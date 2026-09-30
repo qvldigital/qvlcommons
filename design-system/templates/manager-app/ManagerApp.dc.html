@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Manager (PWA)" description="Team-Manager-App: Login, Dashboard, Kader, Spielbericht — Hell/Nacht" -->
+<helmet><script src="./ds-base.js"></script><script src="../../theme.js"></script></helmet>
+<div data-theme="{{ theme }}" style="min-height:100vh;padding:24px;box-sizing:border-box;background:var(--surface-sunken);color:var(--text-body-color)"><x-import component-from-global-scope="ManagerKit" from="./ManagerKit.jsx" hint-size="100%,800px"></x-import></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light'|'dark'&quot;,&quot;section&quot;:&quot;Design&quot;}}">
+class Component extends DCLogic {
+  renderVals() { return { theme: this.props.theme || "light" }; }
+}
+</script>
+</body>
+</html>

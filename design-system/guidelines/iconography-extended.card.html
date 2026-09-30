@@ -1,0 +1,27 @@
+<!-- @dsCard group="Brand" viewport="700x420" name="Iconography — Volleyball-Betrieb" subtitle="Erweiterte Lucide-Auswahl für Liga, Team, Turnier, Safe Space" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;padding:16px;background:#fff;font-family:var(--font-body)}
+.grp{margin-bottom:16px}
+.lbl{font-family:var(--font-display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#4D4D4D;margin-bottom:8px}
+.grid{display:flex;flex-wrap:wrap;gap:16px}
+.it{display:flex;flex-direction:column;align-items:center;gap:4px;width:64px}
+.ic{width:28px;height:28px;background:#006666;display:inline-block}
+.it span{font-size:10px;color:#4D4D4D;text-align:center;line-height:1.2}</style></head><body>
+<script>
+const ICONS={
+ "Liga & Spielbetrieb":["calendar-days","calendar-plus","clipboard-list","list-checks","map-pin-off","hourglass","repeat","circle-check"],
+ "Team & Personen":["users","user-plus","user-round","user-round-minus","shield-check","heart-handshake","badge-check","contact"],
+ "Turnier & Erfolge":["trophy","medal","award","flag","star","podium" /* fallback below */,"target","flame"],
+ "Kommunikation & Sicherheit":["globe","languages","bell","siren","megaphone","info","lock","eye-off"],
+ "Aktionen":["plus","minus","check","x","pencil","trash-2","download","share-2","ellipsis","menu"]
+};
+const BASE="https://unpkg.com/lucide-static@0.544.0/icons/";
+const FALLBACK={"podium":"layout-grid"};
+document.write(Object.entries(ICONS).map(([g,list])=>
+ '<div class="grp"><div class="lbl">'+g+'</div><div class="grid">'+list.map(n=>{
+   const name=FALLBACK[n]||n;
+   return '<div class="it"><span class="ic" style="-webkit-mask:url('+BASE+name+'.svg) center/contain no-repeat;mask:url('+BASE+name+'.svg) center/contain no-repeat"></span><span>'+n+'</span></div>';
+ }).join('')+'</div></div>'
+).join(''));
+</script>
+</body></html>

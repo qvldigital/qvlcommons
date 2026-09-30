@@ -1,0 +1,19 @@
+/* Formensprache: chamfered (45°) corners derived from the logo's block letterforms.
+   Radii are 0 everywhere — never round corners. */
+:root{
+  --radius-none:0;
+  --chamfer-sm:6px;
+  --chamfer-md:10px;
+  --chamfer-lg:16px;
+  --chamfer-xl:24px;
+
+  --border-hairline:1px;
+  --border-strong:2px;
+  --border-heavy:3px;
+  --focus-ring-width:3px;
+
+  /* Clip paths. Use the *-2 variants for buttons/badges (top-left + bottom-right),
+     the *-4 variants for cards/panels (all four corners). */
+  --clip-chamfer-2:polygon(var(--ch,10px) 0,100% 0,100% calc(100% - var(--ch,10px)),calc(100% - var(--ch,10px)) 100%,0 100%,0 var(--ch,10px));
+  --clip-chamfer-4:polygon(var(--ch,10px) 0,calc(100% - var(--ch,10px)) 0,100% var(--ch,10px),100% calc(100% - var(--ch,10px)),calc(100% - var(--ch,10px)) 100%,var(--ch,10px) 100%,0 calc(100% - var(--ch,10px)),0 var(--ch,10px));
+}

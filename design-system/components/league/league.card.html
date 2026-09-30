@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" viewport="700x460" name="Liga" subtitle="Standings, match card, score stepper, roster rows" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>QVL card</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;background:var(--surface-page);padding:16px;font-family:var(--font-body)}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const NS=window.QueerLeagueDesignSystem_ae47b3;
+
+const {StandingsTable,MatchCard,SetScoreInput,LevelBadge,PlayerRow,IconButton,Icon}=NS;
+function Demo(){
+  const [s,setS]=React.useState({home:25,away:21});
+  return <div className="col">
+    <div className="row"><LevelBadge level="B" region="Nord"/><LevelBadge level="C" klasse="FLINTA*"/><LevelBadge level="A" region="Süd" size="lg"/></div>
+    <StandingsTable caption="Level B · Nord" promotion={1} relegation={1} highlightTeam="Berlin Bumpers" rows={[
+      {rank:1,team:'Hamburg Hurricanes',played:10,won:9,lost:1,sets:'28:7',points:27},
+      {rank:2,team:'Berlin Bumpers',played:10,won:8,lost:2,sets:'26:11',points:24},
+      {rank:3,team:'Köln Kicks',played:10,won:5,lost:5,sets:'18:18',points:15},
+      {rank:4,team:'Praha Pride Spikers',played:10,won:1,lost:9,sets:'6:29',points:3}]}/>
+    <MatchCard date="Sa 14.11." time="14:00" level="B" region="Nord" home="Berlin Bumpers" away="Hamburg Hurricanes"
+      homeSets={3} awaySets={1} status="gespielt" sets={['25:21','23:25','25:19','25:17']}/>
+    <div className="row" style={{alignItems:'flex-start'}}>
+      <SetScoreInput setNumber={1} home={s.home} away={s.away} onChange={setS} homeLabel="Bumpers" awayLabel="Hurricanes" style={{flex:1,minWidth:320}}/>
+      <div style={{flex:1,minWidth:280,background:'var(--surface-card)',border:'2px solid var(--border-subtle)'}}>
+        <PlayerRow number={7} name="Alex Winter" pronouns="they/them" role="Zuspiel" status="gemeldet" action={<IconButton label="Entfernen" size="sm"><Icon name="trash-2" size={16}/></IconButton>}/>
+        <PlayerRow alt number={12} name="Mira Kowalski" pronouns="sie/ihr" role="Außen" status="offen"/>
+        <PlayerRow number={4} name="Jon Sørensen" role="Mitte" status="gemeldet"/>
+      </div>
+    </div>
+  </div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

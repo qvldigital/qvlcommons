@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Website (queerleague.de)" description="Öffentliche Liga-Website: Start, Liga, Mitmachen, Wall of Fame — Hell/Nacht" -->
+<helmet><script src="./ds-base.js"></script><script src="../../theme.js"></script></helmet>
+<div data-theme="{{ theme }}" style="min-height:100vh;background:var(--surface-page);color:var(--text-body-color)"><x-import component-from-global-scope="WebsiteKit" from="./WebsiteKit.jsx" hint-size="100%,900px"></x-import></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light'|'dark'&quot;,&quot;section&quot;:&quot;Design&quot;}}">
+class Component extends DCLogic {
+  renderVals() { return { theme: this.props.theme || "light" }; }
+}
+</script>
+</body>
+</html>

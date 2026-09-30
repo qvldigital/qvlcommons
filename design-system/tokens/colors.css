@@ -1,0 +1,41 @@
+/* QVL CI palette — fixed. Do not add new hues.
+   Source: assets/brand/QVL_CI_COLORPALLET.pdf */
+:root{
+  /* Base CI */
+  --qvl-petrol:#006666;        /* Hauptfarbe */
+  --qvl-orange:#FF6600;        /* Akzent 1 */
+  --qvl-yellow:#FFFF00;        /* Akzent 2 — borders/focus only */
+  --qvl-white:#FFFFFF;
+  --qvl-grey:#CCCCCC;          /* Grundfarbe */
+  --qvl-grey-light:#E5E5E5;    /* Seitenhintergrund */
+
+  /* Approved tints */
+  --qvl-petrol-mid:#4C9393;
+  --qvl-petrol-pale:#CCE0E0;
+  --qvl-orange-mid:#FFA366;
+  --qvl-orange-pale:#FFC199;
+
+  /* Akzent 3 — Pink (added by QVL later). Behaves like orange: highlight / CTA / badge.
+     Tints are the same hue mixed toward white, hover/press toward black. White on pink = 4.0:1 →
+     large type and buttons only, same rule as orange. */
+  --qvl-pink:#D04E97;
+  --qvl-pink-mid:color-mix(in srgb,var(--qvl-pink) 60%,#fff);
+  --qvl-pink-pale:color-mix(in srgb,var(--qvl-pink) 20%,#fff);
+  --qvl-pink-hover:color-mix(in srgb,var(--qvl-pink) 88%,#000);
+  --qvl-pink-press:color-mix(in srgb,var(--qvl-pink) 78%,#000);
+
+  /* Ink — NOT on the CI sheet. Added for WCAG-AA body copy on light surfaces.
+     Flagged in readme.md → "Intentional additions". */
+  --qvl-ink:#1A1A1A;
+  --qvl-ink-muted:#4D4D4D;
+
+  /* Derived interaction shades: the CI hues mixed toward black, never new hues. */
+  --qvl-petrol-hover:color-mix(in srgb,var(--qvl-petrol) 86%,#000);
+  --qvl-petrol-press:color-mix(in srgb,var(--qvl-petrol) 74%,#000);
+  --qvl-orange-hover:color-mix(in srgb,var(--qvl-orange) 88%,#000);
+  --qvl-orange-press:color-mix(in srgb,var(--qvl-orange) 78%,#000);
+
+  /* Zebra pair for Spielpläne / Tabellen / Ergebnisse */
+  --qvl-zebra-a:var(--qvl-white);
+  --qvl-zebra-b:var(--qvl-grey-light);
+}

@@ -1,0 +1,14 @@
+/* Minimal global base. Consumers may drop this import and keep only the tokens. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-body-color);font-family:var(--font-body);font-weight:var(--weight-body);font-size:var(--text-body);line-height:var(--leading-body);-webkit-font-smoothing:antialiased;text-wrap:pretty}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);font-weight:var(--weight-display);text-transform:uppercase;letter-spacing:var(--tracking-display);line-height:var(--leading-heading);color:var(--text-heading);margin:0 0 var(--space-4)}
+h1{font-size:var(--text-h1)}h2{font-size:var(--text-h2)}h3{font-size:var(--text-h3)}
+p{margin:0 0 var(--space-4)}
+strong,b{font-weight:var(--weight-emphasis)}
+a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;transition:color var(--duration-fast) var(--ease-standard)}
+a:hover{color:var(--text-link-hover)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:var(--focus-ring-width) solid var(--focus-ring);outline-offset:2px}
+img{max-width:100%;display:block}
+table{border-collapse:collapse}
+body{transition:background var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard)}
+::selection{background:var(--qvl-yellow);color:var(--qvl-ink)}

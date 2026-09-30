@@ -1,0 +1,28 @@
+<!-- @dsCard group="Spielbetrieb" viewport="1280x760" name="Spielbetriebs-Tool" subtitle="Fixtures admin + digitaler Spielberichtsbogen" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Queer League — Spielbetrieb</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;background:var(--surface-page)}</style>
+</head><body><div id="root"></div>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="FixtureAdmin.jsx"></script>
+<script type="text/babel" src="ReportSheet.jsx"></script>
+<script type="text/babel" data-presets="react">
+(function(){
+const {SiteHeader,SiteFooter}=window.QueerLeagueDesignSystem_ae47b3;
+function App(){
+  const [view,setView]=React.useState("plan");
+  return <div>
+    <SiteHeader items={[{value:"plan",label:"Spielbetrieb"},{value:"bericht",label:"Spielbericht"}]}
+      active={view} onNavigate={setView} language="DE" cta="Spieltag anlegen"/>
+    {view==="plan"?<window.FixtureAdmin/>:<div style={{padding:"var(--space-8) 0"}}><window.ReportSheet/></div>}
+    <SiteFooter note="Internes Werkzeug — Ergebnisse werden erst nach Gegenbestätigung öffentlich."
+      columns={[{title:"Spielbetrieb",links:["Spielpläne","Ergebnisse","Tabellen"]},
+        {title:"Regeln",links:["Spielordnung","Safe Space","Schiedsrichter*innen"]}]}/>
+  </div>;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+})();
+</script></body></html>

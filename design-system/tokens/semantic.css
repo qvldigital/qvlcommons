@@ -1,0 +1,70 @@
+:root{
+  /* Surfaces */
+  --surface-page:var(--qvl-grey-light);
+  --surface-card:var(--qvl-white);
+  --surface-raised:var(--qvl-white);
+  --surface-sunken:var(--qvl-grey-light);
+  --surface-inverse:var(--qvl-petrol);
+  --surface-accent:var(--qvl-orange);
+  --surface-accent-soft:var(--qvl-orange-pale);
+  --surface-brand-soft:var(--qvl-petrol-pale);
+  --surface-accent2:var(--qvl-pink);
+  --surface-accent2-soft:var(--qvl-pink-pale);
+  --surface-divider:var(--qvl-grey);
+
+  /* Text */
+  --text-heading:var(--qvl-petrol);
+  --text-body-color:var(--qvl-ink);
+  --text-muted:var(--qvl-ink-muted);
+  --text-on-inverse:var(--qvl-white);
+  --text-on-accent:var(--qvl-white);   /* large type only */
+  --text-link:var(--qvl-petrol);
+  --text-link-hover:var(--qvl-orange-press);
+
+  /* Borders */
+  --border-subtle:var(--qvl-grey);
+  --border-default:var(--qvl-petrol);
+  --border-accent:var(--qvl-orange);
+  --border-accent-2:var(--qvl-pink);
+  --focus-ring:var(--qvl-yellow);
+
+  /* Buttons */
+  --button-primary-bg:var(--qvl-petrol);
+  --button-primary-bg-hover:var(--qvl-petrol-hover);
+  --button-primary-bg-press:var(--qvl-petrol-press);
+  --button-primary-fg:var(--qvl-white);
+  --button-accent-bg:var(--qvl-orange);
+  --button-accent-bg-hover:var(--qvl-orange-hover);
+  --button-accent-bg-press:var(--qvl-orange-press);
+  --button-accent-fg:var(--qvl-white);
+  --button-pink-bg:var(--qvl-pink);
+  --button-pink-bg-hover:var(--qvl-pink-hover);
+  --button-pink-bg-press:var(--qvl-pink-press);
+  --button-pink-fg:var(--qvl-white);
+  --button-secondary-fill:var(--qvl-white);
+  --button-secondary-fg:var(--qvl-petrol);
+  --button-secondary-border:var(--qvl-petrol);
+  --button-ghost-fg:var(--qvl-petrol);
+  --button-disabled-bg:var(--qvl-grey);
+  --button-disabled-fg:var(--qvl-ink-muted);
+
+  /* Status — mapped onto CI hues only */
+  --status-info-bg:var(--qvl-petrol-pale);
+  --status-info-fg:var(--qvl-petrol);
+  --status-success-bg:var(--qvl-petrol-pale);
+  --status-success-fg:var(--qvl-petrol);
+  --status-warn-bg:var(--qvl-orange-pale);
+  --status-warn-fg:var(--qvl-petrol);
+  --status-danger-bg:var(--qvl-orange);
+  --status-danger-fg:var(--qvl-white);
+
+  /* Table */
+  --table-head-bg:var(--qvl-petrol);
+  --table-head-fg:var(--qvl-white);
+  --table-row-bg:var(--qvl-zebra-a);
+  --table-row-bg-alt:var(--qvl-zebra-b);
+  --table-border:var(--qvl-grey);
+  --table-highlight:var(--qvl-orange);
+  --switch-off:var(--qvl-grey);
+  color-scheme:light;
+}

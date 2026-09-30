@@ -1,0 +1,27 @@
+/* Dark mode ("Nacht"). Same CI hues — only surfaces, text and tint roles are remapped.
+   Activate: <html data-theme="dark">. theme.js sets it automatically from the OS ("system", default) or the saved choice.
+   Rules: petrol as TEXT/line becomes petrol-mid; filled petrol/orange/pink buttons keep white labels;
+   logos always sit on a white plate; yellow focus ring is unchanged. */
+[data-theme="dark"]{
+  color-scheme:dark;
+  /* Night surfaces — CI petrol mixed toward black (no new hues) */
+  --qvl-night:#0B1414;--qvl-night-card:#132222;--qvl-night-raised:#1B3030;--qvl-night-sunken:#070E0E;--qvl-night-line:#2C4444;--qvl-paper:#EDEDED;--qvl-paper-muted:#A9BABA;
+  --surface-page:var(--qvl-night);--surface-card:var(--qvl-night-card);--surface-raised:var(--qvl-night-raised);--surface-sunken:var(--qvl-night-sunken);
+  --surface-inverse:var(--qvl-petrol);--surface-brand-soft:color-mix(in srgb,var(--qvl-petrol) 42%,var(--qvl-night));
+  --surface-accent-soft:color-mix(in srgb,var(--qvl-orange) 24%,var(--qvl-night));--surface-accent2-soft:color-mix(in srgb,var(--qvl-pink) 26%,var(--qvl-night));
+  --surface-divider:var(--qvl-night-line);
+  --text-heading:var(--qvl-petrol-mid);--text-body-color:var(--qvl-paper);--text-muted:var(--qvl-paper-muted);
+  --text-link:var(--qvl-petrol-mid);--text-link-hover:var(--qvl-orange-mid);
+  --border-subtle:var(--qvl-night-line);--border-default:var(--qvl-petrol-mid);
+  --button-primary-bg-hover:color-mix(in srgb,var(--qvl-petrol) 82%,#fff);--button-primary-bg-press:color-mix(in srgb,var(--qvl-petrol) 68%,#fff);
+  --button-secondary-fill:transparent;--button-secondary-fg:var(--qvl-petrol-mid);--button-secondary-border:var(--qvl-petrol-mid);--button-ghost-fg:var(--qvl-petrol-mid);
+  --button-disabled-bg:var(--qvl-night-raised);--button-disabled-fg:#7F9494;
+  --status-info-bg:var(--surface-brand-soft);--status-info-fg:var(--qvl-petrol-pale);
+  --status-success-bg:var(--surface-brand-soft);--status-success-fg:var(--qvl-petrol-pale);
+  --status-warn-bg:var(--surface-accent-soft);--status-warn-fg:var(--qvl-orange-pale);
+  --table-row-bg:var(--qvl-night-card);--table-row-bg-alt:#0F1B1B;--table-border:var(--qvl-night-line);
+  --switch-off:#3A5252;
+  --shadow-block-petrol:6px 6px 0 0 var(--qvl-petrol);--shadow-block-grey:6px 6px 0 0 var(--qvl-night-line);--shadow-block-sm-petrol:3px 3px 0 0 var(--qvl-petrol);
+  --drop-block-petrol:drop-shadow(6px 6px 0 var(--qvl-petrol));--drop-block-sm-petrol:drop-shadow(3px 3px 0 var(--qvl-petrol));
+  --overlay-scrim:#050B0B;
+}

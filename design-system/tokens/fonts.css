@@ -1,0 +1,10 @@
+/* QVL webfonts. Bebas Neue (headlines) + Oswald (body) are Google Fonts —
+   both ship full Latin-Ext + Cyrillic subsets, so DE/PL/CS/DA/SV/FR/PT diacritics render cleanly.
+   Served from Google's CDN; swap the @import for self-hosted @font-face rules in production. */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600&display=swap");
+
+:root{
+  --font-display:"Bebas Neue","Oswald",system-ui,sans-serif;
+  --font-body:"Oswald",system-ui,sans-serif;
+  --font-mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}

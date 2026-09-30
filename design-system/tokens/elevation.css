@@ -1,0 +1,16 @@
+/* Flat brand: no soft drop shadows. Depth comes from solid offset blocks and borders. */
+:root{
+  --shadow-none:none;
+  --shadow-block-petrol:6px 6px 0 0 var(--qvl-petrol);
+  --shadow-block-orange:6px 6px 0 0 var(--qvl-orange);
+  --shadow-block-grey:6px 6px 0 0 var(--qvl-grey);
+  --shadow-block-pink:6px 6px 0 0 var(--qvl-pink);
+  --shadow-block-sm-petrol:3px 3px 0 0 var(--qvl-petrol);
+  /* clip-path clips box-shadow. For chamfered elements put this filter on an UNCLIPPED wrapper instead. */
+  --drop-block-petrol:drop-shadow(6px 6px 0 var(--qvl-petrol));
+  --drop-block-orange:drop-shadow(6px 6px 0 var(--qvl-orange));
+  --drop-block-pink:drop-shadow(6px 6px 0 var(--qvl-pink));
+  --drop-block-sm-petrol:drop-shadow(3px 3px 0 var(--qvl-petrol));
+  --overlay-scrim:color-mix(in srgb,var(--qvl-petrol) 82%,#000);
+  --overlay-scrim-alpha:0.88; /* @kind other */
+}
