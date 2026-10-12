@@ -1,0 +1,71 @@
+<!-- @dsCard group="Core" height=230 subtitle="Default, brand, soft, accent and pink tones; optional solid block shadow" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Card</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Card
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "row",
+      style: {
+        alignItems: 'stretch',
+        paddingRight: 6,
+        paddingBottom: 6
+      }
+    }, React.createElement(Card, {
+      style: {
+        flex: 1,
+        minWidth: 180
+      },
+      header: React.createElement("strong", null, "Standard")
+    }, React.createElement("span", {
+      style: {
+        fontSize: 'var(--text-small)'
+      }
+    }, "Weiß, grauer Rand.")), React.createElement(Card, {
+      tone: "brand",
+      style: {
+        flex: 1,
+        minWidth: 180
+      },
+      header: React.createElement("strong", null, "Brand")
+    }, React.createElement("span", {
+      style: {
+        fontSize: 'var(--text-small)'
+      }
+    }, "Petrol invers.")), React.createElement(Card, {
+      tone: "accent",
+      block: true,
+      blockColor: "orange",
+      style: {
+        flex: 1,
+        minWidth: 180
+      },
+      header: React.createElement("strong", null, "Accent + Block")
+    }, React.createElement("span", {
+      style: {
+        fontSize: 'var(--text-small)'
+      }
+    }, "Orange Tint.")), React.createElement(Card, {
+      tone: "pink",
+      block: true,
+      blockColor: "pink",
+      style: {
+        flex: 1,
+        minWidth: 180,
+        marginRight: 6
+      },
+      header: React.createElement("strong", null, "Pink + Block")
+    }, React.createElement("span", {
+      style: {
+        fontSize: 'var(--text-small)'
+      }
+    }, "Pink Pale.")));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

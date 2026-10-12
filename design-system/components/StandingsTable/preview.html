@@ -1,0 +1,54 @@
+<!-- @dsCard group="League" height=340 subtitle="Zebra table with promotion, relegation and own-team highlight" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>StandingsTable</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    StandingsTable
+  } = NS;
+  function Demo() {
+    return React.createElement(StandingsTable, {
+      caption: "Level B · Nord",
+      promotion: 1,
+      relegation: 1,
+      highlightTeam: "Berlin Bumpers",
+      rows: [{
+        rank: 1,
+        team: 'Hamburg Hurricanes',
+        played: 10,
+        won: 9,
+        lost: 1,
+        sets: '28:7',
+        points: 27
+      }, {
+        rank: 2,
+        team: 'Berlin Bumpers',
+        played: 10,
+        won: 8,
+        lost: 2,
+        sets: '26:11',
+        points: 24
+      }, {
+        rank: 3,
+        team: 'Köln Kicks',
+        played: 10,
+        won: 5,
+        lost: 5,
+        sets: '18:18',
+        points: 15
+      }, {
+        rank: 4,
+        team: 'Praha Pride Spikers',
+        played: 10,
+        won: 1,
+        lost: 9,
+        sets: '6:29',
+        points: 3
+      }]
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

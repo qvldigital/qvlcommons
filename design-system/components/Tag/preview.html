@@ -1,0 +1,22 @@
+<!-- @dsCard group="Core" height=90 subtitle="Filter chips: selected, plain and removable" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Tag</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Tag
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "row"
+    }, React.createElement(Tag, {
+      selected: true
+    }, "Nord"), React.createElement(Tag, null, "FLINTA*"), React.createElement(Tag, {
+      onRemove: () => {}
+    }, "Level C"));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

@@ -1,0 +1,81 @@
+<!-- @dsCard group="Brand" height=300 subtitle="Generative net-and-ball fill in petrol, orange and pink colourways" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>NetPattern</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    NetPattern
+  } = NS;
+  const fill = {
+    flex: 1,
+    minHeight: 110,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  };
+  const lab = {
+    color: "#fff",
+    fontFamily: "var(--font-display)",
+    textTransform: "uppercase",
+    letterSpacing: ".02em"
+  };
+  function Demo() {
+    return React.createElement("div", {
+      className: "col",
+      style: {
+        gap: 8
+      }
+    }, React.createElement("div", {
+      className: "row",
+      style: {
+        gap: 8
+      }
+    }, React.createElement(NetPattern, {
+      base: "petrol",
+      ball: "white",
+      style: fill
+    }, React.createElement("strong", {
+      style: lab
+    }, "Petrol")), React.createElement(NetPattern, {
+      base: "petrol-orange",
+      ball: "white",
+      ballOpacity: 0.22,
+      style: fill
+    }, React.createElement("strong", {
+      style: lab
+    }, "Petrol → Orange")), React.createElement(NetPattern, {
+      base: "orange-petrol",
+      ball: "white",
+      style: fill
+    }, React.createElement("strong", {
+      style: lab
+    }, "Orange → Petrol"))), React.createElement("div", {
+      className: "row",
+      style: {
+        gap: 8
+      }
+    }, React.createElement(NetPattern, {
+      base: "pink",
+      ball: "white",
+      style: fill
+    }, React.createElement("strong", {
+      style: lab
+    }, "Pink")), React.createElement(NetPattern, {
+      base: "petrol-pink",
+      ball: "white",
+      style: fill
+    }, React.createElement("strong", {
+      style: lab
+    }, "Petrol → Pink")), React.createElement(NetPattern, {
+      base: "orange-pink",
+      ball: "white",
+      style: fill
+    }, React.createElement("strong", {
+      style: lab
+    }, "Orange → Pink"))));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

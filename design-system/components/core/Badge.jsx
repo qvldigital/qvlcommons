@@ -12,7 +12,8 @@ const FILLED={
   soft:{background:"var(--surface-brand-soft)",color:"var(--text-heading)"},
   pink:{background:"var(--qvl-pink)",color:"var(--qvl-white)"},
   "pink-soft":{background:"var(--qvl-pink-pale)",color:"var(--qvl-ink)"},
-  grey:{background:"var(--qvl-grey)",color:"var(--qvl-ink)"}
+  grey:{background:"var(--qvl-grey)",color:"var(--qvl-ink)"},
+  highlight:{background:"var(--qvl-yellow)",color:"var(--qvl-ink)"}
 };
 
 export function Badge({tone="petrol",size="md",children,style,...rest}){

@@ -1,0 +1,49 @@
+<!-- @dsCard group="League" height=230 subtitle="Roster row with number, name, pronouns, role and status" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>PlayerRow</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    PlayerRow,
+    IconButton,
+    Icon
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      style: {
+        background: 'var(--surface-card)',
+        border: '2px solid var(--border-subtle)',
+        maxWidth: 520
+      }
+    }, React.createElement(PlayerRow, {
+      number: 7,
+      name: "Alex Winter",
+      pronouns: "they/them",
+      role: "Zuspiel",
+      status: "gemeldet",
+      action: React.createElement(IconButton, {
+        label: "Entfernen",
+        size: "sm"
+      }, React.createElement(Icon, {
+        name: "trash-2",
+        size: 16
+      }))
+    }), React.createElement(PlayerRow, {
+      alt: true,
+      number: 12,
+      name: "Mira Kowalski",
+      pronouns: "sie/ihr",
+      role: "Außen",
+      status: "offen"
+    }), React.createElement(PlayerRow, {
+      number: 4,
+      name: "Jon Sørensen",
+      role: "Mitte",
+      status: "gemeldet"
+    }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

@@ -1,0 +1,24 @@
+<!-- @dsCard group="Navigation" height=70 subtitle="Trail with the current page last" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Breadcrumb</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Breadcrumb
+  } = NS;
+  function Demo() {
+    return React.createElement(Breadcrumb, {
+      items: [{
+        value: 'liga',
+        label: 'Liga'
+      }, {
+        value: 'b',
+        label: 'Level B'
+      }, 'Gruppe Nord']
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

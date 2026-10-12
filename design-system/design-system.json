@@ -1,0 +1,77 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "backgrounds": {
+      "files": {},
+      "name": "backgrounds",
+      "order": []
+    },
+    "brand": {
+      "files": {},
+      "name": "brand",
+      "order": []
+    },
+    "icons": {
+      "files": {},
+      "name": "icons",
+      "order": []
+    },
+    "logo": {
+      "files": {},
+      "name": "logo",
+      "order": []
+    },
+    "notes": {
+      "files": {},
+      "name": "notes",
+      "order": []
+    },
+    "patterns": {
+      "files": {},
+      "name": "patterns",
+      "order": []
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-12T20:15:37.672Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": [
+      "project/brand-kit/README.md",
+      "project/ui_kits/manager/README.md",
+      "project/ui_kits/spielbetrieb/README.md",
+      "project/ui_kits/website/README.md"
+    ]
+  },
+  "groups": [
+    "backgrounds",
+    "brand",
+    "icons",
+    "logo",
+    "notes",
+    "patterns"
+  ],
+  "layout": "files",
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18"
+    },
+    {
+      "name": "react-dom",
+      "version": "18"
+    }
+  ],
+  "namespace": "QueerLeagueDesignSystem_ae47b3",
+  "sections": {},
+  "title": "Queer League Design System",
+  "lastChange": {
+    "by": "Claude",
+    "at": "2026-10-12T20:29:56Z",
+    "via": "Claude chat",
+    "note": "Finished the migration: tokens.json, tokens.css, bundle, per-component guides and previews, asset notes, cover."
+  }
+}

@@ -5,4 +5,4 @@
 <Badge tone="outline" size="sm">Level C</Badge>
 ```
 
-`tone="yellow"` is a yellow **border** only — yellow is never a fill behind text.
+`tone="yellow"` is a yellow border; `tone="highlight"` is yellow fill with ink text — for "Live", "Platz 1", "Neu". Max. one highlight badge per view; never on yellow/orange grounds.

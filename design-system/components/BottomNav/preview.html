@@ -1,0 +1,50 @@
+<!-- @dsCard group="Navigation" height=110 subtitle="PWA bottom navigation with 44 px targets" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>BottomNav</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    BottomNav,
+    Icon
+  } = NS;
+  function Demo() {
+    const [b, setB] = React.useState('spiele');
+    return React.createElement(BottomNav, {
+      value: b,
+      onChange: setB,
+      items: [{
+        value: 'start',
+        label: 'Start',
+        icon: React.createElement(Icon, {
+          name: "house",
+          size: 20
+        })
+      }, {
+        value: 'spiele',
+        label: 'Spiele',
+        icon: React.createElement(Icon, {
+          name: "calendar-days",
+          size: 20
+        })
+      }, {
+        value: 'team',
+        label: 'Team',
+        icon: React.createElement(Icon, {
+          name: "users",
+          size: 20
+        })
+      }, {
+        value: 'mehr',
+        label: 'Mehr',
+        icon: React.createElement(Icon, {
+          name: "ellipsis",
+          size: 20
+        })
+      }]
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

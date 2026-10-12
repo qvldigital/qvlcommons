@@ -7,7 +7,6 @@ Stand: Oktober 2026. Quelle der Wahrheit bleibt das Design System (`../styles.cs
 - `tokens/primitives.tokens.json` — alle Farben, Schriften, Größen, Abstände, Fasen, Verläufe, Schatten (W3C Design Tokens / DTCG).
 - `tokens/light.tokens.json`, `tokens/dark.tokens.json` — semantische Farben je Modus (verweisen auf primitives).
 - `tokens/tokens-studio.json` — dasselbe als eine Datei mit Themes „Hell“ und „Nacht“.
-- `palettes/qvl-palette.ase` — Farbfelder für Adobe (Illustrator, Photoshop, InDesign), Affinity, Procreate.
 - `palettes/qvl-palette.gpl` — Farbfelder für GIMP, Inkscape, Krita.
 - `palettes/qvl-colors.csv` — Hex-Liste zum Abtippen/Kopieren.
 - `logos/`, `icons/`, `backgrounds/`, `patterns/` — Bildmaterial (PNG).
@@ -17,7 +16,7 @@ Stand: Oktober 2026. Quelle der Wahrheit bleibt das Design System (`../styles.cs
 **Figma (Tokens Studio Plugin):** `tokens-studio.json` laden → Themes Hell/Nacht → „Create Variables“ bzw. „Create Styles“ (legt auch Verlaufs- und Text-Styles an).
 **Penpot:** Tokens → Import → `tokens-studio.json` (oder die drei Einzeldateien).
 **Canva (Pro / Teams, Brand Kit):** Kein Datei-Import möglich — Farben aus `qvl-colors.csv` einfügen, Schriften „Bebas Neue“ (Überschriften) und „Oswald“ (Text) wählen, Logos aus `logos/` hochladen. Verläufe in Canva als Farbverlauf mit den Hex-Werten aus dem Brand-Kit-Dokument.
-**Adobe / Affinity:** `qvl-palette.ase` in das Farbfelder-Bedienfeld laden.
+**Adobe / Affinity:** `qvl-palette.gpl` importieren (Affinity: Palette → Importieren; Illustrator/Photoshop: Hex-Werte aus `qvl-colors.csv` als Farbfelder anlegen und dort als .ase exportieren).
 
 ## Wichtig
 - Verläufe und die erweiterte Gelb-Regel sind **noch von QVL-CI freizugeben**.

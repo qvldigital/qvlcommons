@@ -1,0 +1,27 @@
+<!-- @dsCard group="League" height=190 subtitle="Fixture with date, teams, sets and status" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>MatchCard</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    MatchCard
+  } = NS;
+  function Demo() {
+    return React.createElement(MatchCard, {
+      date: "Sa 14.11.",
+      time: "14:00",
+      level: "B",
+      region: "Nord",
+      home: "Berlin Bumpers",
+      away: "Hamburg Hurricanes",
+      homeSets: 3,
+      awaySets: 1,
+      status: "gespielt",
+      sets: ['25:21', '23:25', '25:19', '25:17']
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

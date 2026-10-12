@@ -1,0 +1,29 @@
+<!-- @dsCard group="Navigation" height=130 subtitle="Sticky site header with nav items and a CTA" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>SiteHeader</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    SiteHeader
+  } = NS;
+  function Demo() {
+    return React.createElement(SiteHeader, {
+      items: [{
+        value: 'liga',
+        label: 'Liga'
+      }, {
+        value: 'turniere',
+        label: 'Turniere'
+      }, {
+        value: 'fame',
+        label: 'Wall of Fame'
+      }],
+      active: "liga",
+      cta: "Mitmachen"
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

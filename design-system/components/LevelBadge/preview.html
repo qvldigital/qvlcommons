@@ -1,0 +1,28 @@
+<!-- @dsCard group="League" height=110 subtitle="Level with region or Spielklasse" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>LevelBadge</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    LevelBadge
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "row"
+    }, React.createElement(LevelBadge, {
+      level: "B",
+      region: "Nord"
+    }), React.createElement(LevelBadge, {
+      level: "C",
+      klasse: "FLINTA*"
+    }), React.createElement(LevelBadge, {
+      level: "A",
+      region: "Süd",
+      size: "lg"
+    }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

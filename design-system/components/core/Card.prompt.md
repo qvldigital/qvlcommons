@@ -7,3 +7,5 @@
 ```
 
 All four corners are chamfered. `tone="brand"` for petrol inverse blocks; `block` only for hero/feature cards (one per view).
+
+Gradient tones `tiefe` / `pride` (white text) and `sunset` / `flutlicht` (ink text) are for a single feature card per view — never in grids or lists.

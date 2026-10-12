@@ -1,0 +1,30 @@
+<!-- @dsCard group="Forms" height=330 subtitle="Text field with label, hint and error" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Input</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Input
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "col",
+      style: {
+        maxWidth: 420
+      }
+    }, React.createElement(Input, {
+      label: "Teamname",
+      defaultValue: "Berlin Bumpers",
+      required: true,
+      hint: "So erscheint das Team im Spielplan."
+    }), React.createElement(Input, {
+      label: "E-Mail",
+      error: "Bitte gültige Adresse angeben.",
+      defaultValue: "kontakt@"
+    }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

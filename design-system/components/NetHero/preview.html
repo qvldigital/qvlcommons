@@ -1,0 +1,27 @@
+<!-- @dsCard group="Brand" height=320 subtitle="Full-bleed net hero with eyebrow, headline and CTAs" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>NetHero</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    NetHero,
+    Button
+  } = NS;
+  function Demo() {
+    return React.createElement(NetHero, {
+      background: "grey-petrol",
+      eyebrow: "Saison 2026/27",
+      title: "Volleyball, wie es sein soll",
+      lead: "Rund 1.000 Mitglieder, Levels A–D, fünf Regionen — und Platz für dich.",
+      minHeight: 240,
+      actions: React.createElement(Button, {
+        variant: "accent",
+        size: "lg"
+      }, "Team anmelden")
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

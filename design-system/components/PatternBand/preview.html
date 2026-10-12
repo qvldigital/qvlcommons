@@ -1,0 +1,37 @@
+<!-- @dsCard group="Brand" height=300 subtitle="Icon-net section bands behind a white plate" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>PatternBand</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    PatternBand
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "col",
+      style: {
+        gap: 16
+      }
+    }, React.createElement(PatternBand, {
+      pattern: "documents",
+      plate: true,
+      height: 120
+    }, React.createElement("h3", {
+      style: {
+        margin: 0
+      }
+    }, "Regelwerk & Downloads")), React.createElement(PatternBand, {
+      pattern: "table",
+      plate: true,
+      height: 120
+    }, React.createElement("h3", {
+      style: {
+        margin: 0
+      }
+    }, "Tabellen & Wall of Fame")));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

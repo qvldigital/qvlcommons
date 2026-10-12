@@ -1,0 +1,46 @@
+<!-- @dsCard group="Core" height=190 subtitle="Primary, accent, pink, secondary and ghost; sizes and icon" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Button</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Button,
+    Icon
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "col"
+    }, React.createElement("div", {
+      className: "row"
+    }, React.createElement(Button, {
+      variant: "primary"
+    }, "Primär"), React.createElement(Button, {
+      variant: "accent"
+    }, "Team anmelden"), React.createElement(Button, {
+      variant: "pink"
+    }, "Pride-Turnier"), React.createElement(Button, {
+      variant: "secondary"
+    }, "Abbrechen"), React.createElement(Button, {
+      variant: "ghost"
+    }, "Mehr"), React.createElement(Button, {
+      variant: "primary",
+      disabled: true
+    }, "Gesperrt")), React.createElement("div", {
+      className: "row"
+    }, React.createElement(Button, {
+      size: "sm",
+      variant: "primary"
+    }, "Small"), React.createElement(Button, {
+      size: "lg",
+      variant: "accent",
+      iconLeft: React.createElement(Icon, {
+        name: "user-plus",
+        size: 20
+      })
+    }, "Large + Icon")));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

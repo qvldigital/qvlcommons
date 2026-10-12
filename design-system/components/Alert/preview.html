@@ -1,0 +1,31 @@
+<!-- @dsCard group="Feedback" height=330 subtitle="Safe-Space, info, warn and danger notices" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Alert</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Alert
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "col"
+    }, React.createElement(Alert, {
+      tone: "safe",
+      title: "Safe Space"
+    }, "Hallenadressen sind nur für angemeldete Teams sichtbar."), React.createElement(Alert, {
+      tone: "info",
+      title: "Saison 2026/27"
+    }, "Meldeschluss ist der 30. Juni."), React.createElement(Alert, {
+      tone: "warn",
+      title: "Ergebnis fehlt"
+    }, "Ein Spielbericht ist noch offen."), React.createElement(Alert, {
+      tone: "danger",
+      title: "Spiel abgesagt",
+      onClose: () => {}
+    }, "Beide Teams wurden informiert."));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

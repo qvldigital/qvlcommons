@@ -1,0 +1,22 @@
+/* QVL gradients — only between CI hues, never new colours. Always 135° (the chamfer / net-edge diagonal).
+   Large surfaces only (hero, campaign/tournament header, Wall-of-Fame head, app splash, one feature card).
+   Never on buttons, inputs, tables, badges, body text cards. Max. one gradient surface per view.
+   Check text contrast at the WEAKEST stop. Block shadows and chamfers stay solid. */
+:root{
+  --gradient-angle:135deg; /* @kind other */
+  /* Tiefe — petrol-mid → petrol. White on petrol-mid 3.6:1 → headlines/buttons anywhere; body text on the petrol end (≥4.5:1 from ~45%). The default hero. */
+  --qvl-gradient-tiefe:linear-gradient(var(--gradient-angle),var(--qvl-petrol-mid) 0%,var(--qvl-petrol) 100%);
+  /* Pride — petrol → pink, interpolated in OKLCH so the middle passes through violet, not mud. White text ≥4.0:1 → headlines + buttons; body on the petrol end. */
+  --qvl-gradient-pride:linear-gradient(var(--gradient-angle) in oklch,var(--qvl-petrol) 0%,var(--qvl-pink) 100%);
+  /* Sunset — orange → pink. Celebration, tournaments, Wall of Fame. Ink text ≥4.3:1; white only display-size. */
+  --qvl-gradient-sunset:linear-gradient(var(--gradient-angle),var(--qvl-orange) 0%,var(--qvl-pink) 100%);
+  /* Flutlicht — yellow → orange. Energy, "Live", calls to join. Ink text AA everywhere (≥5.9:1). Never white text. */
+  --qvl-gradient-flutlicht:linear-gradient(var(--gradient-angle),var(--qvl-yellow) 0%,var(--qvl-orange) 100%);
+  /* Spektrum — all four accents. LINES ONLY (≤8 px): top-of-page band, progress bar, section rule. Never behind text. */
+  --qvl-gradient-spektrum:linear-gradient(90deg,var(--qvl-petrol) 0%,var(--qvl-pink) 36%,var(--qvl-orange) 68%,var(--qvl-yellow) 100%);
+  --surface-hero:var(--qvl-gradient-tiefe);
+}
+[data-theme="dark"]{
+  /* Night: Tiefe sinks into the night surface instead of petrol-press. */
+  --qvl-gradient-tiefe:linear-gradient(var(--gradient-angle),var(--qvl-petrol) 0%,var(--qvl-night-card) 100%);
+}

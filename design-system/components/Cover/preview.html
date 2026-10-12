@@ -1,0 +1,39 @@
+<!-- @dsCard height=336 -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Cover</title>
+<style>
+html,body{margin:0;padding:0}
+body{position:relative;width:960px;height:336px;overflow:hidden;background:var(--surface-page)}
+svg{position:absolute;left:0;top:0;display:block}
+.petrol{fill:var(--qvl-petrol)}.orange{fill:var(--qvl-orange)}.pink{fill:var(--qvl-pink)}.yellow{fill:var(--qvl-yellow)}.ink{fill:var(--text-body-color)}
+.text{position:absolute;left:32px;bottom:24px;max-width:896px}
+.name{margin:0;font-family:var(--font-display);font-weight:400;font-size:64px;line-height:.95;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--text-body-color)}
+.tag{margin:8px 0 0;font-family:var(--font-body);font-weight:300;font-size:14px;line-height:1.35;color:var(--text-muted)}
+</style></head><body>
+<svg width="960" height="112" viewBox="0 0 960 112" aria-hidden="true">
+<!-- blocks: petrol 7x3 cells (chamfer-xl 24), orange 4x2 (chamfer-lg 16), pink and yellow 2x1 (chamfer-md 10), ink = text-body-color 3x3 (chamfer-lg 16); a cell is space-8 (32px) with a space-2 (8px) gap.
+     arrangement: top-band skeleton (the name is too wide for the left zone); one tall petrol slab, orange over pink and yellow, one square ink block, then the pattern to the right edge.
+     pattern: tiles cut by the chamfer tokens, some merged two wide, the brand's 45 degree block-letter cut; chosen because the README says "chamfered corners, never rounding" and all radii are 0.
+     steps and radii: space-8, space-2; chamfer-sm 6 for pattern tiles; chamfer-md 10, chamfer-lg 16, chamfer-xl 24 for blocks. -->
+<polygon class="petrol" points="24,0 248,0 272,24 272,88 248,112 24,112 0,88 0,24"/>
+<polygon class="orange" points="296,0 416,0 432,16 432,56 416,72 296,72 280,56 280,16"/>
+<polygon class="pink" points="290,80 342,80 352,90 352,102 342,112 290,112 280,102 280,90"/>
+<polygon class="yellow" points="370,80 422,80 432,90 432,102 422,112 370,112 360,102 360,90"/>
+<polygon class="ink" points="456,0 536,0 552,16 552,96 536,112 456,112 440,96 440,16"/>
+<polygon class="orange" points="566,0 626,0 632,6 632,26 626,32 566,32 560,26 560,6"/>
+<polygon class="petrol" points="686,0 706,0 712,6 712,26 706,32 686,32 680,26 680,6"/>
+<polygon class="pink" points="726,0 786,0 792,6 792,26 786,32 726,32 720,26 720,6"/>
+<polygon class="ink" points="846,0 866,0 872,6 872,26 866,32 846,32 840,26 840,6"/>
+<polygon class="petrol" points="886,0 946,0 952,6 952,26 946,32 886,32 880,26 880,6"/>
+<polygon class="petrol" points="566,40 586,40 592,46 592,66 586,72 566,72 560,66 560,46"/>
+<polygon class="yellow" points="646,40 706,40 712,46 712,66 706,72 646,72 640,66 640,46"/>
+<polygon class="orange" points="766,40 786,40 792,46 792,66 786,72 766,72 760,66 760,46"/>
+<polygon class="ink" points="806,40 866,40 872,46 872,66 866,72 806,72 800,66 800,46"/>
+<polygon class="pink" points="926,40 946,40 952,46 952,66 946,72 926,72 920,66 920,46"/>
+<polygon class="pink" points="606,80 626,80 632,86 632,106 626,112 606,112 600,106 600,86"/>
+<polygon class="ink" points="686,80 746,80 752,86 752,106 746,112 686,112 680,106 680,86"/>
+<polygon class="petrol" points="806,80 866,80 872,86 872,106 866,112 806,112 800,106 800,86"/>
+<polygon class="orange" points="886,80 946,80 952,86 952,106 946,112 886,112 880,106 880,86"/>
+<polygon class="yellow" points="566,80 586,80 592,86 592,106 586,112 566,112 560,106 560,86"/>
+</svg>
+<div class="text"><div class="name">Queer League <br>Design System</div><div class="tag">Volleyball, wie es sein soll</div></div>
+</body></html>

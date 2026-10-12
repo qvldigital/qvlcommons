@@ -1,0 +1,36 @@
+<!-- @dsCard group="Core" height=120 subtitle="Level, status and highlight badges" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Badge</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Badge
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "row"
+    }, React.createElement(Badge, {
+      tone: "petrol"
+    }, "Level B"), React.createElement(Badge, {
+      tone: "orange"
+    }, "Anmeldung offen"), React.createElement(Badge, {
+      tone: "outline"
+    }, "Nord"), React.createElement(Badge, {
+      tone: "soft"
+    }, "Saison 26/27"), React.createElement(Badge, {
+      tone: "grey"
+    }, "Archiv"), React.createElement(Badge, {
+      tone: "pink"
+    }, "Neu"), React.createElement(Badge, {
+      tone: "pink-soft"
+    }, "Pride"), React.createElement(Badge, {
+      tone: "yellow"
+    }, "Fokus"), React.createElement(Badge, {
+      tone: "highlight"
+    }, "Live"));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

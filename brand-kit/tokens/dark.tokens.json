@@ -1,0 +1,206 @@
+{
+  "surface": {
+    "page": {
+      "$type": "color",
+      "$value": "{color.night}"
+    },
+    "card": {
+      "$type": "color",
+      "$value": "{color.night-card}"
+    },
+    "raised": {
+      "$type": "color",
+      "$value": "{color.night-raised}"
+    },
+    "sunken": {
+      "$type": "color",
+      "$value": "{color.night-sunken}"
+    },
+    "inverse": {
+      "$type": "color",
+      "$value": "{color.petrol}"
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "{color.orange}"
+    },
+    "accent-soft": {
+      "$type": "color",
+      "$value": "#46280F"
+    },
+    "brand-soft": {
+      "$type": "color",
+      "$value": "#063636"
+    },
+    "accent2": {
+      "$type": "color",
+      "$value": "{color.pink}"
+    },
+    "accent2-soft": {
+      "$type": "color",
+      "$value": "#3E2336"
+    },
+    "divider": {
+      "$type": "color",
+      "$value": "{color.night-line}"
+    }
+  },
+  "text": {
+    "heading": {
+      "$type": "color",
+      "$value": "{color.petrol-mid}"
+    },
+    "body": {
+      "$type": "color",
+      "$value": "{color.paper}"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "{color.paper-muted}"
+    },
+    "on-inverse": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "on-accent": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "on-inverse-accent": {
+      "$type": "color",
+      "$value": "{color.yellow}"
+    },
+    "link": {
+      "$type": "color",
+      "$value": "{color.petrol-mid}"
+    },
+    "link-hover": {
+      "$type": "color",
+      "$value": "{color.orange-mid}"
+    }
+  },
+  "border": {
+    "subtle": {
+      "$type": "color",
+      "$value": "{color.night-line}"
+    },
+    "default": {
+      "$type": "color",
+      "$value": "{color.petrol-mid}"
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "{color.orange}"
+    },
+    "accent-2": {
+      "$type": "color",
+      "$value": "{color.pink}"
+    },
+    "focus-ring": {
+      "$type": "color",
+      "$value": "{color.yellow}"
+    }
+  },
+  "highlight": {
+    "bg": {
+      "$type": "color",
+      "$value": "{color.yellow}"
+    },
+    "fg": {
+      "$type": "color",
+      "$value": "{color.ink}"
+    }
+  },
+  "button": {
+    "primary-bg": {
+      "$type": "color",
+      "$value": "{color.petrol}"
+    },
+    "primary-bg-hover": {
+      "$type": "color",
+      "$value": "#2E8282"
+    },
+    "primary-bg-press": {
+      "$type": "color",
+      "$value": "#529797"
+    },
+    "primary-fg": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "accent-bg": {
+      "$type": "color",
+      "$value": "{color.orange}"
+    },
+    "accent-bg-hover": {
+      "$type": "color",
+      "$value": "{color.orange-hover}"
+    },
+    "accent-bg-press": {
+      "$type": "color",
+      "$value": "{color.orange-press}"
+    },
+    "accent-fg": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "pink-bg": {
+      "$type": "color",
+      "$value": "{color.pink}"
+    },
+    "pink-bg-hover": {
+      "$type": "color",
+      "$value": "{color.pink-hover}"
+    },
+    "pink-bg-press": {
+      "$type": "color",
+      "$value": "{color.pink-press}"
+    },
+    "pink-fg": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "secondary-fg": {
+      "$type": "color",
+      "$value": "{color.petrol-mid}"
+    },
+    "secondary-border": {
+      "$type": "color",
+      "$value": "{color.petrol-mid}"
+    },
+    "disabled-bg": {
+      "$type": "color",
+      "$value": "{color.night-raised}"
+    },
+    "disabled-fg": {
+      "$type": "color",
+      "$value": "#7F9494"
+    }
+  },
+  "table": {
+    "head-bg": {
+      "$type": "color",
+      "$value": "{color.petrol}"
+    },
+    "head-fg": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "row-bg": {
+      "$type": "color",
+      "$value": "{color.night-card}"
+    },
+    "row-bg-alt": {
+      "$type": "color",
+      "$value": "#0F1B1B"
+    },
+    "border": {
+      "$type": "color",
+      "$value": "{color.night-line}"
+    },
+    "highlight": {
+      "$type": "color",
+      "$value": "{color.orange}"
+    }
+  }
+}

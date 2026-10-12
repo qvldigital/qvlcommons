@@ -6,17 +6,20 @@ und die Referee-Software (`qvlreferee`).
 
 ## Inhalt
 
-| Ordner | Was |
+| Pfad | Was |
 | --- | --- |
-| `design-system/` | Das Queer League Design System aus Claude Design, entpackt: Tokens (`tokens/*.css`, inkl. Dark Mode), Komponenten, Guidelines, UI-Kits. `design-system/readme.md` ist die ausführliche Doku. |
-| `design-system/brand-kit/` | Export für andere Werkzeuge (Figma, Penpot, Canva, Adobe, Affinity, GIMP): Design-Tokens als JSON (W3C/DTCG und Tokens Studio, Hell + Nacht), Farbpaletten (`.ase`, `.gpl`, `.csv`), Logos und Bildmaterial, plus `QVL Brand Kit.html` als druckbare Übersicht. Quelle der Wahrheit bleibt das Design System selbst. |
-| `assets/` | Die Original-Markendateien (Logos, Hintergründe, CI-Farbpalette als PDF). |
+| `CLAUDE.md` | Übergabe aus Claude Design: Aufbau und die nicht verhandelbaren Regeln (Safe Space, 11 Sprachen, Mobile first, feste CI, Ton). |
+| `design-system/` | Das Queer League Design System: `README.md` (Brand Book), `tokens.json` als Quelle aller Werte (hell + Nacht), `tokens.css` daraus kompiliert, Einzeldateien in `tokens/` (inkl. `dark.css`, `gradients.css`), Komponenten unter `components/<Name>/`, Guidelines, UI-Kits, Vorlagen. |
+| `brand-kit/` | Export für andere Werkzeuge (Figma, Penpot, Canva, Adobe, GIMP): DTCG- und Tokens-Studio-JSON, Paletten, Logos, Bildmaterial, `QVL Brand Kit.html`, `brand-kit-import.pdf` (Vorlage für den Canva Brand Kit Builder). |
+| `assets/` | Original-Markendateien (Logos, Hintergründe, CI-Farbpalette als PDF) und `assets/fonts/`: Bebas Neue und Oswald als woff2 (latin + latin-ext, Fontsource 5.3.0, SIL OFL 1.1). |
+
+Die Quelle ist das Artefakt „Queer League Design System“ in Claude (Typ Design System); Exporte daraus werden hier eingespielt.
 
 ## Neue Design-System-Version einspielen
 
 _Verläufe und die erweiterte Gelb-Regel (Brand Kit, Oktober 2026) sind noch von der QVL-CI freizugeben._
 
-1. Export aus Claude Design entpacken und den Inhalt von `design-system/` damit ersetzen.
+1. Export aus dem Claude-Artefakt entpacken; `design-system/`, `brand-kit/` und `CLAUDE.md` damit ersetzen. Eine `design-system/SKILL.md` muss erhalten bleiben (der Export bringt keine mit), sonst findet Claude Code den Skill nicht.
 2. Diff prüfen (`git diff --stat`), committen, `version` in `package.json` hochzählen und taggen (`v1.1.0`, …).
 3. Die Apps ziehen eine neue Version erst bewusst nach, getestet über ihre Staging-Umgebung.
 

@@ -1,0 +1,31 @@
+<!-- @dsCard group="Navigation" height=90 subtitle="Horizontally scrolling tabs with optional counts" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Tabs</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Tabs
+  } = NS;
+  function Demo() {
+    const [t, setT] = React.useState('tabelle');
+    return React.createElement(Tabs, {
+      items: [{
+        value: 'plan',
+        label: 'Spielplan'
+      }, {
+        value: 'tabelle',
+        label: 'Tabelle',
+        count: 14
+      }, {
+        value: 'erg',
+        label: 'Ergebnisse'
+      }],
+      value: t,
+      onChange: setT
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

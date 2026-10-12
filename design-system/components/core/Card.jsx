@@ -9,7 +9,12 @@ export function Card({tone="default",border=true,block=false,blockColor="petrol"
     brand:{background:"var(--surface-inverse)",color:"var(--text-on-inverse)",edge:"var(--border-default)"},
     soft:{background:"var(--surface-brand-soft)",color:"var(--text-body-color)",edge:"var(--qvl-petrol-mid)"},
     accent:{background:"var(--surface-accent-soft)",color:"var(--text-body-color)",edge:"var(--border-accent)"},
-    pink:{background:"var(--surface-accent2-soft)",color:"var(--text-body-color)",edge:"var(--border-accent-2)"}
+    pink:{background:"var(--surface-accent2-soft)",color:"var(--text-body-color)",edge:"var(--border-accent-2)"},
+    // gradient tones: feature card only, one per view. Edge = same gradient so the 2 px rim disappears.
+    tiefe:{background:"var(--qvl-gradient-tiefe)",color:"var(--qvl-white)",edge:"var(--qvl-gradient-tiefe)"},
+    pride:{background:"var(--qvl-gradient-pride)",color:"var(--qvl-white)",edge:"var(--qvl-gradient-pride)"},
+    sunset:{background:"var(--qvl-gradient-sunset)",color:"var(--qvl-ink)",edge:"var(--qvl-gradient-sunset)"},
+    flutlicht:{background:"var(--qvl-gradient-flutlicht)",color:"var(--qvl-ink)",edge:"var(--qvl-gradient-flutlicht)"}
   };
   const t=tones[tone]||tones.default;
   const inner={background:t.background,color:t.color,padding,...chamfer(border?ch-2:ch,4)};

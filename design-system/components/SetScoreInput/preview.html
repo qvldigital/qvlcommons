@@ -1,0 +1,30 @@
+<!-- @dsCard group="League" height=200 subtitle="Courtside score stepper with 44 px targets" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>SetScoreInput</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    SetScoreInput
+  } = NS;
+  function Demo() {
+    const [s, setS] = React.useState({
+      home: 25,
+      away: 21
+    });
+    return React.createElement(SetScoreInput, {
+      setNumber: 1,
+      home: s.home,
+      away: s.away,
+      onChange: setS,
+      homeLabel: "Bumpers",
+      awayLabel: "Hurricanes",
+      style: {
+        maxWidth: 460
+      }
+    });
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

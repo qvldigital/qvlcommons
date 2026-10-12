@@ -5,7 +5,8 @@ import * as React from "react";
  * @startingPoint section="Core" subtitle="Chamfered card tones with optional block shadow" viewport="700x320"
  */
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  tone?: "default" | "brand" | "soft" | "accent" | "pink";
+  /** tiefe/pride/sunset/flutlicht are gradient feature cards — one per view, never in lists */
+  tone?: "default" | "brand" | "soft" | "accent" | "pink" | "tiefe" | "pride" | "sunset" | "flutlicht";
   /** colour of the block shadow (default petrol) */
   blockColor?: "petrol" | "orange" | "pink";
   /** 2 px edge in the tone's border colour (default true) */

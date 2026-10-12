@@ -4,7 +4,7 @@
   /* Base CI */
   --qvl-petrol:#006666;        /* Hauptfarbe */
   --qvl-orange:#FF6600;        /* Akzent 1 */
-  --qvl-yellow:#FFFF00;        /* Akzent 2 — borders/focus only */
+  --qvl-yellow:#FFFF00;        /* Akzent 2 — on dark grounds (petrol/night) or as fill under INK. Never on white. */
   --qvl-white:#FFFFFF;
   --qvl-grey:#CCCCCC;          /* Grundfarbe */
   --qvl-grey-light:#E5E5E5;    /* Seitenhintergrund */
@@ -34,6 +34,11 @@
   --qvl-petrol-press:color-mix(in srgb,var(--qvl-petrol) 74%,#000);
   --qvl-orange-hover:color-mix(in srgb,var(--qvl-orange) 88%,#000);
   --qvl-orange-press:color-mix(in srgb,var(--qvl-orange) 78%,#000);
+
+  /* Yellow roles. Yellow/white 1.07:1 → never text, icon or thin line on light grounds.
+     Ink on yellow 16:1, petrol on yellow 6.3:1, yellow on petrol 6.3:1, yellow on night 15:1. */
+  --highlight-bg:var(--qvl-yellow);--highlight-fg:var(--qvl-ink);
+  --text-on-inverse-accent:var(--qvl-yellow);
 
   /* Zebra pair for Spielpläne / Tabellen / Ergebnisse */
   --qvl-zebra-a:var(--qvl-white);

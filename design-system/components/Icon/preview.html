@@ -1,0 +1,49 @@
+<!-- @dsCard group="Core" height=100 subtitle="Lucide glyphs as CSS masks and the brand volleyball" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Icon</title>
+<style>body{margin:0;padding:16px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div id="root"></div>
+<script>
+(function () {
+  const NS = window.QueerLeagueDesignSystem_ae47b3;
+  const {
+    Icon,
+    BallIcon
+  } = NS;
+  function Demo() {
+    return React.createElement("div", {
+      className: "row"
+    }, React.createElement(Icon, {
+      name: "calendar-days",
+      size: 20
+    }), React.createElement(Icon, {
+      name: "users",
+      size: 20
+    }), React.createElement(Icon, {
+      name: "house",
+      size: 20
+    }), React.createElement(Icon, {
+      name: "user-plus",
+      size: 20
+    }), React.createElement(BallIcon, {
+      tone: "petrol",
+      size: 34
+    }), React.createElement(BallIcon, {
+      tone: "orange",
+      size: 34
+    }), React.createElement(BallIcon, {
+      tone: "petrol-dark",
+      size: 34
+    }), React.createElement("span", {
+      style: {
+        background: 'var(--qvl-petrol)',
+        padding: 6,
+        display: 'inline-flex'
+      }
+    }, React.createElement(BallIcon, {
+      tone: "white",
+      size: 28
+    })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(Demo, null));
+})();
+</script></body></html>

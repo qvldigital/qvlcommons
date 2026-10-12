@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600&display=swap");
+
+:root{color-scheme:light}
+[data-theme="dark"]{color-scheme:dark}
+
+/* Motion: fast and mechanical, never bouncy. */
+:root{
+  --ease-standard:cubic-bezier(0.2,0,0.2,1);
+  --ease-out:cubic-bezier(0,0,0.2,1);
+  --ease-in:cubic-bezier(0.4,0,1,1);
+  --duration-instant:80ms;
+  --duration-fast:120ms;
+  --duration-base:180ms;
+  --duration-slow:260ms;
+  --press-scale:0.98;
+}
+@media (prefers-reduced-motion:reduce){
+  :root{--duration-instant:0ms;--duration-fast:0ms;--duration-base:0ms;--duration-slow:0ms;--press-scale:1}
+}
+
+/* Clip paths. Use the *-2 variants for buttons/badges (top-left + bottom-right), the *-4 variants for cards/panels (all four corners). */
+:root{
+  --clip-chamfer-2:polygon(var(--ch,10px) 0,100% 0,100% calc(100% - var(--ch,10px)),calc(100% - var(--ch,10px)) 100%,0 100%,0 var(--ch,10px));
+  --clip-chamfer-4:polygon(var(--ch,10px) 0,calc(100% - var(--ch,10px)) 0,100% var(--ch,10px),100% calc(100% - var(--ch,10px)),calc(100% - var(--ch,10px)) 100%,var(--ch,10px) 100%,0 calc(100% - var(--ch,10px)),0 var(--ch,10px));
+}
+
+/* clip-path clips box-shadow. For chamfered elements put this filter on an UNCLIPPED wrapper instead. */
+:root{
+  --drop-block-petrol:drop-shadow(6px 6px 0 var(--qvl-petrol));
+  --drop-block-orange:drop-shadow(6px 6px 0 var(--qvl-orange));
+  --drop-block-pink:drop-shadow(6px 6px 0 var(--qvl-pink));
+  --drop-block-sm-petrol:drop-shadow(3px 3px 0 var(--qvl-petrol));
+}
+
+/* Gradients: only between CI hues, always 135deg, large surfaces only, max. one per view. */
+:root{
+  --gradient-angle:135deg;
+  --qvl-gradient-tiefe:linear-gradient(var(--gradient-angle),var(--qvl-petrol-mid) 0%,var(--qvl-petrol) 100%);
+  --qvl-gradient-pride:linear-gradient(var(--gradient-angle) in oklch,var(--qvl-petrol) 0%,var(--qvl-pink) 100%);
+  --qvl-gradient-sunset:linear-gradient(var(--gradient-angle),var(--qvl-orange) 0%,var(--qvl-pink) 100%);
+  --qvl-gradient-flutlicht:linear-gradient(var(--gradient-angle),var(--qvl-yellow) 0%,var(--qvl-orange) 100%);
+  --qvl-gradient-spektrum:linear-gradient(90deg,var(--qvl-petrol) 0%,var(--qvl-pink) 36%,var(--qvl-orange) 68%,var(--qvl-yellow) 100%);
+  --surface-hero:var(--qvl-gradient-tiefe);
+}
+[data-theme="dark"]{
+  --qvl-gradient-tiefe:linear-gradient(var(--gradient-angle),var(--qvl-petrol) 0%,var(--qvl-night-card) 100%);
+  --surface-hero:var(--qvl-gradient-tiefe);
+}
+
+/* Minimal global base. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-body-color);font-family:var(--font-body);font-weight:var(--weight-body);font-size:var(--text-body);line-height:var(--leading-body);-webkit-font-smoothing:antialiased;text-wrap:pretty;transition:background var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard)}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);font-weight:var(--weight-display);text-transform:uppercase;letter-spacing:var(--tracking-display);line-height:var(--leading-heading);color:var(--text-heading);margin:0 0 var(--space-4)}
+h1{font-size:var(--text-h1)}h2{font-size:var(--text-h2)}h3{font-size:var(--text-h3)}
+p{margin:0 0 var(--space-4)}
+strong,b{font-weight:var(--weight-emphasis)}
+a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;transition:color var(--duration-fast) var(--ease-standard)}
+a:hover{color:var(--text-link-hover)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:var(--focus-ring-width) solid var(--focus-ring);outline-offset:2px}
+img{max-width:100%;display:block}
+table{border-collapse:collapse}
+::selection{background:var(--qvl-yellow);color:var(--qvl-ink)}
+mark{background:var(--highlight-bg);color:var(--highlight-fg);padding:0 .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}

@@ -12,3 +12,4 @@ img{max-width:100%;display:block}
 table{border-collapse:collapse}
 body{transition:background var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard)}
 ::selection{background:var(--qvl-yellow);color:var(--qvl-ink)}
+mark{background:var(--highlight-bg);color:var(--highlight-fg);padding:0 .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
