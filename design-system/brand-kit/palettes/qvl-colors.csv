@@ -1,0 +1,18 @@
+Name,Hex,Rolle
+QVL Petrol,#006666,Hauptfarbe (CI)
+QVL Orange,#FF6600,Akzent 1 (CI)
+QVL Gelb,#FFFF00,Akzent 2 (CI) — nur auf Petrol/Nacht oder unter Ink; nie auf Weiß
+QVL Pink,#D04E97,Akzent 3
+QVL Weiß,#FFFFFF,
+QVL Hellgrau,#E5E5E5,Seitenhintergrund (CI)
+QVL Grau,#CCCCCC,Grundfarbe (CI)
+QVL Ink,#1A1A1A,Fließtext (Ergänzung für WCAG AA)
+QVL Petrol Mid,#4C9393,
+QVL Petrol Pale,#CCE0E0,
+QVL Orange Mid,#FFA366,
+QVL Orange Pale,#FFC199,
+QVL Pink Mid,#E395C1,
+QVL Pink Pale,#F6DCEA,
+QVL Nacht,#0B1414,
+QVL Nacht Karte,#132222,
+QVL Papier,#EDEDED,

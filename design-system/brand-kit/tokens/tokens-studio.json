@@ -1,0 +1,934 @@
+{
+  "primitives": {
+    "color": {
+      "petrol": {
+        "$type": "color",
+        "$value": "#006666",
+        "$description": "Hauptfarbe (CI)"
+      },
+      "petrol-mid": {
+        "$type": "color",
+        "$value": "#4C9393"
+      },
+      "petrol-pale": {
+        "$type": "color",
+        "$value": "#CCE0E0"
+      },
+      "petrol-hover": {
+        "$type": "color",
+        "$value": "#005858"
+      },
+      "petrol-press": {
+        "$type": "color",
+        "$value": "#004B4B"
+      },
+      "orange": {
+        "$type": "color",
+        "$value": "#FF6600",
+        "$description": "Akzent 1 (CI)"
+      },
+      "orange-mid": {
+        "$type": "color",
+        "$value": "#FFA366"
+      },
+      "orange-pale": {
+        "$type": "color",
+        "$value": "#FFC199"
+      },
+      "orange-hover": {
+        "$type": "color",
+        "$value": "#E05A00"
+      },
+      "orange-press": {
+        "$type": "color",
+        "$value": "#C75000"
+      },
+      "pink": {
+        "$type": "color",
+        "$value": "#D04E97",
+        "$description": "Akzent 3"
+      },
+      "pink-mid": {
+        "$type": "color",
+        "$value": "#E395C1"
+      },
+      "pink-pale": {
+        "$type": "color",
+        "$value": "#F6DCEA"
+      },
+      "pink-hover": {
+        "$type": "color",
+        "$value": "#B74585"
+      },
+      "pink-press": {
+        "$type": "color",
+        "$value": "#A23D76"
+      },
+      "yellow": {
+        "$type": "color",
+        "$value": "#FFFF00",
+        "$description": "Akzent 2 (CI) — nur auf Petrol/Nacht oder unter Ink, nie auf Weiß"
+      },
+      "white": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "grey": {
+        "$type": "color",
+        "$value": "#CCCCCC",
+        "$description": "Grundfarbe (CI)"
+      },
+      "grey-light": {
+        "$type": "color",
+        "$value": "#E5E5E5",
+        "$description": "Seitenhintergrund (CI)"
+      },
+      "ink": {
+        "$type": "color",
+        "$value": "#1A1A1A",
+        "$description": "Fließtext (Ergänzung für WCAG AA)"
+      },
+      "ink-muted": {
+        "$type": "color",
+        "$value": "#4D4D4D"
+      },
+      "night": {
+        "$type": "color",
+        "$value": "#0B1414"
+      },
+      "night-card": {
+        "$type": "color",
+        "$value": "#132222"
+      },
+      "night-raised": {
+        "$type": "color",
+        "$value": "#1B3030"
+      },
+      "night-sunken": {
+        "$type": "color",
+        "$value": "#070E0E"
+      },
+      "night-line": {
+        "$type": "color",
+        "$value": "#2C4444"
+      },
+      "paper": {
+        "$type": "color",
+        "$value": "#EDEDED"
+      },
+      "paper-muted": {
+        "$type": "color",
+        "$value": "#A9BABA"
+      }
+    },
+    "font": {
+      "family": {
+        "display": {
+          "$type": "fontFamily",
+          "$value": [
+            "Bebas Neue",
+            "Impact",
+            "sans-serif"
+          ]
+        },
+        "body": {
+          "$type": "fontFamily",
+          "$value": [
+            "Oswald",
+            "Arial Narrow",
+            "sans-serif"
+          ]
+        }
+      },
+      "weight": {
+        "body": {
+          "$type": "fontWeight",
+          "$value": 300
+        },
+        "emphasis": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "strong": {
+          "$type": "fontWeight",
+          "$value": 500
+        },
+        "display": {
+          "$type": "fontWeight",
+          "$value": 400
+        }
+      },
+      "size": {
+        "display-1": {
+          "$type": "dimension",
+          "$value": "72px"
+        },
+        "display-2": {
+          "$type": "dimension",
+          "$value": "52px"
+        },
+        "h1": {
+          "$type": "dimension",
+          "$value": "36px"
+        },
+        "h2": {
+          "$type": "dimension",
+          "$value": "28px"
+        },
+        "h3": {
+          "$type": "dimension",
+          "$value": "22px"
+        },
+        "eyebrow": {
+          "$type": "dimension",
+          "$value": "13px"
+        },
+        "lead": {
+          "$type": "dimension",
+          "$value": "19px"
+        },
+        "body": {
+          "$type": "dimension",
+          "$value": "16px"
+        },
+        "small": {
+          "$type": "dimension",
+          "$value": "14px"
+        },
+        "caption": {
+          "$type": "dimension",
+          "$value": "12px"
+        }
+      }
+    },
+    "space": {
+      "0": {
+        "$type": "dimension",
+        "$value": "0px"
+      },
+      "1": {
+        "$type": "dimension",
+        "$value": "4px"
+      },
+      "2": {
+        "$type": "dimension",
+        "$value": "8px"
+      },
+      "3": {
+        "$type": "dimension",
+        "$value": "12px"
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "5": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "6": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "32px"
+      },
+      "10": {
+        "$type": "dimension",
+        "$value": "40px"
+      },
+      "12": {
+        "$type": "dimension",
+        "$value": "48px"
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": "64px"
+      },
+      "20": {
+        "$type": "dimension",
+        "$value": "80px"
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": "96px"
+      }
+    },
+    "chamfer": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "6px"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "10px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "$description": "45°-Fasen statt Radien. Radius immer 0."
+    },
+    "border": {
+      "hairline": {
+        "$type": "dimension",
+        "$value": "1px"
+      },
+      "strong": {
+        "$type": "dimension",
+        "$value": "2px"
+      },
+      "heavy": {
+        "$type": "dimension",
+        "$value": "3px"
+      },
+      "focus": {
+        "$type": "dimension",
+        "$value": "3px"
+      }
+    },
+    "typography": {
+      "display-1": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.display}",
+          "fontSize": "{font.size.display-1}",
+          "fontWeight": 400,
+          "lineHeight": 0.92,
+          "letterSpacing": "0.02em"
+        },
+        "$description": "IMMER GROSS"
+      },
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.display}",
+          "fontSize": "{font.size.h1}",
+          "fontWeight": 400,
+          "lineHeight": 1.1,
+          "letterSpacing": "0.02em"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.display}",
+          "fontSize": "{font.size.h2}",
+          "fontWeight": 400,
+          "lineHeight": 1.1,
+          "letterSpacing": "0.02em"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.display}",
+          "fontSize": "{font.size.h3}",
+          "fontWeight": 400,
+          "lineHeight": 1.1,
+          "letterSpacing": "0.02em"
+        }
+      },
+      "eyebrow": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.display}",
+          "fontSize": "{font.size.eyebrow}",
+          "fontWeight": 400,
+          "lineHeight": 1.1,
+          "letterSpacing": "0.14em"
+        }
+      },
+      "lead": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.body}",
+          "fontSize": "{font.size.lead}",
+          "fontWeight": 300,
+          "lineHeight": 1.6,
+          "letterSpacing": "0"
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.body}",
+          "fontSize": "{font.size.body}",
+          "fontWeight": 300,
+          "lineHeight": 1.6,
+          "letterSpacing": "0"
+        }
+      },
+      "small": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.body}",
+          "fontSize": "{font.size.small}",
+          "fontWeight": 300,
+          "lineHeight": 1.35,
+          "letterSpacing": "0"
+        }
+      }
+    },
+    "gradient": {
+      "tiefe": {
+        "$type": "gradient",
+        "$value": [
+          {
+            "color": "{color.petrol-mid}",
+            "position": 0
+          },
+          {
+            "color": "{color.petrol}",
+            "position": 1
+          }
+        ],
+        "$extensions": {
+          "de.queerleague.angle": "135deg"
+        },
+        "$description": "Standard-Hero. Weiß groß; Fließtext zur Petrol-Seite."
+      },
+      "pride": {
+        "$type": "gradient",
+        "$value": [
+          {
+            "color": "{color.petrol}",
+            "position": 0
+          },
+          {
+            "color": "{color.pink}",
+            "position": 1
+          }
+        ],
+        "$extensions": {
+          "de.queerleague.angle": "135deg"
+        },
+        "$description": "In OKLCH interpolieren (Mitte Violett). Weiß nur groß."
+      },
+      "sunset": {
+        "$type": "gradient",
+        "$value": [
+          {
+            "color": "{color.orange}",
+            "position": 0
+          },
+          {
+            "color": "{color.pink}",
+            "position": 1
+          }
+        ],
+        "$extensions": {
+          "de.queerleague.angle": "135deg"
+        },
+        "$description": "Feiern, Turniere, Wall of Fame. Ink-Text."
+      },
+      "flutlicht": {
+        "$type": "gradient",
+        "$value": [
+          {
+            "color": "{color.yellow}",
+            "position": 0
+          },
+          {
+            "color": "{color.orange}",
+            "position": 1
+          }
+        ],
+        "$extensions": {
+          "de.queerleague.angle": "135deg"
+        },
+        "$description": "Live, Mitmachen. Ink-Text, nie Weiß."
+      },
+      "spektrum": {
+        "$type": "gradient",
+        "$value": [
+          {
+            "color": "{color.petrol}",
+            "position": 0
+          },
+          {
+            "color": "{color.pink}",
+            "position": 0.36
+          },
+          {
+            "color": "{color.orange}",
+            "position": 0.68
+          },
+          {
+            "color": "{color.yellow}",
+            "position": 1
+          }
+        ],
+        "$extensions": {
+          "de.queerleague.angle": "90deg"
+        },
+        "$description": "Nur Linien ≤ 8 px."
+      }
+    },
+    "shadow": {
+      "block": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{color.petrol}",
+          "offsetX": "6px",
+          "offsetY": "6px",
+          "blur": "0px",
+          "spread": "0px"
+        },
+        "$description": "Fester Versatzschatten, nie weich."
+      },
+      "block-sm": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{color.petrol}",
+          "offsetX": "3px",
+          "offsetY": "3px",
+          "blur": "0px",
+          "spread": "0px"
+        }
+      }
+    }
+  },
+  "light": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": "{color.grey-light}"
+      },
+      "card": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "{color.grey-light}"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{color.orange}"
+      },
+      "accent-soft": {
+        "$type": "color",
+        "$value": "{color.orange-pale}"
+      },
+      "brand-soft": {
+        "$type": "color",
+        "$value": "{color.petrol-pale}"
+      },
+      "accent2": {
+        "$type": "color",
+        "$value": "{color.pink}"
+      },
+      "accent2-soft": {
+        "$type": "color",
+        "$value": "{color.pink-pale}"
+      },
+      "divider": {
+        "$type": "color",
+        "$value": "{color.grey}"
+      }
+    },
+    "text": {
+      "heading": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "body": {
+        "$type": "color",
+        "$value": "{color.ink}"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{color.ink-muted}"
+      },
+      "on-inverse": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "on-inverse-accent": {
+        "$type": "color",
+        "$value": "{color.yellow}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "link-hover": {
+        "$type": "color",
+        "$value": "{color.orange-press}"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.grey}"
+      },
+      "default": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{color.orange}"
+      },
+      "accent-2": {
+        "$type": "color",
+        "$value": "{color.pink}"
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{color.yellow}"
+      }
+    },
+    "highlight": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.yellow}"
+      },
+      "fg": {
+        "$type": "color",
+        "$value": "{color.ink}"
+      }
+    },
+    "button": {
+      "primary-bg": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "primary-bg-hover": {
+        "$type": "color",
+        "$value": "{color.petrol-hover}"
+      },
+      "primary-bg-press": {
+        "$type": "color",
+        "$value": "{color.petrol-press}"
+      },
+      "primary-fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "accent-bg": {
+        "$type": "color",
+        "$value": "{color.orange}"
+      },
+      "accent-bg-hover": {
+        "$type": "color",
+        "$value": "{color.orange-hover}"
+      },
+      "accent-bg-press": {
+        "$type": "color",
+        "$value": "{color.orange-press}"
+      },
+      "accent-fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "pink-bg": {
+        "$type": "color",
+        "$value": "{color.pink}"
+      },
+      "pink-bg-hover": {
+        "$type": "color",
+        "$value": "{color.pink-hover}"
+      },
+      "pink-bg-press": {
+        "$type": "color",
+        "$value": "{color.pink-press}"
+      },
+      "pink-fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "secondary-fg": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "secondary-border": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "disabled-bg": {
+        "$type": "color",
+        "$value": "{color.grey}"
+      },
+      "disabled-fg": {
+        "$type": "color",
+        "$value": "{color.ink-muted}"
+      }
+    },
+    "table": {
+      "head-bg": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "head-fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "row-bg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "row-bg-alt": {
+        "$type": "color",
+        "$value": "{color.grey-light}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.grey}"
+      },
+      "highlight": {
+        "$type": "color",
+        "$value": "{color.orange}"
+      }
+    }
+  },
+  "dark": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": "{color.night}"
+      },
+      "card": {
+        "$type": "color",
+        "$value": "{color.night-card}"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "{color.night-raised}"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "{color.night-sunken}"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{color.orange}"
+      },
+      "accent-soft": {
+        "$type": "color",
+        "$value": "#46280F"
+      },
+      "brand-soft": {
+        "$type": "color",
+        "$value": "#063636"
+      },
+      "accent2": {
+        "$type": "color",
+        "$value": "{color.pink}"
+      },
+      "accent2-soft": {
+        "$type": "color",
+        "$value": "#3E2336"
+      },
+      "divider": {
+        "$type": "color",
+        "$value": "{color.night-line}"
+      }
+    },
+    "text": {
+      "heading": {
+        "$type": "color",
+        "$value": "{color.petrol-mid}"
+      },
+      "body": {
+        "$type": "color",
+        "$value": "{color.paper}"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{color.paper-muted}"
+      },
+      "on-inverse": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "on-inverse-accent": {
+        "$type": "color",
+        "$value": "{color.yellow}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.petrol-mid}"
+      },
+      "link-hover": {
+        "$type": "color",
+        "$value": "{color.orange-mid}"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.night-line}"
+      },
+      "default": {
+        "$type": "color",
+        "$value": "{color.petrol-mid}"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{color.orange}"
+      },
+      "accent-2": {
+        "$type": "color",
+        "$value": "{color.pink}"
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{color.yellow}"
+      }
+    },
+    "highlight": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.yellow}"
+      },
+      "fg": {
+        "$type": "color",
+        "$value": "{color.ink}"
+      }
+    },
+    "button": {
+      "primary-bg": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "primary-bg-hover": {
+        "$type": "color",
+        "$value": "#2E8282"
+      },
+      "primary-bg-press": {
+        "$type": "color",
+        "$value": "#529797"
+      },
+      "primary-fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "accent-bg": {
+        "$type": "color",
+        "$value": "{color.orange}"
+      },
+      "accent-bg-hover": {
+        "$type": "color",
+        "$value": "{color.orange-hover}"
+      },
+      "accent-bg-press": {
+        "$type": "color",
+        "$value": "{color.orange-press}"
+      },
+      "accent-fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "pink-bg": {
+        "$type": "color",
+        "$value": "{color.pink}"
+      },
+      "pink-bg-hover": {
+        "$type": "color",
+        "$value": "{color.pink-hover}"
+      },
+      "pink-bg-press": {
+        "$type": "color",
+        "$value": "{color.pink-press}"
+      },
+      "pink-fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "secondary-fg": {
+        "$type": "color",
+        "$value": "{color.petrol-mid}"
+      },
+      "secondary-border": {
+        "$type": "color",
+        "$value": "{color.petrol-mid}"
+      },
+      "disabled-bg": {
+        "$type": "color",
+        "$value": "{color.night-raised}"
+      },
+      "disabled-fg": {
+        "$type": "color",
+        "$value": "#7F9494"
+      }
+    },
+    "table": {
+      "head-bg": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
+      "head-fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "row-bg": {
+        "$type": "color",
+        "$value": "{color.night-card}"
+      },
+      "row-bg-alt": {
+        "$type": "color",
+        "$value": "#0F1B1B"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.night-line}"
+      },
+      "highlight": {
+        "$type": "color",
+        "$value": "{color.orange}"
+      }
+    }
+  },
+  "$themes": [
+    {
+      "id": "light",
+      "name": "Hell",
+      "selectedTokenSets": {
+        "primitives": "source",
+        "light": "enabled"
+      }
+    },
+    {
+      "id": "dark",
+      "name": "Nacht",
+      "selectedTokenSets": {
+        "primitives": "source",
+        "dark": "enabled"
+      }
+    }
+  ],
+  "$metadata": {
+    "tokenSetOrder": [
+      "primitives",
+      "light",
+      "dark"
+    ]
+  }
+}
