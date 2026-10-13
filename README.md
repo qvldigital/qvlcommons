@@ -17,7 +17,7 @@ Die Quelle ist das Artefakt „Queer League Design System“ in Claude (Typ Desi
 
 ## Neue Design-System-Version einspielen
 
-_Verläufe und die erweiterte Gelb-Regel (Brand Kit, Oktober 2026) sind noch von der QVL-CI freizugeben._
+_Freigabe: Die Verläufe, die erweiterte Gelb-Regel und die abgeleiteten Pink-Töne sind am 13.10.2026 von der QVL-CI freigegeben. Hinweise „flagged for approval“ / „noch freizugeben“ im Design System und Brand Kit sind damit erledigt, bis Claude Design sie beim nächsten Export entfernt._
 
 1. Export aus dem Claude-Artefakt entpacken; `design-system/`, `brand-kit/` und `CLAUDE.md` damit ersetzen. Eine `design-system/SKILL.md` muss erhalten bleiben (der Export bringt keine mit), sonst findet Claude Code den Skill nicht.
 2. Diff prüfen (`git diff --stat`), committen, `version` in `package.json` hochzählen und taggen (`v1.1.0`, …).
