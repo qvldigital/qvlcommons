@@ -1,3 +1,10 @@
 .DS_Store
 *.zip
 node_modules/
+
+# Project-scoped agent skills: restore with `npx skills experimental_install` (skills-lock.json)
+.claude/skills/
+.agents/
+
+# Local inspector output of the taste skill
+.taste-skill/
