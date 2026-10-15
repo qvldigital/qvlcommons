@@ -8,3 +8,9 @@ node_modules/
 
 # Local inspector output of the taste skill
 .taste-skill/
+
+# Working files not meant for git: design tool state, drafts
+.impeccable/
+DESIGN.md
+PRODUCT.md
+content/
