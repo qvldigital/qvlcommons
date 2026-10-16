@@ -819,7 +819,7 @@ function NetHero({
   }, eyebrow ? /*#__PURE__*/React.createElement("span", {
     style: {
       background: "var(--qvl-orange)",
-      color: "var(--qvl-white)",
+      color: "var(--text-on-accent)",
       padding: "4px 12px",
       fontFamily: "var(--font-display)",
       fontSize: "var(--text-eyebrow)",
@@ -1031,7 +1031,7 @@ const FILLED = {
   },
   orange: {
     background: "var(--qvl-orange)",
-    color: "var(--qvl-white)"
+    color: "var(--text-on-accent)"
   },
   soft: {
     background: "var(--surface-brand-soft)",
@@ -2021,7 +2021,7 @@ function Toast({
     },
     orange: {
       bg: "var(--qvl-orange)",
-      fg: "var(--qvl-white)"
+      fg: "var(--text-on-accent)"
     },
     pink: {
       bg: "var(--qvl-pink)",
@@ -3061,7 +3061,7 @@ function SetScoreInput({
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       background: "var(--qvl-orange)",
-      color: "var(--qvl-white)",
+      color: "var(--text-on-accent)",
       padding: "2px 10px",
       fontFamily: "var(--font-display)",
       letterSpacing: "var(--tracking-display)",

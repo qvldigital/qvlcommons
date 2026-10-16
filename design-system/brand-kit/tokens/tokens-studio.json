@@ -560,7 +560,7 @@
       },
       "on-accent": {
         "$type": "color",
-        "$value": "{color.white}"
+        "$value": "{color.ink}"
       },
       "on-inverse-accent": {
         "$type": "color",
@@ -638,7 +638,7 @@
       },
       "accent-fg": {
         "$type": "color",
-        "$value": "{color.white}"
+        "$value": "{color.ink}"
       },
       "pink-bg": {
         "$type": "color",
@@ -766,7 +766,7 @@
       },
       "on-accent": {
         "$type": "color",
-        "$value": "{color.white}"
+        "$value": "{color.ink}"
       },
       "on-inverse-accent": {
         "$type": "color",
@@ -844,7 +844,7 @@
       },
       "accent-fg": {
         "$type": "color",
-        "$value": "{color.white}"
+        "$value": "{color.ink}"
       },
       "pink-bg": {
         "$type": "color",

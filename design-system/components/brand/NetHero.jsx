@@ -34,7 +34,7 @@ export function NetHero({background="grey-petrol",eyebrow,title,lead,actions,ali
     <div style={{maxWidth:"var(--container-max)",width:"100%",margin:"0 auto",
       padding:"var(--space-16) var(--gutter-desktop) var(--space-12)",
       textAlign:align,display:"flex",flexDirection:"column",alignItems:align==="center"?"center":"flex-start",gap:"var(--space-4)"}}>
-      {eyebrow?<span style={{background:"var(--qvl-orange)",color:"var(--qvl-white)",padding:"4px 12px",
+      {eyebrow?<span style={{background:"var(--qvl-orange)",color:"var(--text-on-accent)",padding:"4px 12px",
         fontFamily:"var(--font-display)",fontSize:"var(--text-eyebrow)",letterSpacing:"var(--tracking-eyebrow)",
         textTransform:"uppercase",...chamfer(5,2)}}>{eyebrow}</span>:null}
       {title?<h1 style={{margin:0,fontFamily:"var(--font-display)",fontSize:"var(--text-display-1)",

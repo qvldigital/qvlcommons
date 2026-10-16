@@ -8,7 +8,7 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
 const BORDERED={outline:{border:"var(--border-default)",fg:"var(--text-heading)",width:2},yellow:{border:"var(--qvl-yellow)",fg:"var(--text-heading)",width:3}};
 const FILLED={
   petrol:{background:"var(--qvl-petrol)",color:"var(--qvl-white)"},
-  orange:{background:"var(--qvl-orange)",color:"var(--qvl-white)"},
+  orange:{background:"var(--qvl-orange)",color:"var(--text-on-accent)"},
   soft:{background:"var(--surface-brand-soft)",color:"var(--text-heading)"},
   pink:{background:"var(--qvl-pink)",color:"var(--qvl-white)"},
   "pink-soft":{background:"var(--qvl-pink-pale)",color:"var(--qvl-ink)"},

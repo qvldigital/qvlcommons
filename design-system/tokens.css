@@ -48,7 +48,7 @@
   --text-body-color:var(--qvl-ink);
   --text-muted:var(--qvl-ink-muted);
   --text-on-inverse:var(--qvl-white);
-  --text-on-accent:var(--qvl-white);
+  --text-on-accent:var(--qvl-ink);
   --text-link:var(--qvl-petrol);
   --text-link-hover:var(--qvl-orange-press);
   --border-subtle:var(--qvl-grey);
@@ -63,7 +63,7 @@
   --button-accent-bg:var(--qvl-orange);
   --button-accent-bg-hover:var(--qvl-orange-hover);
   --button-accent-bg-press:var(--qvl-orange-press);
-  --button-accent-fg:var(--qvl-white);
+  --button-accent-fg:var(--qvl-ink);
   --button-pink-bg:var(--qvl-pink);
   --button-pink-bg-hover:var(--qvl-pink-hover);
   --button-pink-bg-press:var(--qvl-pink-press);
@@ -118,7 +118,7 @@
   --text-body-color:var(--qvl-paper);
   --text-muted:var(--qvl-paper-muted);
   --text-on-inverse:var(--qvl-white);
-  --text-on-accent:var(--qvl-white);
+  --text-on-accent:var(--qvl-ink);
   --text-link:var(--qvl-petrol-mid);
   --text-link-hover:var(--qvl-orange-mid);
   --border-subtle:var(--qvl-night-line);
@@ -133,7 +133,7 @@
   --button-accent-bg:var(--qvl-orange);
   --button-accent-bg-hover:var(--qvl-orange-hover);
   --button-accent-bg-press:var(--qvl-orange-press);
-  --button-accent-fg:var(--qvl-white);
+  --button-accent-fg:var(--qvl-ink);
   --button-pink-bg:var(--qvl-pink);
   --button-pink-bg-hover:var(--qvl-pink-hover);
   --button-pink-bg-press:var(--qvl-pink-press);

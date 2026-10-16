@@ -27,7 +27,7 @@ export function SetScoreInput({setNumber=1,home=0,away=0,onChange,homeLabel="Hei
   return <div style={{background:"var(--border-subtle)",padding:2,...chamfer(12,4),...style}} {...rest}>
     <div style={{background:"var(--surface-card)",padding:"var(--space-4)",...chamfer(10,4)}}>
       <div style={{display:"flex",alignItems:"center",gap:"var(--space-2)",marginBottom:"var(--space-4)"}}>
-        <span style={{background:"var(--qvl-orange)",color:"var(--qvl-white)",padding:"2px 10px",
+        <span style={{background:"var(--qvl-orange)",color:"var(--text-on-accent)",padding:"2px 10px",
           fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",textTransform:"uppercase",
           ...chamfer(5,2)}}>Satz {setNumber}</span>
       </div>
