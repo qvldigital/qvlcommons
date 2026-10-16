@@ -2,9 +2,10 @@
 *.zip
 node_modules/
 
-# Project-scoped agent skills: restore with `npx skills experimental_install` (skills-lock.json)
+# Project-scoped agent skills and their lock file stay local
 .claude/skills/
 .agents/
+skills-lock.json
 
 # Local inspector output of the taste skill
 .taste-skill/
