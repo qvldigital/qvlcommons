@@ -3403,7 +3403,7 @@ function BottomNav({
         flex: 1,
         border: "none",
         background: on ? "color-mix(in srgb,var(--qvl-petrol) 78%,#000)" : "transparent",
-        color: on ? "var(--qvl-orange)" : "var(--qvl-white)",
+        color: on ? "var(--text-on-inverse-accent)" : "var(--qvl-white)",
         minHeight: "var(--tap-min)",
         padding: "8px 4px",
         display: "flex",
@@ -3531,7 +3531,7 @@ function SiteFooter({
       fontSize: "var(--text-eyebrow)",
       letterSpacing: "var(--tracking-eyebrow)",
       textTransform: "uppercase",
-      color: "var(--qvl-orange)",
+      color: "var(--text-on-inverse-accent)",
       margin: "0 0 var(--space-3)"
     }
   }, col.title), /*#__PURE__*/React.createElement("ul", {
