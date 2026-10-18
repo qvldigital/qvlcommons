@@ -2525,6 +2525,20 @@ function Radio({
   const uid = React.useId();
   const fid = id || uid;
   const [focus, setFocus] = React.useState(false);
+  // Uncontrolled radios mirror the native checked state, re-read whenever any change event fires (a sibling in the group may have been picked).
+  const isControlled = checked !== undefined;
+  const ref = React.useRef(null);
+  const [inner, setInner] = React.useState(Boolean(defaultChecked));
+  React.useEffect(() => {
+    if (isControlled) return;
+    const sync = () => {
+      if (ref.current) setInner(ref.current.checked);
+    };
+    sync();
+    document.addEventListener("change", sync);
+    return () => document.removeEventListener("change", sync);
+  }, [isControlled]);
+  const on = isControlled ? checked : inner;
   return /*#__PURE__*/React.createElement("label", {
     htmlFor: fid,
     style: {
@@ -2540,7 +2554,7 @@ function Radio({
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--focus-ring)" : checked ? "var(--qvl-petrol)" : "var(--border-default)",
+      background: focus ? "var(--focus-ring)" : on ? "var(--qvl-petrol)" : "var(--border-default)",
       padding: focus ? 3 : 2,
       ...chamfer(5, 4)
     }
@@ -2558,11 +2572,12 @@ function Radio({
     style: {
       width: 10,
       height: 10,
-      background: checked ? "var(--qvl-orange)" : "transparent",
+      background: on ? "var(--qvl-orange)" : "transparent",
       ...chamfer(3, 4)
     }
   }))), /*#__PURE__*/React.createElement("input", _extends({
     id: fid,
+    ref: ref,
     type: "radio",
     name: name,
     value: value,
