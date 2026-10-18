@@ -99,6 +99,10 @@
     "focus-ring": {
       "$type": "color",
       "$value": "{color.yellow}"
+    },
+    "focus-ring-inner": {
+      "$type": "color",
+      "$value": "{color.night}"
     }
   },
   "highlight": {
@@ -175,6 +179,10 @@
     "disabled-fg": {
       "$type": "color",
       "$value": "#7F9494"
+    },
+    "secondary-fill": {
+      "$type": "color",
+      "$value": "{color.night-card}"
     }
   },
   "table": {

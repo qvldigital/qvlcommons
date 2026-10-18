@@ -1,6 +1,6 @@
 # QVL Brand Kit — Export für andere Apps
 
-Stand: Oktober 2026. Quelle der Wahrheit bleibt das Design System (`../styles.css`, `../readme.md`). Diese Dateien sind daraus abgeleitet.
+Stand: 18. Oktober 2026. Quelle der Wahrheit bleibt das Design System (`../styles.css`, `../readme.md`). Diese Dateien sind daraus abgeleitet.
 
 ## Inhalt
 - `QVL Brand Kit.html` — Übersicht zum Ausdrucken / als PDF speichern (Farben, Gelb-Regeln, Verläufe, Nacht, Schriften, Logos, Formensprache, Tonalität).
@@ -19,6 +19,7 @@ Stand: Oktober 2026. Quelle der Wahrheit bleibt das Design System (`../styles.cs
 **Adobe / Affinity:** `qvl-palette.gpl` importieren (Affinity: Palette → Importieren; Illustrator/Photoshop: Hex-Werte aus `qvl-colors.csv` als Farbfelder anlegen und dort als .ase exportieren).
 
 ## Wichtig
-- Verläufe und die erweiterte Gelb-Regel sind **noch von QVL-CI freizugeben**.
+- Verläufe, die erweiterte Gelb-Regel und die abgeleiteten Pink-Töne sind seit dem 13.10.2026 von der QVL-CI freigegeben.
+- Schrift auf Orange ist Ink, Fokusring ist ein Doppelring (Hell: Gelb innen, Ink außen; Nacht: Gelb außen). Token: `border.focus-ring`, `border.focus-ring-inner`, `border.focus`, `border.focus-inner`.
 - Pride-Verlauf ist für OKLCH gedacht; Apps ohne OKLCH: Mittelstopp `#6E5A9E` bei 50 %.
 - Logos sind nur als PNG vorhanden — für Druck/Vektor beim Verband SVG/PDF anfragen.

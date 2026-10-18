@@ -289,7 +289,11 @@
       },
       "focus": {
         "$type": "dimension",
-        "$value": "3px"
+        "$value": "2px"
+      },
+      "focus-inner": {
+        "$type": "dimension",
+        "$value": "1px"
       }
     },
     "typography": {
@@ -594,6 +598,10 @@
       },
       "focus-ring": {
         "$type": "color",
+        "$value": "{color.ink}"
+      },
+      "focus-ring-inner": {
+        "$type": "color",
         "$value": "{color.yellow}"
       }
     },
@@ -671,6 +679,10 @@
       "disabled-fg": {
         "$type": "color",
         "$value": "{color.ink-muted}"
+      },
+      "secondary-fill": {
+        "$type": "color",
+        "$value": "{color.white}"
       }
     },
     "table": {
@@ -801,6 +813,10 @@
       "focus-ring": {
         "$type": "color",
         "$value": "{color.yellow}"
+      },
+      "focus-ring-inner": {
+        "$type": "color",
+        "$value": "{color.night}"
       }
     },
     "highlight": {
@@ -877,6 +893,10 @@
       "disabled-fg": {
         "$type": "color",
         "$value": "#7F9494"
+      },
+      "secondary-fill": {
+        "$type": "color",
+        "$value": "{color.night-card}"
       }
     },
     "table": {

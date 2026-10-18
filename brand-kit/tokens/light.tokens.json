@@ -98,6 +98,10 @@
     },
     "focus-ring": {
       "$type": "color",
+      "$value": "{color.ink}"
+    },
+    "focus-ring-inner": {
+      "$type": "color",
       "$value": "{color.yellow}"
     }
   },
@@ -175,6 +179,10 @@
     "disabled-fg": {
       "$type": "color",
       "$value": "{color.ink-muted}"
+    },
+    "secondary-fill": {
+      "$type": "color",
+      "$value": "{color.white}"
     }
   },
   "table": {
