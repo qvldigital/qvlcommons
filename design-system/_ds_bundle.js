@@ -1860,8 +1860,50 @@ function Dialog({
   style,
   ...rest
 }) {
+  const boxRef = React.useRef(null);
+  const closeRef = React.useRef(onClose);
+  closeRef.current = onClose;
+  // Modal keyboard behaviour: focus moves into the dialog, Tab stays inside, Escape closes, focus returns to the opener.
+  React.useEffect(() => {
+    if (!open) return;
+    const box = boxRef.current;
+    const opener = document.activeElement;
+    const focusables = () => Array.from(box.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(el => el.offsetParent !== null);
+    (focusables()[0] || box).focus();
+    const onKey = e => {
+      if (e.key === "Escape" && closeRef.current) {
+        e.stopPropagation();
+        closeRef.current();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const f = focusables();
+      if (!f.length) {
+        e.preventDefault();
+        box.focus();
+        return;
+      }
+      const first = f[0],
+        last = f[f.length - 1],
+        on = document.activeElement;
+      if (e.shiftKey && (on === first || on === box)) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (on === last || on === box)) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      if (opener && opener.focus) opener.focus();
+    };
+  }, [open]);
   if (!open) return null;
   return /*#__PURE__*/React.createElement("div", {
+    ref: boxRef,
+    tabIndex: -1,
     role: "dialog",
     "aria-modal": "true",
     "aria-label": title,
@@ -1872,7 +1914,8 @@ function Dialog({
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      padding: "var(--space-4)"
+      padding: "var(--space-4)",
+      outline: "none"
     }
   }, /*#__PURE__*/React.createElement("div", {
     onClick: onClose,
