@@ -3637,9 +3637,28 @@ function Tabs({
   value,
   onChange,
   scrollable = true,
+  panelPrefix,
   style,
   ...rest
 }) {
+  const ids = items.map(it => typeof it === "string" ? it : it.value);
+  const current = ids.includes(value) ? value : ids[0];
+  const refs = React.useRef({});
+  // Roving tabindex: only the selected tab is in the Tab order, arrow keys / Home / End move between tabs.
+  const onKey = (e, i) => {
+    const last = ids.length - 1;
+    const to = {
+      ArrowRight: i === last ? 0 : i + 1,
+      ArrowLeft: i === 0 ? last : i - 1,
+      Home: 0,
+      End: last
+    }[e.key];
+    if (to === undefined) return;
+    e.preventDefault();
+    const el = refs.current[ids[to]];
+    if (el) el.focus();
+    if (onChange) onChange(ids[to]);
+  };
   return /*#__PURE__*/React.createElement("div", _extends({
     role: "tablist",
     style: {
@@ -3650,7 +3669,7 @@ function Tabs({
       overflowX: scrollable ? "auto" : "visible",
       ...style
     }
-  }, rest), items.map(it => {
+  }, rest), items.map((it, i) => {
     const id = typeof it === "string" ? it : it.value;
     const label = typeof it === "string" ? it : it.label;
     const active = id === value;
@@ -3660,6 +3679,13 @@ function Tabs({
     }, /*#__PURE__*/React.createElement("button", {
       role: "tab",
       "aria-selected": active,
+      tabIndex: id === current ? 0 : -1,
+      ref: el => {
+        refs.current[id] = el;
+      },
+      onKeyDown: e => onKey(e, i),
+      id: panelPrefix ? `${panelPrefix}-tab-${id}` : undefined,
+      "aria-controls": panelPrefix ? `${panelPrefix}-panel-${id}` : undefined,
       onClick: () => onChange && onChange(id),
       style: {
         flex: "none",

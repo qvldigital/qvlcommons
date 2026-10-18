@@ -3,14 +3,30 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
   :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
 
-export function Tabs({items=[],value,onChange,scrollable=true,style,...rest}){
+export function Tabs({items=[],value,onChange,scrollable=true,panelPrefix,style,...rest}){
+  const ids=items.map(it=>typeof it==="string"?it:it.value);
+  const current=ids.includes(value)?value:ids[0];
+  const refs=React.useRef({});
+  // Roving tabindex: only the selected tab is in the Tab order, arrow keys / Home / End move between tabs.
+  const onKey=(e,i)=>{
+    const last=ids.length-1;
+    const to={ArrowRight:i===last?0:i+1,ArrowLeft:i===0?last:i-1,Home:0,End:last}[e.key];
+    if(to===undefined) return;
+    e.preventDefault();
+    const el=refs.current[ids[to]];
+    if(el) el.focus();
+    if(onChange) onChange(ids[to]);
+  };
   return <div role="tablist" style={{display:"flex",gap:"var(--space-1)",borderBottom:"2px solid var(--surface-divider)",
     padding:"4px 4px 0",overflowX:scrollable?"auto":"visible",...style}} {...rest}>
-    {items.map(it=>{
+    {items.map((it,i)=>{
       const id=typeof it==="string"?it:it.value;
       const label=typeof it==="string"?it:it.label;
       const active=id===value;
-      return <span key={id} className="qvl-focus"><button role="tab" aria-selected={active} onClick={()=>onChange&&onChange(id)}
+      return <span key={id} className="qvl-focus"><button role="tab" aria-selected={active} tabIndex={id===current?0:-1}
+        ref={el=>{refs.current[id]=el;}} onKeyDown={(e)=>onKey(e,i)}
+        id={panelPrefix?`${panelPrefix}-tab-${id}`:undefined} aria-controls={panelPrefix?`${panelPrefix}-panel-${id}`:undefined}
+        onClick={()=>onChange&&onChange(id)}
         style={{flex:"none",border:"none",cursor:"pointer",background:active?"var(--qvl-petrol)":"var(--qvl-ghost-bg,transparent)",
           color:active?"var(--qvl-white)":"var(--text-heading)",padding:"0 16px",height:44,
           fontFamily:"var(--font-display)",fontSize:"var(--text-body)",letterSpacing:"var(--tracking-display)",
