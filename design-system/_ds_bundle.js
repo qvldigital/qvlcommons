@@ -1032,8 +1032,8 @@ const FILLED = {
     color: "var(--text-heading)"
   },
   pink: {
-    background: "var(--qvl-pink)",
-    color: "var(--qvl-white)"
+    background: "var(--button-pink-bg)",
+    color: "var(--button-pink-fg)"
   },
   "pink-soft": {
     background: "var(--qvl-pink-pale)",
@@ -1825,13 +1825,13 @@ const TONES = {
   },
   warn: {
     bg: "var(--status-warn-bg)",
-    fg: "var(--text-heading)",
+    fg: "var(--status-warn-fg)",
     edge: "var(--qvl-orange)",
     icon: "triangle-alert"
   },
   danger: {
     bg: "var(--status-danger-bg)",
-    fg: "var(--qvl-white)",
+    fg: "var(--status-danger-fg)",
     edge: "var(--qvl-orange)",
     icon: "octagon-alert"
   },
@@ -2142,8 +2142,8 @@ function Toast({
       fg: "var(--text-on-accent)"
     },
     pink: {
-      bg: "var(--qvl-pink)",
-      fg: "var(--qvl-white)"
+      bg: "var(--button-pink-bg)",
+      fg: "var(--button-pink-fg)"
     }
   };
   const t = tones[tone] || tones.petrol;

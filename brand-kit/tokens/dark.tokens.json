@@ -150,15 +150,15 @@
     },
     "pink-bg": {
       "$type": "color",
-      "$value": "{color.pink}"
+      "$value": "{color.pink-hover}"
     },
     "pink-bg-hover": {
       "$type": "color",
-      "$value": "{color.pink-hover}"
+      "$value": "{color.pink-press}"
     },
     "pink-bg-press": {
       "$type": "color",
-      "$value": "{color.pink-press}"
+      "$value": "#8D3567"
     },
     "pink-fg": {
       "$type": "color",

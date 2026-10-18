@@ -10,7 +10,7 @@ const FILLED={
   petrol:{background:"var(--qvl-petrol)",color:"var(--qvl-white)"},
   orange:{background:"var(--qvl-orange)",color:"var(--text-on-accent)"},
   soft:{background:"var(--surface-brand-soft)",color:"var(--text-heading)"},
-  pink:{background:"var(--qvl-pink)",color:"var(--qvl-white)"},
+  pink:{background:"var(--button-pink-bg)",color:"var(--button-pink-fg)"},
   "pink-soft":{background:"var(--qvl-pink-pale)",color:"var(--qvl-ink)"},
   grey:{background:"var(--qvl-grey)",color:"var(--qvl-ink)"},
   highlight:{background:"var(--qvl-yellow)",color:"var(--qvl-ink)"}

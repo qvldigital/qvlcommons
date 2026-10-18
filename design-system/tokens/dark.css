@@ -1,6 +1,6 @@
 /* Dark mode ("Nacht"). Same CI hues — only surfaces, text and tint roles are remapped.
    Activate: <html data-theme="dark">. theme.js sets it automatically from the OS ("system", default) or the saved choice.
-   Rules: petrol as TEXT/line becomes petrol-mid; filled petrol/orange/pink buttons keep white labels;
+   Rules: petrol as TEXT/line becomes petrol-mid; filled petrol and pink keep white labels, orange fills take ink;
    logos always sit on a white plate; the focus ring swaps: yellow outer line, night gap inside. */
 [data-theme="dark"]{
   color-scheme:dark;

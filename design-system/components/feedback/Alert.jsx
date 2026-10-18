@@ -7,8 +7,8 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
 const TONES={
   info:{bg:"var(--status-info-bg)",fg:"var(--status-info-fg)",edge:"var(--border-default)",icon:"info"},
   success:{bg:"var(--status-success-bg)",fg:"var(--status-success-fg)",edge:"var(--border-default)",icon:"circle-check"},
-  warn:{bg:"var(--status-warn-bg)",fg:"var(--text-heading)",edge:"var(--qvl-orange)",icon:"triangle-alert"},
-  danger:{bg:"var(--status-danger-bg)",fg:"var(--qvl-white)",edge:"var(--qvl-orange)",icon:"octagon-alert"},
+  warn:{bg:"var(--status-warn-bg)",fg:"var(--status-warn-fg)",edge:"var(--qvl-orange)",icon:"triangle-alert"},
+  danger:{bg:"var(--status-danger-bg)",fg:"var(--status-danger-fg)",edge:"var(--qvl-orange)",icon:"octagon-alert"},
   safe:{bg:"var(--surface-card)",fg:"var(--text-heading)",edge:"var(--qvl-yellow)",icon:"shield-check"}
 };
 

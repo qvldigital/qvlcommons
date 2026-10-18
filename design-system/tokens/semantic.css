@@ -38,9 +38,9 @@
   --button-accent-bg-hover:var(--qvl-orange-hover);
   --button-accent-bg-press:var(--qvl-orange-press);
   --button-accent-fg:var(--qvl-ink);
-  --button-pink-bg:var(--qvl-pink);
-  --button-pink-bg-hover:var(--qvl-pink-hover);
-  --button-pink-bg-press:var(--qvl-pink-press);
+  --button-pink-bg:var(--qvl-pink-hover);
+  --button-pink-bg-hover:var(--qvl-pink-press);
+  --button-pink-bg-press:color-mix(in srgb,var(--qvl-pink) 68%,#000);
   --button-pink-fg:var(--qvl-white);
   --button-secondary-fill:var(--qvl-white);
   --button-secondary-fg:var(--qvl-petrol);
@@ -55,9 +55,9 @@
   --status-success-bg:var(--qvl-petrol-pale);
   --status-success-fg:var(--qvl-petrol);
   --status-warn-bg:var(--qvl-orange-pale);
-  --status-warn-fg:var(--qvl-petrol);
+  --status-warn-fg:var(--qvl-ink);
   --status-danger-bg:var(--qvl-orange);
-  --status-danger-fg:var(--qvl-white);
+  --status-danger-fg:var(--qvl-ink);
 
   /* Table */
   --table-head-bg:var(--qvl-petrol);
