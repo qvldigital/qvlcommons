@@ -1129,7 +1129,7 @@ const chamfer = (ch = 10, corners = 2) => ({
 const SIZES = {
   sm: {
     padding: "4px 14px",
-    height: 36,
+    height: 44,
     fontSize: "var(--text-small)",
     ch: 6
   },
@@ -1534,7 +1534,7 @@ const chamfer = (ch = 10, corners = 2) => ({
 });
 const SIZES = {
   sm: {
-    box: 36,
+    box: 44,
     ch: 6
   },
   md: {

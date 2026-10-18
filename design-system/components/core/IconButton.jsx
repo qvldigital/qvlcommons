@@ -2,7 +2,7 @@ import React from "react";
 const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
   :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
-const SIZES={sm:{box:36,ch:6},md:{box:44,ch:8},lg:{box:52,ch:10}};
+const SIZES={sm:{box:44,ch:6},md:{box:44,ch:8},lg:{box:52,ch:10}};
 
 export function IconButton({variant="ghost",size="md",disabled=false,label,children,onClick,style,...rest}){
   const [hover,setHover]=React.useState(false);

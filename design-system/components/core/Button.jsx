@@ -4,7 +4,7 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
   :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
 
 const SIZES={
-  sm:{padding:"4px 14px",height:36,fontSize:"var(--text-small)",ch:6},
+  sm:{padding:"4px 14px",height:44,fontSize:"var(--text-small)",ch:6},
   md:{padding:"6px 20px",height:44,fontSize:"var(--text-body)",ch:8},
   lg:{padding:"8px 28px",height:56,fontSize:"var(--text-h3)",ch:10}
 };
