@@ -12,7 +12,7 @@ export function Checkbox({label,description,checked,defaultChecked,disabled,onCh
   const on=isControlled?checked:inner;
   return <label htmlFor={fid} style={{display:"flex",gap:"var(--space-3)",alignItems:"flex-start",
     cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.55:1,minHeight:"var(--tap-min)",...style}}>
-    <span style={{flex:"none",marginTop:2,background:focus?"var(--focus-ring)":on?"var(--qvl-petrol)":"var(--border-subtle)",
+    <span style={{flex:"none",marginTop:2,background:focus?"var(--focus-ring)":on?"var(--qvl-petrol)":"var(--border-default)",
       padding:focus?3:2,...chamfer(5,4),transition:"background var(--duration-fast) var(--ease-standard)"}}>
       <span style={{display:"flex",alignItems:"center",justifyContent:"center",width:20,height:20,
         background:on?"var(--qvl-petrol)":"var(--surface-card)",color:"var(--qvl-white)",

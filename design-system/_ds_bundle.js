@@ -2242,7 +2242,7 @@ function Checkbox({
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--focus-ring)" : on ? "var(--qvl-petrol)" : "var(--border-subtle)",
+      background: focus ? "var(--focus-ring)" : on ? "var(--qvl-petrol)" : "var(--border-default)",
       padding: focus ? 3 : 2,
       ...chamfer(5, 4),
       transition: "background var(--duration-fast) var(--ease-standard)"
@@ -2369,10 +2369,10 @@ function Input({
     "aria-describedby": label && (error || hint) ? msgId : undefined,
     "aria-required": required ? true : undefined
   };
-  const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-subtle)";
+  const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-default)";
   const shell = {
     background: edge,
-    padding: error || focus ? 3 : 1,
+    padding: error || focus ? 3 : 2,
     ...chamfer(8, 4),
     transition: "background var(--duration-fast) var(--ease-standard)"
   };
@@ -2459,7 +2459,7 @@ function Radio({
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--focus-ring)" : checked ? "var(--qvl-petrol)" : "var(--border-subtle)",
+      background: focus ? "var(--focus-ring)" : checked ? "var(--qvl-petrol)" : "var(--border-default)",
       padding: focus ? 3 : 2,
       ...chamfer(5, 4)
     }
@@ -2616,11 +2616,11 @@ function Select({
     "aria-describedby": label && (error || hint) ? msgId : undefined,
     "aria-required": required ? true : undefined
   };
-  const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-subtle)";
+  const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-default)";
   const control = /*#__PURE__*/React.createElement("div", {
     style: {
       background: edge,
-      padding: error || focus ? 3 : 1,
+      padding: error || focus ? 3 : 2,
       ...chamfer(8, 4),
       position: "relative",
       ...style
@@ -2724,8 +2724,8 @@ function Switch({
   }, description) : null), /*#__PURE__*/React.createElement("span", {
     style: {
       flex: "none",
-      background: focus ? "var(--focus-ring)" : "transparent",
-      padding: focus ? 3 : 0,
+      background: focus ? "var(--focus-ring)" : "var(--border-default)",
+      padding: focus ? 3 : 2,
       ...chamfer(6, 2)
     }
   }, /*#__PURE__*/React.createElement("span", {

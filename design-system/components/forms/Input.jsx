@@ -22,8 +22,8 @@ export function Input({label,hint,error,required,multiline=false,rows=4,id,style
   const msgId=fid+"-msg";
   // aria-describedby only when Field renders the message (label present); aria-required keeps native validation out of it.
   const a11y={"aria-invalid":error?true:undefined,"aria-describedby":label&&(error||hint)?msgId:undefined,"aria-required":required?true:undefined};
-  const edge=error?"var(--qvl-orange)":focus?"var(--focus-ring)":"var(--border-subtle)";
-  const shell={background:edge,padding:error||focus?3:1,...chamfer(8,4),
+  const edge=error?"var(--qvl-orange)":focus?"var(--focus-ring)":"var(--border-default)";
+  const shell={background:edge,padding:error||focus?3:2,...chamfer(8,4),
     transition:"background var(--duration-fast) var(--ease-standard)"};
   const field={width:"100%",border:"none",outline:"none",background:"var(--surface-card)",
     font:"inherit",fontWeight:"var(--weight-body)",color:"var(--text-body-color)",
