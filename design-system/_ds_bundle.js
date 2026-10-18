@@ -2303,20 +2303,18 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 const chamfer = (ch = 10, corners = 2) => ({
   clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
 });
+// The label wraps only its own text: hint and error sit outside it and are linked to the control with aria-describedby.
 function Field({
   label,
   hint,
   error,
   required,
   htmlFor,
+  msgId,
   children
 }) {
-  return /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
     htmlFor: htmlFor,
-    style: {
-      display: "block"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
     style: {
       display: "block",
       fontFamily: "var(--font-display)",
@@ -2327,10 +2325,12 @@ function Field({
       marginBottom: "var(--space-2)"
     }
   }, label, required ? /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
     style: {
       color: "var(--qvl-orange)"
     }
   }, " *") : null), children, error ? /*#__PURE__*/React.createElement("span", {
+    id: msgId,
     style: {
       display: "block",
       marginTop: "var(--space-2)",
@@ -2339,6 +2339,7 @@ function Field({
       color: "var(--qvl-orange-press)"
     }
   }, error) : hint ? /*#__PURE__*/React.createElement("span", {
+    id: msgId,
     style: {
       display: "block",
       marginTop: "var(--space-2)",
@@ -2361,6 +2362,13 @@ function Input({
   const [focus, setFocus] = React.useState(false);
   const uid = React.useId();
   const fid = id || uid;
+  const msgId = fid + "-msg";
+  // aria-describedby only when Field renders the message (label present); aria-required keeps native validation out of it.
+  const a11y = {
+    "aria-invalid": error ? true : undefined,
+    "aria-describedby": label && (error || hint) ? msgId : undefined,
+    "aria-required": required ? true : undefined
+  };
   const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-subtle)";
   const shell = {
     background: edge,
@@ -2385,11 +2393,13 @@ function Input({
   const el = multiline ? /*#__PURE__*/React.createElement("textarea", _extends({
     id: fid,
     rows: rows,
+    ...a11y,
     onFocus: () => setFocus(true),
     onBlur: () => setFocus(false),
     style: field
   }, rest)) : /*#__PURE__*/React.createElement("input", _extends({
     id: fid,
+    ...a11y,
     onFocus: () => setFocus(true),
     onBlur: () => setFocus(false),
     style: field
@@ -2405,7 +2415,8 @@ function Input({
     hint: hint,
     error: error,
     required: required,
-    htmlFor: fid
+    htmlFor: fid,
+    msgId: msgId
   }, control) : control;
 }
 Object.assign(__ds_scope, { Input });
@@ -2539,20 +2550,18 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 const chamfer = (ch = 10, corners = 2) => ({
   clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
 });
+// The label wraps only its own text: hint and error sit outside it and are linked to the control with aria-describedby.
 function Field({
   label,
   hint,
   error,
   required,
   htmlFor,
+  msgId,
   children
 }) {
-  return /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
     htmlFor: htmlFor,
-    style: {
-      display: "block"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
     style: {
       display: "block",
       fontFamily: "var(--font-display)",
@@ -2563,10 +2572,12 @@ function Field({
       marginBottom: "var(--space-2)"
     }
   }, label, required ? /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
     style: {
       color: "var(--qvl-orange)"
     }
   }, " *") : null), children, error ? /*#__PURE__*/React.createElement("span", {
+    id: msgId,
     style: {
       display: "block",
       marginTop: "var(--space-2)",
@@ -2575,6 +2586,7 @@ function Field({
       color: "var(--qvl-orange-press)"
     }
   }, error) : hint ? /*#__PURE__*/React.createElement("span", {
+    id: msgId,
     style: {
       display: "block",
       marginTop: "var(--space-2)",
@@ -2597,6 +2609,13 @@ function Select({
   const [focus, setFocus] = React.useState(false);
   const uid = React.useId();
   const fid = id || uid;
+  const msgId = fid + "-msg";
+  // aria-describedby only when Field renders the message (label present); aria-required keeps native validation out of it.
+  const a11y = {
+    "aria-invalid": error ? true : undefined,
+    "aria-describedby": label && (error || hint) ? msgId : undefined,
+    "aria-required": required ? true : undefined
+  };
   const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-subtle)";
   const control = /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2608,6 +2627,7 @@ function Select({
     }
   }, /*#__PURE__*/React.createElement("select", _extends({
     id: fid,
+    ...a11y,
     onFocus: () => setFocus(true),
     onBlur: () => setFocus(false),
     style: {
@@ -2652,7 +2672,8 @@ function Select({
     hint: hint,
     error: error,
     required: required,
-    htmlFor: fid
+    htmlFor: fid,
+    msgId: msgId
   }, control) : control;
 }
 Object.assign(__ds_scope, { Select });
