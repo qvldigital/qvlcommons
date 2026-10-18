@@ -1172,6 +1172,15 @@ function Button({
     onClick
   };
 
+  // clip-path clips outline and box-shadow, so the focus ring is drawn on this unclipped wrapper (see .qvl-focus in bundle.css).
+  const wrap = el => /*#__PURE__*/React.createElement("span", {
+    className: "qvl-focus",
+    style: fullWidth ? {
+      display: "flex",
+      width: "100%"
+    } : undefined
+  }, el);
+
   // Outlined variant: clip-path can't carry a border along its own diagonal cut (an inset
   // box-shadow/border is drawn parallel to the ORIGINAL rectangle, not the chamfered edge, so the
   // cut corner ends up with no stroke — the "open corner" bug). Fix: two nested chamfers — the outer
@@ -1218,19 +1227,19 @@ function Button({
     const kids = /*#__PURE__*/React.createElement("span", {
       style: innerCss
     }, iconLeft, /*#__PURE__*/React.createElement("span", null, children), iconRight);
-    if (href && !disabled) return /*#__PURE__*/React.createElement("a", _extends({
+    if (href && !disabled) return wrap(/*#__PURE__*/React.createElement("a", _extends({
       href: href,
       style: outerCss
-    }, handlers, rest), kids);
-    return /*#__PURE__*/React.createElement("button", _extends({
+    }, handlers, rest), kids));
+    return wrap(/*#__PURE__*/React.createElement("button", _extends({
       type: type,
       disabled: disabled,
       style: outerCss
-    }, handlers, rest), kids);
+    }, handlers, rest), kids));
   }
   let skin;
   if (variant === "primary") skin = solid("var(--button-primary-bg)", "var(--button-primary-bg-hover)", "var(--button-primary-bg-press)", "var(--button-primary-fg)");else if (variant === "accent") skin = solid("var(--button-accent-bg)", "var(--button-accent-bg-hover)", "var(--button-accent-bg-press)", "var(--button-accent-fg)");else if (variant === "pink") skin = solid("var(--button-pink-bg)", "var(--button-pink-bg-hover)", "var(--button-pink-bg-press)", "var(--button-pink-fg)");else skin = {
-    background: hover && !disabled ? "var(--surface-brand-soft)" : "transparent",
+    background: hover && !disabled ? "var(--surface-brand-soft)" : "var(--qvl-ghost-bg, transparent)",
     color: disabled ? "var(--button-disabled-fg)" : "var(--button-ghost-fg)"
   };
   const css = {
@@ -1257,15 +1266,15 @@ function Button({
     ...style
   };
   const kids = /*#__PURE__*/React.createElement(React.Fragment, null, iconLeft, /*#__PURE__*/React.createElement("span", null, children), iconRight);
-  if (href && !disabled) return /*#__PURE__*/React.createElement("a", _extends({
+  if (href && !disabled) return wrap(/*#__PURE__*/React.createElement("a", _extends({
     href: href,
     style: css
-  }, handlers, rest), kids);
-  return /*#__PURE__*/React.createElement("button", _extends({
+  }, handlers, rest), kids));
+  return wrap(/*#__PURE__*/React.createElement("button", _extends({
     type: type,
     disabled: disabled,
     style: css
-  }, handlers, rest), kids);
+  }, handlers, rest), kids));
 }
 Object.assign(__ds_scope, { Button });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Button.jsx", error: String((e && e.message) || e) }); }
@@ -1478,12 +1487,17 @@ function IconButton({
     onMouseLeave: () => setHover(false)
   };
 
+  // clip-path clips outline and box-shadow: the focus ring is drawn on this unclipped wrapper (see .qvl-focus in bundle.css).
+  const wrap = el => /*#__PURE__*/React.createElement("span", {
+    className: "qvl-focus"
+  }, el);
+
   // See Button.jsx: an outlined chamfer needs two nested layers, not a clipped box-shadow border —
   // a box-shadow ring stays parallel to the rectangle and leaves the diagonal cut unstroked.
   if (variant === "secondary") {
     const borderColor = disabled ? "var(--border-subtle)" : "var(--button-secondary-border)";
     const fillBg = hover && !disabled ? "var(--surface-brand-soft)" : "var(--button-secondary-fill)";
-    return /*#__PURE__*/React.createElement("button", _extends({
+    return wrap(/*#__PURE__*/React.createElement("button", _extends({
       type: "button",
       "aria-label": label,
       title: label,
@@ -1517,7 +1531,7 @@ function IconButton({
         transition: "background var(--duration-fast) var(--ease-standard)",
         ...chamfer(Math.max(s.ch - 2, 2), 2)
       }
-    }, children));
+    }, children)));
   }
   let skin;
   if (variant === "primary") skin = {
@@ -1530,10 +1544,10 @@ function IconButton({
     background: hover && !disabled ? "var(--button-accent-bg-hover)" : "var(--button-accent-bg)",
     color: "var(--button-accent-fg)"
   };else skin = {
-    background: hover && !disabled ? "var(--surface-brand-soft)" : "transparent",
+    background: hover && !disabled ? "var(--surface-brand-soft)" : "var(--qvl-ghost-bg, transparent)",
     color: "var(--button-ghost-fg)"
   };
-  return /*#__PURE__*/React.createElement("button", _extends({
+  return wrap(/*#__PURE__*/React.createElement("button", _extends({
     type: "button",
     "aria-label": label,
     title: label,
@@ -1554,7 +1568,7 @@ function IconButton({
       ...skin,
       ...style
     }
-  }, rest), children);
+  }, rest), children));
 }
 Object.assign(__ds_scope, { IconButton });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/IconButton.jsx", error: String((e && e.message) || e) }); }
@@ -2185,7 +2199,7 @@ function Checkbox({
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--qvl-yellow)" : on ? "var(--qvl-petrol)" : "var(--border-subtle)",
+      background: focus ? "var(--focus-ring)" : on ? "var(--qvl-petrol)" : "var(--border-subtle)",
       padding: focus ? 3 : 2,
       ...chamfer(5, 4),
       transition: "background var(--duration-fast) var(--ease-standard)"
@@ -2304,7 +2318,7 @@ function Input({
   const [focus, setFocus] = React.useState(false);
   const uid = React.useId();
   const fid = id || uid;
-  const edge = error ? "var(--qvl-orange)" : focus ? "var(--qvl-yellow)" : "var(--border-subtle)";
+  const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-subtle)";
   const shell = {
     background: edge,
     padding: error || focus ? 3 : 1,
@@ -2391,7 +2405,7 @@ function Radio({
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--qvl-yellow)" : checked ? "var(--qvl-petrol)" : "var(--border-subtle)",
+      background: focus ? "var(--focus-ring)" : checked ? "var(--qvl-petrol)" : "var(--border-subtle)",
       padding: focus ? 3 : 2,
       ...chamfer(5, 4)
     }
@@ -2540,7 +2554,7 @@ function Select({
   const [focus, setFocus] = React.useState(false);
   const uid = React.useId();
   const fid = id || uid;
-  const edge = error ? "var(--qvl-orange)" : focus ? "var(--qvl-yellow)" : "var(--border-subtle)";
+  const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-subtle)";
   const control = /*#__PURE__*/React.createElement("div", {
     style: {
       background: edge,
@@ -2646,7 +2660,7 @@ function Switch({
   }, description) : null), /*#__PURE__*/React.createElement("span", {
     style: {
       flex: "none",
-      background: focus ? "var(--qvl-yellow)" : "transparent",
+      background: focus ? "var(--focus-ring)" : "transparent",
       padding: focus ? 3 : 0,
       ...chamfer(6, 2)
     }
@@ -3579,6 +3593,7 @@ function Tabs({
       display: "flex",
       gap: "var(--space-1)",
       borderBottom: "2px solid var(--surface-divider)",
+      padding: "4px 4px 0",
       overflowX: scrollable ? "auto" : "visible",
       ...style
     }
@@ -3586,8 +3601,10 @@ function Tabs({
     const id = typeof it === "string" ? it : it.value;
     const label = typeof it === "string" ? it : it.label;
     const active = id === value;
-    return /*#__PURE__*/React.createElement("button", {
+    return /*#__PURE__*/React.createElement("span", {
       key: id,
+      className: "qvl-focus"
+    }, /*#__PURE__*/React.createElement("button", {
       role: "tab",
       "aria-selected": active,
       onClick: () => onChange && onChange(id),
@@ -3595,7 +3612,7 @@ function Tabs({
         flex: "none",
         border: "none",
         cursor: "pointer",
-        background: active ? "var(--qvl-petrol)" : "transparent",
+        background: active ? "var(--qvl-petrol)" : "var(--qvl-ghost-bg, transparent)",
         color: active ? "var(--qvl-white)" : "var(--text-heading)",
         padding: "0 16px",
         height: 44,
@@ -3615,7 +3632,7 @@ function Tabs({
         fontWeight: 400,
         fontSize: "var(--text-small)"
       }
-    }, it.count) : null);
+    }, it.count) : null));
   }));
 }
 Object.assign(__ds_scope, { Tabs });

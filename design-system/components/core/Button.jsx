@@ -17,6 +17,9 @@ export function Button({variant="primary",size="md",disabled=false,fullWidth=fal
   const handlers=disabled?{}:{onMouseEnter:()=>setHover(true),onMouseLeave:()=>{setHover(false);setPress(false)},
     onMouseDown:()=>setPress(true),onMouseUp:()=>setPress(false),onClick};
 
+  // clip-path clips outline and box-shadow, so the focus ring is drawn on this unclipped wrapper (see .qvl-focus in bundle.css).
+  const wrap=(el)=><span className="qvl-focus" style={fullWidth?{display:"flex",width:"100%"}:undefined}>{el}</span>;
+
   // Outlined variant: clip-path can't carry a border along its own diagonal cut (an inset
   // box-shadow/border is drawn parallel to the ORIGINAL rectangle, not the chamfered edge, so the
   // cut corner ends up with no stroke — the "open corner" bug). Fix: two nested chamfers — the outer
@@ -34,15 +37,15 @@ export function Button({variant="primary",size="md",disabled=false,fullWidth=fal
       textTransform:"uppercase",lineHeight:1,whiteSpace:"nowrap",
       transition:"background var(--duration-fast) var(--ease-standard)",...chamfer(Math.max(s.ch-2,2),2)};
     const kids=<span style={innerCss}>{iconLeft}<span>{children}</span>{iconRight}</span>;
-    if(href&&!disabled) return <a href={href} style={outerCss} {...handlers} {...rest}>{kids}</a>;
-    return <button type={type} disabled={disabled} style={outerCss} {...handlers} {...rest}>{kids}</button>;
+    if(href&&!disabled) return wrap(<a href={href} style={outerCss} {...handlers} {...rest}>{kids}</a>);
+    return wrap(<button type={type} disabled={disabled} style={outerCss} {...handlers} {...rest}>{kids}</button>);
   }
 
   let skin;
   if(variant==="primary") skin=solid("var(--button-primary-bg)","var(--button-primary-bg-hover)","var(--button-primary-bg-press)","var(--button-primary-fg)");
   else if(variant==="accent") skin=solid("var(--button-accent-bg)","var(--button-accent-bg-hover)","var(--button-accent-bg-press)","var(--button-accent-fg)");
   else if(variant==="pink") skin=solid("var(--button-pink-bg)","var(--button-pink-bg-hover)","var(--button-pink-bg-press)","var(--button-pink-fg)");
-  else skin={background:hover&&!disabled?"var(--surface-brand-soft)":"transparent",color:disabled?"var(--button-disabled-fg)":"var(--button-ghost-fg)"};
+  else skin={background:hover&&!disabled?"var(--surface-brand-soft)":"var(--qvl-ghost-bg,transparent)",color:disabled?"var(--button-disabled-fg)":"var(--button-ghost-fg)"};
 
   const css={display:"inline-flex",alignItems:"center",justifyContent:"center",gap:"var(--space-2)",
     minHeight:s.height,height:s.height,padding:s.padding,width:fullWidth?"100%":"auto",
@@ -53,6 +56,6 @@ export function Button({variant="primary",size="md",disabled=false,fullWidth=fal
     ...chamfer(s.ch,2),...skin,...style};
 
   const kids=<>{iconLeft}<span>{children}</span>{iconRight}</>;
-  if(href&&!disabled) return <a href={href} style={css} {...handlers} {...rest}>{kids}</a>;
-  return <button type={type} disabled={disabled} style={css} {...handlers} {...rest}>{kids}</button>;
+  if(href&&!disabled) return wrap(<a href={href} style={css} {...handlers} {...rest}>{kids}</a>);
+  return wrap(<button type={type} disabled={disabled} style={css} {...handlers} {...rest}>{kids}</button>);
 }

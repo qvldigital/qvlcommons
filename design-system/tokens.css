@@ -55,7 +55,8 @@
   --border-default:var(--qvl-petrol);
   --border-accent:var(--qvl-orange);
   --border-accent-2:var(--qvl-pink);
-  --focus-ring:var(--qvl-yellow);
+  --focus-ring:var(--qvl-ink);
+  --focus-ring-inner:var(--qvl-yellow);
   --button-primary-bg:var(--qvl-petrol);
   --button-primary-bg-hover:var(--qvl-petrol-hover);
   --button-primary-bg-press:var(--qvl-petrol-press);
@@ -126,6 +127,7 @@
   --border-accent:var(--qvl-orange);
   --border-accent-2:var(--qvl-pink);
   --focus-ring:var(--qvl-yellow);
+  --focus-ring-inner:var(--qvl-night);
   --button-primary-bg:var(--qvl-petrol);
   --button-primary-bg-hover:#2e8282;
   --button-primary-bg-press:#529797;
@@ -189,7 +191,8 @@
   --border-hairline:1px;
   --border-strong:2px;
   --border-heavy:3px;
-  --focus-ring-width:3px;
+  --focus-ring-width:2px;
+  --focus-ring-inner-width:1px;
   --text-display-1:clamp(2.75rem,6vw,4.5rem);
   --text-display-2:clamp(2.25rem,4.5vw,3.25rem);
   --text-h1:2.25rem;

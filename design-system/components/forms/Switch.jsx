@@ -13,7 +13,7 @@ export function Switch({label,description,checked=false,disabled,onChange,id,sty
       <span style={{display:"block",fontWeight:"var(--weight-emphasis)"}}>{label}</span>
       {description?<span style={{display:"block",fontSize:"var(--text-small)",color:"var(--text-muted)"}}>{description}</span>:null}
     </span>
-    <span style={{flex:"none",background:focus?"var(--qvl-yellow)":"transparent",padding:focus?3:0,...chamfer(6,2)}}>
+    <span style={{flex:"none",background:focus?"var(--focus-ring)":"transparent",padding:focus?3:0,...chamfer(6,2)}}>
       <span style={{display:"block",width:52,height:28,padding:3,
         background:checked?"var(--qvl-petrol)":"var(--switch-off)",
         transition:"background var(--duration-base) var(--ease-standard)",...chamfer(5,2)}}>

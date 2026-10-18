@@ -26,7 +26,8 @@
   --border-default:var(--qvl-petrol);
   --border-accent:var(--qvl-orange);
   --border-accent-2:var(--qvl-pink);
-  --focus-ring:var(--qvl-yellow);
+  --focus-ring:var(--qvl-ink);
+  --focus-ring-inner:var(--qvl-yellow);
 
   /* Buttons */
   --button-primary-bg:var(--qvl-petrol);

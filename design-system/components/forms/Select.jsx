@@ -18,7 +18,7 @@ export function Select({label,hint,error,required,options=[],placeholder,id,styl
   const [focus,setFocus]=React.useState(false);
   const uid=React.useId();
   const fid=id||uid;
-  const edge=error?"var(--qvl-orange)":focus?"var(--qvl-yellow)":"var(--border-subtle)";
+  const edge=error?"var(--qvl-orange)":focus?"var(--focus-ring)":"var(--border-subtle)";
   const control=<div style={{background:edge,padding:error||focus?3:1,...chamfer(8,4),position:"relative",...style}}>
     <select id={fid} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}
       style={{width:"100%",height:42,border:"none",outline:"none",background:"var(--surface-card)",font:"inherit",

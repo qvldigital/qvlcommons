@@ -112,7 +112,7 @@ Derived from the logo's block letterforms: **45° chamfered corners, never round
 
 ### Borders, shadows, transparency
 
-1 px `#CCCCCC` hairlines in tables; 2 px petrol card edges; **3 px `#FFFF00` focus ring** on every focusable element (`outline`, offset 2 px); 3 px orange for error states. **No soft/blurred shadows anywhere** — depth is a solid 6 px offset block (`--shadow-block-petrol/-orange/-pink`; on chamfered elements use the `--drop-block-*` filters on an unclipped wrapper — `clip-path` clips `box-shadow`), used sparingly (one hero/feature card per view). No backdrop blur. Transparency is used in exactly two places: the petrol modal scrim (`--overlay-scrim`, 88 %) and the white 82 % plate that protects lead text sitting on net artwork. Text is never set on a photographic or patterned ground without a solid or near-solid plate.
+1 px `#CCCCCC` hairlines in tables; 2 px petrol card edges; a **double focus ring** on every focusable element: on light grounds 1 px yellow inside, 2 px ink outside (`--focus-ring-inner`, `--focus-ring`; ink is 13.8:1 on the page, 17.4:1 on cards); in dark mode 1 px night gap inside, 2 px yellow outside. Chamfered controls (`Button`, `IconButton`, `Tabs`) sit in a `.qvl-focus` wrapper because `clip-path` clips `outline`; the wrapper draws the ring as drop-shadows that follow the chamfer; 3 px orange for error states. **No soft/blurred shadows anywhere** — depth is a solid 6 px offset block (`--shadow-block-petrol/-orange/-pink`; on chamfered elements use the `--drop-block-*` filters on an unclipped wrapper — `clip-path` clips `box-shadow`), used sparingly (one hero/feature card per view). No backdrop blur. Transparency is used in exactly two places: the petrol modal scrim (`--overlay-scrim`, 88 %) and the white 82 % plate that protects lead text sitting on net artwork. Text is never set on a photographic or patterned ground without a solid or near-solid plate.
 
 ### Imagery & backgrounds
 
@@ -133,7 +133,7 @@ Fast and mechanical, never bouncy. `--duration-fast` 120 ms for colour, `--durat
 
 - **Hover:** solid buttons darken (CI hue mixed 86 % with black); outline/ghost buttons fill with `--qvl-petrol-pale`; links go petrol → dark orange; table rows do not change.
 - **Press:** `scale(0.98)` plus a further darken (74 %).
-- **Focus:** 3 px yellow ring, always visible, never removed.
+- **Focus:** double ring (yellow 1 px inside, ink 2 px outside; on night a 1 px gap and a 2 px yellow line), always visible, never removed.
 - **Disabled:** grey fill `#CCCCCC`, muted ink, `not-allowed`.
 - `prefers-reduced-motion` zeroes every duration.
 
@@ -228,7 +228,7 @@ readme.md                  this file
 ## Dark mode (Nacht)
 - The `dark` theme in `tokens.json` remaps the semantic tokens only — CI hues are unchanged. Surfaces are petrol mixed toward black (`--qvl-night*`), body text `--qvl-paper`.
 - Activate with `<html data-theme="dark">`; `theme.js` sets it from the OS (`prefers-color-scheme`, live) unless the user chose explicitly, and (`window.QVLTheme.set/toggle`) persists the choice; `<ThemeToggle/>` is the UI.
-- Petrol as text/line/frame → `--text-heading`/`--border-default` (petrol-mid in dark). Filled petrol and pink keep white labels (pink: large type and buttons only); orange fills take `--qvl-ink` labels in both themes. Yellow focus ring unchanged.
+- Petrol as text/line/frame → `--text-heading`/`--border-default` (petrol-mid in dark). Filled petrol and pink keep white labels (pink: large type and buttons only); orange fills take `--qvl-ink` labels in both themes. The focus ring swaps to a yellow outer line with a night gap inside.
 - Logos are PNG only: always on a white chamfer plate in dark mode (header/footer already do this).
 - Components must use semantic tokens (`--surface-*`, `--text-*`, `--border-*`), never raw `--qvl-white/grey/ink` for surfaces or text.
 

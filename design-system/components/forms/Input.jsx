@@ -18,7 +18,7 @@ export function Input({label,hint,error,required,multiline=false,rows=4,id,style
   const [focus,setFocus]=React.useState(false);
   const uid=React.useId();
   const fid=id||uid;
-  const edge=error?"var(--qvl-orange)":focus?"var(--qvl-yellow)":"var(--border-subtle)";
+  const edge=error?"var(--qvl-orange)":focus?"var(--focus-ring)":"var(--border-subtle)";
   const shell={background:edge,padding:error||focus?3:1,...chamfer(8,4),
     transition:"background var(--duration-fast) var(--ease-standard)"};
   const field={width:"100%",border:"none",outline:"none",background:"var(--surface-card)",
