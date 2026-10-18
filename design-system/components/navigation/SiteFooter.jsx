@@ -17,9 +17,9 @@ export function SiteFooter({columns=[],note,style,...rest}){
       {columns.map(col=><div key={col.title}>
         <h4 style={{fontFamily:"var(--font-display)",fontSize:"var(--text-eyebrow)",letterSpacing:"var(--tracking-eyebrow)",
           textTransform:"uppercase",color:"var(--text-on-inverse-accent)",margin:"0 0 var(--space-3)"}}>{col.title}</h4>
-        <ul style={{listStyle:"none",margin:0,padding:0,display:"flex",flexDirection:"column",gap:"var(--space-2)"}}>
-          {col.links.map(l=><li key={l}><a href="#" style={{color:"var(--text-on-inverse)",fontSize:"var(--text-small)",
-            textDecoration:"none",borderBottom:"1px solid color-mix(in srgb,var(--text-on-inverse) 40%,transparent)"}}>{l}</a></li>)}
+        <ul style={{listStyle:"none",margin:0,padding:0,display:"flex",flexDirection:"column",gap:0}}>
+          {col.links.map(l=><li key={l}><a href="#" style={{display:"inline-flex",alignItems:"center",minHeight:"var(--tap-min)",minWidth:"var(--tap-min)",color:"var(--text-on-inverse)",fontSize:"var(--text-small)",
+            textDecoration:"none"}}><span style={{borderBottom:"1px solid color-mix(in srgb,var(--text-on-inverse) 40%,transparent)"}}>{l}</span></a></li>)}
         </ul>
       </div>)}
     </div>

@@ -25,7 +25,7 @@ export function Select({label,hint,error,required,options=[],placeholder,id,styl
   const edge=error?"var(--border-accent)":focus?"var(--focus-ring)":"var(--border-default)";
   const control=<div style={{background:edge,padding:error||focus?3:2,...chamfer(8,4),position:"relative",...style}}>
     <select id={fid} {...a11y} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}
-      style={{width:"100%",height:42,border:"none",outline:"none",background:"var(--surface-card)",font:"inherit",
+      style={{width:"100%",height:44,border:"none",outline:"none",background:"var(--surface-card)",font:"inherit",
         fontWeight:"var(--weight-body)",color:"var(--text-body-color)",padding:"0 36px 0 12px",appearance:"none",...chamfer(7,4)}} {...rest}>
       {placeholder?<option value="">{placeholder}</option>:null}
       {options.map(o=>{const v=typeof o==="string"?o:o.value;const l=typeof o==="string"?o:o.label;

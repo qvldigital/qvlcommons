@@ -13,7 +13,7 @@ export function SiteHeader({items=[],active,onNavigate,language="DE",languages=[
     <div style={{maxWidth:"var(--container-max)",margin:"0 auto",padding:compact?"10px var(--gutter-mobile)":"14px var(--gutter-desktop)",
       display:"flex",alignItems:"center",gap:"var(--space-6)"}}>
       <a href="#" onClick={(e)=>{e.preventDefault();onNavigate&&onNavigate(items[0]&&(items[0].value||items[0]))}}
-        style={{display:"flex",alignItems:"center",textDecoration:"none",flex:"none",background:"var(--surface-logo-plate)",
+        style={{display:"flex",alignItems:"center",minHeight:"var(--tap-min)",textDecoration:"none",flex:"none",background:"var(--surface-logo-plate)",
         padding:"6px 10px",...chamfer(8,2)}}>
         <Logo variant="long-petrol" height={compact?24:30}/>
       </a>
@@ -23,20 +23,20 @@ export function SiteHeader({items=[],active,onNavigate,language="DE",languages=[
           const l=typeof it==="string"?it:it.label;
           const on=v===active;
           return <a key={v} href="#" onClick={(e)=>{e.preventDefault();onNavigate&&onNavigate(v)}}
-            style={{textDecoration:"none",padding:"0 14px",height:40,display:"inline-flex",alignItems:"center",
+            style={{textDecoration:"none",padding:"0 14px",minHeight:"var(--tap-min)",display:"inline-flex",alignItems:"center",
               fontFamily:"var(--font-display)",fontSize:"var(--text-body)",letterSpacing:"var(--tracking-display)",
               textTransform:"uppercase",color:on?"var(--surface-inverse)":"var(--text-on-inverse)",
               background:on?"var(--text-on-inverse)":"transparent",borderBottom:on?"none":"3px solid transparent",
               ...chamfer(6,2)}}>{l}</a>;
         })}
       </nav>
-      <div style={{display:"flex",alignItems:"center",gap:"var(--space-2)",marginLeft:compact?"auto":0}}>
+      <div style={{display:"flex",alignItems:"center",gap:"var(--space-2)",flex:"none",marginLeft:compact?"auto":0}}>
         <label style={{display:"flex",alignItems:"center",gap:6,color:"var(--text-on-inverse)"}}>
           <Icon name="globe" size={18}/>
           <span style={{position:"absolute",width:1,height:1,overflow:"hidden",clip:"rect(0 0 0 0)"}}>{languageLabel}</span>
           <select value={language} onChange={(e)=>onLanguage&&onLanguage(e.target.value)}
             style={{background:"transparent",color:"var(--text-on-inverse)",border:"none",font:"inherit",
-              fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",cursor:"pointer",padding:"4px 2px"}}>
+              fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",cursor:"pointer",padding:"4px 2px",minHeight:"var(--tap-min)",minWidth:"var(--tap-min)"}}>
             {languages.map(l=><option key={l} value={l} style={{color:"var(--text-body-color)"}}>{l}</option>)}
           </select>
         </label>

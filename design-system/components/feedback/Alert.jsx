@@ -23,7 +23,7 @@ export function Alert({tone="info",title,children,onClose,closeLabel="Schließen
         {children?<div style={{fontSize:"var(--text-small)",lineHeight:"var(--leading-tight)"}}>{children}</div>:null}
       </div>
       {onClose?<button type="button" aria-label={closeLabel} onClick={onClose}
-        style={{border:"none",background:"transparent",color:"inherit",cursor:"pointer",padding:0,lineHeight:1}}>
+        style={{border:"none",background:"transparent",color:"inherit",cursor:"pointer",padding:0,lineHeight:1,width:"var(--tap-min)",height:"var(--tap-min)",display:"inline-flex",alignItems:"center",justifyContent:"center",flex:"none",alignSelf:"flex-start",margin:-13}}>
         <Icon name="x" size={18}/></button>:null}
     </div>
   </div>;

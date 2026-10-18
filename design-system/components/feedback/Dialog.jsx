@@ -38,7 +38,7 @@ export function Dialog({open=false,title,children,footer,onClose,width=520,close
             <h2 style={{flex:1,margin:0,fontFamily:"var(--font-display)",fontSize:"var(--text-h2)",
               letterSpacing:"var(--tracking-display)",textTransform:"uppercase",color:"var(--text-heading)",lineHeight:1.05}}>{title}</h2>
             {onClose?<button type="button" aria-label={closeLabel} onClick={onClose}
-              style={{border:"none",background:"transparent",cursor:"pointer",color:"var(--text-heading)",padding:0}}>
+              style={{border:"none",background:"transparent",cursor:"pointer",color:"var(--text-heading)",padding:0,width:"var(--tap-min)",height:"var(--tap-min)",display:"inline-flex",alignItems:"center",justifyContent:"center",flex:"none",margin:-11}}>
               <Icon name="x" size={22}/></button>:null}
           </div>
           <div style={{padding:"var(--space-4) var(--space-5)",fontSize:"var(--text-body)"}}>{children}</div>

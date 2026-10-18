@@ -14,7 +14,7 @@ export function Toast({tone="petrol",message,action,onAction,onClose,closeLabel=
         cursor:"pointer",fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",textTransform:"uppercase",
         textDecoration:"underline",textDecorationThickness:2,textUnderlineOffset:3,padding:0}}>{action}</button>:null}
       {onClose?<button type="button" aria-label={closeLabel} onClick={onClose} style={{border:"none",background:"transparent",
-        color:"inherit",cursor:"pointer",padding:0,lineHeight:1}}><Icon name="x" size={16}/></button>:null}
+        color:"inherit",cursor:"pointer",padding:0,lineHeight:1,width:"var(--tap-min)",height:"var(--tap-min)",display:"inline-flex",alignItems:"center",justifyContent:"center",flex:"none",margin:"-10px -10px -10px 0"}}><Icon name="x" size={16}/></button>:null}
     </div>
   </div>;
 }

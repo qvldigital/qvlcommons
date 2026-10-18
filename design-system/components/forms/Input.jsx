@@ -27,7 +27,7 @@ export function Input({label,hint,error,required,multiline=false,rows=4,id,style
     transition:"background var(--duration-fast) var(--ease-standard)"};
   const field={width:"100%",border:"none",outline:"none",background:"var(--surface-card)",
     font:"inherit",fontWeight:"var(--weight-body)",color:"var(--text-body-color)",
-    padding:multiline?"10px 12px":"0 12px",height:multiline?"auto":42,minHeight:multiline?undefined:42,
+    padding:multiline?"10px 12px":"0 12px",height:multiline?"auto":44,minHeight:multiline?undefined:44,
     ...chamfer(7,4),resize:multiline?"vertical":undefined};
   const el=multiline
     ? <textarea id={fid} rows={rows} {...a11y} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)} style={field} {...rest}/>

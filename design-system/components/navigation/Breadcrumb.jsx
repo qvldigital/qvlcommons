@@ -9,7 +9,7 @@ export function Breadcrumb({items=[],onNavigate,style,...rest}){
       return <span key={i} style={{display:"inline-flex",alignItems:"center",gap:"var(--space-2)"}}>
         {last?<span style={{fontWeight:"var(--weight-emphasis)",color:"var(--text-muted)"}}>{label}</span>
           :<a href="#" onClick={(e)=>{e.preventDefault();onNavigate&&onNavigate(typeof it==="string"?it:it.value)}}
-            style={{color:"var(--text-link)"}}>{label}</a>}
+            style={{display:"inline-flex",alignItems:"center",justifyContent:"center",minHeight:"var(--tap-min)",minWidth:"var(--tap-min)",color:"var(--text-link)"}}>{label}</a>}
         {last?null:<span aria-hidden="true" style={{color:"var(--text-separator)",fontWeight:600}}>/</span>}
       </span>;
     })}

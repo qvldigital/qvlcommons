@@ -1710,7 +1710,13 @@ function Tag({
       cursor: "pointer",
       font: "inherit",
       lineHeight: 1,
-      padding: 0
+      padding: 0,
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      alignSelf: "stretch",
+      minWidth: 32,
+      marginRight: -10
     }
   }, "\xD7") : null;
   if (selected) {
@@ -1904,7 +1910,15 @@ function Alert({
       color: "inherit",
       cursor: "pointer",
       padding: 0,
-      lineHeight: 1
+      lineHeight: 1,
+      width: "var(--tap-min)",
+      height: "var(--tap-min)",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "none",
+      alignSelf: "flex-start",
+      margin: -13
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
     name: "x",
@@ -2042,7 +2056,14 @@ function Dialog({
       background: "transparent",
       cursor: "pointer",
       color: "var(--text-heading)",
-      padding: 0
+      padding: 0,
+      width: "var(--tap-min)",
+      height: "var(--tap-min)",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "none",
+      margin: -11
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
     name: "x",
@@ -2197,7 +2218,14 @@ function Toast({
       color: "inherit",
       cursor: "pointer",
       padding: 0,
-      lineHeight: 1
+      lineHeight: 1,
+      width: "var(--tap-min)",
+      height: "var(--tap-min)",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "none",
+      margin: "-10px -10px -10px 0"
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
     name: "x",
@@ -2469,8 +2497,8 @@ function Input({
     fontWeight: "var(--weight-body)",
     color: "var(--text-body-color)",
     padding: multiline ? "10px 12px" : "0 12px",
-    height: multiline ? "auto" : 42,
-    minHeight: multiline ? undefined : 42,
+    height: multiline ? "auto" : 44,
+    minHeight: multiline ? undefined : 44,
     ...chamfer(7, 4),
     resize: multiline ? "vertical" : undefined
   };
@@ -2731,7 +2759,7 @@ function Select({
     onBlur: () => setFocus(false),
     style: {
       width: "100%",
-      height: 42,
+      height: 44,
       border: "none",
       outline: "none",
       background: "var(--surface-card)",
@@ -3469,6 +3497,11 @@ function Breadcrumb({
         onNavigate && onNavigate(typeof it === "string" ? it : it.value);
       },
       style: {
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "var(--tap-min)",
+        minWidth: "var(--tap-min)",
         color: "var(--text-link)"
       }
     }, label), last ? null : /*#__PURE__*/React.createElement("span", {
@@ -3542,19 +3575,26 @@ function SiteFooter({
       padding: 0,
       display: "flex",
       flexDirection: "column",
-      gap: "var(--space-2)"
+      gap: 0
     }
   }, col.links.map(l => /*#__PURE__*/React.createElement("li", {
     key: l
   }, /*#__PURE__*/React.createElement("a", {
     href: "#",
     style: {
+      display: "inline-flex",
+      alignItems: "center",
+      minHeight: "var(--tap-min)",
+      minWidth: "var(--tap-min)",
       color: "var(--text-on-inverse)",
       fontSize: "var(--text-small)",
-      textDecoration: "none",
+      textDecoration: "none"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
       borderBottom: "1px solid color-mix(in srgb,var(--text-on-inverse) 40%,transparent)"
     }
-  }, l))))))));
+  }, l)))))))));
 }
 Object.assign(__ds_scope, { SiteFooter });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/SiteFooter.jsx", error: String((e && e.message) || e) }); }
@@ -3604,6 +3644,7 @@ function SiteHeader({
     style: {
       display: "flex",
       alignItems: "center",
+      minHeight: "var(--tap-min)",
       textDecoration: "none",
       flex: "none",
       background: "var(--surface-logo-plate)",
@@ -3634,7 +3675,7 @@ function SiteHeader({
       style: {
         textDecoration: "none",
         padding: "0 14px",
-        height: 40,
+        minHeight: "var(--tap-min)",
         display: "inline-flex",
         alignItems: "center",
         fontFamily: "var(--font-display)",
@@ -3652,6 +3693,7 @@ function SiteHeader({
       display: "flex",
       alignItems: "center",
       gap: "var(--space-2)",
+      flex: "none",
       marginLeft: compact ? "auto" : 0
     }
   }, /*#__PURE__*/React.createElement("label", {
@@ -3683,7 +3725,9 @@ function SiteHeader({
       fontFamily: "var(--font-display)",
       letterSpacing: "var(--tracking-display)",
       cursor: "pointer",
-      padding: "4px 2px"
+      padding: "4px 2px",
+      minHeight: "var(--tap-min)",
+      minWidth: "var(--tap-min)"
     }
   }, languages.map(l => /*#__PURE__*/React.createElement("option", {
     key: l,
