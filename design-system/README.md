@@ -100,7 +100,7 @@ Rules: **petrol** carries headers, primary buttons, headlines and table heads. *
 - **Eyebrows / labels / column heads:** Bebas 13 px, tracking `0.14em`, uppercase.
 - **Scores, ranks, points:** Bebas. Everything countable inside prose: Oswald.
 - Both faces carry the diacritics for DE, PL, CS, DA, SV, FR, PT, ES, IT, NL, EN.
-- ⚠️ **Fonts are loaded from Google Fonts** (`components/bundle.css`) because no font binaries were supplied — see *Caveats*.
+- **Fonts are self-hosted:** `tokens/fonts.css` and `components/bundle.css` declare `@font-face` rules for Bebas Neue 400 and Oswald 300/400/500/600 (latin and latin-ext woff2, Fontsource 5.3.0, SIL OFL 1.1) from `/assets/fonts` at the repository root. No request goes to Google.
 
 ### Spacing & layout
 
@@ -218,7 +218,7 @@ readme.md                  this file
 
 ## 10. Caveats / open questions
 
-1. **Font binaries missing.** Bebas Neue and Oswald are loaded from Google Fonts. If QVL licenses/hosts its own copies, drop them into `fonts/`, list them in `tokens.json` under `type.fonts`, and replace the `@import` in `components/bundle.css` with `@font-face` rules.
+1. **Fonts live outside `design-system/`.** The woff2 files are in `assets/fonts/` at the repository root (`../../assets/fonts/` from `tokens/` and `components/`); a copy of `design-system/` alone loses them. `tokens/fonts.css` and `components/bundle.css` both declare the faces; that is harmless, the browser loads each file once.
 2. **No SVG logo.** All lockups are raster; small sizes and print will suffer. An SVG set would be a real improvement.
 3. **No icon set.** Lucide is a substitution — approve or replace.
 4. **`--qvl-ink` is an addition**, not CI. Needs sign-off.
