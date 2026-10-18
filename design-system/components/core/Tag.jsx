@@ -3,10 +3,10 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
   :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
 
-export function Tag({children,selected=false,onRemove,onClick,style,...rest}){
+export function Tag({children,selected=false,onRemove,onClick,removeLabel="Entfernen",style,...rest}){
   const [hover,setHover]=React.useState(false);
   const interactive=Boolean(onClick);
-  const remove=onRemove?<button type="button" aria-label="Entfernen" onClick={(e)=>{e.stopPropagation();onRemove(e)}}
+  const remove=onRemove?<button type="button" aria-label={removeLabel} onClick={(e)=>{e.stopPropagation();onRemove(e)}}
     style={{border:"none",background:"transparent",color:"inherit",cursor:"pointer",font:"inherit",lineHeight:1,padding:0}}>×</button>:null;
 
   if(selected){

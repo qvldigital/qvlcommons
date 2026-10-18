@@ -12,7 +12,7 @@ const TONES={
   safe:{bg:"var(--surface-card)",fg:"var(--text-heading)",edge:"var(--qvl-yellow)",icon:"shield-check"}
 };
 
-export function Alert({tone="info",title,children,onClose,style,...rest}){
+export function Alert({tone="info",title,children,onClose,closeLabel="Schließen",style,...rest}){
   const t=TONES[tone]||TONES.info;
   return <div role={tone==="danger"?"alert":"status"} style={{background:t.edge,padding:3,...chamfer(10,4),...style}} {...rest}>
     <div style={{background:t.bg,color:t.fg,padding:"var(--space-4)",display:"flex",gap:"var(--space-3)",...chamfer(8,4)}}>
@@ -22,7 +22,7 @@ export function Alert({tone="info",title,children,onClose,style,...rest}){
           textTransform:"uppercase",lineHeight:1.05,marginBottom:children?"var(--space-1)":0}}>{title}</div>:null}
         {children?<div style={{fontSize:"var(--text-small)",lineHeight:"var(--leading-tight)"}}>{children}</div>:null}
       </div>
-      {onClose?<button type="button" aria-label="Schließen" onClick={onClose}
+      {onClose?<button type="button" aria-label={closeLabel} onClick={onClose}
         style={{border:"none",background:"transparent",color:"inherit",cursor:"pointer",padding:0,lineHeight:1}}>
         <Icon name="x" size={18}/></button>:null}
     </div>

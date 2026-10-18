@@ -4,7 +4,7 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
   :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
 
-export function Toast({tone="petrol",message,action,onAction,onClose,style,...rest}){
+export function Toast({tone="petrol",message,action,onAction,onClose,closeLabel="Schließen",style,...rest}){
   const tones={petrol:{bg:"var(--qvl-petrol)",fg:"var(--qvl-white)"},orange:{bg:"var(--qvl-orange)",fg:"var(--text-on-accent)"},pink:{bg:"var(--qvl-pink)",fg:"var(--qvl-white)"}};
   const t=tones[tone]||tones.petrol;
   return <div role="status" style={{filter:"var(--drop-block-sm-petrol)",maxWidth:420,...style}} {...rest}>
@@ -13,7 +13,7 @@ export function Toast({tone="petrol",message,action,onAction,onClose,style,...re
       {action?<button type="button" onClick={onAction} style={{border:"none",background:"transparent",color:"inherit",
         cursor:"pointer",fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",textTransform:"uppercase",
         textDecoration:"underline",textDecorationThickness:2,textUnderlineOffset:3,padding:0}}>{action}</button>:null}
-      {onClose?<button type="button" aria-label="Schließen" onClick={onClose} style={{border:"none",background:"transparent",
+      {onClose?<button type="button" aria-label={closeLabel} onClick={onClose} style={{border:"none",background:"transparent",
         color:"inherit",cursor:"pointer",padding:0,lineHeight:1}}><Icon name="x" size={16}/></button>:null}
     </div>
   </div>;

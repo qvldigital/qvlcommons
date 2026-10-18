@@ -6,6 +6,10 @@ export interface NavItem { value: string; label: string }
  * @startingPoint section="Navigation" subtitle="Petrol site header with language switcher" viewport="700x120"
  */
 export interface SiteHeaderProps extends React.HTMLAttributes<HTMLElement> {
+  /** visually hidden label of the language select (default "Sprache"); pass the translated word. */
+  languageLabel?: string;
+  /** aria-label of the menu button in compact mode (default "Menü"); pass the translated word. */
+  menuLabel?: string;
   items?: (NavItem | string)[];
   active?: string;
   onNavigate?: (value: string) => void;

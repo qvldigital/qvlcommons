@@ -2,6 +2,8 @@ import * as React from "react";
 
 /** Transient confirmation. Petrol by default; orange only for destructive undo. */
 export interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** aria-label of the close button (default "Schließen"); pass the translated word. */
+  closeLabel?: string;
   tone?: "petrol" | "orange" | "pink";
   message?: React.ReactNode;
   action?: string;

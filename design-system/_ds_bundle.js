@@ -1689,6 +1689,7 @@ function Tag({
   selected = false,
   onRemove,
   onClick,
+  removeLabel = "Entfernen",
   style,
   ...rest
 }) {
@@ -1696,7 +1697,7 @@ function Tag({
   const interactive = Boolean(onClick);
   const remove = onRemove ? /*#__PURE__*/React.createElement("button", {
     type: "button",
-    "aria-label": "Entfernen",
+    "aria-label": removeLabel,
     onClick: e => {
       e.stopPropagation();
       onRemove(e);
@@ -1846,6 +1847,7 @@ function Alert({
   title,
   children,
   onClose,
+  closeLabel = "Schlie\xDFen",
   style,
   ...rest
 }) {
@@ -1893,7 +1895,7 @@ function Alert({
     }
   }, children) : null), onClose ? /*#__PURE__*/React.createElement("button", {
     type: "button",
-    "aria-label": "Schlie\xDFen",
+    "aria-label": closeLabel,
     onClick: onClose,
     style: {
       border: "none",
@@ -1924,6 +1926,7 @@ function Dialog({
   footer,
   onClose,
   width = 520,
+  closeLabel = "Schlie\xDFen",
   style,
   ...rest
 }) {
@@ -2031,7 +2034,7 @@ function Dialog({
     }
   }, title), onClose ? /*#__PURE__*/React.createElement("button", {
     type: "button",
-    "aria-label": "Schlie\xDFen",
+    "aria-label": closeLabel,
     onClick: onClose,
     style: {
       border: "none",
@@ -2125,6 +2128,7 @@ function Toast({
   action,
   onAction,
   onClose,
+  closeLabel = "Schlie\xDFen",
   style,
   ...rest
 }) {
@@ -2184,7 +2188,7 @@ function Toast({
     }
   }, action) : null, onClose ? /*#__PURE__*/React.createElement("button", {
     type: "button",
-    "aria-label": "Schlie\xDFen",
+    "aria-label": closeLabel,
     onClick: onClose,
     style: {
       border: "none",
@@ -2235,6 +2239,11 @@ function Tooltip({
   ...rest
 }) {
   const [show, setShow] = React.useState(false);
+  const id = React.useId();
+  // Link the trigger to the tooltip text for screen readers; Escape dismisses it (WCAG 1.4.13).
+  const trigger = React.isValidElement(children) ? React.cloneElement(children, {
+    "aria-describedby": [children.props["aria-describedby"], id].filter(Boolean).join(" ")
+  }) : children;
   const pos = placement === "bottom" ? {
     top: "calc(100% + 8px)"
   } : {
@@ -2249,10 +2258,15 @@ function Tooltip({
     onMouseEnter: () => setShow(true),
     onMouseLeave: () => setShow(false),
     onFocus: () => setShow(true),
-    onBlur: () => setShow(false)
-  }, rest), children, show ? /*#__PURE__*/React.createElement("span", {
+    onBlur: () => setShow(false),
+    onKeyDown: e => {
+      if (e.key === "Escape") setShow(false);
+    }
+  }, rest), trigger, /*#__PURE__*/React.createElement("span", {
+    id: id,
     role: "tooltip",
     style: {
+      visibility: show ? "visible" : "hidden",
       position: "absolute",
       left: "50%",
       transform: "translateX(-50%)",
@@ -2266,7 +2280,7 @@ function Tooltip({
       zIndex: 40,
       ...chamfer(5, 2)
     }
-  }, label) : null);
+  }, label));
 }
 Object.assign(__ds_scope, { Tooltip });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/Tooltip.jsx", error: String((e && e.message) || e) }); }
@@ -3544,6 +3558,8 @@ function SiteHeader({
   onLanguage,
   cta,
   compact = false,
+  languageLabel = "Sprache",
+  menuLabel = "Men\xFC",
   style,
   ...rest
 }) {
@@ -3640,7 +3656,7 @@ function SiteHeader({
       overflow: "hidden",
       clip: "rect(0 0 0 0)"
     }
-  }, "Sprache"), /*#__PURE__*/React.createElement("select", {
+  }, languageLabel), /*#__PURE__*/React.createElement("select", {
     value: language,
     onChange: e => onLanguage && onLanguage(e.target.value),
     style: {
@@ -3664,7 +3680,7 @@ function SiteHeader({
     size: "sm",
     href: "#"
   }, cta) : null, compact ? /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
-    label: "Men\xFC",
+    label: menuLabel,
     onClick: () => setOpen(!open),
     style: {
       color: "var(--qvl-white)"

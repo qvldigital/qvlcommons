@@ -143,6 +143,8 @@ export function Logo(props: LogoProps): JSX.Element;
 
 /** Filter / selection chip. Toggleable via `selected` + `onClick`, dismissible via `onRemove`. */
 export interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /** aria-label of the remove button (default "Entfernen"); pass the translated word. */
+  removeLabel?: string;
   selected?: boolean;
   onRemove?: (e: React.MouseEvent) => void;
   children?: React.ReactNode;
@@ -161,6 +163,8 @@ export function ThemeToggle(props: ThemeToggleProps): JSX.Element;
  * @startingPoint section="Feedback" subtitle="Inline alerts incl. the Safe-Space notice" viewport="700x320"
  */
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** aria-label of the close button (default "Schließen"); pass the translated word. */
+  closeLabel?: string;
   tone?: "info" | "success" | "warn" | "danger" | "safe";
   title?: string;
   onClose?: () => void;
@@ -170,6 +174,8 @@ export function Alert(props: AlertProps): JSX.Element;
 
 /** Modal with a petrol 3 px frame, orange block shadow and a petrol scrim. */
 export interface DialogProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** aria-label of the close button (default "Schließen"); pass the translated word. */
+  closeLabel?: string;
   open?: boolean;
   title?: string;
   footer?: React.ReactNode;
@@ -189,6 +195,8 @@ export function EmptyState(props: EmptyStateProps): JSX.Element;
 
 /** Transient confirmation. Petrol by default; orange only for destructive undo. */
 export interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** aria-label of the close button (default "Schließen"); pass the translated word. */
+  closeLabel?: string;
   tone?: "petrol" | "orange" | "pink";
   message?: React.ReactNode;
   action?: string;
@@ -377,6 +385,10 @@ export interface NavItem { value: string; label: string }
  * @startingPoint section="Navigation" subtitle="Petrol site header with language switcher" viewport="700x120"
  */
 export interface SiteHeaderProps extends React.HTMLAttributes<HTMLElement> {
+  /** visually hidden label of the language select (default "Sprache"); pass the translated word. */
+  languageLabel?: string;
+  /** aria-label of the menu button in compact mode (default "Menü"); pass the translated word. */
+  menuLabel?: string;
   items?: (NavItem | string)[];
   active?: string;
   onNavigate?: (value: string) => void;
