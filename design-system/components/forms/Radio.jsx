@@ -21,11 +21,11 @@ export function Radio({label,description,name,value,checked,defaultChecked,disab
   const on=isControlled?checked:inner;
   return <label htmlFor={fid} style={{display:"flex",gap:"var(--space-3)",alignItems:"flex-start",
     cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.55:1,minHeight:"var(--tap-min)",...style}}>
-    <span style={{flex:"none",marginTop:2,background:focus?"var(--focus-ring)":on?"var(--qvl-petrol)":"var(--border-default)",
+    <span style={{flex:"none",marginTop:2,background:focus?"var(--focus-ring)":on?"var(--control-on)":"var(--border-default)",
       padding:focus?3:2,...chamfer(5,4)}}>
       <span style={{display:"flex",alignItems:"center",justifyContent:"center",width:20,height:20,
         background:"var(--surface-card)",...chamfer(4,4)}}>
-        <span style={{width:10,height:10,background:on?"var(--qvl-orange)":"transparent",...chamfer(3,4)}}/>
+        <span style={{width:10,height:10,background:on?"var(--surface-accent)":"transparent",...chamfer(3,4)}}/>
       </span>
     </span>
     <input id={fid} ref={ref} type="radio" name={name} value={value} checked={checked} defaultChecked={defaultChecked}

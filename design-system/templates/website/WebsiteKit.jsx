@@ -32,7 +32,7 @@ function HomeScreen({go}){
           <p style={{margin:0,fontSize:"var(--text-small)"}}>Eigene Runde, eigener Spielplan, gleiche Liga.</p></Card>
         <Card tone="soft"><h3 style={{margin:"0 0 var(--space-2)"}}>Senior*innen</h3>
           <p style={{margin:0,fontSize:"var(--text-small)"}}>Ab 40 — mit Turnierwochenenden.</p></Card>
-        <Card tone="brand"><h3 style={{margin:"0 0 var(--space-2)",color:"var(--qvl-white)"}}>Fünf Regionen</h3>
+        <Card tone="brand"><h3 style={{margin:"0 0 var(--space-2)",color:"var(--text-on-inverse)"}}>Fünf Regionen</h3>
           <p style={{margin:0,fontSize:"var(--text-small)"}}>Nord · Ost · Süd · West · Mitte</p></Card>
       </div>
     </section>
@@ -67,10 +67,10 @@ function HomeScreen({go}){
       </div>
     </section>
 
-    <section style={{background:"var(--qvl-petrol)",color:"var(--qvl-white)",padding:"var(--space-16) var(--gutter-desktop)"}}>
+    <section style={{background:"var(--surface-inverse)",color:"var(--text-on-inverse)",padding:"var(--space-16) var(--gutter-desktop)"}}>
       <div style={{maxWidth:"var(--container-narrow)",margin:"0 auto",textAlign:"center"}}>
         <BallIcon tone="white" size={64} style={{margin:"0 auto var(--space-5)"}}/>
-        <h2 style={{color:"var(--qvl-white)",fontSize:"var(--text-display-2)",margin:"0 0 var(--space-3)"}}>Wir spielen dir den Ball zu</h2>
+        <h2 style={{color:"var(--text-on-inverse)",fontSize:"var(--text-display-2)",margin:"0 0 var(--space-3)"}}>Wir spielen dir den Ball zu</h2>
         <p style={{margin:"0 0 var(--space-6)",fontSize:"var(--text-lead)"}}>
           Egal ob du seit 20 Jahren spielst oder das erste Mal in einer Halle stehst — melde dich, wir finden ein Team für dich.
         </p>

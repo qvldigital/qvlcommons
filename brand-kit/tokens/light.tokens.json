@@ -43,6 +43,14 @@
     "divider": {
       "$type": "color",
       "$value": "{color.grey}"
+    },
+    "logo-plate": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "neutral": {
+      "$type": "color",
+      "$value": "{color.grey}"
     }
   },
   "text": {
@@ -77,6 +85,14 @@
     "link-hover": {
       "$type": "color",
       "$value": "{color.orange-press}"
+    },
+    "danger": {
+      "$type": "color",
+      "$value": "{color.orange-press}"
+    },
+    "separator": {
+      "$type": "color",
+      "$value": "{color.orange}"
     }
   },
   "border": {
@@ -95,6 +111,14 @@
     "accent-2": {
       "$type": "color",
       "$value": "{color.pink}"
+    },
+    "highlight": {
+      "$type": "color",
+      "$value": "{color.yellow}"
+    },
+    "brand-soft": {
+      "$type": "color",
+      "$value": "{color.petrol-mid}"
     },
     "focus-ring": {
       "$type": "color",

@@ -11,14 +11,14 @@ function Spielbericht(){
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:"var(--space-3)"}}>
         <div>
           <div style={{fontFamily:"var(--font-display)",fontSize:"var(--text-h3)",textTransform:"uppercase",
-            letterSpacing:"var(--tracking-display)",color:"var(--qvl-petrol)"}}>Bumpers vs. Hurricanes</div>
+            letterSpacing:"var(--tracking-display)",color:"var(--text-heading)"}}>Bumpers vs. Hurricanes</div>
           <div style={{fontSize:"var(--text-small)",color:"var(--text-muted)"}}>Sa 14.11. · 14:00</div>
         </div>
         <LevelBadge level="B" region="Nord" size="sm"/>
       </div>
       <div style={{display:"flex",alignItems:"center",gap:"var(--space-3)",marginTop:"var(--space-4)"}}>
-        <span style={{fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",lineHeight:1,color:"var(--qvl-petrol)"}}>
-          {won}<span style={{color:"var(--qvl-orange)"}}>:</span>{lost}</span>
+        <span style={{fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",lineHeight:1,color:"var(--text-heading)"}}>
+          {won}<span style={{color:"var(--text-separator)"}}>:</span>{lost}</span>
         <Badge tone="orange">läuft</Badge>
       </div>
     </Card>

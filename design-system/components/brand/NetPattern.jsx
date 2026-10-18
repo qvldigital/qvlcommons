@@ -9,6 +9,7 @@ const dsBase=()=>{
 };
 const asset=(p)=>dsBase()+p.replace(/^\//,"");
 
+// Brand artwork: the fills are named CI hues and stay the same in light and night (like the HINTERGRUND_* PNGs), so they use the --qvl-* palette directly.
 const BASES={
   petrol:"var(--qvl-petrol)",
   orange:"var(--qvl-orange)",

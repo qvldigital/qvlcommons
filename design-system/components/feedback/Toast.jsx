@@ -5,7 +5,7 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
   :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
 
 export function Toast({tone="petrol",message,action,onAction,onClose,closeLabel="Schließen",style,...rest}){
-  const tones={petrol:{bg:"var(--qvl-petrol)",fg:"var(--qvl-white)"},orange:{bg:"var(--qvl-orange)",fg:"var(--text-on-accent)"},pink:{bg:"var(--button-pink-bg)",fg:"var(--button-pink-fg)"}};
+  const tones={petrol:{bg:"var(--surface-inverse)",fg:"var(--text-on-inverse)"},orange:{bg:"var(--surface-accent)",fg:"var(--text-on-accent)"},pink:{bg:"var(--button-pink-bg)",fg:"var(--button-pink-fg)"}};
   const t=tones[tone]||tones.petrol;
   return <div role="status" style={{filter:"var(--drop-block-sm-petrol)",maxWidth:420,...style}} {...rest}>
     <div style={{display:"flex",alignItems:"center",gap:"var(--space-3)",background:t.bg,color:t.fg,padding:"12px 14px",...chamfer(8,2)}}>

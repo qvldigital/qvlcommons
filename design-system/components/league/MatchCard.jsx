@@ -28,7 +28,7 @@ export function MatchCard({date,time,level,region,home,away,homeSets,awaySets,st
         {side(home,homeWon)}
         <div style={{flex:"none",display:"flex",alignItems:"center",gap:8,fontFamily:"var(--font-display)",
           fontSize:"var(--text-h1)",lineHeight:1,color:"var(--text-heading)"}}>
-          <span>{played?homeSets:"–"}</span><span style={{color:"var(--qvl-orange)"}}>:</span><span>{played?awaySets:"–"}</span>
+          <span>{played?homeSets:"–"}</span><span style={{color:"var(--text-separator)"}}>:</span><span>{played?awaySets:"–"}</span>
         </div>
         {side(away,awayWon)}
       </div>

@@ -7,20 +7,20 @@ export function Card({tone="default",border=true,block=false,blockColor="petrol"
   const tones={
     default:{background:"var(--surface-card)",color:"var(--text-body-color)",edge:"var(--border-subtle)"},
     brand:{background:"var(--surface-inverse)",color:"var(--text-on-inverse)",edge:"var(--border-default)"},
-    soft:{background:"var(--surface-brand-soft)",color:"var(--text-body-color)",edge:"var(--qvl-petrol-mid)"},
+    soft:{background:"var(--surface-brand-soft)",color:"var(--text-body-color)",edge:"var(--border-brand-soft)"},
     accent:{background:"var(--surface-accent-soft)",color:"var(--text-body-color)",edge:"var(--border-accent)"},
     pink:{background:"var(--surface-accent2-soft)",color:"var(--text-body-color)",edge:"var(--border-accent-2)"},
     // gradient tones: feature card only, one per view. Edge = same gradient so the 2 px rim disappears.
-    tiefe:{background:"var(--qvl-gradient-tiefe)",color:"var(--qvl-white)",edge:"var(--qvl-gradient-tiefe)"},
-    pride:{background:"var(--qvl-gradient-pride)",color:"var(--qvl-white)",edge:"var(--qvl-gradient-pride)"},
-    sunset:{background:"var(--qvl-gradient-sunset)",color:"var(--qvl-ink)",edge:"var(--qvl-gradient-sunset)"},
-    flutlicht:{background:"var(--qvl-gradient-flutlicht)",color:"var(--qvl-ink)",edge:"var(--qvl-gradient-flutlicht)"}
+    tiefe:{background:"var(--qvl-gradient-tiefe)",color:"var(--text-on-inverse)",edge:"var(--qvl-gradient-tiefe)"},
+    pride:{background:"var(--qvl-gradient-pride)",color:"var(--text-on-inverse)",edge:"var(--qvl-gradient-pride)"},
+    sunset:{background:"var(--qvl-gradient-sunset)",color:"var(--text-on-accent)",edge:"var(--qvl-gradient-sunset)"},
+    flutlicht:{background:"var(--qvl-gradient-flutlicht)",color:"var(--text-on-accent)",edge:"var(--qvl-gradient-flutlicht)"}
   };
   const t=tones[tone]||tones.default;
   const inner={background:t.background,color:t.color,padding,...chamfer(border?ch-2:ch,4)};
   const edge={background:border?t.edge:"transparent",padding:border?2:0,...chamfer(ch,4)};
   // clip-path clips box-shadow, so the block shadow is a drop-shadow filter on an unclipped wrapper.
-  return <div style={{filter:block?`drop-shadow(6px 6px 0 var(--qvl-${blockColor}))`:undefined,...style}} {...rest}>
+  return <div style={{filter:block?`var(--drop-block-${blockColor})`:undefined,...style}} {...rest}>
     <div style={edge}><div style={inner}>
       {header?<div style={{marginBottom:"var(--space-4)"}}>{header}</div>:null}
       {children}

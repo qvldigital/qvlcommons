@@ -9,11 +9,11 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
 
 export function SiteHeader({items=[],active,onNavigate,language="DE",languages=["DE","EN","FR","PL","CS","DA","SV","PT","ES","IT","NL"],onLanguage,cta,compact=false,languageLabel="Sprache",menuLabel="Menü",style,...rest}){
   const [open,setOpen]=React.useState(false);
-  return <header style={{background:"var(--qvl-petrol)",color:"var(--qvl-white)",...style}} {...rest}>
+  return <header style={{background:"var(--surface-inverse)",color:"var(--text-on-inverse)",...style}} {...rest}>
     <div style={{maxWidth:"var(--container-max)",margin:"0 auto",padding:compact?"10px var(--gutter-mobile)":"14px var(--gutter-desktop)",
       display:"flex",alignItems:"center",gap:"var(--space-6)"}}>
       <a href="#" onClick={(e)=>{e.preventDefault();onNavigate&&onNavigate(items[0]&&(items[0].value||items[0]))}}
-        style={{display:"flex",alignItems:"center",textDecoration:"none",flex:"none",background:"var(--qvl-white)",
+        style={{display:"flex",alignItems:"center",textDecoration:"none",flex:"none",background:"var(--surface-logo-plate)",
         padding:"6px 10px",...chamfer(8,2)}}>
         <Logo variant="long-petrol" height={compact?24:30}/>
       </a>
@@ -25,32 +25,32 @@ export function SiteHeader({items=[],active,onNavigate,language="DE",languages=[
           return <a key={v} href="#" onClick={(e)=>{e.preventDefault();onNavigate&&onNavigate(v)}}
             style={{textDecoration:"none",padding:"0 14px",height:40,display:"inline-flex",alignItems:"center",
               fontFamily:"var(--font-display)",fontSize:"var(--text-body)",letterSpacing:"var(--tracking-display)",
-              textTransform:"uppercase",color:on?"var(--qvl-petrol)":"var(--qvl-white)",
-              background:on?"var(--qvl-white)":"transparent",borderBottom:on?"none":"3px solid transparent",
+              textTransform:"uppercase",color:on?"var(--surface-inverse)":"var(--text-on-inverse)",
+              background:on?"var(--text-on-inverse)":"transparent",borderBottom:on?"none":"3px solid transparent",
               ...chamfer(6,2)}}>{l}</a>;
         })}
       </nav>
       <div style={{display:"flex",alignItems:"center",gap:"var(--space-2)",marginLeft:compact?"auto":0}}>
-        <label style={{display:"flex",alignItems:"center",gap:6,color:"var(--qvl-white)"}}>
+        <label style={{display:"flex",alignItems:"center",gap:6,color:"var(--text-on-inverse)"}}>
           <Icon name="globe" size={18}/>
           <span style={{position:"absolute",width:1,height:1,overflow:"hidden",clip:"rect(0 0 0 0)"}}>{languageLabel}</span>
           <select value={language} onChange={(e)=>onLanguage&&onLanguage(e.target.value)}
-            style={{background:"transparent",color:"var(--qvl-white)",border:"none",font:"inherit",
+            style={{background:"transparent",color:"var(--text-on-inverse)",border:"none",font:"inherit",
               fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",cursor:"pointer",padding:"4px 2px"}}>
-            {languages.map(l=><option key={l} value={l} style={{color:"var(--qvl-ink)"}}>{l}</option>)}
+            {languages.map(l=><option key={l} value={l} style={{color:"var(--text-body-color)"}}>{l}</option>)}
           </select>
         </label>
         {cta&&!compact?<Button variant="accent" size="sm" href="#">{cta}</Button>:null}
-        {compact?<IconButton label={menuLabel} onClick={()=>setOpen(!open)} style={{color:"var(--qvl-white)"}}>
+        {compact?<IconButton label={menuLabel} onClick={()=>setOpen(!open)} style={{color:"var(--text-on-inverse)"}}>
           <Icon name={open?"x":"menu"} size={22}/></IconButton>:null}
       </div>
     </div>
-    {compact&&open?<nav style={{display:"flex",flexDirection:"column",borderTop:"2px solid var(--qvl-orange)"}}>
+    {compact&&open?<nav style={{display:"flex",flexDirection:"column",borderTop:"2px solid var(--border-accent)"}}>
       {items.map(it=>{const v=typeof it==="string"?it:it.value;const l=typeof it==="string"?it:it.label;
         return <a key={v} href="#" onClick={(e)=>{e.preventDefault();setOpen(false);onNavigate&&onNavigate(v)}}
-          style={{padding:"14px var(--gutter-mobile)",color:"var(--qvl-white)",textDecoration:"none",
+          style={{padding:"14px var(--gutter-mobile)",color:"var(--text-on-inverse)",textDecoration:"none",
             fontFamily:"var(--font-display)",textTransform:"uppercase",letterSpacing:"var(--tracking-display)",
-            borderBottom:"1px solid color-mix(in srgb,var(--qvl-white) 22%,transparent)"}}>{l}</a>})}
+            borderBottom:"1px solid color-mix(in srgb,var(--text-on-inverse) 22%,transparent)"}}>{l}</a>})}
     </nav>:null}
   </header>;
 }

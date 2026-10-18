@@ -790,7 +790,7 @@ function NetHero({
   ...rest
 }) {
   const dark = background.startsWith("petrol");
-  const ink = inkOnDark !== undefined ? inkOnDark ? "var(--qvl-white)" : "var(--text-heading)" : dark ? "var(--qvl-white)" : "var(--text-heading)";
+  const ink = inkOnDark !== undefined ? inkOnDark ? "var(--text-on-inverse)" : "var(--text-heading)" : dark ? "var(--text-on-inverse)" : "var(--text-heading)";
   return /*#__PURE__*/React.createElement("section", _extends({
     style: {
       position: "relative",
@@ -816,7 +816,7 @@ function NetHero({
     }
   }, eyebrow ? /*#__PURE__*/React.createElement("span", {
     style: {
-      background: "var(--qvl-orange)",
+      background: "var(--surface-accent)",
       color: "var(--text-on-accent)",
       padding: "4px 12px",
       fontFamily: "var(--font-display)",
@@ -842,7 +842,7 @@ function NetHero({
       maxWidth: "48ch",
       fontSize: "var(--text-lead)",
       lineHeight: "var(--leading-tight)",
-      color: dark ? "var(--qvl-white)" : "var(--text-body-color)",
+      color: dark ? "var(--text-on-inverse)" : "var(--text-body-color)",
       background: dark ? "transparent" : "color-mix(in srgb,var(--surface-card) 82%,transparent)",
       padding: dark ? 0 : "8px 10px"
     }
@@ -867,6 +867,7 @@ const dsBase = () => {
   return "/";
 };
 const asset = p => dsBase() + p.replace(/^\//, "");
+// Brand artwork: the fills are named CI hues and stay the same in light and night (like the HINTERGRUND_* PNGs), so they use the --qvl-* palette directly.
 const BASES = {
   petrol: "var(--qvl-petrol)",
   orange: "var(--qvl-orange)",
@@ -1013,18 +1014,18 @@ const BORDERED = {
     width: 2
   },
   yellow: {
-    border: "var(--qvl-yellow)",
+    border: "var(--border-highlight)",
     fg: "var(--text-heading)",
     width: 3
   }
 };
 const FILLED = {
   petrol: {
-    background: "var(--qvl-petrol)",
-    color: "var(--qvl-white)"
+    background: "var(--surface-inverse)",
+    color: "var(--text-on-inverse)"
   },
   orange: {
-    background: "var(--qvl-orange)",
+    background: "var(--surface-accent)",
     color: "var(--text-on-accent)"
   },
   soft: {
@@ -1036,16 +1037,16 @@ const FILLED = {
     color: "var(--button-pink-fg)"
   },
   "pink-soft": {
-    background: "var(--qvl-pink-pale)",
-    color: "var(--qvl-ink)"
+    background: "var(--surface-accent2-soft)",
+    color: "var(--text-body-color)"
   },
   grey: {
-    background: "var(--qvl-grey)",
-    color: "var(--qvl-ink)"
+    background: "var(--surface-neutral)",
+    color: "var(--text-body-color)"
   },
   highlight: {
-    background: "var(--qvl-yellow)",
-    color: "var(--qvl-ink)"
+    background: "var(--highlight-bg)",
+    color: "var(--highlight-fg)"
   }
 };
 function Badge({
@@ -1314,7 +1315,7 @@ function Card({
     soft: {
       background: "var(--surface-brand-soft)",
       color: "var(--text-body-color)",
-      edge: "var(--qvl-petrol-mid)"
+      edge: "var(--border-brand-soft)"
     },
     accent: {
       background: "var(--surface-accent-soft)",
@@ -1329,22 +1330,22 @@ function Card({
     // gradient tones: feature card only, one per view. Edge = same gradient so the 2 px rim disappears.
     tiefe: {
       background: "var(--qvl-gradient-tiefe)",
-      color: "var(--qvl-white)",
+      color: "var(--text-on-inverse)",
       edge: "var(--qvl-gradient-tiefe)"
     },
     pride: {
       background: "var(--qvl-gradient-pride)",
-      color: "var(--qvl-white)",
+      color: "var(--text-on-inverse)",
       edge: "var(--qvl-gradient-pride)"
     },
     sunset: {
       background: "var(--qvl-gradient-sunset)",
-      color: "var(--qvl-ink)",
+      color: "var(--text-on-accent)",
       edge: "var(--qvl-gradient-sunset)"
     },
     flutlicht: {
       background: "var(--qvl-gradient-flutlicht)",
-      color: "var(--qvl-ink)",
+      color: "var(--text-on-accent)",
       edge: "var(--qvl-gradient-flutlicht)"
     }
   };
@@ -1363,7 +1364,7 @@ function Card({
   // clip-path clips box-shadow, so the block shadow is a drop-shadow filter on an unclipped wrapper.
   return /*#__PURE__*/React.createElement("div", _extends({
     style: {
-      filter: block ? `drop-shadow(6px 6px 0 var(--qvl-${blockColor}))` : undefined,
+      filter: block ? `var(--drop-block-${blockColor})` : undefined,
       ...style
     }
   }, rest), /*#__PURE__*/React.createElement("div", {
@@ -1723,8 +1724,8 @@ function Tag({
         gap: "var(--space-2)",
         height: 32,
         padding: "0 10px",
-        background: "var(--qvl-petrol)",
-        color: "var(--qvl-white)",
+        background: "var(--surface-inverse)",
+        color: "var(--text-on-inverse)",
         fontFamily: "var(--font-body)",
         fontWeight: "var(--weight-emphasis)",
         fontSize: "var(--text-small)",
@@ -1826,19 +1827,19 @@ const TONES = {
   warn: {
     bg: "var(--status-warn-bg)",
     fg: "var(--status-warn-fg)",
-    edge: "var(--qvl-orange)",
+    edge: "var(--border-accent)",
     icon: "triangle-alert"
   },
   danger: {
     bg: "var(--status-danger-bg)",
     fg: "var(--status-danger-fg)",
-    edge: "var(--qvl-orange)",
+    edge: "var(--border-accent)",
     icon: "octagon-alert"
   },
   safe: {
     bg: "var(--surface-card)",
     fg: "var(--text-heading)",
-    edge: "var(--qvl-yellow)",
+    edge: "var(--border-highlight)",
     icon: "shield-check"
   }
 };
@@ -2134,11 +2135,11 @@ function Toast({
 }) {
   const tones = {
     petrol: {
-      bg: "var(--qvl-petrol)",
-      fg: "var(--qvl-white)"
+      bg: "var(--surface-inverse)",
+      fg: "var(--text-on-inverse)"
     },
     orange: {
-      bg: "var(--qvl-orange)",
+      bg: "var(--surface-accent)",
       fg: "var(--text-on-accent)"
     },
     pink: {
@@ -2271,8 +2272,8 @@ function Tooltip({
       left: "50%",
       transform: "translateX(-50%)",
       ...pos,
-      background: "var(--qvl-petrol)",
-      color: "var(--qvl-white)",
+      background: "var(--surface-inverse)",
+      color: "var(--text-on-inverse)",
       padding: "6px 10px",
       width: "max-content",
       maxWidth: "min(16rem, calc(100vw - 32px))",
@@ -2325,7 +2326,7 @@ function Checkbox({
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--focus-ring)" : on ? "var(--qvl-petrol)" : "var(--border-default)",
+      background: focus ? "var(--focus-ring)" : on ? "var(--control-on)" : "var(--border-default)",
       padding: focus ? 3 : 2,
       ...chamfer(5, 4),
       transition: "background var(--duration-fast) var(--ease-standard)"
@@ -2337,8 +2338,8 @@ function Checkbox({
       justifyContent: "center",
       width: 20,
       height: 20,
-      background: on ? "var(--qvl-petrol)" : "var(--surface-card)",
-      color: "var(--qvl-white)",
+      background: on ? "var(--control-on)" : "var(--surface-card)",
+      color: "var(--text-on-inverse)",
       fontFamily: "var(--font-body)",
       fontWeight: 600,
       fontSize: 14,
@@ -2419,7 +2420,7 @@ function Field({
       marginTop: "var(--space-2)",
       fontSize: "var(--text-small)",
       fontWeight: "var(--weight-emphasis)",
-      color: "var(--qvl-orange-press)"
+      color: "var(--text-danger)"
     }
   }, error) : hint ? /*#__PURE__*/React.createElement("span", {
     id: msgId,
@@ -2452,7 +2453,7 @@ function Input({
     "aria-describedby": label && (error || hint) ? msgId : undefined,
     "aria-required": required ? true : undefined
   };
-  const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-default)";
+  const edge = error ? "var(--border-accent)" : focus ? "var(--focus-ring)" : "var(--border-default)";
   const shell = {
     background: edge,
     padding: error || focus ? 3 : 2,
@@ -2556,7 +2557,7 @@ function Radio({
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--focus-ring)" : on ? "var(--qvl-petrol)" : "var(--border-default)",
+      background: focus ? "var(--focus-ring)" : on ? "var(--control-on)" : "var(--border-default)",
       padding: focus ? 3 : 2,
       ...chamfer(5, 4)
     }
@@ -2574,7 +2575,7 @@ function Radio({
     style: {
       width: 10,
       height: 10,
-      background: on ? "var(--qvl-orange)" : "transparent",
+      background: on ? "var(--surface-accent)" : "transparent",
       ...chamfer(3, 4)
     }
   }))), /*#__PURE__*/React.createElement("input", _extends({
@@ -2681,7 +2682,7 @@ function Field({
       marginTop: "var(--space-2)",
       fontSize: "var(--text-small)",
       fontWeight: "var(--weight-emphasis)",
-      color: "var(--qvl-orange-press)"
+      color: "var(--text-danger)"
     }
   }, error) : hint ? /*#__PURE__*/React.createElement("span", {
     id: msgId,
@@ -2714,7 +2715,7 @@ function Select({
     "aria-describedby": label && (error || hint) ? msgId : undefined,
     "aria-required": required ? true : undefined
   };
-  const edge = error ? "var(--qvl-orange)" : focus ? "var(--focus-ring)" : "var(--border-default)";
+  const edge = error ? "var(--border-accent)" : focus ? "var(--focus-ring)" : "var(--border-default)";
   const control = /*#__PURE__*/React.createElement("div", {
     style: {
       background: edge,
@@ -2832,7 +2833,7 @@ function Switch({
       width: 52,
       height: 28,
       padding: 3,
-      background: checked ? "var(--qvl-petrol)" : "var(--switch-off)",
+      background: checked ? "var(--switch-on)" : "var(--switch-off)",
       transition: "background var(--duration-base) var(--ease-standard)",
       ...chamfer(5, 2)
     }
@@ -2841,7 +2842,7 @@ function Switch({
       display: "block",
       width: 22,
       height: 22,
-      background: checked ? "var(--qvl-orange)" : "var(--qvl-white)",
+      background: checked ? "var(--surface-accent)" : "var(--switch-thumb)",
       transform: checked ? "translateX(24px)" : "translateX(0)",
       transition: "transform var(--duration-base) var(--ease-standard),background var(--duration-base) var(--ease-standard)",
       ...chamfer(4, 2)
@@ -2904,8 +2905,8 @@ function LevelBadge({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      background: "var(--qvl-petrol)",
-      color: "var(--qvl-white)",
+      background: "var(--surface-inverse)",
+      color: "var(--text-on-inverse)",
       fontFamily: "var(--font-display)",
       fontSize: s.font,
       lineHeight: 1,
@@ -3031,7 +3032,7 @@ function MatchCard({
     }
   }, /*#__PURE__*/React.createElement("span", null, played ? homeSets : "–"), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: "var(--qvl-orange)"
+      color: "var(--text-separator)"
     }
   }, ":"), /*#__PURE__*/React.createElement("span", null, played ? awaySets : "–")), side(away, awayWon)), sets.length ? /*#__PURE__*/React.createElement("div", {
     style: {
@@ -3187,8 +3188,8 @@ function SetScoreInput({
     style: {
       minWidth: 72,
       padding: "6px 4px",
-      background: "var(--qvl-petrol)",
-      color: "var(--qvl-white)",
+      background: "var(--surface-inverse)",
+      color: "var(--text-on-inverse)",
       fontFamily: "var(--font-display)",
       fontSize: "var(--text-display-2)",
       lineHeight: 1,
@@ -3226,7 +3227,7 @@ function SetScoreInput({
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
-      background: "var(--qvl-orange)",
+      background: "var(--surface-accent)",
       color: "var(--text-on-accent)",
       padding: "2px 10px",
       fontFamily: "var(--font-display)",
@@ -3324,8 +3325,8 @@ function StandingsTable({
       captionSide: "top",
       textAlign: "left",
       padding: "10px 12px",
-      background: "var(--qvl-petrol)",
-      color: "var(--qvl-white)",
+      background: "var(--table-head-bg)",
+      color: "var(--table-head-fg)",
       fontFamily: "var(--font-display)",
       fontSize: "var(--text-body)",
       letterSpacing: "var(--tracking-display)",
@@ -3350,7 +3351,7 @@ function StandingsTable({
     }
   }, c.label)))), /*#__PURE__*/React.createElement("tbody", null, rows.map((r, i) => {
     const me = highlightTeam && r.team === highlightTeam;
-    const zone = i < promotion ? "var(--qvl-petrol)" : i >= rows.length - relegation ? "var(--qvl-orange)" : "transparent";
+    const zone = i < promotion ? "var(--border-default)" : i >= rows.length - relegation ? "var(--border-accent)" : "transparent";
     return /*#__PURE__*/React.createElement("tr", {
       key: r.team + i,
       style: {
@@ -3390,8 +3391,8 @@ function BottomNav({
   return /*#__PURE__*/React.createElement("nav", _extends({
     style: {
       display: "flex",
-      background: "var(--qvl-petrol)",
-      borderTop: "3px solid var(--qvl-orange)",
+      background: "var(--surface-inverse)",
+      borderTop: "3px solid var(--border-accent)",
       ...style
     }
   }, rest), items.map(it => {
@@ -3402,8 +3403,8 @@ function BottomNav({
       style: {
         flex: 1,
         border: "none",
-        background: on ? "color-mix(in srgb,var(--qvl-petrol) 78%,#000)" : "transparent",
-        color: on ? "var(--text-on-inverse-accent)" : "var(--qvl-white)",
+        background: on ? "color-mix(in srgb,var(--surface-inverse) 78%,#000)" : "transparent",
+        color: on ? "var(--text-on-inverse-accent)" : "var(--text-on-inverse)",
         minHeight: "var(--tap-min)",
         padding: "8px 4px",
         display: "flex",
@@ -3473,7 +3474,7 @@ function Breadcrumb({
     }, label), last ? null : /*#__PURE__*/React.createElement("span", {
       "aria-hidden": "true",
       style: {
-        color: "var(--qvl-orange)",
+        color: "var(--text-separator)",
         fontWeight: 600
       }
     }, "/"));
@@ -3493,8 +3494,8 @@ function SiteFooter({
 }) {
   return /*#__PURE__*/React.createElement("footer", _extends({
     style: {
-      background: "var(--qvl-petrol)",
-      color: "var(--qvl-white)",
+      background: "var(--surface-inverse)",
+      color: "var(--text-on-inverse)",
       padding: "var(--space-12) var(--gutter-desktop) var(--space-8)",
       ...style
     }
@@ -3508,7 +3509,7 @@ function SiteFooter({
     }
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
-      background: "var(--qvl-white)",
+      background: "var(--surface-logo-plate)",
       padding: "8px 12px",
       display: "inline-block",
       clipPath: "polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)"
@@ -3548,10 +3549,10 @@ function SiteFooter({
   }, /*#__PURE__*/React.createElement("a", {
     href: "#",
     style: {
-      color: "var(--qvl-white)",
+      color: "var(--text-on-inverse)",
       fontSize: "var(--text-small)",
       textDecoration: "none",
-      borderBottom: "1px solid color-mix(in srgb,var(--qvl-white) 40%,transparent)"
+      borderBottom: "1px solid color-mix(in srgb,var(--text-on-inverse) 40%,transparent)"
     }
   }, l))))))));
 }
@@ -3581,8 +3582,8 @@ function SiteHeader({
   const [open, setOpen] = React.useState(false);
   return /*#__PURE__*/React.createElement("header", _extends({
     style: {
-      background: "var(--qvl-petrol)",
-      color: "var(--qvl-white)",
+      background: "var(--surface-inverse)",
+      color: "var(--text-on-inverse)",
       ...style
     }
   }, rest), /*#__PURE__*/React.createElement("div", {
@@ -3605,7 +3606,7 @@ function SiteHeader({
       alignItems: "center",
       textDecoration: "none",
       flex: "none",
-      background: "var(--qvl-white)",
+      background: "var(--surface-logo-plate)",
       padding: "6px 10px",
       ...chamfer(8, 2)
     }
@@ -3640,8 +3641,8 @@ function SiteHeader({
         fontSize: "var(--text-body)",
         letterSpacing: "var(--tracking-display)",
         textTransform: "uppercase",
-        color: on ? "var(--qvl-petrol)" : "var(--qvl-white)",
-        background: on ? "var(--qvl-white)" : "transparent",
+        color: on ? "var(--surface-inverse)" : "var(--text-on-inverse)",
+        background: on ? "var(--text-on-inverse)" : "transparent",
         borderBottom: on ? "none" : "3px solid transparent",
         ...chamfer(6, 2)
       }
@@ -3658,7 +3659,7 @@ function SiteHeader({
       display: "flex",
       alignItems: "center",
       gap: 6,
-      color: "var(--qvl-white)"
+      color: "var(--text-on-inverse)"
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
     name: "globe",
@@ -3676,7 +3677,7 @@ function SiteHeader({
     onChange: e => onLanguage && onLanguage(e.target.value),
     style: {
       background: "transparent",
-      color: "var(--qvl-white)",
+      color: "var(--text-on-inverse)",
       border: "none",
       font: "inherit",
       fontFamily: "var(--font-display)",
@@ -3688,7 +3689,7 @@ function SiteHeader({
     key: l,
     value: l,
     style: {
-      color: "var(--qvl-ink)"
+      color: "var(--text-body-color)"
     }
   }, l)))), cta && !compact ? /*#__PURE__*/React.createElement(__ds_scope.Button, {
     variant: "accent",
@@ -3698,7 +3699,7 @@ function SiteHeader({
     label: menuLabel,
     onClick: () => setOpen(!open),
     style: {
-      color: "var(--qvl-white)"
+      color: "var(--text-on-inverse)"
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
     name: open ? "x" : "menu",
@@ -3707,7 +3708,7 @@ function SiteHeader({
     style: {
       display: "flex",
       flexDirection: "column",
-      borderTop: "2px solid var(--qvl-orange)"
+      borderTop: "2px solid var(--border-accent)"
     }
   }, items.map(it => {
     const v = typeof it === "string" ? it : it.value;
@@ -3722,12 +3723,12 @@ function SiteHeader({
       },
       style: {
         padding: "14px var(--gutter-mobile)",
-        color: "var(--qvl-white)",
+        color: "var(--text-on-inverse)",
         textDecoration: "none",
         fontFamily: "var(--font-display)",
         textTransform: "uppercase",
         letterSpacing: "var(--tracking-display)",
-        borderBottom: "1px solid color-mix(in srgb,var(--qvl-white) 22%,transparent)"
+        borderBottom: "1px solid color-mix(in srgb,var(--text-on-inverse) 22%,transparent)"
       }
     }, l);
   })) : null);
@@ -3806,8 +3807,8 @@ function Tabs({
         minWidth: 0,
         border: "none",
         cursor: "pointer",
-        background: active ? "var(--qvl-petrol)" : "var(--qvl-ghost-bg, transparent)",
-        color: active ? "var(--qvl-white)" : "var(--text-heading)",
+        background: active ? "var(--surface-inverse)" : "var(--qvl-ghost-bg, transparent)",
+        color: active ? "var(--text-on-inverse)" : "var(--text-heading)",
         padding: "6px 16px",
         minHeight: 44,
         fontFamily: "var(--font-display)",
@@ -4663,7 +4664,7 @@ try { (() => {
       }
     }, "Mein Team"), /*#__PURE__*/React.createElement("h2", {
       style: {
-        color: "var(--qvl-white)",
+        color: "var(--text-on-inverse)",
         margin: "var(--space-1) 0 var(--space-3)",
         fontSize: "var(--text-h1)"
       }
@@ -4710,7 +4711,7 @@ try { (() => {
       style: {
         fontFamily: "var(--font-display)",
         fontSize: "var(--text-display-2)",
-        color: "var(--qvl-petrol)",
+        color: "var(--text-heading)",
         lineHeight: 1
       }
     }, "11"), /*#__PURE__*/React.createElement("div", {
@@ -4724,7 +4725,7 @@ try { (() => {
       style: {
         fontFamily: "var(--font-display)",
         fontSize: "var(--text-display-2)",
-        color: "var(--qvl-petrol)",
+        color: "var(--text-heading)",
         lineHeight: 1
       }
     }, "24"), /*#__PURE__*/React.createElement("div", {
@@ -5097,7 +5098,7 @@ try { (() => {
         fontSize: "var(--text-h3)",
         textTransform: "uppercase",
         letterSpacing: "var(--tracking-display)",
-        color: "var(--qvl-petrol)"
+        color: "var(--text-heading)"
       }
     }, "Bumpers vs. Hurricanes"), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -5120,11 +5121,11 @@ try { (() => {
         fontFamily: "var(--font-display)",
         fontSize: "var(--text-display-2)",
         lineHeight: 1,
-        color: "var(--qvl-petrol)"
+        color: "var(--text-heading)"
       }
     }, won, /*#__PURE__*/React.createElement("span", {
       style: {
-        color: "var(--qvl-orange)"
+        color: "var(--text-separator)"
       }
     }, ":"), lost), /*#__PURE__*/React.createElement(Badge, {
       tone: "orange"
@@ -5408,7 +5409,7 @@ try { (() => {
       }
     }, /*#__PURE__*/React.createElement("span", null, "Offen"), /*#__PURE__*/React.createElement("strong", {
       style: {
-        color: "var(--qvl-orange)"
+        color: "var(--text-heading)"
       }
     }, "3"))), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -5604,7 +5605,7 @@ try { (() => {
       }
     }, won, /*#__PURE__*/React.createElement("span", {
       style: {
-        color: "var(--qvl-orange)"
+        color: "var(--text-separator)"
       }
     }, ":"), lost)), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -5843,7 +5844,7 @@ try { (() => {
     }, /*#__PURE__*/React.createElement("h3", {
       style: {
         margin: "0 0 var(--space-2)",
-        color: "var(--qvl-white)"
+        color: "var(--text-on-inverse)"
       }
     }, "F\xFCnf Regionen"), /*#__PURE__*/React.createElement("p", {
       style: {
@@ -5966,8 +5967,8 @@ try { (() => {
       }]
     }))), /*#__PURE__*/React.createElement("section", {
       style: {
-        background: "var(--qvl-petrol)",
-        color: "var(--qvl-white)",
+        background: "var(--surface-inverse)",
+        color: "var(--text-on-inverse)",
         padding: "var(--space-16) var(--gutter-desktop)"
       }
     }, /*#__PURE__*/React.createElement("div", {
@@ -5984,7 +5985,7 @@ try { (() => {
       }
     }), /*#__PURE__*/React.createElement("h2", {
       style: {
-        color: "var(--qvl-white)",
+        color: "var(--text-on-inverse)",
         fontSize: "var(--text-display-2)",
         margin: "0 0 var(--space-3)"
       }

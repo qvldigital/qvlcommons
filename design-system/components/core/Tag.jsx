@@ -12,7 +12,7 @@ export function Tag({children,selected=false,onRemove,onClick,removeLabel="Entfe
   if(selected){
     return <span onClick={onClick} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}
       style={{display:"inline-flex",alignItems:"center",gap:"var(--space-2)",height:32,padding:"0 10px",
-        background:"var(--qvl-petrol)",color:"var(--qvl-white)",fontFamily:"var(--font-body)",
+        background:"var(--surface-inverse)",color:"var(--text-on-inverse)",fontFamily:"var(--font-body)",
         fontWeight:"var(--weight-emphasis)",fontSize:"var(--text-small)",cursor:interactive?"pointer":"default",
         ...chamfer(6,2),...style}} {...rest}>{children}{remove}</span>;
   }

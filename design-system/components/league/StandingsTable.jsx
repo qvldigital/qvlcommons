@@ -18,8 +18,8 @@ export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promo
   return <div style={{background:"var(--border-default)",padding:3,minWidth:0,...chamfer(10,4),...style}} {...rest}>
     <div style={{background:"var(--surface-card)",overflowX:"auto",minWidth:0,...chamfer(8,4)}}>
       <table style={{width:"100%",minWidth:min,borderCollapse:"collapse",fontSize:"var(--text-small)"}}>
-        {caption?<caption style={{captionSide:"top",textAlign:"left",padding:"10px 12px",background:"var(--qvl-petrol)",
-          color:"var(--qvl-white)",fontFamily:"var(--font-display)",fontSize:"var(--text-body)",
+        {caption?<caption style={{captionSide:"top",textAlign:"left",padding:"10px 12px",background:"var(--table-head-bg)",
+          color:"var(--table-head-fg)",fontFamily:"var(--font-display)",fontSize:"var(--text-body)",
           letterSpacing:"var(--tracking-display)",textTransform:"uppercase"}}>{caption}</caption>:null}
         <thead>
           <tr style={{background:"var(--table-head-bg)"}}>
@@ -31,7 +31,7 @@ export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promo
         <tbody>
           {rows.map((r,i)=>{
             const me=highlightTeam&&r.team===highlightTeam;
-            const zone=i<promotion?"var(--qvl-petrol)":i>=rows.length-relegation?"var(--qvl-orange)":"transparent";
+            const zone=i<promotion?"var(--border-default)":i>=rows.length-relegation?"var(--border-accent)":"transparent";
             return <tr key={r.team+i} style={{background:me?"var(--surface-accent-soft)":(i%2?"var(--table-row-bg-alt)":"var(--table-row-bg)"),
               borderLeft:`4px solid ${zone}`}}>
               {columns.map(c=><td key={c.key} style={{textAlign:c.align||"left",padding:"10px 10px",

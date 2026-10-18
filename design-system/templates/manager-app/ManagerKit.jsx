@@ -38,7 +38,7 @@ function Dashboard({go}){
         <div>
           <div style={{fontFamily:"var(--font-display)",fontSize:"var(--text-eyebrow)",letterSpacing:"var(--tracking-eyebrow)",
             textTransform:"uppercase",opacity:.85}}>Mein Team</div>
-          <h2 style={{color:"var(--qvl-white)",margin:"var(--space-1) 0 var(--space-3)",fontSize:"var(--text-h1)"}}>Berlin Bumpers</h2>
+          <h2 style={{color:"var(--text-on-inverse)",margin:"var(--space-1) 0 var(--space-3)",fontSize:"var(--text-h1)"}}>Berlin Bumpers</h2>
           <LevelBadge level="B" region="Nord"/>
         </div>
         <Badge tone="orange">Platz 2</Badge>
@@ -59,10 +59,10 @@ function Dashboard({go}){
 
     <div style={{display:"grid",gridTemplateColumns:"minmax(0,1fr) minmax(0,1fr)",gap:"var(--space-3)"}}>
       <Card padding="var(--space-4)"><div style={{fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",
-        color:"var(--qvl-petrol)",lineHeight:1}}>11</div>
+        color:"var(--text-heading)",lineHeight:1}}>11</div>
         <div style={{fontSize:"var(--text-small)",color:"var(--text-muted)"}}>Spieler*innen gemeldet</div></Card>
       <Card padding="var(--space-4)"><div style={{fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",
-        color:"var(--qvl-petrol)",lineHeight:1}}>24</div>
+        color:"var(--text-heading)",lineHeight:1}}>24</div>
         <div style={{fontSize:"var(--text-small)",color:"var(--text-muted)"}}>Punkte</div></Card>
     </div>
 
@@ -138,14 +138,14 @@ function Spielbericht(){
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:"var(--space-3)"}}>
         <div>
           <div style={{fontFamily:"var(--font-display)",fontSize:"var(--text-h3)",textTransform:"uppercase",
-            letterSpacing:"var(--tracking-display)",color:"var(--qvl-petrol)"}}>Bumpers vs. Hurricanes</div>
+            letterSpacing:"var(--tracking-display)",color:"var(--text-heading)"}}>Bumpers vs. Hurricanes</div>
           <div style={{fontSize:"var(--text-small)",color:"var(--text-muted)"}}>Sa 14.11. · 14:00</div>
         </div>
         <LevelBadge level="B" region="Nord" size="sm"/>
       </div>
       <div style={{display:"flex",alignItems:"center",gap:"var(--space-3)",marginTop:"var(--space-4)"}}>
-        <span style={{fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",lineHeight:1,color:"var(--qvl-petrol)"}}>
-          {won}<span style={{color:"var(--qvl-orange)"}}>:</span>{lost}</span>
+        <span style={{fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",lineHeight:1,color:"var(--text-heading)"}}>
+          {won}<span style={{color:"var(--text-separator)"}}>:</span>{lost}</span>
         <Badge tone="orange">läuft</Badge>
       </div>
     </Card>

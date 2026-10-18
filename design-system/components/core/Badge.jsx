@@ -5,15 +5,15 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
 
 // outline / yellow are bordered — see Button.jsx for why that needs two nested chamfer layers
 // instead of a clipped inset box-shadow (which leaves the diagonal cut with no stroke).
-const BORDERED={outline:{border:"var(--border-default)",fg:"var(--text-heading)",width:2},yellow:{border:"var(--qvl-yellow)",fg:"var(--text-heading)",width:3}};
+const BORDERED={outline:{border:"var(--border-default)",fg:"var(--text-heading)",width:2},yellow:{border:"var(--border-highlight)",fg:"var(--text-heading)",width:3}};
 const FILLED={
-  petrol:{background:"var(--qvl-petrol)",color:"var(--qvl-white)"},
-  orange:{background:"var(--qvl-orange)",color:"var(--text-on-accent)"},
+  petrol:{background:"var(--surface-inverse)",color:"var(--text-on-inverse)"},
+  orange:{background:"var(--surface-accent)",color:"var(--text-on-accent)"},
   soft:{background:"var(--surface-brand-soft)",color:"var(--text-heading)"},
   pink:{background:"var(--button-pink-bg)",color:"var(--button-pink-fg)"},
-  "pink-soft":{background:"var(--qvl-pink-pale)",color:"var(--qvl-ink)"},
-  grey:{background:"var(--qvl-grey)",color:"var(--qvl-ink)"},
-  highlight:{background:"var(--qvl-yellow)",color:"var(--qvl-ink)"}
+  "pink-soft":{background:"var(--surface-accent2-soft)",color:"var(--text-body-color)"},
+  grey:{background:"var(--surface-neutral)",color:"var(--text-body-color)"},
+  highlight:{background:"var(--highlight-bg)",color:"var(--highlight-fg)"}
 };
 
 export function Badge({tone="petrol",size="md",children,style,...rest}){

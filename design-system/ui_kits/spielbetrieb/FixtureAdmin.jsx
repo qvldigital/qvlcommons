@@ -48,7 +48,7 @@ function FixtureAdmin(){
           <div style={{display:"grid",gap:"var(--space-2)",fontSize:"var(--text-small)"}}>
             <div style={{display:"flex",justifyContent:"space-between"}}><span>Spiele</span><strong>4</strong></div>
             <div style={{display:"flex",justifyContent:"space-between"}}><span>Bestätigt</span><strong>1</strong></div>
-            <div style={{display:"flex",justifyContent:"space-between"}}><span>Offen</span><strong style={{color:"var(--qvl-orange)"}}>3</strong></div>
+            <div style={{display:"flex",justifyContent:"space-between"}}><span>Offen</span><strong style={{color:"var(--text-heading)"}}>3</strong></div>
           </div>
           <div style={{display:"flex",gap:"var(--space-2)",marginTop:"var(--space-4)"}}>
             <Button size="sm" variant="primary">Erinnern</Button>

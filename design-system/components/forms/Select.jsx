@@ -10,7 +10,7 @@ function Field({label,hint,error,required,htmlFor,msgId,children}){
       {label}{required?<span aria-hidden="true" style={{color:"var(--text-heading)"}}> *</span>:null}
     </label>
     {children}
-    {error?<span id={msgId} style={{display:"block",marginTop:"var(--space-2)",fontSize:"var(--text-small)",fontWeight:"var(--weight-emphasis)",color:"var(--qvl-orange-press)"}}>{error}</span>
+    {error?<span id={msgId} style={{display:"block",marginTop:"var(--space-2)",fontSize:"var(--text-small)",fontWeight:"var(--weight-emphasis)",color:"var(--text-danger)"}}>{error}</span>
       :hint?<span id={msgId} style={{display:"block",marginTop:"var(--space-2)",fontSize:"var(--text-small)",color:"var(--text-muted)"}}>{hint}</span>:null}
   </div>;
 }
@@ -22,7 +22,7 @@ export function Select({label,hint,error,required,options=[],placeholder,id,styl
   const msgId=fid+"-msg";
   // aria-describedby only when Field renders the message (label present); aria-required keeps native validation out of it.
   const a11y={"aria-invalid":error?true:undefined,"aria-describedby":label&&(error||hint)?msgId:undefined,"aria-required":required?true:undefined};
-  const edge=error?"var(--qvl-orange)":focus?"var(--focus-ring)":"var(--border-default)";
+  const edge=error?"var(--border-accent)":focus?"var(--focus-ring)":"var(--border-default)";
   const control=<div style={{background:edge,padding:error||focus?3:2,...chamfer(8,4),position:"relative",...style}}>
     <select id={fid} {...a11y} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}
       style={{width:"100%",height:42,border:"none",outline:"none",background:"var(--surface-card)",font:"inherit",

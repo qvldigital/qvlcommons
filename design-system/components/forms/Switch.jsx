@@ -15,9 +15,9 @@ export function Switch({label,description,checked=false,disabled,onChange,id,sty
     </span>
     <span style={{flex:"none",background:focus?"var(--focus-ring)":"var(--border-default)",padding:focus?3:2,...chamfer(6,2)}}>
       <span style={{display:"block",width:52,height:28,padding:3,
-        background:checked?"var(--qvl-petrol)":"var(--switch-off)",
+        background:checked?"var(--switch-on)":"var(--switch-off)",
         transition:"background var(--duration-base) var(--ease-standard)",...chamfer(5,2)}}>
-        <span style={{display:"block",width:22,height:22,background:checked?"var(--qvl-orange)":"var(--qvl-white)",
+        <span style={{display:"block",width:22,height:22,background:checked?"var(--surface-accent)":"var(--switch-thumb)",
           transform:checked?"translateX(24px)":"translateX(0)",
           transition:"transform var(--duration-base) var(--ease-standard),background var(--duration-base) var(--ease-standard)",
           ...chamfer(4,2)}}/>

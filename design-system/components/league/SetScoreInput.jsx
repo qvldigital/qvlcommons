@@ -18,7 +18,7 @@ export function SetScoreInput({setNumber=1,home=0,away=0,onChange,homeLabel="Hei
     <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:"var(--space-2)"}}>
       <IconButton label={`${label} minus`} size="md" variant="secondary" disabled={disabled} onClick={()=>bump(which,-1)}>
         <Icon name="minus" size={18}/></IconButton>
-      <div style={{minWidth:72,padding:"6px 4px",background:"var(--qvl-petrol)",color:"var(--qvl-white)",
+      <div style={{minWidth:72,padding:"6px 4px",background:"var(--surface-inverse)",color:"var(--text-on-inverse)",
         fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",lineHeight:1,...chamfer(8,2)}}>{value}</div>
       <IconButton label={`${label} plus`} size="md" variant="primary" disabled={disabled} onClick={()=>bump(which,1)}>
         <Icon name="plus" size={18}/></IconButton>
@@ -27,7 +27,7 @@ export function SetScoreInput({setNumber=1,home=0,away=0,onChange,homeLabel="Hei
   return <div style={{background:"var(--border-subtle)",padding:2,...chamfer(12,4),...style}} {...rest}>
     <div style={{background:"var(--surface-card)",padding:"var(--space-4)",...chamfer(10,4)}}>
       <div style={{display:"flex",alignItems:"center",gap:"var(--space-2)",marginBottom:"var(--space-4)"}}>
-        <span style={{background:"var(--qvl-orange)",color:"var(--text-on-accent)",padding:"2px 10px",
+        <span style={{background:"var(--surface-accent)",color:"var(--text-on-accent)",padding:"2px 10px",
           fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",textTransform:"uppercase",
           ...chamfer(5,2)}}>Satz {setNumber}</span>
       </div>

@@ -17,7 +17,7 @@ function ReportSheet(){
             letterSpacing:"var(--tracking-display)",lineHeight:1.05}}>Bumpers · Hurricanes</div>
         </div>
         <div style={{fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",lineHeight:1}}>
-          {won}<span style={{color:"var(--qvl-orange)"}}>:</span>{lost}</div>
+          {won}<span style={{color:"var(--text-separator)"}}>:</span>{lost}</div>
       </div>
       <div style={{marginTop:"var(--space-3)"}}><LevelBadge level="B" region="Nord" size="sm"/></div>
     </Card>

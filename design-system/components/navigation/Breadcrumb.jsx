@@ -10,7 +10,7 @@ export function Breadcrumb({items=[],onNavigate,style,...rest}){
         {last?<span style={{fontWeight:"var(--weight-emphasis)",color:"var(--text-muted)"}}>{label}</span>
           :<a href="#" onClick={(e)=>{e.preventDefault();onNavigate&&onNavigate(typeof it==="string"?it:it.value)}}
             style={{color:"var(--text-link)"}}>{label}</a>}
-        {last?null:<span aria-hidden="true" style={{color:"var(--qvl-orange)",fontWeight:600}}>/</span>}
+        {last?null:<span aria-hidden="true" style={{color:"var(--text-separator)",fontWeight:600}}>/</span>}
       </span>;
     })}
   </nav>;

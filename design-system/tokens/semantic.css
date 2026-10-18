@@ -11,6 +11,8 @@
   --surface-accent2:var(--qvl-pink);
   --surface-accent2-soft:var(--qvl-pink-pale);
   --surface-divider:var(--qvl-grey);
+  --surface-logo-plate:var(--qvl-white);
+  --surface-neutral:var(--qvl-grey);
 
   /* Text */
   --text-heading:var(--qvl-petrol);
@@ -20,12 +22,16 @@
   --text-on-accent:var(--qvl-ink);   /* orange fills, 5.9:1 */
   --text-link:var(--qvl-petrol);
   --text-link-hover:var(--qvl-orange-press);
+  --text-danger:var(--qvl-orange-press);
+  --text-separator:var(--qvl-orange);
 
   /* Borders */
   --border-subtle:var(--qvl-grey);
   --border-default:var(--qvl-petrol);
   --border-accent:var(--qvl-orange);
   --border-accent-2:var(--qvl-pink);
+  --border-highlight:var(--qvl-yellow);
+  --border-brand-soft:var(--qvl-petrol-mid);
   --focus-ring:var(--qvl-ink);
   --focus-ring-inner:var(--qvl-yellow);
 
@@ -67,5 +73,8 @@
   --table-border:var(--qvl-grey);
   --table-highlight:var(--qvl-orange);
   --switch-off:var(--qvl-grey);
+  --control-on:var(--qvl-petrol);
+  --switch-on:var(--qvl-petrol);
+  --switch-thumb:var(--qvl-white);
   color-scheme:light;
 }

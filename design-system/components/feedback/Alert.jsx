@@ -7,9 +7,9 @@ const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
 const TONES={
   info:{bg:"var(--status-info-bg)",fg:"var(--status-info-fg)",edge:"var(--border-default)",icon:"info"},
   success:{bg:"var(--status-success-bg)",fg:"var(--status-success-fg)",edge:"var(--border-default)",icon:"circle-check"},
-  warn:{bg:"var(--status-warn-bg)",fg:"var(--status-warn-fg)",edge:"var(--qvl-orange)",icon:"triangle-alert"},
-  danger:{bg:"var(--status-danger-bg)",fg:"var(--status-danger-fg)",edge:"var(--qvl-orange)",icon:"octagon-alert"},
-  safe:{bg:"var(--surface-card)",fg:"var(--text-heading)",edge:"var(--qvl-yellow)",icon:"shield-check"}
+  warn:{bg:"var(--status-warn-bg)",fg:"var(--status-warn-fg)",edge:"var(--border-accent)",icon:"triangle-alert"},
+  danger:{bg:"var(--status-danger-bg)",fg:"var(--status-danger-fg)",edge:"var(--border-accent)",icon:"octagon-alert"},
+  safe:{bg:"var(--surface-card)",fg:"var(--text-heading)",edge:"var(--border-highlight)",icon:"shield-check"}
 };
 
 export function Alert({tone="info",title,children,onClose,closeLabel="Schließen",style,...rest}){
