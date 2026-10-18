@@ -14,7 +14,7 @@ export function Tooltip({label,placement="top",children,style,...rest}){
     onFocus={()=>setShow(true)} onBlur={()=>setShow(false)} onKeyDown={(e)=>{if(e.key==="Escape")setShow(false);}} {...rest}>
     {trigger}
     <span id={id} role="tooltip" style={{visibility:show?"visible":"hidden",position:"absolute",left:"50%",transform:"translateX(-50%)",...pos,
-      background:"var(--qvl-petrol)",color:"var(--qvl-white)",padding:"6px 10px",whiteSpace:"nowrap",
+      background:"var(--qvl-petrol)",color:"var(--qvl-white)",padding:"6px 10px",width:"max-content",maxWidth:"min(16rem, calc(100vw - 32px))",overflowWrap:"break-word",
       fontSize:"var(--text-caption)",fontWeight:"var(--weight-emphasis)",zIndex:40,...chamfer(5,2)}}>{label}</span>
   </span>;
 }

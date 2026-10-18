@@ -25,7 +25,7 @@ export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promo
           <tr style={{background:"var(--table-head-bg)"}}>
             {columns.map(c=><th key={c.key} scope="col" style={{textAlign:c.align||"left",
               padding:"10px 10px",width:c.width,color:"var(--table-head-fg)",fontFamily:"var(--font-display)",
-              fontWeight:400,letterSpacing:"var(--tracking-table)",textTransform:"uppercase",whiteSpace:"nowrap"}}>{c.label}</th>)}
+              fontWeight:400,letterSpacing:"var(--tracking-table)",textTransform:"uppercase"}}>{c.label}</th>)}
           </tr>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@ export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promo
                 fontWeight:c.key==="points"||c.key==="team"?"var(--weight-emphasis)":"var(--weight-body)",
                 fontFamily:c.key==="rank"||c.key==="points"?"var(--font-display)":"var(--font-body)",
                 fontSize:c.key==="rank"||c.key==="points"?"var(--text-body)":"inherit",
-                color:c.key==="points"?"var(--text-heading)":"inherit",whiteSpace:"nowrap"}}>{r[c.key]}</td>)}
+                color:c.key==="points"?"var(--text-heading)":"inherit"}}>{r[c.key]}</td>)}
             </tr>;
           })}
         </tbody>

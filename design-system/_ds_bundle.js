@@ -1057,12 +1057,12 @@ function Badge({
 }) {
   const s = size === "sm" ? {
     height: 20,
-    padding: "0 8px",
+    padding: "2px 8px",
     fontSize: "var(--text-caption)",
     ch: 4
   } : {
     height: 26,
-    padding: "0 10px",
+    padding: "3px 10px",
     fontSize: "var(--text-small)",
     ch: 5
   };
@@ -1070,13 +1070,13 @@ function Badge({
     display: "inline-flex",
     alignItems: "center",
     gap: "var(--space-1)",
-    height: s.height,
+    minHeight: s.height,
     fontFamily: "var(--font-display)",
     fontSize: s.fontSize,
     letterSpacing: "var(--tracking-display)",
     textTransform: "uppercase",
-    lineHeight: 1,
-    whiteSpace: "nowrap"
+    lineHeight: 1.1,
+    overflowWrap: "anywhere"
   };
   if (BORDERED[tone]) {
     const b = BORDERED[tone];
@@ -1092,7 +1092,7 @@ function Badge({
       style: {
         display: "flex",
         alignItems: "center",
-        height: s.height - b.width * 2,
+        minHeight: s.height - b.width * 2,
         padding: s.padding,
         color: b.fg,
         background: "var(--surface-card)",
@@ -1121,19 +1121,19 @@ const chamfer = (ch = 10, corners = 2) => ({
 });
 const SIZES = {
   sm: {
-    padding: "0 14px",
+    padding: "4px 14px",
     height: 36,
     fontSize: "var(--text-small)",
     ch: 6
   },
   md: {
-    padding: "0 20px",
+    padding: "6px 20px",
     height: 44,
     fontSize: "var(--text-body)",
     ch: 8
   },
   lg: {
-    padding: "0 28px",
+    padding: "8px 28px",
     height: 56,
     fontSize: "var(--text-h3)",
     ch: 10
@@ -1193,7 +1193,7 @@ function Button({
       display: "inline-flex",
       alignItems: "stretch",
       verticalAlign: "middle",
-      height: s.height,
+      minHeight: s.height,
       boxSizing: "border-box",
       width: fullWidth ? "100%" : "auto",
       background: borderColor,
@@ -1211,7 +1211,6 @@ function Button({
       justifyContent: "center",
       gap: "var(--space-2)",
       width: "100%",
-      height: "100%",
       padding: s.padding,
       boxSizing: "border-box",
       background: fillBg,
@@ -1220,8 +1219,9 @@ function Button({
       fontSize: s.fontSize,
       letterSpacing: "var(--tracking-display)",
       textTransform: "uppercase",
-      lineHeight: 1,
-      whiteSpace: "nowrap",
+      lineHeight: 1.1,
+      textAlign: "center",
+      overflowWrap: "anywhere",
       transition: "background var(--duration-fast) var(--ease-standard)",
       ...chamfer(Math.max(s.ch - 2, 2), 2)
     };
@@ -1250,7 +1250,6 @@ function Button({
     justifyContent: "center",
     gap: "var(--space-2)",
     minHeight: s.height,
-    height: s.height,
     padding: s.padding,
     width: fullWidth ? "100%" : "auto",
     fontFamily: "var(--font-display)",
@@ -1258,8 +1257,9 @@ function Button({
     letterSpacing: "var(--tracking-display)",
     textTransform: "uppercase",
     textDecoration: "none",
-    lineHeight: 1,
-    whiteSpace: "nowrap",
+    lineHeight: 1.1,
+    textAlign: "center",
+    overflowWrap: "anywhere",
     cursor: disabled ? "not-allowed" : "pointer",
     transition: "background var(--duration-fast) var(--ease-standard),transform var(--duration-instant) var(--ease-standard)",
     transform: press && !disabled ? "scale(var(--press-scale))" : "none",
@@ -2274,7 +2274,9 @@ function Tooltip({
       background: "var(--qvl-petrol)",
       color: "var(--qvl-white)",
       padding: "6px 10px",
-      whiteSpace: "nowrap",
+      width: "max-content",
+      maxWidth: "min(16rem, calc(100vw - 32px))",
+      overflowWrap: "break-word",
       fontSize: "var(--text-caption)",
       fontWeight: "var(--weight-emphasis)",
       zIndex: 40,
@@ -3344,8 +3346,7 @@ function StandingsTable({
       fontFamily: "var(--font-display)",
       fontWeight: 400,
       letterSpacing: "var(--tracking-table)",
-      textTransform: "uppercase",
-      whiteSpace: "nowrap"
+      textTransform: "uppercase"
     }
   }, c.label)))), /*#__PURE__*/React.createElement("tbody", null, rows.map((r, i) => {
     const me = highlightTeam && r.team === highlightTeam;
@@ -3365,8 +3366,7 @@ function StandingsTable({
         fontWeight: c.key === "points" || c.key === "team" ? "var(--weight-emphasis)" : "var(--weight-body)",
         fontFamily: c.key === "rank" || c.key === "points" ? "var(--font-display)" : "var(--font-body)",
         fontSize: c.key === "rank" || c.key === "points" ? "var(--text-body)" : "inherit",
-        color: c.key === "points" ? "var(--text-heading)" : "inherit",
-        whiteSpace: "nowrap"
+        color: c.key === "points" ? "var(--text-heading)" : "inherit"
       }
     }, r[c.key])));
   })))));
@@ -3776,6 +3776,7 @@ function Tabs({
       borderBottom: "2px solid var(--surface-divider)",
       padding: "4px 4px 0",
       overflowX: scrollable ? "auto" : "visible",
+      flexWrap: scrollable ? undefined : "wrap",
       ...style
     }
   }, rest), items.map((it, i) => {
@@ -3784,7 +3785,12 @@ function Tabs({
     const active = id === value;
     return /*#__PURE__*/React.createElement("span", {
       key: id,
-      className: "qvl-focus"
+      className: "qvl-focus",
+      style: scrollable ? {
+        flex: "none"
+      } : {
+        minWidth: 0
+      }
     }, /*#__PURE__*/React.createElement("button", {
       role: "tab",
       "aria-selected": active,
@@ -3797,18 +3803,20 @@ function Tabs({
       "aria-controls": panelPrefix ? `${panelPrefix}-panel-${id}` : undefined,
       onClick: () => onChange && onChange(id),
       style: {
-        flex: "none",
+        minWidth: 0,
         border: "none",
         cursor: "pointer",
         background: active ? "var(--qvl-petrol)" : "var(--qvl-ghost-bg, transparent)",
         color: active ? "var(--qvl-white)" : "var(--text-heading)",
-        padding: "0 16px",
-        height: 44,
+        padding: "6px 16px",
+        minHeight: 44,
         fontFamily: "var(--font-display)",
         fontSize: "var(--text-body)",
         letterSpacing: "var(--tracking-display)",
         textTransform: "uppercase",
-        whiteSpace: "nowrap",
+        lineHeight: 1.1,
+        textAlign: "center",
+        overflowWrap: "break-word",
         transition: "background var(--duration-fast) var(--ease-standard)",
         ...chamfer(8, 2)
       }

@@ -17,15 +17,15 @@ const FILLED={
 };
 
 export function Badge({tone="petrol",size="md",children,style,...rest}){
-  const s=size==="sm"?{height:20,padding:"0 8px",fontSize:"var(--text-caption)",ch:4}:{height:26,padding:"0 10px",fontSize:"var(--text-small)",ch:5};
-  const base={display:"inline-flex",alignItems:"center",gap:"var(--space-1)",height:s.height,
+  const s=size==="sm"?{height:20,padding:"2px 8px",fontSize:"var(--text-caption)",ch:4}:{height:26,padding:"3px 10px",fontSize:"var(--text-small)",ch:5};
+  const base={display:"inline-flex",alignItems:"center",gap:"var(--space-1)",minHeight:s.height,
     fontFamily:"var(--font-display)",fontSize:s.fontSize,letterSpacing:"var(--tracking-display)",
-    textTransform:"uppercase",lineHeight:1,whiteSpace:"nowrap"};
+    textTransform:"uppercase",lineHeight:1.1,overflowWrap:"anywhere"};
 
   if(BORDERED[tone]){
     const b=BORDERED[tone];
     return <span style={{...base,padding:b.width,background:b.border,...chamfer(s.ch,2),...style}} {...rest}>
-      <span style={{display:"flex",alignItems:"center",height:s.height-b.width*2,padding:s.padding,color:b.fg,background:"var(--surface-card)",
+      <span style={{display:"flex",alignItems:"center",minHeight:s.height-b.width*2,padding:s.padding,color:b.fg,background:"var(--surface-card)",
         ...chamfer(Math.max(s.ch-b.width,2),2)}}>{children}</span>
     </span>;
   }

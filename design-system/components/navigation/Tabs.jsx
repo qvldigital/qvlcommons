@@ -18,19 +18,19 @@ export function Tabs({items=[],value,onChange,scrollable=true,panelPrefix,style,
     if(onChange) onChange(ids[to]);
   };
   return <div role="tablist" style={{display:"flex",gap:"var(--space-1)",borderBottom:"2px solid var(--surface-divider)",
-    padding:"4px 4px 0",overflowX:scrollable?"auto":"visible",...style}} {...rest}>
+    padding:"4px 4px 0",overflowX:scrollable?"auto":"visible",flexWrap:scrollable?undefined:"wrap",...style}} {...rest}>
     {items.map((it,i)=>{
       const id=typeof it==="string"?it:it.value;
       const label=typeof it==="string"?it:it.label;
       const active=id===value;
-      return <span key={id} className="qvl-focus"><button role="tab" aria-selected={active} tabIndex={id===current?0:-1}
+      return <span key={id} className="qvl-focus" style={scrollable?{flex:"none"}:{minWidth:0}}><button role="tab" aria-selected={active} tabIndex={id===current?0:-1}
         ref={el=>{refs.current[id]=el;}} onKeyDown={(e)=>onKey(e,i)}
         id={panelPrefix?`${panelPrefix}-tab-${id}`:undefined} aria-controls={panelPrefix?`${panelPrefix}-panel-${id}`:undefined}
         onClick={()=>onChange&&onChange(id)}
-        style={{flex:"none",border:"none",cursor:"pointer",background:active?"var(--qvl-petrol)":"var(--qvl-ghost-bg,transparent)",
-          color:active?"var(--qvl-white)":"var(--text-heading)",padding:"0 16px",height:44,
+        style={{minWidth:0,border:"none",cursor:"pointer",background:active?"var(--qvl-petrol)":"var(--qvl-ghost-bg,transparent)",
+          color:active?"var(--qvl-white)":"var(--text-heading)",padding:"6px 16px",minHeight:44,
           fontFamily:"var(--font-display)",fontSize:"var(--text-body)",letterSpacing:"var(--tracking-display)",
-          textTransform:"uppercase",whiteSpace:"nowrap",transition:"background var(--duration-fast) var(--ease-standard)",
+          textTransform:"uppercase",lineHeight:1.1,textAlign:"center",overflowWrap:"break-word",transition:"background var(--duration-fast) var(--ease-standard)",
           ...chamfer(8,2)}}>{label}{typeof it!=="string"&&it.count!==undefined?
             <span style={{marginLeft:8,opacity:0.8,fontFamily:"var(--font-body)",fontWeight:400,fontSize:"var(--text-small)"}}>{it.count}</span>:null}</button></span>;
     })}
