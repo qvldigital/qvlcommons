@@ -7,7 +7,7 @@ function Field({label,hint,error,required,htmlFor,msgId,children}){
   return <div>
     <label htmlFor={htmlFor} style={{display:"block",fontFamily:"var(--font-display)",fontSize:"var(--text-eyebrow)",
       letterSpacing:"var(--tracking-eyebrow)",textTransform:"uppercase",color:"var(--text-heading)",marginBottom:"var(--space-2)"}}>
-      {label}{required?<span aria-hidden="true" style={{color:"var(--qvl-orange)"}}> *</span>:null}
+      {label}{required?<span aria-hidden="true" style={{color:"var(--text-heading)"}}> *</span>:null}
     </label>
     {children}
     {error?<span id={msgId} style={{display:"block",marginTop:"var(--space-2)",fontSize:"var(--text-small)",fontWeight:"var(--weight-emphasis)",color:"var(--qvl-orange-press)"}}>{error}</span>

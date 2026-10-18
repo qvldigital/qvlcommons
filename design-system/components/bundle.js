@@ -2418,7 +2418,7 @@ function Field({
   }, label, required ? /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true",
     style: {
-      color: "var(--qvl-orange)"
+      color: "var(--text-heading)"
     }
   }, " *") : null), children, error ? /*#__PURE__*/React.createElement("span", {
     id: msgId,
@@ -2665,7 +2665,7 @@ function Field({
   }, label, required ? /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true",
     style: {
-      color: "var(--qvl-orange)"
+      color: "var(--text-heading)"
     }
   }, " *") : null), children, error ? /*#__PURE__*/React.createElement("span", {
     id: msgId,
