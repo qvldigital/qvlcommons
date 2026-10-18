@@ -140,7 +140,7 @@
   --button-pink-bg-hover:var(--qvl-pink-hover);
   --button-pink-bg-press:var(--qvl-pink-press);
   --button-pink-fg:var(--qvl-white);
-  --button-secondary-fill:#00000000;
+  --button-secondary-fill:var(--qvl-night-card);
   --button-secondary-fg:var(--qvl-petrol-mid);
   --button-secondary-border:var(--qvl-petrol-mid);
   --button-ghost-fg:var(--qvl-petrol-mid);

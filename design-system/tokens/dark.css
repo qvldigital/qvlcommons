@@ -14,7 +14,7 @@
   --text-link:var(--qvl-petrol-mid);--text-link-hover:var(--qvl-orange-mid);
   --border-subtle:var(--qvl-night-line);--border-default:var(--qvl-petrol-mid);
   --button-primary-bg-hover:color-mix(in srgb,var(--qvl-petrol) 82%,#fff);--button-primary-bg-press:color-mix(in srgb,var(--qvl-petrol) 68%,#fff);
-  --button-secondary-fill:transparent;--button-secondary-fg:var(--qvl-petrol-mid);--button-secondary-border:var(--qvl-petrol-mid);--button-ghost-fg:var(--qvl-petrol-mid);
+  --button-secondary-fill:var(--qvl-night-card);--button-secondary-fg:var(--qvl-petrol-mid);--button-secondary-border:var(--qvl-petrol-mid);--button-ghost-fg:var(--qvl-petrol-mid);
   --button-disabled-bg:var(--qvl-night-raised);--button-disabled-fg:#7F9494;
   --status-info-bg:var(--surface-brand-soft);--status-info-fg:var(--qvl-petrol-pale);
   --status-success-bg:var(--surface-brand-soft);--status-success-fg:var(--qvl-petrol-pale);
