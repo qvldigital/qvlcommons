@@ -3184,7 +3184,7 @@ function SetScoreInput({
   };
   const cell = (which, label, value) => /*#__PURE__*/React.createElement("div", {
     style: {
-      flex: 1,
+      flex: "1 1 176px",
       textAlign: "center"
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -3266,6 +3266,7 @@ function SetScoreInput({
   }, "Satz ", setNumber)), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
+      flexWrap: "wrap",
       gap: "var(--space-4)"
     }
   }, cell("home", homeLabel, home), cell("away", awayLabel, away))));

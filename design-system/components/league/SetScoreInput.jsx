@@ -12,7 +12,7 @@ export function SetScoreInput({setNumber=1,home=0,away=0,onChange,homeLabel="Hei
     next[which]=Math.max(0,Number(next[which])+d);
     onChange(next);
   };
-  const cell=(which,label,value)=><div style={{flex:1,textAlign:"center"}}>
+  const cell=(which,label,value)=><div style={{flex:"1 1 176px",textAlign:"center"}}>
     <div style={{fontFamily:"var(--font-display)",fontSize:"var(--text-eyebrow)",letterSpacing:"var(--tracking-eyebrow)",
       textTransform:"uppercase",color:"var(--text-muted)",marginBottom:"var(--space-2)"}}>{label}</div>
     <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:"var(--space-2)"}}>
@@ -31,7 +31,8 @@ export function SetScoreInput({setNumber=1,home=0,away=0,onChange,homeLabel="Hei
           fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",textTransform:"uppercase",
           ...chamfer(5,2)}}>Satz {setNumber}</span>
       </div>
-      <div style={{display:"flex",gap:"var(--space-4)"}}>{cell("home",homeLabel,home)}{cell("away",awayLabel,away)}</div>
+      {/* Each counter needs 176 px (44 + 72 + 44 + gaps); below that the two wrap under each other instead of shrinking the 44 px targets. */}
+      <div style={{display:"flex",flexWrap:"wrap",gap:"var(--space-4)"}}>{cell("home",homeLabel,home)}{cell("away",awayLabel,away)}</div>
     </div>
   </div>;
 }
