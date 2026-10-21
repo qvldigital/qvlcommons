@@ -12,7 +12,8 @@ export function Toast({tone="petrol",message,action,onAction,onClose,closeLabel=
       <span style={{flex:1,fontSize:"var(--text-small)",fontWeight:"var(--weight-emphasis)"}}>{message}</span>
       {action?<button type="button" onClick={onAction} style={{border:"none",background:"transparent",color:"inherit",
         cursor:"pointer",fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-display)",textTransform:"uppercase",
-        textDecoration:"underline",textDecorationThickness:2,textUnderlineOffset:3,padding:0}}>{action}</button>:null}
+        textDecoration:"underline",textDecorationThickness:2,textUnderlineOffset:3,
+        padding:"0 8px",minHeight:"var(--tap-min)",minWidth:"var(--tap-min)",margin:"-10px 0",flex:"none"}}>{action}</button>:null}
       {onClose?<button type="button" aria-label={closeLabel} onClick={onClose} style={{border:"none",background:"transparent",
         color:"inherit",cursor:"pointer",padding:0,lineHeight:1,width:"var(--tap-min)",height:"var(--tap-min)",display:"inline-flex",alignItems:"center",justifyContent:"center",flex:"none",margin:"-10px -10px -10px 0"}}><Icon name="x" size={16}/></button>:null}
     </div>

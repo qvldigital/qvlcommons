@@ -2206,7 +2206,11 @@ function Toast({
       textDecoration: "underline",
       textDecorationThickness: 2,
       textUnderlineOffset: 3,
-      padding: 0
+      padding: "0 8px",
+      minHeight: "var(--tap-min)",
+      minWidth: "var(--tap-min)",
+      margin: "-10px 0",
+      flex: "none"
     }
   }, action) : null, onClose ? /*#__PURE__*/React.createElement("button", {
     type: "button",
