@@ -34,6 +34,7 @@
   --qvl-petrol-press:color-mix(in srgb,var(--qvl-petrol) 74%,#000);
   --qvl-orange-hover:color-mix(in srgb,var(--qvl-orange) 88%,#000);
   --qvl-orange-press:color-mix(in srgb,var(--qvl-orange) 78%,#000);
+  --qvl-orange-deep:color-mix(in srgb,var(--qvl-orange) 68%,#000);
 
   /* Yellow roles. Yellow/white 1.07:1 → never text, icon or thin line on light grounds.
      Ink on yellow 16:1, petrol on yellow 6.3:1, yellow on petrol 6.3:1, yellow on night 15:1. */

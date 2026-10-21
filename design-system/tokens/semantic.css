@@ -22,7 +22,7 @@
   --text-on-accent:var(--qvl-ink);   /* orange fills, 5.9:1 */
   --text-link:var(--qvl-petrol);
   --text-link-hover:var(--qvl-orange-press);
-  --text-danger:var(--qvl-orange-press);
+  --text-danger:var(--qvl-orange-deep);
   --text-separator:var(--qvl-orange);
 
   /* Borders */

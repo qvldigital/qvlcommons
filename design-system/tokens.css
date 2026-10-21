@@ -21,6 +21,7 @@
   --qvl-petrol-press:#004b4b;
   --qvl-orange-hover:#e05a00;
   --qvl-orange-press:#c75000;
+  --qvl-orange-deep:#ad4500;
   --qvl-night:#0b1414;
   --qvl-night-card:#132222;
   --qvl-night-raised:#1b3030;
@@ -53,7 +54,7 @@
   --text-on-accent:var(--qvl-ink);
   --text-link:var(--qvl-petrol);
   --text-link-hover:var(--qvl-orange-press);
-  --text-danger:var(--qvl-orange-press);
+  --text-danger:var(--qvl-orange-deep);
   --text-separator:var(--qvl-orange);
   --border-subtle:var(--qvl-grey);
   --border-default:var(--qvl-petrol);
