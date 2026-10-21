@@ -9,7 +9,7 @@
 <x-dc>
 <!-- @template name="Spielbetrieb-Tool" description="Spielplan-Verwaltung und digitaler Spielberichtsbogen — Hell/Nacht" -->
 <helmet><script src="./ds-base.js"></script><script src="../../theme.js"></script></helmet>
-<div data-theme="{{ theme }}" style="min-height:100vh;background:var(--surface-page);color:var(--text-body-color)"><x-import component-from-global-scope="SpielbetriebKit" from="./SpielbetriebKit.jsx" hint-size="100%,900px"></x-import></div>
+<div data-theme="{{ theme }}" style="min-height:100vh;min-height:100svh;background:var(--surface-page);color:var(--text-body-color)"><x-import component-from-global-scope="SpielbetriebKit" from="./SpielbetriebKit.jsx" hint-size="100%,900px"></x-import></div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light'|'dark'&quot;,&quot;section&quot;:&quot;Design&quot;}}">
 class Component extends DCLogic {
