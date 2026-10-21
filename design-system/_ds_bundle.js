@@ -2284,6 +2284,22 @@ function Tooltip({
   } : {
     bottom: "calc(100% + 8px)"
   };
+  // Keep the bubble inside the viewport: centred on the trigger, shifted sideways when that would cross an edge.
+  const tipRef = React.useRef(null);
+  const [shift, setShift] = React.useState(0);
+  const useIso = typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
+  useIso(() => {
+    if (!show) {
+      setShift(0);
+      return;
+    }
+    const el = tipRef.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect(),
+      m = 8,
+      vw = document.documentElement.clientWidth;
+    if (r.left < m) setShift(s => s + (m - r.left));else if (r.right > vw - m) setShift(s => s - (r.right - (vw - m)));
+  }, [show, label]);
   return /*#__PURE__*/React.createElement("span", _extends({
     style: {
       position: "relative",
@@ -2298,13 +2314,14 @@ function Tooltip({
       if (e.key === "Escape") setShow(false);
     }
   }, rest), trigger, /*#__PURE__*/React.createElement("span", {
+    ref: tipRef,
     id: id,
     role: "tooltip",
     style: {
       visibility: show ? "visible" : "hidden",
       position: "absolute",
       left: "50%",
-      transform: "translateX(-50%)",
+      transform: `translateX(calc(-50% + ${shift}px))`,
       ...pos,
       background: "var(--surface-inverse)",
       color: "var(--text-on-inverse)",
