@@ -197,7 +197,7 @@ function AppShell(){
 }
 function App(){
   const [logged,setLogged]=React.useState(false);
-  return <div className="stage"><style>{"\n.stage{display:flex;gap:24px;justify-content:center;align-items:flex-start;flex-wrap:wrap}\n.phone{width:390px;height:712px;background:var(--surface-page);display:flex;flex-direction:column;overflow:hidden;\n  box-shadow:6px 6px 0 0 var(--qvl-petrol);border:3px solid var(--qvl-petrol)}\n.phone .scroll{flex:1;overflow-y:auto}\n.cap{font-family:var(--font-display);letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--text-muted);margin:0 0 8px 2px}"}</style>
+  return <div className="stage"><style>{"\n.stage{display:flex;gap:24px;justify-content:center;align-items:flex-start;flex-wrap:wrap}\n.phone{width:390px;height:712px;background:var(--surface-page);display:flex;flex-direction:column;overflow:hidden;\n  box-shadow:6px 6px 0 0 var(--qvl-petrol);border:3px solid var(--qvl-petrol)}\n.phone .scroll{flex:1;overflow-y:auto}\n.cap{font-family:var(--font-display);letter-spacing:.14em;text-transform:uppercase;font-size:var(--text-eyebrow);color:var(--text-muted);margin:0 0 8px 2px}"}</style>
     {logged?null:<Phone label="Login"><div className="scroll"><window.Login onLogin={()=>setLogged(true)}/></div></Phone>}
     <div><p className="cap">{logged?"App":"App (nach Login)"}</p><AppShell/></div>
   </div>;
