@@ -28,7 +28,7 @@ export function Button({variant="primary",size="md",disabled=false,fullWidth=fal
     const borderColor=disabled?"var(--border-subtle)":"var(--button-secondary-border)";
     const fillBg=hover&&!disabled?"var(--surface-brand-soft)":"var(--button-secondary-fill)";
     const fg=disabled?"var(--button-disabled-fg)":hover?"var(--text-on-soft)":"var(--button-secondary-fg)";
-    const outerCss={display:"inline-flex",alignItems:"stretch",verticalAlign:"middle",minHeight:s.height,boxSizing:"border-box",width:fullWidth?"100%":"auto",background:borderColor,padding:2,border:"none",
+    const outerCss={display:"inline-flex",alignItems:"stretch",verticalAlign:"middle",minHeight:s.height,minWidth:s.height,boxSizing:"border-box",width:fullWidth?"100%":"auto",background:borderColor,padding:2,border:"none",
       cursor:disabled?"not-allowed":"pointer",transform:press&&!disabled?"scale(var(--press-scale))":"none",
       transition:"transform var(--duration-instant) var(--ease-standard)",...chamfer(s.ch,2),...style};
     const innerCss={display:"flex",alignItems:"center",justifyContent:"center",gap:"var(--space-2)",
@@ -48,7 +48,7 @@ export function Button({variant="primary",size="md",disabled=false,fullWidth=fal
   else skin={background:hover&&!disabled?"var(--surface-brand-soft)":"var(--qvl-ghost-bg,transparent)",color:disabled?"var(--button-disabled-fg)":hover?"var(--text-on-soft)":"var(--qvl-ghost-fg,var(--button-ghost-fg))",border:"none"};
 
   const css={display:"inline-flex",alignItems:"center",justifyContent:"center",gap:"var(--space-2)",
-    minHeight:s.height,padding:s.padding,width:fullWidth?"100%":"auto",
+    minHeight:s.height,minWidth:s.height,padding:s.padding,width:fullWidth?"100%":"auto",
     fontFamily:"var(--font-display)",fontSize:s.fontSize,letterSpacing:"var(--tracking-display)",
     textTransform:"uppercase",textDecoration:"none",lineHeight:1.1,textAlign:"center",overflowWrap:"anywhere",cursor:disabled?"not-allowed":"pointer",
     transition:"background var(--duration-fast) var(--ease-standard),transform var(--duration-instant) var(--ease-standard)",
