@@ -10,7 +10,7 @@ export function LevelBadge({level,region,klasse,size="md",style,...rest}){
       background:"var(--surface-inverse)",color:"var(--text-on-inverse)",fontFamily:"var(--font-display)",fontSize:s.font,
       lineHeight:1,letterSpacing:0,...chamfer(6,2)}}>{level}</span>
     {region||klasse?<span style={{display:"inline-flex",alignItems:"center",padding:"0 10px",height:s.box,
-      background:"var(--surface-brand-soft)",color:"var(--text-heading)",fontFamily:"var(--font-display)",
+      background:"var(--surface-brand-soft)",color:"var(--text-on-soft)",fontFamily:"var(--font-display)",
       fontSize:size==="sm"?"var(--text-caption)":"var(--text-small)",letterSpacing:"var(--tracking-eyebrow)",
       textTransform:"uppercase",...chamfer(6,2)}}>{[region,klasse].filter(Boolean).join(" · ")}</span>:null}
   </span>;

@@ -10,7 +10,7 @@ a:hover{text-decoration-color:var(--text-link-hover)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:var(--focus-ring-width) solid var(--focus-ring);outline-offset:var(--focus-ring-inner-width);box-shadow:0 0 0 var(--focus-ring-inner-width) var(--focus-ring-inner)}
 /* Focus ring for chamfered (clip-path) controls: clip-path also clips outline and box-shadow, so the ring is drawn on the unclipped .qvl-focus wrapper as chained drop-shadows (each one expands the silhouette produced by the one before) that follow the chamfered silhouette. Transparent controls (ghost, inactive tab) take a soft fill while focused so there is a silhouette to trace. */
 .qvl-focus{display:inline-flex;vertical-align:middle}
-.qvl-focus>:focus-visible{outline:none;box-shadow:none;--qvl-ghost-bg:var(--surface-brand-soft)}
+.qvl-focus>:focus-visible{outline:none;box-shadow:none;--qvl-ghost-bg:var(--surface-brand-soft);--qvl-ghost-fg:var(--text-on-soft)}
 .qvl-focus:has(>:focus-visible){filter:drop-shadow(var(--focus-ring-inner-width) 0 0 var(--focus-ring-inner)) drop-shadow(calc(var(--focus-ring-inner-width)*-1) 0 0 var(--focus-ring-inner)) drop-shadow(0 var(--focus-ring-inner-width) 0 var(--focus-ring-inner)) drop-shadow(0 calc(var(--focus-ring-inner-width)*-1) 0 var(--focus-ring-inner)) drop-shadow(var(--focus-ring-width) 0 0 var(--focus-ring)) drop-shadow(calc(var(--focus-ring-width)*-1) 0 0 var(--focus-ring)) drop-shadow(0 var(--focus-ring-width) 0 var(--focus-ring)) drop-shadow(0 calc(var(--focus-ring-width)*-1) 0 var(--focus-ring))}
 img{max-width:100%;display:block}
 table{border-collapse:collapse}

@@ -55,6 +55,7 @@
   --text-link:var(--qvl-petrol);
   --text-link-hover:var(--qvl-orange-press);
   --text-danger:var(--qvl-orange-deep);
+  --text-on-soft:var(--qvl-petrol);
   --text-separator:var(--qvl-orange);
   --border-subtle:var(--qvl-grey);
   --border-default:var(--qvl-petrol);
@@ -135,6 +136,7 @@
   --text-link:var(--qvl-petrol-mid);
   --text-link-hover:var(--qvl-orange-mid);
   --text-danger:var(--qvl-orange-mid);
+  --text-on-soft:var(--qvl-petrol-pale);
   --text-separator:var(--qvl-orange);
   --border-subtle:var(--qvl-night-line);
   --border-default:var(--qvl-petrol-mid);

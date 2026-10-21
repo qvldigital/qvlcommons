@@ -1036,7 +1036,7 @@ const FILLED = {
   },
   soft: {
     background: "var(--surface-brand-soft)",
-    color: "var(--text-heading)"
+    color: "var(--text-on-soft)"
   },
   pink: {
     background: "var(--button-pink-bg)",
@@ -1195,7 +1195,7 @@ function Button({
   if (variant === "secondary") {
     const borderColor = disabled ? "var(--border-subtle)" : "var(--button-secondary-border)";
     const fillBg = hover && !disabled ? "var(--surface-brand-soft)" : "var(--button-secondary-fill)";
-    const fg = disabled ? "var(--button-disabled-fg)" : "var(--button-secondary-fg)";
+    const fg = disabled ? "var(--button-disabled-fg)" : hover ? "var(--text-on-soft)" : "var(--button-secondary-fg)";
     const outerCss = {
       display: "inline-flex",
       alignItems: "stretch",
@@ -1248,7 +1248,7 @@ function Button({
   let skin;
   if (variant === "primary") skin = solid("var(--button-primary-bg)", "var(--button-primary-bg-hover)", "var(--button-primary-bg-press)", "var(--button-primary-fg)");else if (variant === "accent") skin = solid("var(--button-accent-bg)", "var(--button-accent-bg-hover)", "var(--button-accent-bg-press)", "var(--button-accent-fg)");else if (variant === "pink") skin = solid("var(--button-pink-bg)", "var(--button-pink-bg-hover)", "var(--button-pink-bg-press)", "var(--button-pink-fg)");else skin = {
     background: hover && !disabled ? "var(--surface-brand-soft)" : "var(--qvl-ghost-bg, transparent)",
-    color: disabled ? "var(--button-disabled-fg)" : "var(--button-ghost-fg)",
+    color: disabled ? "var(--button-disabled-fg)" : hover ? "var(--text-on-soft)" : "var(--qvl-ghost-fg, var(--button-ghost-fg))",
     border: "none"
   };
   const css = {
@@ -1603,7 +1603,7 @@ function IconButton({
         width: "100%",
         height: "100%",
         background: fillBg,
-        color: disabled ? "var(--button-disabled-fg)" : "var(--button-secondary-fg)",
+        color: disabled ? "var(--button-disabled-fg)" : hover ? "var(--text-on-soft)" : "var(--button-secondary-fg)",
         transition: "background var(--duration-fast) var(--ease-standard)",
         ...chamfer(Math.max(s.ch - 2, 2), 2)
       }
@@ -1621,7 +1621,7 @@ function IconButton({
     color: "var(--button-accent-fg)"
   };else skin = {
     background: hover && !disabled ? "var(--surface-brand-soft)" : "var(--qvl-ghost-bg, transparent)",
-    color: "var(--button-ghost-fg)"
+    color: hover && !disabled ? "var(--text-on-soft)" : "var(--qvl-ghost-fg, var(--button-ghost-fg))"
   };
   return wrap(/*#__PURE__*/React.createElement("button", _extends({
     type: "button",
@@ -1774,7 +1774,7 @@ function Tag({
       height: 30,
       padding: "0 9px",
       background: hover && interactive ? "var(--surface-brand-soft)" : "var(--surface-card)",
-      color: "var(--text-heading)",
+      color: hover && interactive ? "var(--text-on-soft)" : "var(--text-heading)",
       fontFamily: "var(--font-body)",
       fontWeight: "var(--weight-emphasis)",
       fontSize: "var(--text-small)",
@@ -2958,7 +2958,7 @@ function LevelBadge({
       padding: "0 10px",
       height: s.box,
       background: "var(--surface-brand-soft)",
-      color: "var(--text-heading)",
+      color: "var(--text-on-soft)",
       fontFamily: "var(--font-display)",
       fontSize: size === "sm" ? "var(--text-caption)" : "var(--text-small)",
       letterSpacing: "var(--tracking-eyebrow)",
@@ -3129,7 +3129,7 @@ function PlayerRow({
       alignItems: "center",
       justifyContent: "center",
       background: "var(--surface-brand-soft)",
-      color: "var(--text-heading)",
+      color: "var(--text-on-soft)",
       fontFamily: "var(--font-display)",
       fontSize: "var(--text-body)",
       ...chamfer(5, 2)
@@ -3405,7 +3405,7 @@ function StandingsTable({
         fontWeight: c.key === "points" || c.key === "team" ? "var(--weight-emphasis)" : "var(--weight-body)",
         fontFamily: c.key === "rank" || c.key === "points" ? "var(--font-display)" : "var(--font-body)",
         fontSize: c.key === "rank" || c.key === "points" ? "var(--text-body)" : "inherit",
-        color: c.key === "points" ? "var(--text-heading)" : "inherit"
+        color: c.key === "points" && !me ? "var(--text-heading)" : "inherit"
       }
     }, r[c.key])));
   })))));
@@ -3862,7 +3862,7 @@ function Tabs({
         border: "none",
         cursor: "pointer",
         background: active ? "var(--surface-inverse)" : "var(--qvl-ghost-bg, transparent)",
-        color: active ? "var(--text-on-inverse)" : "var(--text-heading)",
+        color: active ? "var(--text-on-inverse)" : "var(--qvl-ghost-fg, var(--text-heading))",
         padding: "6px 16px",
         minHeight: 44,
         fontFamily: "var(--font-display)",

@@ -39,7 +39,7 @@ export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promo
                 fontWeight:c.key==="points"||c.key==="team"?"var(--weight-emphasis)":"var(--weight-body)",
                 fontFamily:c.key==="rank"||c.key==="points"?"var(--font-display)":"var(--font-body)",
                 fontSize:c.key==="rank"||c.key==="points"?"var(--text-body)":"inherit",
-                color:c.key==="points"?"var(--text-heading)":"inherit"}}>{r[c.key]}</td>)}
+                color:c.key==="points"&&!me?"var(--text-heading)":"inherit"}}>{r[c.key]}</td>)}
             </tr>;
           })}
         </tbody>

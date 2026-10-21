@@ -21,7 +21,7 @@
   --status-warn-bg:var(--surface-accent-soft);--status-warn-fg:var(--qvl-orange-pale);
   --table-row-bg:var(--qvl-night-card);--table-row-bg-alt:#0F1B1B;--table-border:var(--qvl-night-line);
   --switch-off:#3A5252;
-  --surface-neutral:var(--qvl-night-line);--text-danger:var(--qvl-orange-mid);--control-on:var(--qvl-petrol-mid);
+  --surface-neutral:var(--qvl-night-line);--text-danger:var(--qvl-orange-mid);--text-on-soft:var(--qvl-petrol-pale);--control-on:var(--qvl-petrol-mid);
   --focus-ring:var(--qvl-yellow);--focus-ring-inner:var(--qvl-night);
   --shadow-block-petrol:6px 6px 0 0 var(--qvl-petrol);--shadow-block-grey:6px 6px 0 0 var(--qvl-night-line);--shadow-block-sm-petrol:3px 3px 0 0 var(--qvl-petrol);
   --drop-block-petrol:drop-shadow(6px 6px 0 var(--qvl-petrol));--drop-block-sm-petrol:drop-shadow(3px 3px 0 var(--qvl-petrol));

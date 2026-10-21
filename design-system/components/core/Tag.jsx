@@ -23,7 +23,7 @@ export function Tag({children,selected=false,onRemove,onClick,removeLabel="Entfe
     style={{display:"inline-flex",height:32,padding:1,background:"var(--border-subtle)",
       cursor:interactive?"pointer":"default",...chamfer(6,2),...style}} {...rest}>
     <span style={{display:"inline-flex",alignItems:"center",gap:"var(--space-2)",height:30,padding:"0 9px",
-      background:hover&&interactive?"var(--surface-brand-soft)":"var(--surface-card)",color:"var(--text-heading)",
+      background:hover&&interactive?"var(--surface-brand-soft)":"var(--surface-card)",color:hover&&interactive?"var(--text-on-soft)":"var(--text-heading)",
       fontFamily:"var(--font-body)",fontWeight:"var(--weight-emphasis)",fontSize:"var(--text-small)",
       transition:"background var(--duration-fast) var(--ease-standard)",...chamfer(5,2)}}>{children}{remove}</span>
   </span>;

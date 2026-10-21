@@ -22,7 +22,7 @@ export function IconButton({variant="ghost",size="md",disabled=false,label,child
       style={{display:"inline-flex",alignItems:"stretch",verticalAlign:"middle",boxSizing:"border-box",width:s.box,height:s.box,padding:2,border:"none",background:borderColor,
         cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.5:1,...chamfer(s.ch,2),...style}} {...rest}>
       <span style={{display:"flex",alignItems:"center",justifyContent:"center",width:"100%",height:"100%",
-        background:fillBg,color:disabled?"var(--button-disabled-fg)":"var(--button-secondary-fg)",
+        background:fillBg,color:disabled?"var(--button-disabled-fg)":hover?"var(--text-on-soft)":"var(--button-secondary-fg)",
         transition:"background var(--duration-fast) var(--ease-standard)",...chamfer(Math.max(s.ch-2,2),2)}}>{children}</span>
     </button>);
   }
@@ -31,7 +31,7 @@ export function IconButton({variant="ghost",size="md",disabled=false,label,child
   if(variant==="primary") skin={background:hover&&!disabled?"var(--button-primary-bg-hover)":"var(--button-primary-bg)",color:"var(--button-primary-fg)"};
   else if(variant==="pink") skin={background:hover&&!disabled?"var(--button-pink-bg-hover)":"var(--button-pink-bg)",color:"var(--button-pink-fg)"};
   else if(variant==="accent") skin={background:hover&&!disabled?"var(--button-accent-bg-hover)":"var(--button-accent-bg)",color:"var(--button-accent-fg)"};
-  else skin={background:hover&&!disabled?"var(--surface-brand-soft)":"var(--qvl-ghost-bg,transparent)",color:"var(--button-ghost-fg)"};
+  else skin={background:hover&&!disabled?"var(--surface-brand-soft)":"var(--qvl-ghost-bg,transparent)",color:hover&&!disabled?"var(--text-on-soft)":"var(--qvl-ghost-fg,var(--button-ghost-fg))"};
   return wrap(<button type="button" aria-label={label} title={label} disabled={disabled} onClick={disabled?undefined:onClick}
     {...handlers}
     style={{width:s.box,height:s.box,display:"inline-flex",alignItems:"center",justifyContent:"center",border:"none",

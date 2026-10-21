@@ -9,7 +9,7 @@ const BORDERED={outline:{border:"var(--border-default)",fg:"var(--text-heading)"
 const FILLED={
   petrol:{background:"var(--surface-inverse)",color:"var(--text-on-inverse)"},
   orange:{background:"var(--surface-accent)",color:"var(--text-on-accent)"},
-  soft:{background:"var(--surface-brand-soft)",color:"var(--text-heading)"},
+  soft:{background:"var(--surface-brand-soft)",color:"var(--text-on-soft)"},
   pink:{background:"var(--button-pink-bg)",color:"var(--button-pink-fg)"},
   "pink-soft":{background:"var(--surface-accent2-soft)",color:"var(--text-body-color)"},
   grey:{background:"var(--surface-neutral)",color:"var(--text-body-color)"},

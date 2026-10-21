@@ -28,7 +28,7 @@ export function Tabs({items=[],value,onChange,scrollable=true,panelPrefix,style,
         id={panelPrefix?`${panelPrefix}-tab-${id}`:undefined} aria-controls={panelPrefix?`${panelPrefix}-panel-${id}`:undefined}
         onClick={()=>onChange&&onChange(id)}
         style={{minWidth:0,border:"none",cursor:"pointer",background:active?"var(--surface-inverse)":"var(--qvl-ghost-bg,transparent)",
-          color:active?"var(--text-on-inverse)":"var(--text-heading)",padding:"6px 16px",minHeight:44,
+          color:active?"var(--text-on-inverse)":"var(--qvl-ghost-fg,var(--text-heading))",padding:"6px 16px",minHeight:44,
           fontFamily:"var(--font-display)",fontSize:"var(--text-body)",letterSpacing:"var(--tracking-display)",
           textTransform:"uppercase",lineHeight:1.1,textAlign:"center",overflowWrap:"break-word",transition:"background var(--duration-fast) var(--ease-standard)",
           ...chamfer(8,2)}}>{label}{typeof it!=="string"&&it.count!==undefined?

@@ -23,6 +23,7 @@
   --text-link:var(--qvl-petrol);
   --text-link-hover:var(--qvl-orange-press);
   --text-danger:var(--qvl-orange-deep);
+  --text-on-soft:var(--qvl-petrol);
   --text-separator:var(--qvl-orange);
 
   /* Borders */
