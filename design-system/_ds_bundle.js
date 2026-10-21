@@ -3613,13 +3613,39 @@ function SiteHeader({
   languages = ["DE", "EN", "FR", "PL", "CS", "DA", "SV", "PT", "ES", "IT", "NL"],
   onLanguage,
   cta,
-  compact = false,
+  compact,
   languageLabel = "Sprache",
   menuLabel = "Men\xFC",
   style,
   ...rest
 }) {
   const [open, setOpen] = React.useState(false);
+  // compact omitted = automatic: switch to the menu button as soon as logo, navigation and actions no longer fit in one row,
+  // whatever the label lengths in the current language; switch back once the row is wide enough again.
+  const rowRef = React.useRef(null);
+  const need = React.useRef(0);
+  const [narrow, setNarrow] = React.useState(false);
+  const narrowRef = React.useRef(false);
+  narrowRef.current = narrow;
+  const isCompact = compact !== undefined ? compact : narrow;
+  const useIso = typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
+  useIso(() => {
+    if (compact !== undefined) return;
+    const row = rowRef.current;
+    if (!row || typeof ResizeObserver === "undefined") return;
+    const fit = () => {
+      if (!narrowRef.current) {
+        if (row.scrollWidth > row.clientWidth + 1) {
+          need.current = row.scrollWidth;
+          setNarrow(true);
+        }
+      } else if (row.clientWidth >= need.current) setNarrow(false);
+    };
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(row);
+    return () => ro.disconnect();
+  }, [compact, narrow]);
   return /*#__PURE__*/React.createElement("header", _extends({
     style: {
       background: "var(--surface-inverse)",
@@ -3627,10 +3653,11 @@ function SiteHeader({
       ...style
     }
   }, rest), /*#__PURE__*/React.createElement("div", {
+    ref: rowRef,
     style: {
       maxWidth: "var(--container-max)",
       margin: "0 auto",
-      padding: compact ? "10px var(--gutter-mobile)" : "14px var(--gutter-desktop)",
+      padding: isCompact ? "10px var(--gutter-mobile)" : "14px var(--gutter-desktop)",
       display: "flex",
       alignItems: "center",
       gap: "var(--space-6)"
@@ -3653,10 +3680,10 @@ function SiteHeader({
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Logo, {
     variant: "long-petrol",
-    height: compact ? 24 : 30
+    height: isCompact ? 24 : 30
   })), /*#__PURE__*/React.createElement("nav", {
     style: {
-      display: compact ? "none" : "flex",
+      display: isCompact ? "none" : "flex",
       gap: "var(--space-1)",
       marginLeft: "auto",
       alignItems: "center"
@@ -3694,7 +3721,7 @@ function SiteHeader({
       alignItems: "center",
       gap: "var(--space-2)",
       flex: "none",
-      marginLeft: compact ? "auto" : 0
+      marginLeft: isCompact ? "auto" : 0
     }
   }, /*#__PURE__*/React.createElement("label", {
     style: {
@@ -3735,11 +3762,11 @@ function SiteHeader({
     style: {
       color: "var(--text-body-color)"
     }
-  }, l)))), cta && !compact ? /*#__PURE__*/React.createElement(__ds_scope.Button, {
+  }, l)))), cta && !isCompact ? /*#__PURE__*/React.createElement(__ds_scope.Button, {
     variant: "accent",
     size: "sm",
     href: "#"
-  }, cta) : null, compact ? /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, cta) : null, isCompact ? /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
     label: menuLabel,
     onClick: () => setOpen(!open),
     style: {
@@ -3748,7 +3775,7 @@ function SiteHeader({
   }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
     name: open ? "x" : "menu",
     size: 22
-  })) : null)), compact && open ? /*#__PURE__*/React.createElement("nav", {
+  })) : null)), isCompact && open ? /*#__PURE__*/React.createElement("nav", {
     style: {
       display: "flex",
       flexDirection: "column",

@@ -397,7 +397,7 @@ export interface SiteHeaderProps extends React.HTMLAttributes<HTMLElement> {
   onLanguage?: (code: string) => void;
   /** label of the single orange CTA */
   cta?: string;
-  /** mobile layout: burger menu instead of inline nav */
+  /** Menu-button layout. Omit it to switch automatically when logo, navigation and actions no longer fit in one row (any language); true or false forces a layout. */
   compact?: boolean;
 }
 export function SiteHeader(props: SiteHeaderProps): JSX.Element;
