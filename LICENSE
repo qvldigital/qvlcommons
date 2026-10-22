@@ -13,8 +13,7 @@ Texte. Marke, Name und Logos gehören dem Verein.
 Ausnahme: Inhalte Dritter behalten ihre eigene Lizenz.
 - Schriften: Bebas Neue und Oswald unter der SIL Open Font License 1.1
   (siehe assets/fonts/LICENSE-BebasNeue.txt und assets/fonts/LICENSE-Oswald.txt).
-- Icons: Lucide (Version 0.544.0, ISC-Lizenz), im Icon-Baustein eingebettet;
-  Material Icons (Apache License 2.0, siehe design-system/assets/icons/LICENSE-MaterialIcons.txt).
+- Icons: Lucide (Version 0.544.0, ISC-Lizenz), im Icon-Baustein eingebettet.
 
 English
 
@@ -27,5 +26,4 @@ patterns and texts. The brand, the name and the logos belong to the association.
 Exception: third-party content keeps its own licence.
 - Fonts: Bebas Neue and Oswald under the SIL Open Font License 1.1
   (see assets/fonts/LICENSE-BebasNeue.txt and assets/fonts/LICENSE-Oswald.txt).
-- Icons: Lucide (version 0.544.0, ISC licence), embedded in the Icon component;
-  Material Icons (Apache License 2.0, see design-system/assets/icons/LICENSE-MaterialIcons.txt).
+- Icons: Lucide (version 0.544.0, ISC licence), embedded in the Icon component.

@@ -1,6 +1,6 @@
 {
   "name": "@qvl/commons",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Gemeinsame Basis der Queer-League-Tools (Manager, Planner, Referee): Design System, Design-Tokens und Marken-Assets.",
   "license": "UNLICENSED",
   "private": true,
