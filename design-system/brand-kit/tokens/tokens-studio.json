@@ -41,7 +41,12 @@
       },
       "orange-press": {
         "$type": "color",
-        "$value": "#C75000"
+        "$value": "#E05A00"
+      },
+      "orange-deep": {
+        "$type": "color",
+        "$value": "#AD4500",
+        "$description": "Fehlertext auf hellem Grund (Orange 68 % mit Schwarz): 4,6:1 auf dem Seitengrund"
       },
       "pink": {
         "$type": "color",
@@ -574,6 +579,10 @@
         "$type": "color",
         "$value": "{color.ink}"
       },
+      "on-soft": {
+        "$type": "color",
+        "$value": "{color.petrol}"
+      },
       "on-inverse-accent": {
         "$type": "color",
         "$value": "{color.yellow}"
@@ -588,7 +597,7 @@
       },
       "danger": {
         "$type": "color",
-        "$value": "{color.orange-press}"
+        "$value": "{color.orange-deep}"
       },
       "separator": {
         "$type": "color",
@@ -811,6 +820,10 @@
       "on-accent": {
         "$type": "color",
         "$value": "{color.ink}"
+      },
+      "on-soft": {
+        "$type": "color",
+        "$value": "{color.petrol-pale}"
       },
       "on-inverse-accent": {
         "$type": "color",

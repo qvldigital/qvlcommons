@@ -74,6 +74,10 @@
       "$type": "color",
       "$value": "{color.ink}"
     },
+    "on-soft": {
+      "$type": "color",
+      "$value": "{color.petrol}"
+    },
     "on-inverse-accent": {
       "$type": "color",
       "$value": "{color.yellow}"
@@ -88,7 +92,7 @@
     },
     "danger": {
       "$type": "color",
-      "$value": "{color.orange-press}"
+      "$value": "{color.orange-deep}"
     },
     "separator": {
       "$type": "color",

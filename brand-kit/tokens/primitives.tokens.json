@@ -40,7 +40,12 @@
     },
     "orange-press": {
       "$type": "color",
-      "$value": "#C75000"
+      "$value": "#E05A00"
+    },
+    "orange-deep": {
+      "$type": "color",
+      "$value": "#AD4500",
+      "$description": "Fehlertext auf hellem Grund (Orange 68 % mit Schwarz): 4,6:1 auf dem Seitengrund"
     },
     "pink": {
       "$type": "color",

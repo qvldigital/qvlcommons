@@ -74,6 +74,10 @@
       "$type": "color",
       "$value": "{color.ink}"
     },
+    "on-soft": {
+      "$type": "color",
+      "$value": "{color.petrol-pale}"
+    },
     "on-inverse-accent": {
       "$type": "color",
       "$value": "{color.yellow}"
