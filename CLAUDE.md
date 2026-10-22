@@ -15,4 +15,5 @@ Queer Volleyball League e.V. — extern immer "Queer League". Einstieg ist `desi
 2. 11 Sprachen: nichts mit fester Breite oder `nowrap` auf übersetzbaren Texten.
 3. Mobile first: Tap-Ziele mindestens 44 px.
 4. Feste CI: keine neuen Farbtöne erfinden; Texte und Flächen mit semantischen Tokens (`surface-*`, `text-*`, `border-*`) setzen, nicht mit rohen `qvl-*`-Werten.
-5. Ton: du-Ansprache, Genderstern (Spieler*innen), FLINTA* immer mit Sternchen, kein Emoji, Headlines in Bebas Neue GROSS, Fließtext in Oswald Light.
+5. Icons nach Fläche: Software (Manager, Planner, Referee) und alles aus dem Design System mit Lucide über `Icon`; die Website (Zephyr) behält die Material Icons des Themes, Font Awesome nur für Marken-Symbole. Nie mischen innerhalb einer Fläche.
+6. Ton: du-Ansprache, Genderstern (Spieler*innen), FLINTA* immer mit Sternchen, kein Emoji, Headlines in Bebas Neue GROSS, Fließtext in Oswald Light.

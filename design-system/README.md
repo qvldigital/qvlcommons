@@ -142,9 +142,10 @@ Fast and mechanical, never bouncy. `--duration-fast` 120 ms for colour, `--durat
 ## 5. Iconography
 
 - **No icon set was supplied with the brand material.** ⚠️ **Substitution:** the system uses **Lucide** (stroke, 2 px, `lucide-static@0.544.0`, ISC; the glyphs the system uses are embedded in `Icon`, so no icon request leaves the page; a name that is not embedded falls back to the unpkg CDN) via the `Icon` component, rendered as a CSS mask so it inherits `currentColor`. Sizes 16 / 20 / 22 px. Keep to the stroke set — never mix in filled icon families. Note: Lucide has **no whistle glyph** — for referee contexts use `siren`, `megaphone` or the whistle that already sits inside the `pattern-pads-cards` artwork.
+- **Which set where (decided 21.10.2026):** the software (Manager, Planner, Referee) and everything built from this system uses **Lucide** through `Icon`. The public website (queerleague.de, WordPress theme Zephyr) keeps the theme's own **Material Icons** (filled, classic); Font Awesome stays for brand marks only (social logos), not for controls. Never mix sets within one surface. The website UI kit and template show Lucide as a stand-in for the Material Icons the real site renders. Videos follow the surface they show.
 - **The only brand-owned graphic icon is the volleyball**, extracted programmatically from the supplied CI backgrounds into `assets/icons/ball-{petrol,petrol-dark,orange,white}.png` and exposed as `BallIcon`. It is the illustration used in `EmptyState` and anywhere a spot graphic is needed.
 - The icons *inside* the pattern PNGs (document, info-i, table, medal, whistle, cards, knee pads) are part of that artwork — use the pattern, don't extract them as UI icons.
-- **No emoji**, no unicode characters as icons, no icon font. Hand-drawn SVG icons are not permitted — use Lucide or the supplied artwork.
+- **No emoji**, no unicode characters as icons. In the software no icon font and no hand-drawn SVG icons: use Lucide or the supplied artwork. (The website's theme icon font is the one exception, see above.)
 - Logos are raster PNGs (`assets/logo/`), used through `Logo`. No SVG logo was supplied — see *Caveats*.
 
 ---
@@ -220,7 +221,7 @@ readme.md                  this file
 
 1. **Fonts live outside `design-system/`.** The woff2 files are in `assets/fonts/` at the repository root (`../../assets/fonts/` from `tokens/` and `components/`); a copy of `design-system/` alone loses them. `tokens/fonts.css` and `components/bundle.css` both declare the faces; that is harmless, the browser loads each file once.
 2. **No SVG logo.** All lockups are raster; small sizes and print will suffer. An SVG set would be a real improvement.
-3. **No icon set.** Lucide is a substitution — approve or replace.
+3. **No icon set of its own.** Lucide is a substitution for the software, the website keeps the theme's Material Icons (decided 21.10.2026, see §5).
 4. **`--qvl-ink` is an addition**, not CI. Needs sign-off.
 5. **Products were not accessible.** UI kits are proposals; real screens or code would make them recreations.
 
