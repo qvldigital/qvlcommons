@@ -1,0 +1,31 @@
+qvlcommons
+Copyright (c) 2026 Queer Volleyball League e.V. Alle Rechte vorbehalten. / All rights reserved.
+
+Deutsch
+
+Dieses Repository ist öffentlich einsehbar, aber nicht frei nutzbar. Ohne
+vorherige Zustimmung der Queer Volleyball League e.V. ist es nicht erlaubt,
+Inhalte daraus zu kopieren, zu verändern, weiterzugeben oder in eigenen
+Produkten zu verwenden. Das gilt für das Design System, die Design-Tokens, die
+Komponenten, das Brand Kit, die Logos, Icons, Hintergründe und Muster sowie die
+Texte. Marke, Name und Logos gehören dem Verein.
+
+Ausnahme: Inhalte Dritter behalten ihre eigene Lizenz.
+- Schriften: Bebas Neue und Oswald unter der SIL Open Font License 1.1
+  (siehe assets/fonts/LICENSE-BebasNeue.txt und assets/fonts/LICENSE-Oswald.txt).
+- Icons: Lucide (Version 0.544.0, ISC-Lizenz), im Icon-Baustein eingebettet;
+  Material Icons (Apache License 2.0, siehe design-system/assets/icons/LICENSE-MaterialIcons.txt).
+
+English
+
+This repository is publicly viewable but not free to use. Without prior
+permission from Queer Volleyball League e.V. you may not copy, modify,
+redistribute or use its contents in your own products. This applies to the
+design system, design tokens, components, brand kit, logos, icons, backgrounds,
+patterns and texts. The brand, the name and the logos belong to the association.
+
+Exception: third-party content keeps its own licence.
+- Fonts: Bebas Neue and Oswald under the SIL Open Font License 1.1
+  (see assets/fonts/LICENSE-BebasNeue.txt and assets/fonts/LICENSE-Oswald.txt).
+- Icons: Lucide (version 0.544.0, ISC licence), embedded in the Icon component;
+  Material Icons (Apache License 2.0, see design-system/assets/icons/LICENSE-MaterialIcons.txt).
