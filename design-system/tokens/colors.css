@@ -1,5 +1,5 @@
 /* QVL CI palette — fixed. Do not add new hues.
-   Source: assets/brand/QVL_CI_COLORPALLET.pdf */
+   Source: assets/QVL_CI_COLORPALLET_V1.pdf (repo root) */
 :root{
   /* Base CI */
   --qvl-petrol:#006666;        /* Hauptfarbe */

@@ -21,7 +21,7 @@ Tech stack the tokens are written for: **Next.js + Tailwind + shadcn/ui**, token
 
 Everything here derives from the brand material the user supplied. There was **no codebase, Figma file or screenshot access** — so the UI kits are brand-faithful *proposals*, not recreations of shipped screens (see §8).
 
-- `assets/brand/QVL_CI_COLORPALLET.pdf` (colours + type, read and transcribed; the original upload is no longer kept in this repo)
+- `assets/QVL_CI_COLORPALLET_V1.pdf` in the repo root, outside `design-system/` (colours + type, read and transcribed into `tokens.json`)
 - Logo PNGs: `QVL_LOGO_LANG_PETROL_ORANGE_RAHMEN`, `QVL_LOGO_LANG_ORANGE_PETROL_RAHMEN`, `QVL_LOGO_KURZ_PETROL_ORANGE_RAHMEN2`, `QVL_ICON_PETROL_ORANGE`
 - 8 net/ball background PNGs (`HINTERGRUND_FELD_*`) and 3 icon-net pattern PNGs (`HINTERGRUND_DOKUMENTE_INFO`, `HINTERGRUND_TABELLE_MEDAILLE`, `HINTERGRUND_SCHONER_KARTEN`)
 - Written CI notes from the user (colour roles, typography, Formensprache, tonality, principles)
@@ -205,7 +205,6 @@ assets/logo/               4 supplied logo lockups (PNG)
 assets/backgrounds/        9 net + ball colourways (PNG)
 assets/patterns/           3 icon-net patterns (PNG)
 assets/icons/              ball mark, 4 colourways (extracted PNG)
-assets/brand/              QVL_CI_COLORPALLET.pdf
 assets/<group>/README.md   usage notes per asset group
 components/{core,forms,navigation,feedback,league,brand}/
 guidelines/                23 foundation specimen cards (Colors, Type, Spacing, Shape, Brand)
