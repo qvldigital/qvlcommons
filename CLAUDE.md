@@ -17,3 +17,18 @@ Queer Volleyball League e.V. — extern immer "Queer League". Einstieg ist `desi
 4. Feste CI: keine neuen Farbtöne erfinden; Texte und Flächen mit semantischen Tokens (`surface-*`, `text-*`, `border-*`) setzen, nicht mit rohen `qvl-*`-Werten.
 5. Icons nach Fläche: Software (Manager, Planner, Referee) und alles aus dem Design System mit Lucide über `Icon`; die Website (Zephyr) behält die Material Icons des Themes, Font Awesome nur für Marken-Symbole. Nie mischen innerhalb einer Fläche.
 6. Ton: du-Ansprache, Genderstern (Spieler*innen), FLINTA* immer mit Sternchen, kein Emoji, Headlines in Bebas Neue GROSS, Fließtext in Oswald Light.
+
+## QVL To-Do-Liste (Source of Truth für offene Punkte)
+
+Zentrale Liste aller offenen QVL-Punkte: https://claude.ai/artifact/QQ4TjdruSP4SC6SPSqPcBP
+
+Wenn Sebi um einen Abgleich bittet oder eine Session mit offenen Folgeaufgaben endet:
+
+1. Sammle offene Aufgaben, offene Entscheidungen und in der Session Erledigtes. Nur Besprochenes oder Beschlossenes, keine Vermutungen.
+2. Mit Zugriff auf die Artefakt-Datenbank (ArtifactData):
+   - Zuerst `items` lesen und abgleichen: Vorhandenes aktualisieren, Erledigtes auf status "done" mit doneAt setzen, nichts löschen.
+   - Neue Punkte in `items` anlegen. Felder: title, detail (1–3 Sätze), area (manager | design | website | newsletter | dv | planner), group, status "open", priority ("" oder P1–P3, nur wenn Sebi sie nennt), due (YYYY-MM-DD oder ""), kind ("" | entscheidung | vorstand | merker | selbst), label (z. B. Version oder Commit), source ("Claude Code: <Repo>"), order (über dem bisherigen Höchstwert), createdAt, updatedAt. doc_id kurz und eindeutig.
+   - Offene Entscheidungen zusätzlich in `questions`. Felder: text, context, options, itemId, status "open", answer "", note "", createdAt, answeredAt "". `options` ist eine Liste von Texten (`["A", "B"]`), kein einzelner Text mit „|“; alle Textfelder sind Strings.
+   - Alles in einer Batch-Operation schreiben, danach melden, was neu, geändert und erledigt ist.
+3. Ohne Zugriff: Die Punkte als JSON-Block im obigen Format ausgeben, Überschrift „Für die QVL To-Do-Liste“.
+4. Technische Entscheidungen gehören zusätzlich ins Repo (CLAUDE.md, Docs, Commit-Message), nicht nur in die Liste.
