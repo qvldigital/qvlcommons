@@ -10,7 +10,7 @@ Stand: 21. Oktober 2026. Quelle der Wahrheit bleibt das Design System (`../style
 - `palettes/qvl-palette.gpl` — Farbfelder für GIMP, Inkscape, Krita.
 - `palettes/qvl-colors.csv` — Hex-Liste zum Abtippen/Kopieren.
 - `logos/`, `icons/`, `backgrounds/`, `patterns/` — Bildmaterial (PNG).
-- `illustrations/` — sechs Insel-Illustrationen (Website, Cloud, Formulare, Newsletter, Community, Mail) als SVG und transparentes PNG; Regeln in `design-system/assets/illustrations/README.md`.
+- `illustrations/` — acht Insel-Illustrationen (Website, Cloud, Formulare, Newsletter, Community, Mail, Tickets -50 %, 10 Free Tickets) als SVG und transparentes PNG; Regeln in `design-system/assets/illustrations/README.md`.
 
 ## So importieren
 **Figma (Variables):** Lokale Variablen → Import → `primitives.tokens.json` als Collection „Primitives“; dann `light.tokens.json` und `dark.tokens.json` als zwei Modi einer Collection „Theme“. Verläufe und Typografie kann Figma nicht als Variablen — als Styles anlegen (Werte in primitives unter `gradient` / `typography`).
