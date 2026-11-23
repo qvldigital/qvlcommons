@@ -1,0 +1,174 @@
+{
+ "ball": [
+  "liga",
+  "Volleyball"
+ ],
+ "net": [
+  "liga",
+  "Netz mit Ball"
+ ],
+ "court": [
+  "liga",
+  "Spielfeld"
+ ],
+ "whistle": [
+  "liga",
+  "Pfeife"
+ ],
+ "scoreboard": [
+  "liga",
+  "Anzeigetafel"
+ ],
+ "trophy": [
+  "liga",
+  "Pokal"
+ ],
+ "medal": [
+  "liga",
+  "Medaille"
+ ],
+ "jersey": [
+  "liga",
+  "Trikot"
+ ],
+ "kneepads": [
+  "liga",
+  "Knieschoner"
+ ],
+ "lineup": [
+  "liga",
+  "Aufstellung"
+ ],
+ "standings": [
+  "liga",
+  "Tabelle"
+ ],
+ "matchday": [
+  "liga",
+  "Spieltag"
+ ],
+ "team": [
+  "liga",
+  "Team"
+ ],
+ "stopwatch": [
+  "liga",
+  "Auszeit"
+ ],
+ "website": [
+  "kontakt",
+  "Website"
+ ],
+ "mail": [
+  "kontakt",
+  "Mail"
+ ],
+ "newsletter": [
+  "kontakt",
+  "Newsletter"
+ ],
+ "community": [
+  "kontakt",
+  "Community-Chat"
+ ],
+ "push": [
+  "kontakt",
+  "Push-Nachricht"
+ ],
+ "social": [
+  "kontakt",
+  "Social Media"
+ ],
+ "livestream": [
+  "kontakt",
+  "Livestream"
+ ],
+ "videocall": [
+  "kontakt",
+  "Videocall"
+ ],
+ "qr-code": [
+  "kontakt",
+  "QR-Code"
+ ],
+ "cloud": [
+  "kontakt",
+  "Cloud & Dateien"
+ ],
+ "forms": [
+  "kontakt",
+  "Formular"
+ ],
+ "magic-link": [
+  "kontakt",
+  "Magic Link"
+ ],
+ "tickets-50": [
+  "organisation",
+  "Tickets -50 %"
+ ],
+ "tickets-10-free": [
+  "organisation",
+  "10 Free Tickets"
+ ],
+ "vote": [
+  "organisation",
+  "Abstimmung"
+ ],
+ "agenda": [
+  "organisation",
+  "Tagesordnung"
+ ],
+ "statute": [
+  "organisation",
+  "Satzung"
+ ],
+ "finance": [
+  "organisation",
+  "Finanzen"
+ ],
+ "receipt": [
+  "organisation",
+  "Auslagen"
+ ],
+ "membership": [
+  "organisation",
+  "Mitgliedsausweis"
+ ],
+ "megaphone": [
+  "organisation",
+  "Ankündigung"
+ ],
+ "press": [
+  "organisation",
+  "Presse"
+ ],
+ "safe-space": [
+  "organisation",
+  "Safe Space"
+ ],
+ "location-private": [
+  "organisation",
+  "Ort geschützt"
+ ],
+ "stats": [
+  "organisation",
+  "Statistik"
+ ],
+ "folder": [
+  "organisation",
+  "Ablage"
+ ],
+ "checklist": [
+  "organisation",
+  "Checkliste"
+ ],
+ "volunteer": [
+  "organisation",
+  "Ehrenamt"
+ ],
+ "costs-rising": [
+  "organisation",
+  "Steigende Kosten"
+ ]
+}

@@ -143,7 +143,7 @@ Fast and mechanical, never bouncy. `--duration-fast` 120 ms for colour, `--durat
 
 - **No icon set was supplied with the brand material.** ⚠️ **Substitution:** the system uses **Lucide** (stroke, 2 px, `lucide-static@0.544.0`, ISC; the glyphs the system uses are embedded in `Icon`, so no icon request leaves the page; a name that is not embedded falls back to the unpkg CDN) via the `Icon` component, rendered as a CSS mask so it inherits `currentColor`. Sizes 16 / 20 / 22 px. Keep to the stroke set — never mix in filled icon families. Note: Lucide has **no whistle glyph** — for referee contexts use `siren`, `megaphone` or the whistle that already sits inside the `pattern-pads-cards` artwork.
 - **Which set where (decided 21.10.2026):** the software (Manager, Planner, Referee) and everything built from this system uses **Lucide** through `Icon`. The public website (queerleague.de, WordPress theme Zephyr) keeps the theme's own **Material Icons** (filled, classic); Font Awesome stays for brand marks only (social logos), not for controls. Never mix sets within one surface. The website UI kit and template show Lucide as a stand-in for the Material Icons the real site renders. Videos follow the surface they show.
-- **The only brand-owned graphic icon is the volleyball**, extracted programmatically from the supplied CI backgrounds into `assets/icons/ball-{petrol,petrol-dark,orange,white}.png` and exposed as `BallIcon`. It is the illustration used in `EmptyState` and anywhere a spot graphic is needed.
+- **The only brand-owned graphic icon is the volleyball**, extracted programmatically from the supplied CI backgrounds into `assets/icons/ball-{petrol,petrol-dark,orange,white}.png` and exposed as `BallIcon`. It is the illustration used in `EmptyState` and anywhere a spot graphic is needed. For slides, mails and posts there are also 43 illustrations in `assets/illustrations/` (volleyball and league, digital contact channels, organisation), generated from `../assets/illustrations/build.py`; see their README.
 - The icons *inside* the pattern PNGs (document, info-i, table, medal, whistle, cards, knee pads) are part of that artwork — use the pattern, don't extract them as UI icons.
 - **No emoji**, no unicode characters as icons. In the software no icon font and no hand-drawn SVG icons: use Lucide or the supplied artwork. (The website's theme icon font is the one exception, see above.)
 - Logos are raster PNGs (`assets/logo/`), used through `Logo`. No SVG logo was supplied — see *Caveats*.
@@ -205,6 +205,8 @@ assets/logo/               4 supplied logo lockups (PNG)
 assets/backgrounds/        9 net + ball colourways (PNG)
 assets/patterns/           3 icon-net patterns (PNG)
 assets/icons/              ball mark, 4 colourways (extracted PNG)
+assets/apps/               app lockups and app icons for Manager, Planner, Referee
+assets/illustrations/      43 illustrations (SVG + PNG), overview.png
 assets/<group>/README.md   usage notes per asset group
 components/{core,forms,navigation,feedback,league,brand}/
 guidelines/                23 foundation specimen cards (Colors, Type, Spacing, Shape, Brand)
