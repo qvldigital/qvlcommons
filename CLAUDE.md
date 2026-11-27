@@ -18,6 +18,15 @@ Queer Volleyball League e.V. — extern immer "Queer League". Einstieg ist `desi
 5. Icons nach Fläche: Software (Manager, Planner, Referee) und alles aus dem Design System mit Lucide über `Icon`; die Website (Zephyr) behält die Material Icons des Themes, Font Awesome nur für Marken-Symbole. Nie mischen innerhalb einer Fläche.
 6. Ton: du-Ansprache, Genderstern (Spieler*innen), FLINTA* immer mit Sternchen, kein Emoji, Headlines in Bebas Neue GROSS, Fließtext in Oswald Light.
 
+## Leitplanken für Design-Skills (gilt für alle Apps)
+Farben, Schriften, Nacht-Modus und Tokens kommen ausschließlich aus `design-system/tokens.json`. Kein Skill schlägt eigenmächtig neue Paletten, Schriften, Radien oder Schatten vor.
+- impeccable: Standard für App-Bildschirme. Erlaubt sind audit, critique, harden, polish, clarify, distill, adapt, layout; nicht bolder, colorize, overdrive, new-work.
+- ui-ux-pro-max: nur als Nachschlagewerk mit `--domain ux|chart|react` und `--stack nextjs|shadcn|react`, nie `--design-system`, `--persist` oder `--tokens`. Next.js-Hinweise gegen die Docs der installierten Next-Version prüfen. Tap-Ziele 44 px, nicht 24.
+- design-taste-frontend: nur für öffentliche Werbe- oder Kampagnenseiten, nicht für Manager, Planner, Referee. Seine Verbote von Verläufen, Haarlinien und Eyebrows gelten nicht; Fotos nie mit Hallen, Orten oder Adressen.
+- Vorrang bei der Umsetzung: Regeln dieses Repos > impeccable > ui-ux-pro-max > design-taste-frontend.
+- Widerspricht ein Skill der CI, wird das nicht weggewischt, sondern als Frage an die CI notiert (Regel bleibt, wird verfeinert oder fällt). Marke (Farben, Formen) entscheidet Sebi bzw. der Vorstand; reine Umsetzung (Schriftschnitt, Mindestgrößen, Dichte) kann in Commons verbessert werden.
+- Jede App verweist in ihrer eigenen `CLAUDE.md` auf diesen Abschnitt.
+
 ## QVL To-Do-Liste (Source of Truth für offene Punkte)
 
 Zentrale Liste aller offenen QVL-Punkte: https://claude.ai/artifact/QQ4TjdruSP4SC6SPSqPcBP
