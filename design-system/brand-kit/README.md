@@ -10,6 +10,7 @@ Stand: 21. Oktober 2026. Quelle der Wahrheit bleibt das Design System (`../style
 - `palettes/qvl-palette.gpl` — Farbfelder für GIMP, Inkscape, Krita.
 - `palettes/qvl-colors.csv` — Hex-Liste zum Abtippen/Kopieren.
 - `logos/`, `icons/`, `backgrounds/`, `patterns/` — Bildmaterial (PNG).
+- `apps/` — Logos und App-Icons von Manager, Planner und Referee: je App `logo-light` (helle Flächen), `logo-dark` (dunkle Flächen, ohne weiße Platte) und das App-Icon als PNG (1024 px) und SVG. Nie umfärben oder verzerren; Regeln in `design-system/assets/apps/README.md`.
 - `illustrations/` — 43 Illustrationen zu Volleyball und Liga, Kontaktwegen und Organisation als SVG und transparentes PNG (1200 px); Regeln in `design-system/assets/illustrations/README.md`.
 
 ## So importieren
