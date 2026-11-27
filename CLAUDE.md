@@ -14,6 +14,10 @@ Queer Volleyball League e.V., extern immer „Queer League“. Manager und Plann
 5. Icons: Software und Design System nur Lucide über `Icon`; die Website (Zephyr) Material Icons, Font Awesome nur für Marken. Nie mischen.
 6. Ton: du, Genderstern (Spieler*innen), FLINTA* mit Sternchen, kein Emoji, Headlines Bebas Neue in Versalien, Fließtext Oswald Regular (Light nur für Leadtext ab 19 px).
 
+## READMEs
+- Alle drei Repos haben dieselbe README-Struktur und oben dieselbe Repo-Tabelle mit den Adressen.
+- Vor jedem Prod-Release (Apps: PR `staging` → `main`, Commons: Tag `vX.Y.Z`) die `README.md` prüfen und im selben PR nachziehen: Stand und Version, Adressen und Umgebungen, Variablen, Befehle, Doku-Tabelle. Ändert sich die Repo-Tabelle, in allen drei Repos anpassen, je Repo eigener Commit oder PR.
+
 ## Design-Skills
 - impeccable ist Standard für App-Bildschirme, nur audit, critique, harden, polish, clarify, distill, adapt, layout.
 - ui-ux-pro-max nur als Nachschlagewerk (`--domain ux|chart|react`, `--stack nextjs|shadcn|react`), nie `--design-system`, `--persist`, `--tokens`.
