@@ -1,13 +1,21 @@
 import React from "react";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 const SIZES={sm:{box:44,ch:6},md:{box:44,ch:8},lg:{box:52,ch:10}};
 
 export function IconButton({variant="ghost",size="md",disabled=false,label,children,onClick,style,...rest}){
   const [hover,setHover]=React.useState(false);
+  const [press,setPress]=React.useState(false);
   const s=SIZES[size]||SIZES.md;
-  const handlers={onMouseEnter:()=>setHover(true),onMouseLeave:()=>setHover(false)};
+  // Press like Button: scale to --press-scale, release snaps back with --ease-snap.
+  const handlers=disabled?{}:{onMouseEnter:()=>setHover(true),onMouseLeave:()=>setHover(false),
+    onPointerDown:()=>setPress(true),onPointerUp:()=>setPress(false),onPointerLeave:()=>setPress(false),onPointerCancel:()=>setPress(false)};
+  const pressCss={transform:press?"scale(var(--press-scale))":"none",
+    transition:`background var(--duration-fast) var(--ease-standard),${press?"transform var(--duration-instant) var(--ease-standard)":"transform var(--duration-slow) var(--ease-snap)"}`};
 
   // clip-path clips outline and box-shadow: the focus ring is drawn on this unclipped wrapper (see .qvl-focus in bundle.css).
   const wrap=(el)=><span className="qvl-focus">{el}</span>;
@@ -20,7 +28,7 @@ export function IconButton({variant="ghost",size="md",disabled=false,label,child
     return wrap(<button type="button" aria-label={label} title={label} disabled={disabled} onClick={disabled?undefined:onClick}
       {...handlers}
       style={{display:"inline-flex",alignItems:"stretch",verticalAlign:"middle",boxSizing:"border-box",width:s.box,height:s.box,padding:2,border:"none",background:borderColor,
-        cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.5:1,...chamfer(s.ch,2),...style}} {...rest}>
+        cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.5:1,...pressCss,...chamfer(s.ch,2),...style}} {...rest}>
       <span style={{display:"flex",alignItems:"center",justifyContent:"center",width:"100%",height:"100%",
         background:fillBg,color:disabled?"var(--button-disabled-fg)":hover?"var(--text-on-soft)":"var(--button-secondary-fg)",
         transition:"background var(--duration-fast) var(--ease-standard)",...chamfer(Math.max(s.ch-2,2),2)}}>{children}</span>
@@ -36,5 +44,5 @@ export function IconButton({variant="ghost",size="md",disabled=false,label,child
     {...handlers}
     style={{width:s.box,height:s.box,display:"inline-flex",alignItems:"center",justifyContent:"center",border:"none",
       cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.5:1,
-      transition:"background var(--duration-fast) var(--ease-standard)",...chamfer(s.ch,2),...skin,...style}} {...rest}>{children}</button>);
+      ...pressCss,...chamfer(s.ch,2),...skin,...style}} {...rest}>{children}</button>);
 }

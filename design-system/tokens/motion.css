@@ -1,13 +1,21 @@
+/* Motion — precise and fast, with momentum in the moments that matter (CI review 27.11.2026). Animate transform and opacity only; input never waits for an animation. */
 :root{
   --ease-standard:cubic-bezier(0.2,0,0.2,1); /* @kind other */
   --ease-out:cubic-bezier(0,0,0.2,1); /* @kind other */
   --ease-in:cubic-bezier(0.4,0,1,1); /* @kind other */
+  --ease-snap:linear(0, 0.22 6%, 0.66 16%, 1.03 28%, 1.07 35%, 1.02 48%, 0.995 62%, 1); /* @kind other */
+  --ease-arrive:cubic-bezier(0.16,1,0.3,1); /* @kind other */
   --duration-instant:80ms; /* @kind other */
   --duration-fast:120ms; /* @kind other */
   --duration-base:180ms; /* @kind other */
   --duration-slow:260ms; /* @kind other */
+  --duration-moment:420ms; /* @kind other */
   --press-scale:0.98; /* @kind other */
+  --press-depth:4px; /* @kind other */
+  --motion-rise:12px; /* @kind other */
+  --stagger:40ms; /* @kind other */
 }
+/* Reduced motion: no spatial movement, short colour and opacity changes stay */
 @media (prefers-reduced-motion:reduce){
-  :root{--duration-instant:0ms; /* @kind other */ --duration-fast:0ms; /* @kind other */ --duration-base:0ms; /* @kind other */ --duration-slow:0ms; /* @kind other */ --press-scale:1 /* @kind other */}
+  :root{--duration-instant:0ms; /* @kind other */ --duration-base:120ms; /* @kind other */ --duration-slow:120ms; /* @kind other */ --duration-moment:160ms; /* @kind other */ --press-scale:1; /* @kind other */ --press-depth:0px; /* @kind other */ --motion-rise:0px; /* @kind other */ --stagger:0ms; /* @kind other */ --ease-snap:var(--ease-out); /* @kind other */ }
 }

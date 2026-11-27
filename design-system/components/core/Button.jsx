@@ -1,7 +1,10 @@
 import React from "react";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 const SIZES={
   sm:{padding:"4px 14px",height:44,fontSize:"var(--text-small)",ch:6},
@@ -14,8 +17,10 @@ export function Button({variant="primary",size="md",disabled=false,fullWidth=fal
   const [press,setPress]=React.useState(false);
   const s=SIZES[size]||SIZES.md;
   const solid=(bg,hov,pr,fg)=>({background:disabled?"var(--button-disabled-bg)":press?pr:hover?hov:bg,color:disabled?"var(--button-disabled-fg)":fg,border:"none"});
-  const handlers=disabled?{}:{onMouseEnter:()=>setHover(true),onMouseLeave:()=>{setHover(false);setPress(false)},
-    onMouseDown:()=>setPress(true),onMouseUp:()=>setPress(false),onClick};
+  // Pointer events so touch presses too. Down takes --duration-instant, release snaps back with --ease-snap.
+  const handlers=disabled?{}:{onMouseEnter:()=>setHover(true),onMouseLeave:()=>setHover(false),
+    onPointerDown:()=>setPress(true),onPointerUp:()=>setPress(false),onPointerLeave:()=>setPress(false),onPointerCancel:()=>setPress(false),onClick};
+  const pressMove=press?"transform var(--duration-instant) var(--ease-standard)":"transform var(--duration-slow) var(--ease-snap)";
 
   // clip-path clips outline and box-shadow, so the focus ring is drawn on this unclipped wrapper (see .qvl-focus in bundle.css).
   const wrap=(el)=><span className="qvl-focus" style={fullWidth?{display:"flex",width:"100%"}:undefined}>{el}</span>;
@@ -30,7 +35,7 @@ export function Button({variant="primary",size="md",disabled=false,fullWidth=fal
     const fg=disabled?"var(--button-disabled-fg)":hover?"var(--text-on-soft)":"var(--button-secondary-fg)";
     const outerCss={display:"inline-flex",alignItems:"stretch",verticalAlign:"middle",minHeight:s.height,minWidth:s.height,boxSizing:"border-box",width:fullWidth?"100%":"auto",background:borderColor,padding:2,border:"none",
       cursor:disabled?"not-allowed":"pointer",transform:press&&!disabled?"scale(var(--press-scale))":"none",
-      transition:"transform var(--duration-instant) var(--ease-standard)",...chamfer(s.ch,2),...style};
+      transition:pressMove,...chamfer(s.ch,2),...style};
     const innerCss={display:"flex",alignItems:"center",justifyContent:"center",gap:"var(--space-2)",
       width:"100%",padding:s.padding,boxSizing:"border-box",background:fillBg,color:fg,
       fontFamily:"var(--font-display)",fontSize:s.fontSize,letterSpacing:"var(--tracking-display)",
@@ -51,7 +56,7 @@ export function Button({variant="primary",size="md",disabled=false,fullWidth=fal
     minHeight:s.height,minWidth:s.height,padding:s.padding,width:fullWidth?"100%":"auto",
     fontFamily:"var(--font-display)",fontSize:s.fontSize,letterSpacing:"var(--tracking-display)",
     textTransform:"uppercase",textDecoration:"none",lineHeight:1.1,textAlign:"center",overflowWrap:"anywhere",cursor:disabled?"not-allowed":"pointer",
-    transition:"background var(--duration-fast) var(--ease-standard),transform var(--duration-instant) var(--ease-standard)",
+    transition:`background var(--duration-fast) var(--ease-standard),${pressMove}`,
     transform:press&&!disabled?"scale(var(--press-scale))":"none",
     ...chamfer(s.ch,2),...skin,...style};
 

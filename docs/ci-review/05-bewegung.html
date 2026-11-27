@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CI-Review 5: Bewegung</title>
+<link rel="stylesheet" href="../../design-system/styles.css">
+<link rel="stylesheet" href="../../design-system/components/bundle.css">
+<style>
+  body { padding: 16px; }
+  :root { --motion-rise: 6px; --duration-exit: 120ms; }
+  body.rm { --press-scale: 1; --motion-rise: 0px; --duration-base: 120ms; --duration-slow: 120ms; }
+  .cols { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .col { flex: 1 1 340px; min-width: 0; padding: 16px; background: var(--surface-card); border: 1px solid var(--border-default); display: grid; gap: 12px; align-content: start; }
+  .tag { font-family: var(--font-display); font-size: 1.125rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-heading); margin: 0; }
+  .note { font-size: .875rem; color: var(--text-muted); margin: 0; }
+  .btn { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: var(--tracking-display); text-transform: uppercase; min-height: 44px; padding: 0 20px; border: 0; background: var(--surface-inverse); color: var(--text-on-inverse); cursor: pointer; justify-self: start;
+    transition: background var(--duration-fast) var(--ease-standard), transform var(--duration-instant) var(--ease-standard); }
+  .btn:hover { background: color-mix(in srgb, var(--surface-inverse) 86%, #000); }
+  .btn:active { transform: scale(var(--press-scale)); }
+  .stage { position: relative; min-height: 64px; }
+  .toast { padding: 12px 16px; background: var(--surface-inverse); color: var(--text-on-inverse); }
+  .A .toast[hidden] { display: none; }
+  .B .toast { opacity: 0; transform: translateY(var(--motion-rise)); visibility: hidden;
+    transition: opacity var(--duration-exit) var(--ease-in), transform var(--duration-exit) var(--ease-in), visibility 0s var(--duration-exit); }
+  .B .toast.on { opacity: 1; transform: none; visibility: visible;
+    transition: opacity var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out), visibility 0s; }
+  .score { font-family: var(--font-display); font-size: 3rem; line-height: 1; color: var(--text-heading); padding: 4px 8px; justify-self: start; }
+  .B .score.flash { animation: flash var(--duration-slow) var(--ease-out); }
+  @keyframes flash { from { background: var(--highlight-bg); color: var(--highlight-fg); } to { background: transparent; } }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  label.rm { display: flex; gap: 8px; align-items: center; min-height: 44px; font-size: .875rem; }
+</style>
+</head>
+<body>
+<h1>Bewegung und Zustandswechsel</h1>
+<label class="rm"><input type="checkbox" id="rm"> Reduzierte Bewegung simulieren (Variante B: Bewegung fällt weg, Farbe und Deckkraft bleiben kurz)</label>
+<div class="cols">
+  <div class="col A">
+    <p class="tag">A · heute</p>
+    <p class="note">Press und Hover definiert; Overlays und Wertwechsel erscheinen ohne Übergang</p>
+  </div>
+  <div class="col B">
+    <p class="tag">B · kleines Regelwerk</p>
+    <p class="note">Toast: rein 180 ms (heben und einblenden), raus 120 ms; neuer Satzstand blitzt kurz in Highlight-Gelb auf</p>
+  </div>
+</div>
+<template id="t">
+  <button class="btn">Speichern</button>
+  <div class="row"><button class="btn tg">Toast zeigen</button></div>
+  <div class="stage"><div class="toast" hidden>Spielbericht gespeichert.</div></div>
+  <div class="row"><span class="score">25</span><button class="btn plus">+1 Punkt</button></div>
+</template>
+<script>
+  for (const col of document.querySelectorAll(".col")) {
+    col.append(document.getElementById("t").content.cloneNode(true));
+    const toast = col.querySelector(".toast"), score = col.querySelector(".score");
+    const isB = col.classList.contains("B");
+    if (isB) toast.hidden = false;
+    col.querySelector(".tg").onclick = () => {
+      if (isB) toast.classList.toggle("on"); else toast.hidden = !toast.hidden;
+    };
+    col.querySelector(".plus").onclick = () => {
+      score.textContent = +score.textContent + 1;
+      if (isB) { score.classList.remove("flash"); void score.offsetWidth; score.classList.add("flash"); }
+    };
+  }
+  document.getElementById("rm").onchange = e => document.body.classList.toggle("rm", e.target.checked);
+</script>
+</body>
+</html>

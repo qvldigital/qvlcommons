@@ -1,8 +1,11 @@
 import React from "react";
 import { Icon } from "../core/Icon.jsx";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 export function Dialog({open=false,title,children,footer,onClose,width=520,closeLabel="Schließen",style,...rest}){
   const boxRef=React.useRef(null);
@@ -27,11 +30,18 @@ export function Dialog({open=false,title,children,footer,onClose,width=520,close
     document.addEventListener("keydown",onKey);
     return()=>{document.removeEventListener("keydown",onKey);if(opener&&opener.focus) opener.focus();};
   },[open]);
-  if(!open) return null;
-  return <div ref={boxRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label={title}
-    style={{position:"fixed",inset:0,zIndex:80,display:"flex",alignItems:"center",justifyContent:"center",padding:"var(--space-4)",outline:"none"}}>
-    <div onClick={onClose} style={{position:"absolute",inset:0,background:"var(--overlay-scrim)",opacity:"var(--overlay-scrim-alpha)"}}/>
-    <div style={{position:"relative",width:"100%",maxWidth:width,filter:"var(--drop-block-orange)"}}>
+  // Motion: the panel rises in with --ease-snap; on close it stays mounted for its short exit (--duration-fast) and lets clicks through meanwhile.
+  const [shown,setShown]=React.useState(open);
+  React.useEffect(()=>{if(open) setShown(true);},[open]);
+  // Safety net if the exit animation never runs (animations switched off by the browser or a user style).
+  React.useEffect(()=>{if(open||!shown) return;const t=setTimeout(()=>setShown(false),400);return()=>clearTimeout(t);},[open,shown]);
+  if(!open&&!shown) return null;
+  const leaving=!open;
+  return <div ref={boxRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label={title} aria-hidden={leaving||undefined}
+    style={{position:"fixed",inset:0,zIndex:80,display:"flex",alignItems:"center",justifyContent:"center",padding:"var(--space-4)",outline:"none",pointerEvents:leaving?"none":undefined}}>
+    <div onClick={onClose} className={leaving?"qvl-fade-leave":"qvl-fade-enter"} style={{position:"absolute",inset:0,background:"var(--overlay-scrim)",opacity:"var(--overlay-scrim-alpha)"}}/>
+    <div className={leaving?"qvl-leave":"qvl-enter"} onAnimationEnd={(e)=>{if(e.target===e.currentTarget&&leaving) setShown(false);}}
+      style={{position:"relative",width:"100%",maxWidth:width,filter:"var(--drop-block-orange)"}}>
       <div style={{background:"var(--border-default)",padding:3,...chamfer(14,4),...style}} {...rest}>
         <div style={{background:"var(--surface-card)",...chamfer(12,4)}}>
           <div style={{display:"flex",alignItems:"flex-start",gap:"var(--space-4)",padding:"var(--space-5) var(--space-5) 0"}}>

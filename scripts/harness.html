@@ -1,0 +1,21 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Preview-Hülle</title>
+<link rel="stylesheet" href="../design-system/styles.css"><link rel="stylesheet" href="../design-system/components/bundle.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="../design-system/components/bundle.js"></script>
+<script src="../design-system/theme.js"></script>
+<!-- Renders one component preview with React, bundle and tokens: ?c=<Component>[&theme=dark][&fallback=1][&pseudo=1] -->
+<script src="pseudo-l10n.js"></script></head><body><script>
+(async () => {
+  const q = new URLSearchParams(location.search), c = q.get("c");
+  if (q.get("fallback")) { const s = document.createElement("style"); s.textContent = ":root{--qvl-chamfer-clip:initial!important;--qvl-bevel:0!important;--qvl-bevel-overflow:visible!important}"; document.head.append(s); }
+  if (q.get("theme")) document.documentElement.dataset.theme = q.get("theme");
+  const html = await (await fetch("../design-system/components/" + c + "/preview.html", { cache: "no-store" })).text();
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  doc.querySelectorAll("style").forEach(s => document.head.append(s.cloneNode(true)));
+  for (const n of [...doc.body.childNodes]) {
+    if (n.tagName === "SCRIPT") { const s = document.createElement("script"); s.textContent = n.textContent; document.body.append(s); }
+    else document.body.append(document.importNode(n, true));
+  }
+})();
+</script></body></html>

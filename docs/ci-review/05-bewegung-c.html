@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CI-Review 5: Bewegung C</title>
+<link rel="stylesheet" href="../../design-system/styles.css">
+<link rel="stylesheet" href="../../design-system/components/bundle.css">
+<style>
+  /* Proposed motion tokens (variant C) */
+  :root {
+    --ease-snap: linear(0, 0.22 6%, 0.66 16%, 1.03 28%, 1.07 35%, 1.02 48%, 0.995 62%, 1);  /* short overshoot, settles fast */
+    --ease-arrive: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-moment: 420ms;   /* a moment that matters: set won, saved, arrived */
+    --motion-rise: 12px;
+    --stagger: 40ms;            /* list entrance, capped at 6 items */
+    --press-depth: 4px;         /* button sinks into its block shadow */
+  }
+  body.rm { --motion-rise: 0px; --press-depth: 0px; --stagger: 0ms; --duration-moment: 160ms; --ease-snap: ease-out; }
+
+  body { padding: 16px; }
+  .wrap { max-width: 440px; display: grid; gap: 24px; }
+  .tag { font-family: var(--font-display); font-size: 1.125rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-heading); margin: 0 0 8px; }
+  .note { font-size: .875rem; color: var(--text-muted); margin: 0 0 12px; }
+  label.rm { display: flex; gap: 8px; align-items: center; min-height: 44px; font-size: .875rem; }
+
+  /* 1 press: the button sinks into its block shadow, snaps back */
+  .press { position: relative; display: inline-block; filter: var(--drop-block-petrol); }
+  .press button { font-family: var(--font-display); font-size: 1.375rem; letter-spacing: var(--tracking-display); text-transform: uppercase;
+    min-height: 48px; padding: 0 24px; border: 0; cursor: pointer; background: var(--surface-accent); color: var(--text-on-accent);
+    clip-path: polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+    transition: transform var(--duration-moment) var(--ease-snap); }
+  .press:has(button:active) { filter: drop-shadow(calc(6px - var(--press-depth)) calc(6px - var(--press-depth)) 0 var(--qvl-petrol)); }
+  .press button:active { transform: translate(var(--press-depth), var(--press-depth)); transition-duration: 60ms; }
+
+  /* 2 score: digits roll, set win sweeps the Spektrum line */
+  .board { background: var(--surface-inverse); color: var(--text-on-inverse); padding: 16px; position: relative; overflow: hidden;
+    clip-path: polygon(16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px); }
+  .teams { display: flex; justify-content: space-between; gap: 12px; font-family: var(--font-display); font-size: 1.125rem; letter-spacing: var(--tracking-display); text-transform: uppercase; }
+  .scores { display: flex; justify-content: center; align-items: center; gap: 16px; margin: 8px 0; }
+  .num { font-family: var(--font-display); font-size: 4rem; line-height: 1; height: 1em; overflow: hidden; display: inline-flex; flex-direction: column; min-width: 1.2ch; text-align: center; }
+  .num span { display: block; }
+  .num.roll span { animation: roll var(--duration-moment) var(--ease-snap); }
+  @keyframes roll { from { transform: translateY(var(--roll-from, 100%)); opacity: 0; } to { transform: none; opacity: 1; } }
+  body.rm .num.roll span { animation-name: fade; }
+  @keyframes fade { from { opacity: 0; } }
+  .colon { font-family: var(--font-display); font-size: 3rem; color: var(--qvl-orange); }
+  .sweep { position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--qvl-gradient-spektrum); transform: scaleX(0); transform-origin: left; }
+  .sweep.go { animation: sweep 900ms var(--ease-arrive) forwards; }
+  @keyframes sweep { 0% { transform: scaleX(0); } 70% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+  .setwon { font-family: var(--font-display); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; font-size: var(--text-eyebrow); color: var(--text-on-inverse-accent); min-height: 1.4em; text-align: center; }
+  .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btns button, .list button { font: inherit; min-height: 44px; padding: 0 14px; border: 2px solid var(--border-default); background: var(--surface-card); color: var(--text-heading); cursor: pointer; }
+
+  /* 3 list: staggered entrance, then view transition into the detail */
+  .list { display: grid; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  .list li { background: var(--surface-card); border: 2px solid var(--border-default); padding: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; cursor: pointer; min-height: 44px; }
+  .list.enter li { animation: rise var(--duration-moment) var(--ease-arrive) both; animation-delay: calc(min(var(--i), 6) * var(--stagger)); }
+  @keyframes rise { from { opacity: 0; transform: translateY(var(--motion-rise)); } }
+  .detail { background: var(--surface-card); border: 2px solid var(--border-default); padding: 16px; }
+  .detail h3 { margin: 0 0 8px; }
+  ::view-transition-group(*) { animation-duration: var(--duration-moment); animation-timing-function: var(--ease-arrive); }
+
+  /* 4 toast with a short snap */
+  .stage { min-height: 60px; }
+  .toast { padding: 12px 16px; background: var(--surface-inverse); color: var(--text-on-inverse); opacity: 0; transform: translateY(var(--motion-rise)) scale(.98); visibility: hidden;
+    transition: opacity 120ms var(--ease-in), transform 120ms var(--ease-in), visibility 0s 120ms; }
+  .toast.on { opacity: 1; transform: none; visibility: visible; transition: opacity 200ms var(--ease-out), transform var(--duration-moment) var(--ease-snap), visibility 0s; }
+</style>
+</head>
+<body>
+<h1>Bewegung, Variante C</h1>
+<label class="rm"><input type="checkbox" id="rm"> Reduzierte Bewegung simulieren</label>
+<div class="wrap">
+  <section>
+    <p class="tag">1 · Drücken</p>
+    <p class="note">Der Button sinkt in seinen Block-Schatten und federt kurz zurück.</p>
+    <span class="press"><button>Spiel starten</button></span>
+  </section>
+
+  <section>
+    <p class="tag">2 · Punkt und Satzgewinn</p>
+    <p class="note">Ziffern rollen; beim Satzgewinn läuft die Spektrum-Linie einmal durch.</p>
+    <div class="board">
+      <div class="teams"><span>Berlin Bumpers</span><span>Hamburg Hurricanes</span></div>
+      <div class="scores"><span class="num" id="a"><span>23</span></span><span class="colon">:</span><span class="num" id="b"><span>21</span></span></div>
+      <div class="setwon" id="won"></div>
+      <div class="sweep" id="sweep"></div>
+    </div>
+    <div class="btns" style="margin-top:8px"><button id="pa">+1 Berlin</button><button id="pb">+1 Hamburg</button></div>
+  </section>
+
+  <section>
+    <p class="tag">3 · Liste und Übergang</p>
+    <p class="note">Einträge kommen gestaffelt (höchstens 6); Antippen öffnet die Detailansicht mit fließendem Übergang (View Transitions).</p>
+    <div id="view"></div>
+  </section>
+
+  <section>
+    <p class="tag">4 · Rückmeldung</p>
+    <div class="btns"><button id="t">Speichern</button></div>
+    <div class="stage" style="margin-top:8px"><div class="toast" id="toast">Spielbericht gespeichert.</div></div>
+  </section>
+</div>
+<script>
+  const rm = () => document.body.classList.contains("rm");
+  document.getElementById("rm").onchange = e => document.body.classList.toggle("rm", e.target.checked);
+
+  // score roll
+  const roll = (el, v) => { el.classList.remove("roll"); el.firstElementChild.textContent = v; void el.offsetWidth; el.classList.add("roll"); };
+  const sc = { a: 23, b: 21 };
+  const point = k => {
+    sc[k]++; roll(document.getElementById(k), sc[k]);
+    const won = (sc.a >= 25 || sc.b >= 25) && Math.abs(sc.a - sc.b) >= 2;
+    const w = document.getElementById("won"), s = document.getElementById("sweep");
+    if (won) {
+      w.textContent = "Satz an " + (sc.a > sc.b ? "Berlin Bumpers" : "Hamburg Hurricanes");
+      s.classList.remove("go"); void s.offsetWidth; if (!rm()) s.classList.add("go");
+      setTimeout(() => { sc.a = 0; sc.b = 0; roll(document.getElementById("a"), 0); roll(document.getElementById("b"), 0); w.textContent = ""; }, 1800);
+    }
+  };
+  document.getElementById("pa").onclick = () => point("a");
+  document.getElementById("pb").onclick = () => point("b");
+
+  // list -> detail with a view transition
+  const teams = ["Berlin Bumpers", "Hamburg Hurricanes", "Köln Kanonen", "Leipzig Lilacs", "Essen Aces"];
+  const view = document.getElementById("view");
+  const swap = fn => (document.startViewTransition && !rm()) ? document.startViewTransition(fn) : fn();
+  const showList = (enter) => {
+    view.innerHTML = '<ul class="list' + (enter ? " enter" : "") + '">' + teams.map((t, i) =>
+      `<li style="--i:${i};view-transition-name:t${i}" data-i="${i}"><span>${t}</span><span>Level ${"ABCD"[i % 4]}</span></li>`).join("") + "</ul>";
+    view.querySelectorAll("li").forEach(li => li.onclick = () => swap(() => showDetail(+li.dataset.i)));
+  };
+  const showDetail = i => {
+    view.innerHTML = `<div class="detail" style="view-transition-name:t${i}"><h3>${teams[i]}</h3><p>Level ${"ABCD"[i % 4]} · 14 Spieler*innen · nächstes Spiel am 14.11.</p><button id="back">Zurück</button></div>`;
+    document.getElementById("back").onclick = () => swap(() => showList(false));
+  };
+  showList(true);
+
+  // toast
+  document.getElementById("t").onclick = () => {
+    const t = document.getElementById("toast"); t.classList.add("on");
+    clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("on"), 2200);
+  };
+</script>
+</body>
+</html>

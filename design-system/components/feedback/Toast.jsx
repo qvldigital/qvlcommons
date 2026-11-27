@@ -1,13 +1,17 @@
 import React from "react";
 import { Icon } from "../core/Icon.jsx";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 export function Toast({tone="petrol",message,action,onAction,onClose,closeLabel="Schließen",style,...rest}){
   const tones={petrol:{bg:"var(--surface-inverse)",fg:"var(--text-on-inverse)"},orange:{bg:"var(--surface-accent)",fg:"var(--text-on-accent)"},pink:{bg:"var(--button-pink-bg)",fg:"var(--button-pink-fg)"}};
   const t=tones[tone]||tones.petrol;
-  return <div role="status" style={{filter:"var(--drop-block-sm-petrol)",maxWidth:420,...style}} {...rest}>
+  // Rises in with --ease-snap (.qvl-enter). To animate the exit, give it className="qvl-leave" for --duration-fast before removing it.
+  return <div role="status" {...rest} className={rest.className||"qvl-enter"} style={{filter:"var(--drop-block-sm-petrol)",maxWidth:420,...style}}>
     <div style={{display:"flex",alignItems:"center",gap:"var(--space-3)",background:t.bg,color:t.fg,padding:"12px 14px",...chamfer(8,2)}}>
       <span style={{flex:1,fontSize:"var(--text-small)",fontWeight:"var(--weight-emphasis)"}}>{message}</span>
       {action?<button type="button" onClick={onAction} style={{border:"none",background:"transparent",color:"inherit",

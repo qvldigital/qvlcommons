@@ -1,9 +1,12 @@
 import React from "react";
 import { IconButton } from "../core/IconButton.jsx";
 import { Icon } from "../core/Icon.jsx";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 export function SetScoreInput({setNumber=1,home=0,away=0,onChange,homeLabel="Heim",awayLabel="Gast",disabled=false,style,...rest}){
   const bump=(which,d)=>{
@@ -12,6 +15,11 @@ export function SetScoreInput({setNumber=1,home=0,away=0,onChange,homeLabel="Hei
     next[which]=Math.max(0,Number(next[which])+d);
     onChange(next);
   };
+  // Changed digits roll in (up when the score rises, down when it is corrected) with --ease-snap; the first render stays still.
+  const prev=React.useRef({home,away});
+  const roll={home:home>prev.current.home?"qvl-roll-up":home<prev.current.home?"qvl-roll-down":undefined,
+    away:away>prev.current.away?"qvl-roll-up":away<prev.current.away?"qvl-roll-down":undefined};
+  React.useEffect(()=>{prev.current={home,away};},[home,away]);
   const cell=(which,label,value)=><div style={{flex:"1 1 176px",textAlign:"center"}}>
     <div style={{fontFamily:"var(--font-display)",fontSize:"var(--text-eyebrow)",letterSpacing:"var(--tracking-eyebrow)",
       textTransform:"uppercase",color:"var(--text-muted)",marginBottom:"var(--space-2)"}}>{label}</div>
@@ -19,7 +27,8 @@ export function SetScoreInput({setNumber=1,home=0,away=0,onChange,homeLabel="Hei
       <IconButton label={`${label} minus`} size="md" variant="secondary" disabled={disabled} onClick={()=>bump(which,-1)}>
         <Icon name="minus" size={18}/></IconButton>
       <div style={{minWidth:72,padding:"6px 4px",background:"var(--surface-inverse)",color:"var(--text-on-inverse)",
-        fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",lineHeight:1,...chamfer(8,2)}}>{value}</div>
+        fontFamily:"var(--font-display)",fontSize:"var(--text-display-2)",lineHeight:1,...chamfer(8,2)}}>
+        <span key={value} className={roll[which]}>{value}</span></div>
       <IconButton label={`${label} plus`} size="md" variant="primary" disabled={disabled} onClick={()=>bump(which,1)}>
         <Icon name="plus" size={18}/></IconButton>
     </div>

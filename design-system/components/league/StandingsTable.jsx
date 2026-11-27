@@ -1,7 +1,10 @@
 import React from "react";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 const COLS=[
   {key:"rank",label:"#",align:"right",width:44},
@@ -13,10 +16,12 @@ const COLS=[
   {key:"points",label:"PKT",align:"right",width:60}
 ];
 
-export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promotion=0,relegation=0,minWidth,style,...rest}){
+export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promotion=0,relegation=0,minWidth,density="comfortable",style,...rest}){
+  const compact=density==="compact";
+  const cell=compact?{padding:"4px 10px",height:"var(--row-compact)"}:{padding:"10px 10px"};
   const min=minWidth!==undefined?minWidth:Math.max(240,columns.length*74);
   return <div style={{background:"var(--border-default)",padding:3,minWidth:0,...chamfer(10,4),...style}} {...rest}>
-    <div style={{background:"var(--surface-card)",overflowX:"auto",minWidth:0,...chamfer(8,4)}}>
+    <div style={{background:"var(--surface-card)",minWidth:0,...chamfer(8,4),overflowX:"auto"}}>
       <table style={{width:"100%",minWidth:min,borderCollapse:"collapse",fontSize:"var(--text-small)"}}>
         {caption?<caption style={{captionSide:"top",textAlign:"left",padding:"10px 12px",background:"var(--table-head-bg)",
           color:"var(--table-head-fg)",fontFamily:"var(--font-display)",fontSize:"var(--text-body)",
@@ -24,7 +29,7 @@ export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promo
         <thead>
           <tr style={{background:"var(--table-head-bg)"}}>
             {columns.map(c=><th key={c.key} scope="col" style={{textAlign:c.align||"left",
-              padding:"10px 10px",width:c.width,color:"var(--table-head-fg)",fontFamily:"var(--font-display)",
+              ...cell,width:c.width,color:"var(--table-head-fg)",fontFamily:"var(--font-display)",
               fontWeight:400,letterSpacing:"var(--tracking-table)",textTransform:"uppercase"}}>{c.label}</th>)}
           </tr>
         </thead>
@@ -34,7 +39,7 @@ export function StandingsTable({rows=[],columns=COLS,highlightTeam,caption,promo
             const zone=i<promotion?"var(--border-default)":i>=rows.length-relegation?"var(--border-accent)":"transparent";
             return <tr key={r.team+i} style={{background:me?"var(--surface-accent-soft)":(i%2?"var(--table-row-bg-alt)":"var(--table-row-bg)"),
               borderLeft:`4px solid ${zone}`}}>
-              {columns.map(c=><td key={c.key} style={{textAlign:c.align||"left",padding:"10px 10px",
+              {columns.map(c=><td key={c.key} style={{textAlign:c.align||"left",...cell,
                 borderTop:"1px solid var(--table-border)",
                 fontWeight:c.key==="points"||c.key==="team"?"var(--weight-emphasis)":"var(--weight-body)",
                 fontFamily:c.key==="rank"||c.key==="points"?"var(--font-display)":"var(--font-body)",

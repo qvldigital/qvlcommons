@@ -6,3 +6,5 @@
   <p>Satzergebnisse 25:21 / 23:25 / 15:12 werden veröffentlicht.</p>
 </Dialog>
 ```
+
+**Motion:** the panel rises in over a fading scrim; on close it stays mounted for its 120 ms exit, ignores clicks meanwhile and is hidden from screen readers.

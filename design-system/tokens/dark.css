@@ -4,6 +4,8 @@
    logos always sit on a white plate; the focus ring swaps: yellow outer line, night gap inside. */
 [data-theme="dark"]{
   color-scheme:dark;
+  /* Running text gets a little more air on dark grounds */
+  --leading-body:var(--leading-body-night);--tracking-body:var(--tracking-body-night);
   /* Night surfaces — CI petrol mixed toward black (no new hues) */
   --qvl-night:#0B1414;--qvl-night-card:#132222;--qvl-night-raised:#1B3030;--qvl-night-sunken:#070E0E;--qvl-night-line:#2C4444;--qvl-paper:#EDEDED;--qvl-paper-muted:#A9BABA;
   --surface-page:var(--qvl-night);--surface-card:var(--qvl-night-card);--surface-raised:var(--qvl-night-raised);--surface-sunken:var(--qvl-night-sunken);

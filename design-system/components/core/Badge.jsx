@@ -1,7 +1,10 @@
 import React from "react";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 // outline / yellow are bordered — see Button.jsx for why that needs two nested chamfer layers
 // instead of a clipped inset box-shadow (which leaves the diagonal cut with no stroke).
@@ -17,7 +20,7 @@ const FILLED={
 };
 
 export function Badge({tone="petrol",size="md",children,style,...rest}){
-  const s=size==="sm"?{height:20,padding:"2px 8px",fontSize:"var(--text-caption)",ch:4}:{height:26,padding:"3px 10px",fontSize:"var(--text-small)",ch:5};
+  const s=size==="sm"?{height:20,padding:"2px 8px",fontSize:"var(--text-small)",ch:4}:{height:26,padding:"3px 10px",fontSize:"var(--text-small)",ch:5};
   const base={display:"inline-flex",alignItems:"center",gap:"var(--space-1)",minHeight:s.height,
     fontFamily:"var(--font-display)",fontSize:s.fontSize,letterSpacing:"var(--tracking-display)",
     textTransform:"uppercase",lineHeight:1.1,overflowWrap:"anywhere"};

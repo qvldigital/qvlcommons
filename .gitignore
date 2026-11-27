@@ -11,7 +11,9 @@ skills-lock.json
 .taste-skill/
 
 # Working files not meant for git: design tool state, drafts
-.impeccable/
+.impeccable/*
+# …except the detector config: CI exceptions with their reasons are shared (CI review 27.11.2026)
+!.impeccable/config.json
 DESIGN.md
 PRODUCT.md
 content/

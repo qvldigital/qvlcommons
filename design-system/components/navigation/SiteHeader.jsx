@@ -3,9 +3,12 @@ import { Logo } from "../core/Logo.jsx";
 import { Icon } from "../core/Icon.jsx";
 import { IconButton } from "../core/IconButton.jsx";
 import { Button } from "../core/Button.jsx";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 export function SiteHeader({items=[],active,onNavigate,language="DE",languages=["DE","EN","FR","PL","CS","DA","SV","PT","ES","IT","NL"],onLanguage,cta,compact,languageLabel="Sprache",menuLabel="Menü",style,...rest}){
   const [open,setOpen]=React.useState(false);

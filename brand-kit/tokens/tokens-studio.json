@@ -146,17 +146,21 @@
         }
       },
       "weight": {
-        "body": {
+        "lead": {
           "$type": "fontWeight",
           "$value": 300
         },
-        "emphasis": {
+        "body": {
           "$type": "fontWeight",
           "$value": 400
         },
-        "strong": {
+        "emphasis": {
           "$type": "fontWeight",
           "$value": 500
+        },
+        "strong": {
+          "$type": "fontWeight",
+          "$value": 600
         },
         "display": {
           "$type": "fontWeight",
@@ -186,7 +190,7 @@
         },
         "eyebrow": {
           "$type": "dimension",
-          "$value": "13px"
+          "$value": "14px"
         },
         "lead": {
           "$type": "dimension",
@@ -350,7 +354,7 @@
           "fontSize": "{font.size.eyebrow}",
           "fontWeight": 400,
           "lineHeight": 1.1,
-          "letterSpacing": "0.14em"
+          "letterSpacing": "0.1em"
         }
       },
       "lead": {
@@ -368,7 +372,7 @@
         "$value": {
           "fontFamily": "{font.family.body}",
           "fontSize": "{font.size.body}",
-          "fontWeight": 300,
+          "fontWeight": 400,
           "lineHeight": 1.6,
           "letterSpacing": "0"
         }
@@ -378,7 +382,7 @@
         "$value": {
           "fontFamily": "{font.family.body}",
           "fontSize": "{font.size.small}",
-          "fontWeight": 300,
+          "fontWeight": 400,
           "lineHeight": 1.35,
           "letterSpacing": "0"
         }

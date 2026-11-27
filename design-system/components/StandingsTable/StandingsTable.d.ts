@@ -23,5 +23,7 @@ export interface StandingsTableProps extends React.HTMLAttributes<HTMLDivElement
   relegation?: number;
   /** min table width in px before horizontal scroll kicks in; defaults to 74 px per column (min 240) */
   minWidth?: number;
+  /** "compact" = 36 px rows for admin tables on desktop (--row-compact); with touch (pointer: coarse) rows stay 44 px. Default "comfortable". */
+  density?: "comfortable" | "compact";
 }
 export function StandingsTable(props: StandingsTableProps): JSX.Element;

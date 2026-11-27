@@ -5,3 +5,5 @@
 ```
 
 Never shrink below the shown size — it is used standing, one-handed, in a loud hall.
+
+**Motion:** a changed score rolls in (up when it rises, down when it is corrected); the first render stays still. Reduced motion makes it a plain fade.
