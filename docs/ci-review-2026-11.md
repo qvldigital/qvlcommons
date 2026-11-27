@@ -117,6 +117,13 @@ Nicht verhandelbar und hier nicht zur Debatte: Safe Space (keine Hallen, Adresse
 
 Nicht mehr durchgesprochen. Befund: Das Repo-README sagt, Verläufe, erweiterte Gelb-Regel und abgeleitete Pink-Töne seien am 13.10.2026 von der QVL-CI freigegeben; `design-system/README.md` markiert Gelb (Zeile 90) und Verläufe (Zeile 92) aber noch als „flagged for QVL CI approval“, `--qvl-ink` (Zeile 177) ebenso. Offene Frage an Sebi: Gilt die Freigabe vom 13.10. auch für `--qvl-ink`, und sollen die Vermerke im Design-System-README entfernt werden?
 
+## Nachtrag 27.11.2026 abends (nach Release 2.4.0)
+
+- **Fasen (Punkt 4):** Sebi: keine Vorstandssitzung nötig, freie Hand; pragmatisch ausprobieren. Variante C ist als Versuch umgesetzt: neuer Token `--chamfer-field-scale` (0 = Felder, Selects, Tabs, Checkbox, Radio und Switch eckig, 1 = wie vorher). Die sechs Komponenten rechnen ihre Fase damit; ohne Token bleiben die Fasen (Rückfall 1). Vergleich in `docs/ci-review/04-fasen-versuch-felder.png` und `-manager.png`. Bewertet wird im Einsatz in den Apps.
+- **Bewegung (Punkt 5, cir03):** in den Komponenten umgesetzt. Button und IconButton drücken bei Maus und Touch (Pointer-Events) und federn mit `--ease-snap` zurück; Dialog steigt über einem einblendenden Scrim auf und geht in 120 ms (bleibt so lange gemountet, lässt Klicks durch, Sicherheitsnetz 400 ms); Toast steigt auf; Tooltip blendet ein und hebt sich 4 px; SetScoreInput rollt geänderte Ziffern hoch oder runter. Klassen für Apps in `bundle.css` und `tokens/base.css`: `.qvl-enter`, `.qvl-leave`, `.qvl-fade-enter`, `.qvl-fade-leave`, `.qvl-roll-up`, `.qvl-roll-down`, `.qvl-stagger`. Offen in den Apps: View Transitions und der Spektrum-Strich bei Satzgewinn (Referee).
+- **Mails (ci02b):** im Manager auf Branch `claude/mail-oswald-regular` (Commit 097bd07): Fließtext Oswald Regular 400 statt Light bei 17 px, Hervorhebung bleibt 500.
+- **Messung:** `check:design` meldet 30 statt 15 Funde. Die zusätzlichen Kontrastwarnungen (ShapeChamfer-Vorschau 1,9:1, Website-Kit `#4c9393` auf `#063636` 3,7:1, NetHero über dem Netzbild) gibt es genauso in v2.4.0; der erste Lauf hatte sie nicht erfasst.
+
 ## Überblick
 
 | # | Thema | Entscheidung | Stand |

@@ -91,6 +91,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .qvl-chamfer,.qvl-chamfer-4{corner-shape:bevel;overflow:var(--qvl-bevel-overflow,visible)}
 .qvl-chamfer{border-radius:calc(var(--qvl-bevel,0)*var(--ch,10px)) 0;clip-path:var(--qvl-chamfer-clip,polygon(var(--ch,10px) 0,100% 0,100% calc(100% - var(--ch,10px)),calc(100% - var(--ch,10px)) 100%,0 100%,0 var(--ch,10px)))}
 .qvl-chamfer-4{border-radius:calc(var(--qvl-bevel,0)*var(--ch,10px));clip-path:var(--qvl-chamfer-clip,polygon(var(--ch,10px) 0,calc(100% - var(--ch,10px)) 0,100% var(--ch,10px),100% calc(100% - var(--ch,10px)),calc(100% - var(--ch,10px)) 100%,var(--ch,10px) 100%,0 calc(100% - var(--ch,10px)),0 var(--ch,10px)))}
+/* Motion classes (CI review 27.11.2026, see README "Motion, hover, press"). Overlays rise in with --ease-snap and leave faster than they arrive; score digits roll; lists stagger (max. 6 items). Reduced motion zeroes the distances in the tokens, so every class becomes a plain fade. */
+@keyframes qvl-rise{from{opacity:0;transform:translateY(var(--motion-rise))}}
+@keyframes qvl-sink{to{opacity:0;transform:translateY(calc(var(--motion-rise)/2))}}
+@keyframes qvl-fade-in{from{opacity:0}}
+@keyframes qvl-fade-out{to{opacity:0}}
+@keyframes qvl-roll-up{from{opacity:0;transform:translateY(calc(var(--motion-rise)*2))}}
+@keyframes qvl-roll-down{from{opacity:0;transform:translateY(calc(var(--motion-rise)*-2))}}
+.qvl-enter{animation:qvl-rise var(--duration-moment) var(--ease-snap) both}
+.qvl-leave{animation:qvl-sink var(--duration-fast) var(--ease-in) both;pointer-events:none}
+.qvl-fade-enter{animation:qvl-fade-in var(--duration-base) var(--ease-out) both}
+.qvl-fade-leave{animation:qvl-fade-out var(--duration-fast) var(--ease-in) both;pointer-events:none}
+.qvl-roll-up{display:inline-block;animation:qvl-roll-up var(--duration-moment) var(--ease-snap) both}
+.qvl-roll-down{display:inline-block;animation:qvl-roll-down var(--duration-moment) var(--ease-snap) both}
+.qvl-stagger>*{animation:qvl-rise var(--duration-moment) var(--ease-snap) both}
+.qvl-stagger>:nth-child(2){animation-delay:var(--stagger)}
+.qvl-stagger>:nth-child(3){animation-delay:calc(var(--stagger)*2)}
+.qvl-stagger>:nth-child(4){animation-delay:calc(var(--stagger)*3)}
+.qvl-stagger>:nth-child(5){animation-delay:calc(var(--stagger)*4)}
+.qvl-stagger>:nth-child(6){animation-delay:calc(var(--stagger)*5)}
+.qvl-stagger>:nth-child(n+7){animation:none}
 img{max-width:100%;display:block}
 table{border-collapse:collapse}
 ::selection{background:var(--qvl-yellow);color:var(--qvl-ink)}

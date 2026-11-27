@@ -1,10 +1,12 @@
 import React from "react";
 // Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
-const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
-  ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
-  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
-  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
+// Fields, tabs and toggles have square corners while --chamfer-field-scale is 0 (trial since 27.11.2026, see README "Chamfer"); 1 brings their chamfers back.
+const fieldCh=(n)=>`calc(var(--chamfer-field-scale,1)*${n}px)`;
+const chamfer=(n=10,corners=2)=>{const ch=fieldCh(n);return{clipPath:`var(--qvl-chamfer-clip,${corners===4
+  ?`polygon(${ch} 0,calc(100% - ${ch}) 0,100% ${ch},100% calc(100% - ${ch}),calc(100% - ${ch}) 100%,${ch} 100%,0 calc(100% - ${ch}),0 ${ch})`
+  :`polygon(${ch} 0,100% 0,100% calc(100% - ${ch}),calc(100% - ${ch}) 100%,0 100%,0 ${ch})`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch})`:`calc(var(--qvl-bevel,0)*${ch}) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"};};
 // The label wraps only its own text: hint and error sit outside it and are linked to the control with aria-describedby.
 function Field({label,hint,error,required,htmlFor,msgId,children}){
   return <div>

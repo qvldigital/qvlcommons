@@ -213,6 +213,7 @@
   --chamfer-md:10px;
   --chamfer-lg:16px;
   --chamfer-xl:24px;
+  --chamfer-field-scale:0;
   --border-hairline:1px;
   --border-strong:2px;
   --border-heavy:3px;
