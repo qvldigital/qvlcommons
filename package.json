@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "check:design": "node scripts/check-design.mjs",
-    "check:i18n": "node scripts/check-i18n.mjs"
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "bundle": "node scripts/rebundle.mjs"
   },
   "files": [
     "LICENSE",
@@ -18,5 +19,8 @@
     "design-system/assets",
     "brand-kit",
     "assets"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/standalone": "7.26.4"
+  }
 }

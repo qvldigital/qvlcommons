@@ -35,7 +35,7 @@ export async function pages() {
   const kits = (await readdir(join(ROOT, "design-system/ui_kits"), { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name).sort();
   return [
     ...comps.map((c) => ({ name: `component ${c}`, path: `/scripts/harness.html?c=${c}`, mobile: true })),
-    // The kits show phone frames on a desktop canvas and have no viewport meta: measure them at desktop width only.
+    // The kits are presentation canvases (the Manager kit shows phone frames side by side): measure them at desktop width only.
     ...kits.map((k) => ({ name: `kit ${k}`, path: `/design-system/ui_kits/${k}/`, mobile: false })),
   ];
 }

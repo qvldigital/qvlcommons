@@ -1,5 +1,11 @@
 import React from "react";
 import { Logo } from "../core/Logo.jsx";
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
+  ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 export function SiteFooter({columns=[],note,style,...rest}){
   return <footer style={{background:"var(--surface-inverse)",color:"var(--text-on-inverse)",padding:"var(--space-12) var(--gutter-desktop) var(--space-8)",...style}} {...rest}>
@@ -7,7 +13,7 @@ export function SiteFooter({columns=[],note,style,...rest}){
       gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))",gap:"var(--space-8)"}}>
       <div>
         <div style={{background:"var(--surface-logo-plate)",padding:"8px 12px",display:"inline-block",
-          clipPath:"polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)"}}>
+          ...chamfer(8,2)}}>
           <Logo variant="long-petrol" height={30}/>
         </div>
         <p style={{marginTop:"var(--space-4)",fontSize:"var(--text-small)",maxWidth:"32ch",opacity:0.9}}>

@@ -11,14 +11,15 @@ const chamfer=(n=10,corners=2)=>{const ch=fieldCh(n);return{clipPath:`var(--qvl-
 export function Switch({label,description,checked=false,disabled,onChange,id,style,...rest}){
   const uid=React.useId();
   const fid=id||uid;
-  const [focus,setFocus]=React.useState(false);
   return <label htmlFor={fid} style={{display:"flex",gap:"var(--space-3)",alignItems:"center",justifyContent:"space-between",
     cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.55:1,minHeight:"var(--tap-min)",...style}}>
     <span>
       <span style={{display:"block",fontWeight:"var(--weight-emphasis)"}}>{label}</span>
       {description?<span style={{display:"block",fontSize:"var(--text-small)",color:"var(--text-muted)"}}>{description}</span>:null}
     </span>
-    <span style={{flex:"none",background:focus?"var(--focus-ring)":"var(--border-default)",padding:focus?3:2,...chamfer(6,2)}}>
+    {/* The visually hidden input sits inside .qvl-focus-field, so the track gets the same double focus ring as Input and Select. */}
+    <span className="qvl-focus-field" style={{flex:"none",position:"relative"}}>
+    <span style={{display:"block",background:"var(--border-default)",padding:2,...chamfer(6,2)}}>
       <span style={{display:"block",width:52,height:28,padding:3,
         background:checked?"var(--switch-on)":"var(--switch-off)",
         transition:"background var(--duration-base) var(--ease-standard)",...chamfer(5,2)}}>
@@ -29,7 +30,7 @@ export function Switch({label,description,checked=false,disabled,onChange,id,sty
       </span>
     </span>
     <input id={fid} type="checkbox" role="switch" checked={checked} disabled={disabled} onChange={onChange}
-      onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}
-      style={{position:"absolute",opacity:0,width:1,height:1}} {...rest}/>
+      style={{position:"absolute",left:0,top:0,opacity:0,width:1,height:1}} {...rest}/>
+    </span>
   </label>;
 }

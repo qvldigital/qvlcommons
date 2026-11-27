@@ -2,12 +2,13 @@
 <!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><title>Cover</title>
 <style>
 html,body{margin:0;padding:0}
-body{position:relative;width:960px;height:336px;overflow:hidden;background:var(--surface-page)}
+html{overflow:hidden}
+body{position:relative;width:100%;max-width:960px;height:336px;overflow:hidden;background:var(--surface-page)}
 svg{position:absolute;left:0;top:0;display:block}
 .petrol{fill:var(--qvl-petrol)}.orange{fill:var(--qvl-orange)}.pink{fill:var(--qvl-pink)}.yellow{fill:var(--qvl-yellow)}.ink{fill:var(--text-body-color)}
-.text{position:absolute;left:32px;bottom:24px;max-width:896px}
+.text{position:absolute;left:32px;right:32px;bottom:24px;max-width:896px}
 .name{margin:0;font-family:var(--font-display);font-weight:400;font-size:64px;line-height:.95;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--text-body-color)}
-.tag{margin:8px 0 0;font-family:var(--font-body);font-weight:300;font-size:14px;line-height:1.35;color:var(--text-muted)}
+.tag{margin:8px 0 0;font-family:var(--font-body);font-weight:var(--weight-body);font-size:14px;line-height:1.35;color:var(--text-muted)}
 </style></head><body>
 <svg width="960" height="112" viewBox="0 0 960 112" aria-hidden="true">
 <!-- blocks: petrol 7x3 cells (chamfer-xl 24), orange 4x2 (chamfer-lg 16), pink and yellow 2x1 (chamfer-md 10), ink = text-body-color 3x3 (chamfer-lg 16); a cell is space-8 (32px) with a space-2 (8px) gap.

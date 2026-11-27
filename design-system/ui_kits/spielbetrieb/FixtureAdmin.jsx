@@ -44,7 +44,7 @@ function FixtureAdmin(){
       <div style={{display:"grid",gap:"var(--space-4)",alignContent:"start"}}>
         <Alert tone="safe" title="Safe Space">Hallen werden intern zugeordnet, aber nie veröffentlicht.</Alert>
         <Card padding="var(--space-4)">
-          <h3 style={{margin:"0 0 var(--space-3)"}}>Spieltag 6</h3>
+          <h2 style={{margin:"0 0 var(--space-3)",fontSize:"var(--text-h3)"}}>Spieltag 6</h2>
           <div style={{display:"grid",gap:"var(--space-2)",fontSize:"var(--text-small)"}}>
             <div style={{display:"flex",justifyContent:"space-between"}}><span>Spiele</span><strong>4</strong></div>
             <div style={{display:"flex",justifyContent:"space-between"}}><span>Bestätigt</span><strong>1</strong></div>
