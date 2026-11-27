@@ -1,19 +1,35 @@
-# qvlcommons
+# Queer League Commons (`qvlcommons`)
 
-Gemeinsame Basis für die Tools der Queer Volleyball League e.V.:
-den **Queer League Manager** (`qvlmanager`), den Planner (`qvlplanner`)
-und die Referee-Software (`qvlreferee`).
+Gemeinsame Basis der Queer-League-Tools: das Queer League Design System (Brand Book, Tokens, Komponenten), das Brand Kit für andere Werkzeuge und die Original-Markendateien. Die Apps übernehmen daraus Farben, Schriften, Logos und Regeln.
+
+> **Stand:** Version 2.3.0 (Illustrations-Bibliothek). Releases als Git-Tags `vX.Y.Z`.
+
+## Die drei Repos
+
+| Repo | Was | Prod | Staging |
+| --- | --- | --- | --- |
+| [`qvlmanager`](https://github.com/qvldigital/qvlmanager) | Queer League Manager: Stammdaten, Meldungen, DV, Koordination | [manager.queerleague.de](https://manager.queerleague.de) | [staging.manager.queerleague.org](https://staging.manager.queerleague.org) |
+| [`qvlplanner`](https://github.com/qvldigital/qvlplanner) | Queer League Planner: Spielbetrieb | [planner.queerleague.de](https://planner.queerleague.de) | [staging.planner.queerleague.org](https://staging.planner.queerleague.org) |
+| **`qvlcommons`** | Design System, Tokens, Marken-Assets | – | – |
+
+Die Referee-Software (`qvlreferee`) folgt später und nutzt dieselbe Basis.
 
 ## Inhalt
 
 | Pfad | Was |
 | --- | --- |
-| `CLAUDE.md` | Übergabe aus Claude Design: Aufbau und die nicht verhandelbaren Regeln (Safe Space, 11 Sprachen, Mobile first, feste CI, Ton). |
 | `design-system/` | Das Queer League Design System: `README.md` (Brand Book), `tokens.json` als Quelle aller Werte (hell + Nacht), `tokens.css` daraus kompiliert, Einzeldateien in `tokens/` (inkl. `dark.css`, `gradients.css`), Komponenten unter `components/<Name>/`, Guidelines, UI-Kits, Vorlagen. |
 | `brand-kit/` | Export für andere Werkzeuge (Figma, Penpot, Canva, Adobe, GIMP): DTCG- und Tokens-Studio-JSON, Paletten, Logos, Bildmaterial, `QVL Brand Kit.html`, `brand-kit-import.pdf` (Vorlage für den Canva Brand Kit Builder). |
 | `assets/` | Original-Markendateien (Logos, Hintergründe, CI-Farbpalette als PDF) und `assets/fonts/`: Bebas Neue und Oswald als woff2 (latin + latin-ext, Fontsource 5.3.0, SIL OFL 1.1). |
+| `CLAUDE.md` | Aufbau, nicht verhandelbare Regeln und Leitplanken für Design-Skills. |
 
 Die Quelle ist dieses Repository. Das Artefakt „Queer League Design System“ in Claude (Typ Design System) ist daraus abgeleitet und dient als Übersicht; es wird nach einem Release aus dem Repo veröffentlicht. **Exporte aus dem Artefakt nie in `design-system/` einspielen:** Sie würden die Änderungen seit dem 18.10.2026 überschreiben (Fokusring, semantische Tokens, Kontraste, Bundles).
+
+## Nutzung
+
+- **In den Apps:** Manager und Planner übernehmen Tokens und Fonts heute als Kopie (`globals.css`, `src/app/fonts`); die App-Logos liegen unter `design-system/assets/apps`. Später als Git-Abhängigkeit auf ein festes Tag, z. B. `"@qvl/commons": "github:qvldigital/qvlcommons#v2.3.0"`. Vercel baut nur aus dem jeweiligen App-Repo, ein relativer Pfad wie `../qvlcommons` funktioniert dort nicht.
+- **Für Claude Code:** `~/.claude/skills/queer-league-design-system` ist ein Symlink auf `design-system/`. Jede neue Version hier ist damit sofort in allen Projekten als Skill verfügbar.
+- Die Apps ziehen eine neue Version erst bewusst nach, getestet über ihre Staging-Umgebung.
 
 ## Das Design System ändern
 
@@ -23,20 +39,30 @@ _Freigabe: Die Verläufe, die erweiterte Gelb-Regel und die abgeleiteten Pink-T�
 2. **Komponenten** unter `design-system/components/<Kategorie>/*.jsx` ändern. Jede Änderung steht zusätzlich in beiden Bundles (`design-system/_ds_bundle.js` und `design-system/components/bundle.js`), auch Änderungen an den UI-Kits. Danach die Prüfsummen-Zeile am Dateianfang beider Bundles neu berechnen (SHA-256 der Quelldatei, die ersten 12 Zeichen).
 3. **Brand Kit:** `brand-kit/` und `design-system/brand-kit/` bleiben identisch (das PDF liegt nur im Root).
 4. **Prüfen:** im Browser Hell und Nacht, 390 und 1440 px, Kontrast messen.
-5. **Release:** `version` in `package.json` hochzählen, committen, taggen (`v2.1.0`, …), pushen.
-6. Die Apps ziehen eine neue Version erst bewusst nach, getestet über ihre Staging-Umgebung.
-7. Danach das Artefakt aus dem Repo aktualisieren (Dateien unter `project/` ersetzen).
 
-## Nutzung
+## Release
 
-- **Für Claude Code:** `~/.claude/skills/queer-league-design-system` ist ein Symlink auf
-  `design-system/`. Jede neue Version hier ist damit sofort in allen Projekten als
-  Skill verfügbar.
-- **In den Apps (später):** als Git-Abhängigkeit auf ein festes Tag, z. B.
-  `"@qvl/commons": "github:qvldigital/qvlcommons#v2.1.0"`, und die Tokens aus
-  `design-system/tokens/` importieren. Vercel baut nur aus dem jeweiligen App-Repo;
-  ein relativer Pfad wie `../qvlcommons` funktioniert dort nicht.
+1. `version` in `package.json` hochzählen, committen, taggen (`v2.3.0`, …), pushen. Es gibt nur den Branch `main`.
+2. Danach das Artefakt aus dem Repo aktualisieren (Dateien unter `project/` ersetzen).
 
-Die Inhalte sind öffentlich einsehbar (Logos und Farben stehen ohnehin auf
-queerleague.de), die Rechte an Marke und Logos liegen bei der Queer Volleyball League e.V.
-Es gilt die Datei `LICENSE`: alle Rechte vorbehalten, Schriften und Icons behalten ihre eigene Lizenz.
+## Doku im Repo
+
+| Datei | Inhalt |
+| --- | --- |
+| `design-system/README.md` | Brand Book mit allen Regeln (Einstieg) |
+| `CLAUDE.md` | Übergabe an Claude Code, Regeln, Leitplanken für Design-Skills |
+| `design-system/components/<Name>/README.md` | Nutzung der einzelnen Komponenten |
+| `design-system/assets/<Gruppe>/README.md` | Logos, Ball-Icons, Hintergründe, Muster |
+
+## Regeln in Kürze
+
+- **Safe Space:** nie Hallennamen, Adressen, Karten oder Spielorte öffentlich anzeigen.
+- **11 Sprachen:** nichts mit fester Breite oder `nowrap` auf übersetzbaren Texten.
+- **Mobile first:** Tap-Ziele mindestens 44 px.
+- **Feste CI:** keine neuen Farbtöne; Texte und Flächen mit semantischen Tokens (`surface-*`, `text-*`, `border-*`).
+- **Icons:** Software mit Lucide, die Website mit den Material Icons des Themes.
+- **Ton:** du-Ansprache, Genderstern (Spieler*innen), FLINTA* mit Sternchen, kein Emoji, Headlines in Bebas Neue GROSS, Fließtext in Oswald Light.
+
+## Rechte
+
+Die Inhalte sind öffentlich einsehbar (Logos und Farben stehen ohnehin auf queerleague.de), die Rechte an Marke und Logos liegen bei der Queer Volleyball League e.V. Es gilt die Datei `LICENSE`: alle Rechte vorbehalten, Schriften und Icons behalten ihre eigene Lizenz.
