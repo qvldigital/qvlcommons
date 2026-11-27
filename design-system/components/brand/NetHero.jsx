@@ -30,7 +30,10 @@ const BGS={
 
 export function NetHero({background="grey-petrol",eyebrow,title,lead,actions,align="left",minHeight=380,inkOnDark,style,...rest}){
   const dark=background.startsWith("petrol");
-  const ink=inkOnDark!==undefined?(inkOnDark?"var(--text-on-inverse)":"var(--text-heading)"):(dark?"var(--text-on-inverse)":"var(--text-heading)");
+  // The net artwork keeps its light grey ground in night too, so the headline on it stays CI petrol (4.2:1 at display size)
+  // instead of following --text-heading, which turns petrol-mid in night (2.2:1 on the grey).
+  const onArt="var(--qvl-petrol)";
+  const ink=inkOnDark!==undefined?(inkOnDark?"var(--text-on-inverse)":onArt):(dark?"var(--text-on-inverse)":onArt);
   return <section style={{position:"relative",minHeight,display:"flex",alignItems:"flex-end",
     backgroundImage:`url(${asset(BGS[background]||BGS["grey-petrol"])})`,backgroundSize:"cover",
     backgroundPosition:"center top",...style}} {...rest}>

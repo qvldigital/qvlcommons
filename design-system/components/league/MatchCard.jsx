@@ -38,7 +38,7 @@ export function MatchCard({date,time,level,region,home,away,homeSets,awaySets,st
       {sets.length?<div style={{display:"flex",gap:"var(--space-2)",padding:"0 var(--space-4) var(--space-4)",
         fontSize:"var(--text-caption)",color:"var(--text-muted)",fontWeight:"var(--weight-emphasis)"}}>
         {sets.map((s,i)=><span key={i} style={{background:"var(--surface-sunken)",padding:"2px 8px",
-          clipPath:"polygon(4px 0,100% 0,100% calc(100% - 4px),calc(100% - 4px) 100%,0 100%,0 4px)"}}>{s}</span>)}
+          ...chamfer(4,2)}}>{s}</span>)}
       </div>:null}
     </div>
   </div>;

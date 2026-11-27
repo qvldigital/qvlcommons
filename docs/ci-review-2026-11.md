@@ -124,6 +124,8 @@ Nicht mehr durchgesprochen. Befund: Das Repo-README sagt, Verläufe, erweiterte 
 - **Mails (ci02b):** im Manager auf Branch `claude/mail-oswald-regular` (Commit 097bd07): Fließtext Oswald Regular 400 statt Light bei 17 px, Hervorhebung bleibt 500.
 - **Messung:** `check:design` meldet 30 statt 15 Funde. Die zusätzlichen Kontrastwarnungen (ShapeChamfer-Vorschau 1,9:1, Website-Kit `#4c9393` auf `#063636` 3,7:1, NetHero über dem Netzbild) gibt es genauso in v2.4.0; der erste Lauf hatte sie nicht erfasst.
 
+- **Nacharbeiten (cir04, 05, 07, 10, 15, 16):** Cover schrumpft unter 960 px mit (kein Seitwärtsscrollen bei 768 px), Untertitel Regular; Checkbox, Radio und Switch tragen den Doppelring über `.qvl-focus-field` (React-Fokus-State entfällt); SiteFooter, MatchCard und Kit-Login nutzen `chamfer()` bzw. `.qvl-chamfer`, das README nennt die Klassen statt `--clip-chamfer-*`; UI-Kits mit Viewport-Meta, Spielbetrieb-Kit h1 → h2; Kontrast: ShapeChamfer-Beschriftung mit `--text-muted`, Überschriften in `Card tone="soft"` mit `--text-on-soft`, NetHero-Headline auf dem grauen Netzbild fest in CI-Petrol (auch nachts); `npm run bundle` baut die Bundles aus den Quellen.
+
 ## Überblick
 
 | # | Thema | Entscheidung | Stand |

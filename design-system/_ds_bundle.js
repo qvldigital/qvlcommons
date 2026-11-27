@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"QueerLeagueDesignSystem_ae47b3","components":[{"name":"NetHero","sourcePath":"components/brand/NetHero.jsx"},{"name":"NetPattern","sourcePath":"components/brand/NetPattern.jsx"},{"name":"PatternBand","sourcePath":"components/brand/PatternBand.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"BallIcon","sourcePath":"components/core/Icon.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"ThemeToggle","sourcePath":"components/core/ThemeToggle.jsx"},{"name":"Alert","sourcePath":"components/feedback/Alert.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"ToastStack","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"LevelBadge","sourcePath":"components/league/LevelBadge.jsx"},{"name":"MatchCard","sourcePath":"components/league/MatchCard.jsx"},{"name":"PlayerRow","sourcePath":"components/league/PlayerRow.jsx"},{"name":"SetScoreInput","sourcePath":"components/league/SetScoreInput.jsx"},{"name":"StandingsTable","sourcePath":"components/league/StandingsTable.jsx"},{"name":"BottomNav","sourcePath":"components/navigation/BottomNav.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"SiteFooter","sourcePath":"components/navigation/SiteFooter.jsx"},{"name":"SiteHeader","sourcePath":"components/navigation/SiteHeader.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"}],"sourceHashes":{"brand-kit/doc-page.js":"f52ae9c02fca","components/brand/NetHero.jsx":"214e4e8bea6f","components/brand/NetPattern.jsx":"af65ad09b56a","components/brand/PatternBand.jsx":"09072e48dd5d","components/core/Badge.jsx":"ef013c821e24","components/core/Button.jsx":"819ee2f797c7","components/core/Card.jsx":"3fb59e82d056","components/core/Icon.jsx":"d9e1eb02cd6d","components/core/IconButton.jsx":"52a4362a10d9","components/core/Logo.jsx":"2a4bc1b2fa93","components/core/Tag.jsx":"103b442ed128","components/core/ThemeToggle.jsx":"3dff1de68f5e","components/feedback/Alert.jsx":"495df84d03f5","components/feedback/Dialog.jsx":"7e97a6c57ce6","components/feedback/EmptyState.jsx":"a3f1048ff38a","components/feedback/Toast.jsx":"c9aecd0c441e","components/feedback/Tooltip.jsx":"dddfc4e3c81a","components/forms/Checkbox.jsx":"7406e03bea81","components/forms/Input.jsx":"e12e4044886c","components/forms/Radio.jsx":"d8e3ced058a2","components/forms/Select.jsx":"0ef883307eb6","components/forms/Switch.jsx":"c56d34d260a6","components/league/LevelBadge.jsx":"c534d5aa996b","components/league/MatchCard.jsx":"990ac5f0d179","components/league/PlayerRow.jsx":"fb4628e93d6c","components/league/SetScoreInput.jsx":"6c23ace26c27","components/league/StandingsTable.jsx":"0cef7940a3c1","components/navigation/BottomNav.jsx":"90e47ca134fc","components/navigation/Breadcrumb.jsx":"a896433375b1","components/navigation/SiteFooter.jsx":"5b2f43c2ca95","components/navigation/SiteHeader.jsx":"de9c8942da5e","components/navigation/Tabs.jsx":"38c51216fa0d","doc-page.js":"f52ae9c02fca","theme.js":"3c0e4743d8d2","ui_kits/manager/Dashboard.jsx":"d7a06fcdbbae","ui_kits/manager/Login.jsx":"70aee013b0d0","ui_kits/manager/Roster.jsx":"96bfcc327d00","ui_kits/manager/Spielbericht.jsx":"c83d675b5da9","ui_kits/spielbetrieb/FixtureAdmin.jsx":"6818e2439c88","ui_kits/spielbetrieb/ReportSheet.jsx":"3a74078045a3","ui_kits/website/HomeScreen.jsx":"7c38fb82c6a6","ui_kits/website/LigaScreen.jsx":"8e41fb77f516","ui_kits/website/MitmachenScreen.jsx":"cce91359c8bc","ui_kits/website/WallOfFameScreen.jsx":"2dd078e0c1f9"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"QueerLeagueDesignSystem_ae47b3","components":[{"name":"NetHero","sourcePath":"components/brand/NetHero.jsx"},{"name":"NetPattern","sourcePath":"components/brand/NetPattern.jsx"},{"name":"PatternBand","sourcePath":"components/brand/PatternBand.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"BallIcon","sourcePath":"components/core/Icon.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"ThemeToggle","sourcePath":"components/core/ThemeToggle.jsx"},{"name":"Alert","sourcePath":"components/feedback/Alert.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"ToastStack","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"LevelBadge","sourcePath":"components/league/LevelBadge.jsx"},{"name":"MatchCard","sourcePath":"components/league/MatchCard.jsx"},{"name":"PlayerRow","sourcePath":"components/league/PlayerRow.jsx"},{"name":"SetScoreInput","sourcePath":"components/league/SetScoreInput.jsx"},{"name":"StandingsTable","sourcePath":"components/league/StandingsTable.jsx"},{"name":"BottomNav","sourcePath":"components/navigation/BottomNav.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"SiteFooter","sourcePath":"components/navigation/SiteFooter.jsx"},{"name":"SiteHeader","sourcePath":"components/navigation/SiteHeader.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"}],"sourceHashes":{"brand-kit/doc-page.js":"f52ae9c02fca","components/brand/NetHero.jsx":"600447300198","components/brand/NetPattern.jsx":"af65ad09b56a","components/brand/PatternBand.jsx":"09072e48dd5d","components/core/Badge.jsx":"ef013c821e24","components/core/Button.jsx":"819ee2f797c7","components/core/Card.jsx":"21c64772d207","components/core/Icon.jsx":"d9e1eb02cd6d","components/core/IconButton.jsx":"52a4362a10d9","components/core/Logo.jsx":"2a4bc1b2fa93","components/core/Tag.jsx":"103b442ed128","components/core/ThemeToggle.jsx":"3dff1de68f5e","components/feedback/Alert.jsx":"495df84d03f5","components/feedback/Dialog.jsx":"7e97a6c57ce6","components/feedback/EmptyState.jsx":"a3f1048ff38a","components/feedback/Toast.jsx":"c9aecd0c441e","components/feedback/Tooltip.jsx":"dddfc4e3c81a","components/forms/Checkbox.jsx":"dcc0411597d7","components/forms/Input.jsx":"e12e4044886c","components/forms/Radio.jsx":"ac7ae01b33a3","components/forms/Select.jsx":"0ef883307eb6","components/forms/Switch.jsx":"089160bc8076","components/league/LevelBadge.jsx":"c534d5aa996b","components/league/MatchCard.jsx":"7e1ad9fc13e7","components/league/PlayerRow.jsx":"fb4628e93d6c","components/league/SetScoreInput.jsx":"6c23ace26c27","components/league/StandingsTable.jsx":"0cef7940a3c1","components/navigation/BottomNav.jsx":"90e47ca134fc","components/navigation/Breadcrumb.jsx":"a896433375b1","components/navigation/SiteFooter.jsx":"76c348518d7e","components/navigation/SiteHeader.jsx":"de9c8942da5e","components/navigation/Tabs.jsx":"38c51216fa0d","doc-page.js":"f52ae9c02fca","theme.js":"3c0e4743d8d2","ui_kits/manager/Dashboard.jsx":"d7a06fcdbbae","ui_kits/manager/Login.jsx":"1936cc9d8316","ui_kits/manager/Roster.jsx":"96bfcc327d00","ui_kits/manager/Spielbericht.jsx":"c83d675b5da9","ui_kits/spielbetrieb/FixtureAdmin.jsx":"59277d38e09e","ui_kits/spielbetrieb/ReportSheet.jsx":"3a74078045a3","ui_kits/website/HomeScreen.jsx":"7c38fb82c6a6","ui_kits/website/LigaScreen.jsx":"8e41fb77f516","ui_kits/website/MitmachenScreen.jsx":"cce91359c8bc","ui_kits/website/WallOfFameScreen.jsx":"2dd078e0c1f9"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -754,6 +754,7 @@ try { (() => {
 // components/brand/NetHero.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
 const chamfer = (ch = 10, corners = 2) => ({
   clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
   borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
@@ -793,7 +794,10 @@ function NetHero({
   ...rest
 }) {
   const dark = background.startsWith("petrol");
-  const ink = inkOnDark !== undefined ? inkOnDark ? "var(--text-on-inverse)" : "var(--text-heading)" : dark ? "var(--text-on-inverse)" : "var(--text-heading)";
+  // The net artwork keeps its light grey ground in night too, so the headline on it stays CI petrol (4.2:1 at display size)
+  // instead of following --text-heading, which turns petrol-mid in night (2.2:1 on the grey).
+  const onArt = "var(--qvl-petrol)";
+  const ink = inkOnDark !== undefined ? inkOnDark ? "var(--text-on-inverse)" : onArt : dark ? "var(--text-on-inverse)" : onArt;
   return /*#__PURE__*/React.createElement("section", _extends({
     style: {
       position: "relative",
@@ -1301,6 +1305,7 @@ Object.assign(__ds_scope, { Button });
 // components/core/Card.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
 const chamfer = (ch = 10, corners = 2) => ({
   clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
   borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
@@ -1369,10 +1374,14 @@ function Card({
     }
   };
   const t = tones[tone] || tones.default;
+  // Headings inside the soft tone take the on-soft colour: in night, petrol-mid on the soft petrol ground stays below 4.5:1.
   const inner = {
     background: t.background,
     color: t.color,
     padding,
+    ...(tone === "soft" ? {
+      "--text-heading": "var(--text-on-soft)"
+    } : null),
     ...chamfer(border ? ch - 2 : ch, 4)
   };
   const edge = {
@@ -2444,7 +2453,6 @@ function Checkbox({
 }) {
   const uid = React.useId();
   const fid = id || uid;
-  const [focus, setFocus] = React.useState(false);
   const isControlled = checked !== undefined;
   const [inner, setInner] = React.useState(Boolean(defaultChecked));
   const on = isControlled ? checked : inner;
@@ -2460,11 +2468,17 @@ function Checkbox({
       ...style
     }
   }, /*#__PURE__*/React.createElement("span", {
+    className: "qvl-focus-field",
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--focus-ring)" : on ? "var(--control-on)" : "var(--border-default)",
-      padding: focus ? 3 : 2,
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
+      background: on ? "var(--control-on)" : "var(--border-default)",
+      padding: 2,
       ...chamfer(5, 4),
       transition: "background var(--duration-fast) var(--ease-standard)"
     }
@@ -2489,19 +2503,19 @@ function Checkbox({
     checked: isControlled ? checked : undefined,
     defaultChecked: isControlled ? undefined : defaultChecked,
     disabled: disabled,
-    onFocus: () => setFocus(true),
-    onBlur: () => setFocus(false),
     onChange: e => {
       if (!isControlled) setInner(e.target.checked);
       onChange && onChange(e);
     },
     style: {
       position: "absolute",
+      left: 0,
+      top: 0,
       opacity: 0,
       width: 1,
       height: 1
     }
-  }, rest)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+  }, rest))), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
     style: {
       display: "block",
       fontWeight: "var(--weight-emphasis)",
@@ -2680,7 +2694,6 @@ function Radio({
 }) {
   const uid = React.useId();
   const fid = id || uid;
-  const [focus, setFocus] = React.useState(false);
   // Uncontrolled radios mirror the native checked state, re-read whenever any change event fires (a sibling in the group may have been picked).
   const isControlled = checked !== undefined;
   const ref = React.useRef(null);
@@ -2707,11 +2720,17 @@ function Radio({
       ...style
     }
   }, /*#__PURE__*/React.createElement("span", {
+    className: "qvl-focus-field",
     style: {
       flex: "none",
       marginTop: 2,
-      background: focus ? "var(--focus-ring)" : on ? "var(--control-on)" : "var(--border-default)",
-      padding: focus ? 3 : 2,
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
+      background: on ? "var(--control-on)" : "var(--border-default)",
+      padding: 2,
       ...chamfer(5, 4)
     }
   }, /*#__PURE__*/React.createElement("span", {
@@ -2741,15 +2760,15 @@ function Radio({
     defaultChecked: defaultChecked,
     disabled: disabled,
     onChange: onChange,
-    onFocus: () => setFocus(true),
-    onBlur: () => setFocus(false),
     style: {
       position: "absolute",
+      left: 0,
+      top: 0,
       opacity: 0,
       width: 1,
       height: 1
     }
-  }, rest)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+  }, rest))), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
     style: {
       display: "block",
       fontWeight: "var(--weight-emphasis)"
@@ -2967,7 +2986,6 @@ function Switch({
 }) {
   const uid = React.useId();
   const fid = id || uid;
-  const [focus, setFocus] = React.useState(false);
   return /*#__PURE__*/React.createElement("label", {
     htmlFor: fid,
     style: {
@@ -2992,10 +3010,16 @@ function Switch({
       color: "var(--text-muted)"
     }
   }, description) : null), /*#__PURE__*/React.createElement("span", {
+    className: "qvl-focus-field",
     style: {
       flex: "none",
-      background: focus ? "var(--focus-ring)" : "var(--border-default)",
-      padding: focus ? 3 : 2,
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: "block",
+      background: "var(--border-default)",
+      padding: 2,
       ...chamfer(6, 2)
     }
   }, /*#__PURE__*/React.createElement("span", {
@@ -3025,15 +3049,15 @@ function Switch({
     checked: checked,
     disabled: disabled,
     onChange: onChange,
-    onFocus: () => setFocus(true),
-    onBlur: () => setFocus(false),
     style: {
       position: "absolute",
+      left: 0,
+      top: 0,
       opacity: 0,
       width: 1,
       height: 1
     }
-  }, rest)));
+  }, rest))));
 }
 Object.assign(__ds_scope, { Switch });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/forms/Switch.jsx", error: String((e && e.message) || e) }); }
@@ -3109,6 +3133,7 @@ Object.assign(__ds_scope, { LevelBadge });
 // components/league/MatchCard.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
 const chamfer = (ch = 10, corners = 2) => ({
   clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
   borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
@@ -3186,8 +3211,8 @@ function MatchCard({
   }, level ? /*#__PURE__*/React.createElement(__ds_scope.Badge, {
     tone: "outline",
     size: "sm"
-  }, [level, region].filter(Boolean).join(" · ")) : null, /*#__PURE__*/React.createElement(__ds_scope.Badge, {
-    tone: played ? "petrol" : status === "läuft" ? "orange" : "grey",
+  }, [level, region].filter(Boolean).join(" \xB7 ")) : null, /*#__PURE__*/React.createElement(__ds_scope.Badge, {
+    tone: played ? "petrol" : status === "l\xE4uft" ? "orange" : "grey",
     size: "sm"
   }, status))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -3207,11 +3232,11 @@ function MatchCard({
       lineHeight: 1,
       color: "var(--text-heading)"
     }
-  }, /*#__PURE__*/React.createElement("span", null, played ? homeSets : "–"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", null, played ? homeSets : "\u2013"), /*#__PURE__*/React.createElement("span", {
     style: {
       color: "var(--text-separator)"
     }
-  }, ":"), /*#__PURE__*/React.createElement("span", null, played ? awaySets : "–")), side(away, awayWon)), sets.length ? /*#__PURE__*/React.createElement("div", {
+  }, ":"), /*#__PURE__*/React.createElement("span", null, played ? awaySets : "\u2013")), side(away, awayWon)), sets.length ? /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: "var(--space-2)",
@@ -3225,7 +3250,7 @@ function MatchCard({
     style: {
       background: "var(--surface-sunken)",
       padding: "2px 8px",
-      clipPath: "polygon(4px 0,100% 0,100% calc(100% - 4px),calc(100% - 4px) 100%,0 100%,0 4px)"
+      ...chamfer(4, 2)
     }
   }, s))) : null));
 }
@@ -3708,6 +3733,13 @@ Object.assign(__ds_scope, { Breadcrumb });
 // components/navigation/SiteFooter.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer = (ch = 10, corners = 2) => ({
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
+});
 function SiteFooter({
   columns = [],
   note,
@@ -3734,7 +3766,7 @@ function SiteFooter({
       background: "var(--surface-logo-plate)",
       padding: "8px 12px",
       display: "inline-block",
-      clipPath: "polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)"
+      ...chamfer(8, 2)
     }
   }, /*#__PURE__*/React.createElement(__ds_scope.Logo, {
     variant: "long-petrol",
@@ -5084,11 +5116,12 @@ try { (() => {
         marginBottom: "var(--space-8)"
       }
     }, /*#__PURE__*/React.createElement("span", {
+      className: "qvl-chamfer",
       style: {
         display: "inline-flex",
         background: "var(--surface-logo-plate)",
         padding: "8px 14px",
-        clipPath: "polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)"
+        "--ch": "10px"
       }
     }, /*#__PURE__*/React.createElement(Logo, {
       variant: "long-petrol",
@@ -5563,7 +5596,7 @@ try { (() => {
         gap: "var(--space-2)",
         flexWrap: "wrap"
       }
-    }, ["Nord", "Ost", "Süd", "West", "Mitte"].map(r => /*#__PURE__*/React.createElement(Tag, {
+    }, ["Nord", "Ost", "S\xFCd", "West", "Mitte"].map(r => /*#__PURE__*/React.createElement(Tag, {
       key: r,
       selected: r === region,
       onClick: () => setRegion(r)
@@ -5658,9 +5691,10 @@ try { (() => {
       title: "Safe Space"
     }, "Hallen werden intern zugeordnet, aber nie ver\xF6ffentlicht."), /*#__PURE__*/React.createElement(Card, {
       padding: "var(--space-4)"
-    }, /*#__PURE__*/React.createElement("h3", {
+    }, /*#__PURE__*/React.createElement("h2", {
       style: {
-        margin: "0 0 var(--space-3)"
+        margin: "0 0 var(--space-3)",
+        fontSize: "var(--text-h3)"
       }
     }, "Spieltag 6"), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -5704,7 +5738,7 @@ try { (() => {
       name: "pencil",
       size: 16
     })))))) : null, tab === "tab" ? /*#__PURE__*/React.createElement(StandingsTable, {
-      caption: `Level B · Gruppe ${region}`,
+      caption: `Level B \xB7 Gruppe ${region}`,
       promotion: 1,
       relegation: 1,
       rows: [{
@@ -5762,7 +5796,7 @@ try { (() => {
         label: "Gast"
       }, {
         key: "result",
-        label: "Sätze",
+        label: "S\xE4tze",
         align: "right",
         width: 80
       }, {
@@ -5776,13 +5810,13 @@ try { (() => {
         home: "Berlin Bumpers",
         away: "Kiel Kraken",
         result: "3:1",
-        status: "bestätigt"
+        status: "best\xE4tigt"
       }, {
         date: "Sa 31.10.",
         home: "Hamburg Hurricanes",
         away: "Bremen Blockers",
         result: "3:0",
-        status: "bestätigt"
+        status: "best\xE4tigt"
       }, {
         date: "So 18.10.",
         home: "Praha Pride Spikers",

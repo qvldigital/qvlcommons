@@ -5,8 +5,7 @@ function Login({onLogin}){
     padding:"var(--space-6)",background:"var(--surface-page)"}}>
     <div style={{textAlign:"center",marginBottom:"var(--space-8)"}}>
       {/* The logo is a PNG with a transparent ground: it always sits on the white logo plate (see README, dark mode). */}
-      <span style={{display:"inline-flex",background:"var(--surface-logo-plate)",padding:"8px 14px",
-        clipPath:"polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)"}}>
+      <span className="qvl-chamfer" style={{display:"inline-flex",background:"var(--surface-logo-plate)",padding:"8px 14px","--ch":"10px"}}>
         <Logo variant="long-petrol" height={40}/>
       </span>
       <div style={{marginTop:"var(--space-3)",fontFamily:"var(--font-display)",letterSpacing:"var(--tracking-eyebrow)",

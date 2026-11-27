@@ -11,22 +11,24 @@ const chamfer=(n=10,corners=2)=>{const ch=fieldCh(n);return{clipPath:`var(--qvl-
 export function Checkbox({label,description,checked,defaultChecked,disabled,onChange,id,style,...rest}){
   const uid=React.useId();
   const fid=id||uid;
-  const [focus,setFocus]=React.useState(false);
   const isControlled=checked!==undefined;
   const [inner,setInner]=React.useState(Boolean(defaultChecked));
   const on=isControlled?checked:inner;
   return <label htmlFor={fid} style={{display:"flex",gap:"var(--space-3)",alignItems:"flex-start",
     cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.55:1,minHeight:"var(--tap-min)",...style}}>
-    <span style={{flex:"none",marginTop:2,background:focus?"var(--focus-ring)":on?"var(--control-on)":"var(--border-default)",
-      padding:focus?3:2,...chamfer(5,4),transition:"background var(--duration-fast) var(--ease-standard)"}}>
+    {/* The visually hidden input sits inside .qvl-focus-field, so the box gets the same double focus ring as Input and Select. */}
+    <span className="qvl-focus-field" style={{flex:"none",marginTop:2,position:"relative"}}>
+    <span style={{display:"block",background:on?"var(--control-on)":"var(--border-default)",
+      padding:2,...chamfer(5,4),transition:"background var(--duration-fast) var(--ease-standard)"}}>
       <span style={{display:"flex",alignItems:"center",justifyContent:"center",width:20,height:20,
         background:on?"var(--control-on)":"var(--surface-card)",color:"var(--text-on-inverse)",
         fontFamily:"var(--font-body)",fontWeight:600,fontSize:14,lineHeight:1,...chamfer(4,4)}}>{on?"✓":""}</span>
     </span>
     <input id={fid} type="checkbox" checked={isControlled?checked:undefined} defaultChecked={isControlled?undefined:defaultChecked}
-      disabled={disabled} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}
+      disabled={disabled}
       onChange={(e)=>{if(!isControlled)setInner(e.target.checked);onChange&&onChange(e)}}
-      style={{position:"absolute",opacity:0,width:1,height:1}} {...rest}/>
+      style={{position:"absolute",left:0,top:0,opacity:0,width:1,height:1}} {...rest}/>
+    </span>
     <span>
       <span style={{display:"block",fontWeight:"var(--weight-emphasis)",fontSize:"var(--text-body)"}}>{label}</span>
       {description?<span style={{display:"block",fontSize:"var(--text-small)",color:"var(--text-muted)"}}>{description}</span>:null}

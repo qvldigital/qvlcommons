@@ -11,7 +11,6 @@ const chamfer=(n=10,corners=2)=>{const ch=fieldCh(n);return{clipPath:`var(--qvl-
 export function Radio({label,description,name,value,checked,defaultChecked,disabled,onChange,id,style,...rest}){
   const uid=React.useId();
   const fid=id||uid;
-  const [focus,setFocus]=React.useState(false);
   // Uncontrolled radios mirror the native checked state, re-read whenever any change event fires (a sibling in the group may have been picked).
   const isControlled=checked!==undefined;
   const ref=React.useRef(null);
@@ -26,16 +25,19 @@ export function Radio({label,description,name,value,checked,defaultChecked,disab
   const on=isControlled?checked:inner;
   return <label htmlFor={fid} style={{display:"flex",gap:"var(--space-3)",alignItems:"flex-start",
     cursor:disabled?"not-allowed":"pointer",opacity:disabled?0.55:1,minHeight:"var(--tap-min)",...style}}>
-    <span style={{flex:"none",marginTop:2,background:focus?"var(--focus-ring)":on?"var(--control-on)":"var(--border-default)",
-      padding:focus?3:2,...chamfer(5,4)}}>
+    {/* The visually hidden input sits inside .qvl-focus-field, so the box gets the same double focus ring as Input and Select. */}
+    <span className="qvl-focus-field" style={{flex:"none",marginTop:2,position:"relative"}}>
+    <span style={{display:"block",background:on?"var(--control-on)":"var(--border-default)",
+      padding:2,...chamfer(5,4)}}>
       <span style={{display:"flex",alignItems:"center",justifyContent:"center",width:20,height:20,
         background:"var(--surface-card)",...chamfer(4,4)}}>
         <span style={{width:10,height:10,background:on?"var(--surface-accent)":"transparent",...chamfer(3,4)}}/>
       </span>
     </span>
     <input id={fid} ref={ref} type="radio" name={name} value={value} checked={checked} defaultChecked={defaultChecked}
-      disabled={disabled} onChange={onChange} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}
-      style={{position:"absolute",opacity:0,width:1,height:1}} {...rest}/>
+      disabled={disabled} onChange={onChange}
+      style={{position:"absolute",left:0,top:0,opacity:0,width:1,height:1}} {...rest}/>
+    </span>
     <span>
       <span style={{display:"block",fontWeight:"var(--weight-emphasis)"}}>{label}</span>
       {description?<span style={{display:"block",fontSize:"var(--text-small)",color:"var(--text-muted)"}}>{description}</span>:null}
