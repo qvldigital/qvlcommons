@@ -13,10 +13,10 @@ Queer Volleyball League e.V. — extern immer "Queer League". Einstieg ist `desi
 ## Regeln (aus dem README, nicht verhandelbar)
 1. Safe Space: nie Hallennamen, Adressen, Karten oder Spielorte öffentlich anzeigen.
 2. 11 Sprachen: nichts mit fester Breite oder `nowrap` auf übersetzbaren Texten.
-3. Mobile first: Tap-Ziele mindestens 44 px.
+3. Mobile first: Tap-Ziele mindestens 44 px. Einzige Ausnahme: Datentabellen in Admin-Ansichten mit `density="compact"` (Zeilen 36 px, Aktionen 32 px), nur bei Maus; bei Touch automatisch 44 px.
 4. Feste CI: keine neuen Farbtöne erfinden; Texte und Flächen mit semantischen Tokens (`surface-*`, `text-*`, `border-*`) setzen, nicht mit rohen `qvl-*`-Werten.
 5. Icons nach Fläche: Software (Manager, Planner, Referee) und alles aus dem Design System mit Lucide über `Icon`; die Website (Zephyr) behält die Material Icons des Themes, Font Awesome nur für Marken-Symbole. Nie mischen innerhalb einer Fläche.
-6. Ton: du-Ansprache, Genderstern (Spieler*innen), FLINTA* immer mit Sternchen, kein Emoji, Headlines in Bebas Neue GROSS, Fließtext in Oswald Light.
+6. Ton: du-Ansprache, Genderstern (Spieler*innen), FLINTA* immer mit Sternchen, kein Emoji, Headlines in Bebas Neue GROSS, Fließtext in Oswald Regular (Light nur für Lead ab 19 px).
 
 ## Leitplanken für Design-Skills (gilt für alle Apps)
 Farben, Schriften, Nacht-Modus und Tokens kommen ausschließlich aus `design-system/tokens.json`. Kein Skill schlägt eigenmächtig neue Paletten, Schriften, Radien oder Schatten vor.

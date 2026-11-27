@@ -1,7 +1,10 @@
 import React from "react";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 // The label wraps only its own text: hint and error sit outside it and are linked to the control with aria-describedby.
 function Field({label,hint,error,required,htmlFor,msgId,children}){
   return <div>
@@ -16,22 +19,22 @@ function Field({label,hint,error,required,htmlFor,msgId,children}){
 }
 
 export function Input({label,hint,error,required,multiline=false,rows=4,id,style,...rest}){
-  const [focus,setFocus]=React.useState(false);
   const uid=React.useId();
   const fid=id||uid;
   const msgId=fid+"-msg";
   // aria-describedby only when Field renders the message (label present); aria-required keeps native validation out of it.
   const a11y={"aria-invalid":error?true:undefined,"aria-describedby":label&&(error||hint)?msgId:undefined,"aria-required":required?true:undefined};
-  const edge=error?"var(--border-accent)":focus?"var(--focus-ring)":"var(--border-default)";
-  const shell={background:edge,padding:error||focus?3:2,...chamfer(8,4),
+  // Focus: the double ring comes from the unclipped .qvl-focus-field wrapper (bundle.css), as on Button and Tabs.
+  const edge=error?"var(--border-accent)":"var(--border-default)";
+  const shell={background:edge,padding:error?3:2,...chamfer(8,4),
     transition:"background var(--duration-fast) var(--ease-standard)"};
   const field={width:"100%",border:"none",outline:"none",background:"var(--surface-card)",
     font:"inherit",fontWeight:"var(--weight-body)",color:"var(--text-body-color)",
     padding:multiline?"10px 12px":"0 12px",height:multiline?"auto":44,minHeight:multiline?undefined:44,
     ...chamfer(7,4),resize:multiline?"vertical":undefined};
   const el=multiline
-    ? <textarea id={fid} rows={rows} {...a11y} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)} style={field} {...rest}/>
-    : <input id={fid} {...a11y} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)} style={field} {...rest}/>;
-  const control=<div style={{...shell,...style}}>{el}</div>;
+    ? <textarea id={fid} rows={rows} {...a11y} style={field} {...rest}/>
+    : <input id={fid} {...a11y} style={field} {...rest}/>;
+  const control=<div className="qvl-focus-field"><div style={{...shell,...style}}>{el}</div></div>;
   return label?<Field label={label} hint={hint} error={error} required={required} htmlFor={fid} msgId={msgId}>{control}</Field>:control;
 }

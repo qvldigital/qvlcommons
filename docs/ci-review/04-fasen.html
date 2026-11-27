@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CI-Review 4: Fasen und Fokus</title>
+<link rel="stylesheet" href="../../design-system/styles.css">
+<link rel="stylesheet" href="../../design-system/components/bundle.css">
+<style>
+  body { padding: 16px; }
+  .cols { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .col { flex: 1 1 340px; min-width: 0; padding: 16px; background: var(--surface-card); border: 1px solid var(--border-default); display: grid; gap: 16px; }
+  .tag { font-family: var(--font-display); font-size: 1.125rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-heading); margin: 0; }
+  .note { font-size: .875rem; color: var(--text-muted); margin: -8px 0 0; }
+  .lbl { font-family: var(--font-display); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--text-heading); display: block; margin-bottom: 8px; }
+  .btn { font-family: var(--font-display); font-size: 1.375rem; letter-spacing: var(--tracking-display); text-transform: uppercase; min-height: 44px; padding: 0 20px; border: 0; background: var(--surface-inverse); color: var(--text-on-inverse); cursor: pointer; }
+  .field { width: 100%; box-sizing: border-box; min-height: 44px; padding: 0 12px; font: inherit; color: var(--text-body-color); background: var(--surface-card); border: 2px solid var(--border-default); }
+  .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+  .tab { font-family: var(--font-display); font-size: 1rem; letter-spacing: var(--tracking-display); text-transform: uppercase; min-height: 44px; padding: 0 14px; border: 2px solid var(--border-default); background: transparent; color: var(--text-heading); cursor: pointer; }
+  .tab[aria-selected="true"] { background: var(--surface-inverse); color: var(--text-on-inverse); border-color: transparent; }
+
+  /* A: clip-path; ring drawn by a wrapper with drop-shadows */
+  .A .chamf { clip-path: var(--clip-chamfer-2, polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)); }
+  .A .wrap { display: inline-flex; }
+  .A .wrap.f { filter: drop-shadow(1px 0 0 var(--focus-ring-inner)) drop-shadow(-1px 0 0 var(--focus-ring-inner)) drop-shadow(0 1px 0 var(--focus-ring-inner)) drop-shadow(0 -1px 0 var(--focus-ring-inner)) drop-shadow(2px 0 0 var(--focus-ring)) drop-shadow(-2px 0 0 var(--focus-ring)) drop-shadow(0 2px 0 var(--focus-ring)) drop-shadow(0 -2px 0 var(--focus-ring)); }
+  .A .wrap.f .tab { background: var(--surface-brand-soft); color: var(--text-on-soft); } /* as in bundle.css: ghost elements get a fill on focus so the drop-shadows do not trace the letters */
+  .A .field.f { border-color: var(--focus-ring); border-width: 3px; }
+
+  /* B: corner-shape bevel; outline + box-shadow follow the bevel, no wrapper */
+  .B .chamf { border-radius: 10px 0; corner-shape: bevel; }
+  .B .field.chamf { border-radius: 8px; }
+  .B .f { outline: 2px solid var(--focus-ring); outline-offset: 1px; box-shadow: 0 0 0 1px var(--focus-ring-inner); }
+
+  /* C: bevel only on buttons and cards; fields and tabs square */
+  .C .btn { border-radius: 10px 0; corner-shape: bevel; }
+  .C .f { outline: 2px solid var(--focus-ring); outline-offset: 1px; box-shadow: 0 0 0 1px var(--focus-ring-inner); }
+  .card { padding: 16px; border: 2px solid var(--border-default); }
+  .A .shell { background: var(--border-default); padding: 2px; clip-path: polygon(16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px); }
+  .A .shell .card { border: 0; background: var(--surface-card); clip-path: polygon(15px 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,0 100%,0 15px); }
+  .B .card, .C .card { border-radius: 16px 0; corner-shape: bevel; }
+  .support { font-size: .875rem; }
+</style>
+</head>
+<body>
+<h1>Fasen und Fokusring</h1>
+<p class="support" id="sup"></p>
+<div class="cols">
+  <div class="col A">
+    <p class="tag">A · heute</p>
+    <p class="note">clip-path; Fokusring über Wrapper mit acht drop-shadows; Feld mit Rahmen in Fokusfarbe</p>
+  </div>
+  <div class="col B">
+    <p class="tag">B · gleiche Formen, neue Technik</p>
+    <p class="note">corner-shape: bevel; Fokus als normales outline, folgt der Fase; kein Wrapper</p>
+  </div>
+  <div class="col C">
+    <p class="tag">C · Fasen nur an Buttons und Karten</p>
+    <p class="note">Felder und Tabs eckig (Radius 0), Fokus als outline</p>
+  </div>
+</div>
+<template id="t">
+  <div class="card"><span class="lbl">Karte</span>Berlin Bumpers · Level B</div>
+  <div><span class="wrap f"><button class="btn chamf">Speichern</button></span></div>
+  <div><label class="lbl">Teamname</label><input class="field chamf f" value="Berlin Bumpers"></div>
+  <div class="tabs" role="tablist"><span class="wrap"><button class="tab chamf" role="tab" aria-selected="true">Tabelle</button></span><span class="wrap f"><button class="tab chamf f" role="tab" aria-selected="false">Spielplan</button></span></div>
+</template>
+<script>
+  for (const col of document.querySelectorAll(".col")) col.append(document.getElementById("t").content.cloneNode(true));
+  // in A the wrapper carries the ring, so the inner element must not; in B/C the element itself carries it
+  const ac = document.querySelector(".A .card"), sh = document.createElement("div"); sh.className = "shell"; ac.replaceWith(sh); sh.append(ac);
+  document.querySelectorAll(".A .btn, .A .tab").forEach(e => e.classList.remove("f"));
+  document.querySelectorAll(".B .wrap.f, .C .wrap.f").forEach(w => { w.classList.remove("f"); w.firstElementChild.classList.add("f"); });
+  document.querySelectorAll(".C .field, .C .tab").forEach(e => e.classList.remove("chamf"));
+  document.getElementById("sup").textContent = "corner-shape in diesem Browser: " + (CSS.supports("corner-shape", "bevel") ? "ja" : "nein (B und C zeigen dann eckige Formen)");
+</script>
+</body>
+</html>

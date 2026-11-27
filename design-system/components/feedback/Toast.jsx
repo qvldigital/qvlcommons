@@ -1,8 +1,11 @@
 import React from "react";
 import { Icon } from "../core/Icon.jsx";
-const chamfer=(ch=10,corners=2)=>({clipPath:corners===4
+// Chamfer: corner-shape: bevel where supported (outline and borders follow the bevel), clip-path otherwise. See bundle.css "Chamfer".
+const chamfer=(ch=10,corners=2)=>({clipPath:`var(--qvl-chamfer-clip,${corners===4
   ?`polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)`
-  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`});
+  :`polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius:corners===4?`calc(var(--qvl-bevel,0)*${ch}px)`:`calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape:"bevel",overflow:"var(--qvl-bevel-overflow,visible)"});
 
 export function Toast({tone="petrol",message,action,onAction,onClose,closeLabel="Schließen",style,...rest}){
   const tones={petrol:{bg:"var(--surface-inverse)",fg:"var(--text-on-inverse)"},orange:{bg:"var(--surface-accent)",fg:"var(--text-on-accent)"},pink:{bg:"var(--button-pink-bg)",fg:"var(--button-pink-fg)"}};

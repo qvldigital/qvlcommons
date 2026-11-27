@@ -22,7 +22,10 @@ _Freigabe: Die Verläufe, die erweiterte Gelb-Regel und die abgeleiteten Pink-T�
 1. **Werte** in `design-system/tokens.json` ändern (Quelle aller Werte). Daraus abgeleitet und von Hand nachzuziehen: `design-system/tokens.css`, `design-system/tokens/*.css`, die Token-Exporte in `brand-kit/tokens/`.
 2. **Komponenten** unter `design-system/components/<Kategorie>/*.jsx` ändern. Jede Änderung steht zusätzlich in beiden Bundles (`design-system/_ds_bundle.js` und `design-system/components/bundle.js`), auch Änderungen an den UI-Kits. Danach die Prüfsummen-Zeile am Dateianfang beider Bundles neu berechnen (SHA-256 der Quelldatei, die ersten 12 Zeichen).
 3. **Brand Kit:** `brand-kit/` und `design-system/brand-kit/` bleiben identisch (das PDF liegt nur im Root).
-4. **Prüfen:** im Browser Hell und Nacht, 390 und 1440 px, Kontrast messen.
+4. **Prüfen:** im Browser Hell und Nacht, 390 und 1440 px, Kontrast messen. Dazu zwei Messgeräte (Node 22+, Chrome oder Edge; kein Build-Gate, von Hand und vor jedem Release):
+   - `npm run check:design` — der Detektor des `impeccable`-Skills über alle Komponenten-Vorschauen und UI-Kits bei 390 und 1280 px. Regeln, die der CI widersprechen, stehen mit Begründung als Ausnahme in `.impeccable/config.json` (bisher: `kicker-above-heading`, weil Eyebrows Teil der CI sind).
+   - `npm run check:i18n` — 11-Sprachen-Belastungstest: Alle Texte werden pseudo-lokalisiert (rund 40 % länger, mit Sonderzeichen der Ligasprachen, `scripts/pseudo-l10n.js`), dann misst `inspect.mjs` des `design-taste-frontend`-Skills Überlauf, abgeschnittenen und verdeckten Text, Kontrast und kaputte Bilder. Dessen Stilregeln zählen nicht.
+   - Einzelne Komponente ansehen: `scripts/harness.html?c=Button` (Optionen `&theme=dark`, `&pseudo=1`, `&fallback=1` für den `clip-path`-Rückfall der Fasen), über einen lokalen Server aus dem Repo-Root.
 5. **Release:** `version` in `package.json` hochzählen, committen, taggen (`v2.1.0`, …), pushen.
 6. Die Apps ziehen eine neue Version erst bewusst nach, getestet über ihre Staging-Umgebung.
 7. Danach das Artefakt aus dem Repo aktualisieren (Dateien unter `project/` ersetzen).

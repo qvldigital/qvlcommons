@@ -34,7 +34,7 @@ Not available to the reader of this repo but referenced for completeness: `queer
 
 1. **Safe Space** — never display hall names, addresses, maps or venue data publicly. Components deliberately have no venue field; where a user would expect one, show the `Alert tone="safe"` notice instead.
 2. **11 languages** — every component must survive strings 2× the German length. No fixed widths on labels, no `nowrap` on anything translatable, tabs and nav scroll horizontally.
-3. **Mobile first** — the PWA is used standing at the side of a court. 44 px minimum targets (`--tap-min`), big numerals, thumb-reachable actions.
+3. **Mobile first** — the PWA is used standing at the side of a court. 44 px minimum targets (`--tap-min`), big numerals, thumb-reachable actions. **One exception:** data tables and their toolbars in admin views may switch to compact density (`density="compact"`: rows `--row-compact` 36 px, row actions `--tap-compact` 32 px, at least 8 px apart). It applies with a mouse only; on touch (`pointer: coarse`) both tokens fall back to 44 px. Buttons, fields, navigation and everything public keep 44 px. *Added 27.11.2026 (CI review).*
 4. **Fixed CI** — the palette is closed. Never invent a hue. Interaction shades are the CI hues mixed toward black (`--qvl-petrol-hover` etc.).
 5. **Community, not Verband** — copy and visuals are warm and a bit cheeky, never bureaucratic.
 
@@ -96,8 +96,9 @@ Rules: **petrol** carries headers, primary buttons, headlines and table heads. *
 ### Type
 
 - **Headlines: Bebas Neue Regular, uppercase**, tracking `+0.02em`, line-height `0.92–1.1`. One weight only; hierarchy comes from size.
-- **Body: Oswald Light (300)**; emphasis is **Oswald Regular (400)** — never Bebas inline.
-- **Eyebrows / labels / column heads:** Bebas 13 px, tracking `0.14em`, uppercase.
+- **Body: Oswald Regular (400)**; emphasis is **Oswald Medium (500)**, strong emphasis SemiBold (600) — never Bebas inline. **Oswald Light (300) only for lead text from 19 px up** (`text-lead`, `weight-lead`) and larger statements; never for body, small copy, captions, labels or table cells. In night mode running text gets a little more air (`leading-body-night` 1.7, `tracking-body-night` 0.01em), set automatically by the dark theme. *Changed 27.11.2026 (CI review, was Light 300 for all running text): Light was too thin at 16 px and below and on night grounds.*
+- **Eyebrows / labels / column heads:** Bebas 14 px, tracking `0.1em`, uppercase. **14 px is the floor for Bebas** — never smaller, also not in badges or table heads. *Changed 27.11.2026 (CI review, was 13 px / 0.14em): too fiddly on phones.*
+- **Long words in 11 languages:** headings hyphenate (`hyphens: auto; overflow-wrap: break-word`, set in the base styles). This only works with the right language tag: `<html lang>` per page and `lang` on every block in another language. Never truncate translatable text with an ellipsis. Write headings in sentence case in the source and let `text-transform` uppercase them; hand-typed capitals hyphenate worse.
 - **Scores, ranks, points:** Bebas. Everything countable inside prose: Oswald.
 - Both faces carry the diacritics for DE, PL, CS, DA, SV, FR, PT, ES, IT, NL, EN.
 - **Fonts are self-hosted:** `tokens/fonts.css` and `components/bundle.css` declare `@font-face` rules for Bebas Neue 400 and Oswald 300/400/500/600 (latin and latin-ext woff2, Fontsource 5.3.0, SIL OFL 1.1) from `/assets/fonts` at the repository root. No request goes to Google.
@@ -110,9 +111,11 @@ Rules: **petrol** carries headers, primary buttons, headlines and table heads. *
 
 Derived from the logo's block letterforms: **45° chamfered corners, never rounding. All radii are 0.** Chamfer sizes `--chamfer-sm/md/lg/xl` = 6 / 10 / 16 / 24 px, applied via the `--clip-chamfer-2` (top-left + bottom-right — buttons, badges, tabs) and `--clip-chamfer-4` (all corners — cards, panels, dialogs) clip paths. Because `clip-path` eats borders, bordered blocks are a coloured outer chamfer with a 2–3 px pad around an inner chamfer — that is how `Card`, `Input`, `StandingsTable` and `Alert` get their edge.
 
+**Technique (changed 27.11.2026, CI review):** where the browser supports `corner-shape` (Chrome/Edge 139+, Firefox 163+, Safari 27.3+ incl. iOS), a chamfer is a real shape — `border-radius` + `corner-shape: bevel` — so outline, borders and box-shadow follow the bevel and children are clipped with `overflow: clip`. Older browsers fall back to the `clip-path` polygons. Components switch automatically through their `chamfer()` helper (custom properties `--qvl-chamfer-clip`, `--qvl-bevel`, `--qvl-bevel-overflow`, set in an `@supports` block). **Apps** (Tailwind, shadcn) use `class="qvl-chamfer"` (top-left + bottom-right) or `"qvl-chamfer-4"` (all four corners) with the size in `--ch`; on the new path a normal `:focus-visible` outline works. The outer/inner pad pattern and the wrappers stay until the `clip-path` fallback is dropped (when Safari 27.3 is widespread).
+
 ### Borders, shadows, transparency
 
-1 px `#CCCCCC` hairlines in tables; 2 px petrol card edges; a **double focus ring** on every focusable element: on light grounds 1 px yellow inside, 2 px ink outside (`--focus-ring-inner`, `--focus-ring`; ink is 13.8:1 on the page, 17.4:1 on cards); in dark mode 1 px night gap inside, 2 px yellow outside. Chamfered controls (`Button`, `IconButton`, `Tabs`) sit in a `.qvl-focus` wrapper because `clip-path` clips `outline`; the wrapper draws the ring as drop-shadows that follow the chamfer; 3 px orange for error states. **No soft/blurred shadows anywhere** — depth is a solid 6 px offset block (`--shadow-block-petrol/-orange/-pink`; on chamfered elements use the `--drop-block-*` filters on an unclipped wrapper — `clip-path` clips `box-shadow`), used sparingly (one hero/feature card per view). No backdrop blur. Transparency is used in exactly two places: the petrol modal scrim (`--overlay-scrim`, 88 %) and the white 82 % plate that protects lead text sitting on net artwork. Text is never set on a photographic or patterned ground without a solid or near-solid plate.
+1 px `#CCCCCC` hairlines in tables; 2 px petrol card edges; a **double focus ring** on every focusable element: on light grounds 1 px yellow inside, 2 px ink outside (`--focus-ring-inner`, `--focus-ring`; ink is 13.8:1 on the page, 17.4:1 on cards); in dark mode 1 px night gap inside, 2 px yellow outside. Chamfered controls (`Button`, `IconButton`, `Tabs`) sit in a `.qvl-focus` wrapper, fields (`Input`, `Select`) in a `.qvl-focus-field` wrapper. With `corner-shape` support the ring is a native outline that follows the bevel; on the `clip-path` fallback the wrapper draws it as drop-shadows. 3 px orange for error states. **No soft/blurred shadows anywhere** — depth is a solid 6 px offset block (`--shadow-block-petrol/-orange/-pink`; on chamfered elements use the `--drop-block-*` filters on an unclipped wrapper — `clip-path` clips `box-shadow`), used sparingly (one hero/feature card per view). No backdrop blur. Transparency is used in exactly two places: the petrol modal scrim (`--overlay-scrim`, 88 %) and the white 82 % plate that protects lead text sitting on net artwork. Text is never set on a photographic or patterned ground without a solid or near-solid plate.
 
 ### Imagery & backgrounds
 
@@ -129,13 +132,19 @@ White, 2 px petrol or grey chamfered edge, 24 px padding, flat. Tones: `default`
 
 ### Motion, hover, press
 
-Fast and mechanical, never bouncy. `--duration-fast` 120 ms for colour, `--duration-base` 180 ms for movement, easing `cubic-bezier(0.2,0,0.2,1)`. Fades and colour swaps only — no spring, no slide-in carousels, no parallax.
+**Precise and fast, with momentum in the moments that matter.** Everyday state changes stay quick and quiet (`--duration-fast` 120 ms for colour, `--duration-base` 180 ms for toggles, `--ease-standard`). The moments that matter — a point, a set won, saved, arrived on a view — get a short, confident flourish built from the brand itself (block shadow, chamfer, Bebas digits, the Spektrum line): `--duration-moment` 420 ms with `--ease-snap` (a short overshoot that settles fast, never a rubber-band bounce) or `--ease-arrive`. *Changed 27.11.2026 (CI review, was "fast and mechanical, never bouncy, fades and colour swaps only"): UX and a wow effect must not exclude each other.*
+
+- **Press:** elements with a block shadow sink into it by `--press-depth` (4 px) and snap back with `--ease-snap`; others scale to `--press-scale` (0.98). Press down takes `--duration-instant`.
+- **Overlays** (Toast, Dialog, Tooltip): rise `--motion-rise` (12 px) and fade in over `--duration-moment` / `--duration-base` with `--ease-snap` or `--ease-out`; they leave faster than they arrive (`--duration-fast`, `--ease-in`).
+- **Values that change** (score, points, counters): Bebas digits roll in with `--ease-snap`; a set or match won sweeps the Spektrum line (≤ 8 px) once across the board.
+- **Views and lists:** moving between list and detail uses View Transitions (`--ease-arrive`), the tapped item becomes the new view. Lists that appear as lists may stagger by `--stagger` (40 ms), at most 6 items.
+- **Budget:** at most one big effect per view; animate `transform` and `opacity` only; input never waits for an animation; no parallax, no endless loops, no scroll-linked motion without meaning.
 
 - **Hover:** solid buttons darken (CI hue mixed 86 % with black); outline/ghost buttons fill with `--qvl-petrol-pale`; links go petrol → dark orange; table rows do not change.
-- **Press:** `scale(0.98)` plus a further darken (74 %).
+- **Press colour:** a further darken (74 %); the movement is described above.
 - **Focus:** double ring (yellow 1 px inside, ink 2 px outside; on night a 1 px gap and a 2 px yellow line), always visible, never removed.
 - **Disabled:** grey fill `#CCCCCC`, muted ink, `not-allowed`.
-- `prefers-reduced-motion` zeroes every duration.
+- `prefers-reduced-motion`: spatial movement stops (`--press-depth`, `--motion-rise`, `--stagger` and the press scale fall away, `--ease-snap` becomes `--ease-out`), but short colour and opacity changes stay at up to 120–160 ms, because they confirm what happened. The Spektrum sweep and digit roll become a plain fade.
 
 ---
 

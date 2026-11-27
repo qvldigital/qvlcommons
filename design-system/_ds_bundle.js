@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"QueerLeagueDesignSystem_ae47b3","components":[{"name":"NetHero","sourcePath":"components/brand/NetHero.jsx"},{"name":"NetPattern","sourcePath":"components/brand/NetPattern.jsx"},{"name":"PatternBand","sourcePath":"components/brand/PatternBand.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"BallIcon","sourcePath":"components/core/Icon.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"ThemeToggle","sourcePath":"components/core/ThemeToggle.jsx"},{"name":"Alert","sourcePath":"components/feedback/Alert.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"ToastStack","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"LevelBadge","sourcePath":"components/league/LevelBadge.jsx"},{"name":"MatchCard","sourcePath":"components/league/MatchCard.jsx"},{"name":"PlayerRow","sourcePath":"components/league/PlayerRow.jsx"},{"name":"SetScoreInput","sourcePath":"components/league/SetScoreInput.jsx"},{"name":"StandingsTable","sourcePath":"components/league/StandingsTable.jsx"},{"name":"BottomNav","sourcePath":"components/navigation/BottomNav.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"SiteFooter","sourcePath":"components/navigation/SiteFooter.jsx"},{"name":"SiteHeader","sourcePath":"components/navigation/SiteHeader.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"}],"sourceHashes":{"brand-kit/doc-page.js":"f52ae9c02fca","components/brand/NetHero.jsx":"69f08a437c2f","components/brand/NetPattern.jsx":"af65ad09b56a","components/brand/PatternBand.jsx":"56a679951bad","components/core/Badge.jsx":"75f02781b085","components/core/Button.jsx":"799e61f53a39","components/core/Card.jsx":"b2546596ab54","components/core/Icon.jsx":"d9e1eb02cd6d","components/core/IconButton.jsx":"137f3ec4b2bd","components/core/Logo.jsx":"2a4bc1b2fa93","components/core/Tag.jsx":"af0a3cdc3749","components/core/ThemeToggle.jsx":"3dff1de68f5e","components/feedback/Alert.jsx":"a9d5041f3c6b","components/feedback/Dialog.jsx":"e77299bc770e","components/feedback/EmptyState.jsx":"213e42b18f88","components/feedback/Toast.jsx":"d4c67befc0ee","components/feedback/Tooltip.jsx":"b3cc5738965b","components/forms/Checkbox.jsx":"22624bc4a605","components/forms/Input.jsx":"5491ad618278","components/forms/Radio.jsx":"bafe5fcfa9a9","components/forms/Select.jsx":"59720db72b80","components/forms/Switch.jsx":"a7f366b4b67f","components/league/LevelBadge.jsx":"348e9f34116f","components/league/MatchCard.jsx":"54d7dfa8224f","components/league/PlayerRow.jsx":"42d18fc314a5","components/league/SetScoreInput.jsx":"388ed579d645","components/league/StandingsTable.jsx":"cd87d3d41058","components/navigation/BottomNav.jsx":"f6ca851c86ef","components/navigation/Breadcrumb.jsx":"a896433375b1","components/navigation/SiteFooter.jsx":"5b2f43c2ca95","components/navigation/SiteHeader.jsx":"93a3f04d20ab","components/navigation/Tabs.jsx":"3a5bd2fbf51e","doc-page.js":"f52ae9c02fca","theme.js":"3c0e4743d8d2","ui_kits/manager/Dashboard.jsx":"d7a06fcdbbae","ui_kits/manager/Login.jsx":"70aee013b0d0","ui_kits/manager/Roster.jsx":"96bfcc327d00","ui_kits/manager/Spielbericht.jsx":"c83d675b5da9","ui_kits/spielbetrieb/FixtureAdmin.jsx":"6818e2439c88","ui_kits/spielbetrieb/ReportSheet.jsx":"3a74078045a3","ui_kits/website/HomeScreen.jsx":"7c38fb82c6a6","ui_kits/website/LigaScreen.jsx":"8e41fb77f516","ui_kits/website/MitmachenScreen.jsx":"cce91359c8bc","ui_kits/website/WallOfFameScreen.jsx":"2dd078e0c1f9"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"QueerLeagueDesignSystem_ae47b3","components":[{"name":"NetHero","sourcePath":"components/brand/NetHero.jsx"},{"name":"NetPattern","sourcePath":"components/brand/NetPattern.jsx"},{"name":"PatternBand","sourcePath":"components/brand/PatternBand.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"BallIcon","sourcePath":"components/core/Icon.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"ThemeToggle","sourcePath":"components/core/ThemeToggle.jsx"},{"name":"Alert","sourcePath":"components/feedback/Alert.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"ToastStack","sourcePath":"components/feedback/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/feedback/Tooltip.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Radio","sourcePath":"components/forms/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/forms/Radio.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"LevelBadge","sourcePath":"components/league/LevelBadge.jsx"},{"name":"MatchCard","sourcePath":"components/league/MatchCard.jsx"},{"name":"PlayerRow","sourcePath":"components/league/PlayerRow.jsx"},{"name":"SetScoreInput","sourcePath":"components/league/SetScoreInput.jsx"},{"name":"StandingsTable","sourcePath":"components/league/StandingsTable.jsx"},{"name":"BottomNav","sourcePath":"components/navigation/BottomNav.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"SiteFooter","sourcePath":"components/navigation/SiteFooter.jsx"},{"name":"SiteHeader","sourcePath":"components/navigation/SiteHeader.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"}],"sourceHashes":{"brand-kit/doc-page.js":"f52ae9c02fca","components/brand/NetHero.jsx":"214e4e8bea6f","components/brand/NetPattern.jsx":"af65ad09b56a","components/brand/PatternBand.jsx":"09072e48dd5d","components/core/Badge.jsx":"ef013c821e24","components/core/Button.jsx":"069884711bda","components/core/Card.jsx":"3fb59e82d056","components/core/Icon.jsx":"d9e1eb02cd6d","components/core/IconButton.jsx":"2207e39af44f","components/core/Logo.jsx":"2a4bc1b2fa93","components/core/Tag.jsx":"103b442ed128","components/core/ThemeToggle.jsx":"3dff1de68f5e","components/feedback/Alert.jsx":"495df84d03f5","components/feedback/Dialog.jsx":"fef63d75bb77","components/feedback/EmptyState.jsx":"a3f1048ff38a","components/feedback/Toast.jsx":"b610e4c762fe","components/feedback/Tooltip.jsx":"34463beed737","components/forms/Checkbox.jsx":"42b1bb4b3bb1","components/forms/Input.jsx":"1931a54494ba","components/forms/Radio.jsx":"9aabdc8fa17a","components/forms/Select.jsx":"9e0c3e548795","components/forms/Switch.jsx":"1509efa1f3fc","components/league/LevelBadge.jsx":"c534d5aa996b","components/league/MatchCard.jsx":"990ac5f0d179","components/league/PlayerRow.jsx":"fb4628e93d6c","components/league/SetScoreInput.jsx":"110cb266fc0a","components/league/StandingsTable.jsx":"0cef7940a3c1","components/navigation/BottomNav.jsx":"90e47ca134fc","components/navigation/Breadcrumb.jsx":"a896433375b1","components/navigation/SiteFooter.jsx":"5b2f43c2ca95","components/navigation/SiteHeader.jsx":"de9c8942da5e","components/navigation/Tabs.jsx":"ae9a43a36885","doc-page.js":"f52ae9c02fca","theme.js":"3c0e4743d8d2","ui_kits/manager/Dashboard.jsx":"d7a06fcdbbae","ui_kits/manager/Login.jsx":"70aee013b0d0","ui_kits/manager/Roster.jsx":"96bfcc327d00","ui_kits/manager/Spielbericht.jsx":"c83d675b5da9","ui_kits/spielbetrieb/FixtureAdmin.jsx":"6818e2439c88","ui_kits/spielbetrieb/ReportSheet.jsx":"3a74078045a3","ui_kits/website/HomeScreen.jsx":"7c38fb82c6a6","ui_kits/website/LigaScreen.jsx":"8e41fb77f516","ui_kits/website/MitmachenScreen.jsx":"cce91359c8bc","ui_kits/website/WallOfFameScreen.jsx":"2dd078e0c1f9"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -755,7 +755,10 @@ try { (() => {
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 
 /* Resolve /assets against the project root by locating the linked styles.css.
@@ -947,7 +950,10 @@ Object.assign(__ds_scope, { NetPattern });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 
 /* Resolve /assets against the project root by locating the linked styles.css.
@@ -1002,7 +1008,10 @@ Object.assign(__ds_scope, { PatternBand });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 
 // outline / yellow are bordered — see Button.jsx for why that needs two nested chamfer layers
@@ -1059,7 +1068,7 @@ function Badge({
   const s = size === "sm" ? {
     height: 20,
     padding: "2px 8px",
-    fontSize: "var(--text-caption)",
+    fontSize: "var(--text-small)",
     ch: 4
   } : {
     height: 26,
@@ -1118,7 +1127,10 @@ Object.assign(__ds_scope, { Badge });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 const SIZES = {
   sm: {
@@ -1288,7 +1300,10 @@ Object.assign(__ds_scope, { Button });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Card({
   tone = "default",
@@ -1524,7 +1539,10 @@ Object.assign(__ds_scope, { Icon, BallIcon });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 const SIZES = {
   sm: {
@@ -1685,7 +1703,10 @@ Object.assign(__ds_scope, { Logo });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Tag({
   children,
@@ -1817,7 +1838,10 @@ Object.assign(__ds_scope, { ThemeToggle });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 const TONES = {
   info: {
@@ -1934,7 +1958,10 @@ Object.assign(__ds_scope, { Alert });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Dialog({
   open = false,
@@ -2091,7 +2118,10 @@ Object.assign(__ds_scope, { Dialog });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function EmptyState({
   title,
@@ -2144,7 +2174,10 @@ Object.assign(__ds_scope, { EmptyState });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Toast({
   tone = "petrol",
@@ -2264,7 +2297,10 @@ Object.assign(__ds_scope, { Toast, ToastStack });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Tooltip({
   label,
@@ -2343,7 +2379,10 @@ Object.assign(__ds_scope, { Tooltip });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Checkbox({
   label,
@@ -2436,7 +2475,10 @@ Object.assign(__ds_scope, { Checkbox });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 // The label wraps only its own text: hint and error sit outside it and are linked to the control with aria-describedby.
 function Field({
@@ -2494,7 +2536,6 @@ function Input({
   style,
   ...rest
 }) {
-  const [focus, setFocus] = React.useState(false);
   const uid = React.useId();
   const fid = id || uid;
   const msgId = fid + "-msg";
@@ -2504,10 +2545,10 @@ function Input({
     "aria-describedby": label && (error || hint) ? msgId : undefined,
     "aria-required": required ? true : undefined
   };
-  const edge = error ? "var(--border-accent)" : focus ? "var(--focus-ring)" : "var(--border-default)";
+  const edge = error ? "var(--border-accent)" : "var(--border-default)";
   const shell = {
     background: edge,
-    padding: error || focus ? 3 : 2,
+    padding: error ? 3 : 2,
     ...chamfer(8, 4),
     transition: "background var(--duration-fast) var(--ease-standard)"
   };
@@ -2529,22 +2570,20 @@ function Input({
     id: fid,
     rows: rows,
     ...a11y,
-    onFocus: () => setFocus(true),
-    onBlur: () => setFocus(false),
     style: field
   }, rest)) : /*#__PURE__*/React.createElement("input", _extends({
     id: fid,
     ...a11y,
-    onFocus: () => setFocus(true),
-    onBlur: () => setFocus(false),
     style: field
   }, rest));
   const control = /*#__PURE__*/React.createElement("div", {
+    className: "qvl-focus-field"
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       ...shell,
       ...style
     }
-  }, el);
+  }, el));
   return label ? /*#__PURE__*/React.createElement(Field, {
     label: label,
     hint: hint,
@@ -2561,7 +2600,10 @@ Object.assign(__ds_scope, { Input });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Radio({
   label,
@@ -2698,7 +2740,10 @@ Object.assign(__ds_scope, { Radio, RadioGroup });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 // The label wraps only its own text: hint and error sit outside it and are linked to the control with aria-describedby.
 function Field({
@@ -2756,7 +2801,6 @@ function Select({
   style,
   ...rest
 }) {
-  const [focus, setFocus] = React.useState(false);
   const uid = React.useId();
   const fid = id || uid;
   const msgId = fid + "-msg";
@@ -2766,11 +2810,13 @@ function Select({
     "aria-describedby": label && (error || hint) ? msgId : undefined,
     "aria-required": required ? true : undefined
   };
-  const edge = error ? "var(--border-accent)" : focus ? "var(--focus-ring)" : "var(--border-default)";
+  const edge = error ? "var(--border-accent)" : "var(--border-default)";
   const control = /*#__PURE__*/React.createElement("div", {
+    className: "qvl-focus-field"
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       background: edge,
-      padding: error || focus ? 3 : 2,
+      padding: error ? 3 : 2,
       ...chamfer(8, 4),
       position: "relative",
       ...style
@@ -2778,8 +2824,6 @@ function Select({
   }, /*#__PURE__*/React.createElement("select", _extends({
     id: fid,
     ...a11y,
-    onFocus: () => setFocus(true),
-    onBlur: () => setFocus(false),
     style: {
       width: "100%",
       height: 44,
@@ -2816,7 +2860,7 @@ function Select({
       borderTop: "7px solid var(--text-heading)",
       pointerEvents: "none"
     }
-  }));
+  })));
   return label ? /*#__PURE__*/React.createElement(Field, {
     label: label,
     hint: hint,
@@ -2833,7 +2877,10 @@ Object.assign(__ds_scope, { Select });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Switch({
   label,
@@ -2922,7 +2969,10 @@ Object.assign(__ds_scope, { Switch });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function LevelBadge({
   level,
@@ -2973,7 +3023,7 @@ function LevelBadge({
       background: "var(--surface-brand-soft)",
       color: "var(--text-on-soft)",
       fontFamily: "var(--font-display)",
-      fontSize: size === "sm" ? "var(--text-caption)" : "var(--text-small)",
+      fontSize: "var(--text-small)",
       letterSpacing: "var(--tracking-eyebrow)",
       textTransform: "uppercase",
       ...chamfer(6, 2)
@@ -2987,7 +3037,10 @@ Object.assign(__ds_scope, { LevelBadge });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function MatchCard({
   date,
@@ -3110,7 +3163,10 @@ Object.assign(__ds_scope, { MatchCard });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function PlayerRow({
   number,
@@ -3183,7 +3239,10 @@ Object.assign(__ds_scope, { PlayerRow });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function SetScoreInput({
   setNumber = 1,
@@ -3301,7 +3360,10 @@ Object.assign(__ds_scope, { SetScoreInput });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 const COLS = [{
   key: "rank",
@@ -3346,9 +3408,17 @@ function StandingsTable({
   promotion = 0,
   relegation = 0,
   minWidth,
+  density = "comfortable",
   style,
   ...rest
 }) {
+  const compact = density === "compact";
+  const cell = compact ? {
+    padding: "4px 10px",
+    height: "var(--row-compact)"
+  } : {
+    padding: "10px 10px"
+  };
   const min = minWidth !== undefined ? minWidth : Math.max(240, columns.length * 74);
   return /*#__PURE__*/React.createElement("div", _extends({
     style: {
@@ -3361,9 +3431,9 @@ function StandingsTable({
   }, rest), /*#__PURE__*/React.createElement("div", {
     style: {
       background: "var(--surface-card)",
-      overflowX: "auto",
       minWidth: 0,
-      ...chamfer(8, 4)
+      ...chamfer(8, 4),
+      overflowX: "auto"
     }
   }, /*#__PURE__*/React.createElement("table", {
     style: {
@@ -3393,7 +3463,7 @@ function StandingsTable({
     scope: "col",
     style: {
       textAlign: c.align || "left",
-      padding: "10px 10px",
+      ...cell,
       width: c.width,
       color: "var(--table-head-fg)",
       fontFamily: "var(--font-display)",
@@ -3414,7 +3484,7 @@ function StandingsTable({
       key: c.key,
       style: {
         textAlign: c.align || "left",
-        padding: "10px 10px",
+        ...cell,
         borderTop: "1px solid var(--table-border)",
         fontWeight: c.key === "points" || c.key === "team" ? "var(--weight-emphasis)" : "var(--weight-body)",
         fontFamily: c.key === "rank" || c.key === "points" ? "var(--font-display)" : "var(--font-body)",
@@ -3431,7 +3501,10 @@ Object.assign(__ds_scope, { StandingsTable });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function BottomNav({
   items = [],
@@ -3469,7 +3542,7 @@ function BottomNav({
     }, it.icon, /*#__PURE__*/React.createElement("span", {
       style: {
         fontFamily: "var(--font-display)",
-        fontSize: "var(--text-caption)",
+        fontSize: "var(--text-small)",
         letterSpacing: "var(--tracking-display)",
         textTransform: "uppercase",
         lineHeight: 1
@@ -3627,7 +3700,10 @@ Object.assign(__ds_scope, { SiteFooter });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function SiteHeader({
   items = [],
@@ -3835,7 +3911,10 @@ Object.assign(__ds_scope, { SiteHeader });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const chamfer = (ch = 10, corners = 2) => ({
-  clipPath: corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`
+  clipPath: `var(--qvl-chamfer-clip,${corners === 4 ? `polygon(${ch}px 0,calc(100% - ${ch}px) 0,100% ${ch}px,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,${ch}px 100%,0 calc(100% - ${ch}px),0 ${ch}px)` : `polygon(${ch}px 0,100% 0,100% calc(100% - ${ch}px),calc(100% - ${ch}px) 100%,0 100%,0 ${ch}px)`})`,
+  borderRadius: corners === 4 ? `calc(var(--qvl-bevel,0)*${ch}px)` : `calc(var(--qvl-bevel,0)*${ch}px) 0`,
+  cornerShape: "bevel",
+  overflow: "var(--qvl-bevel-overflow,visible)"
 });
 function Tabs({
   items = [],

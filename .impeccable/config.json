@@ -1,0 +1,57 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "kicker-above-heading"
+    ],
+    "ignoreFiles": [
+      "design-system/templates/*/support.js"
+    ],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "helvetica neue",
+        "files": [
+          "design-system/**/bundle.js"
+        ],
+        "createdAt": "2026-10-18T13:29:21.550Z",
+        "reason": "doc-page scaffold inside the bundle, not product UI"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "7px",
+        "files": [
+          "design-system/**/bundle.js"
+        ],
+        "createdAt": "2026-10-18T13:29:21.564Z",
+        "reason": "doc-page scaffold inside the bundle, not product UI"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "64px",
+        "files": [
+          "design-system/components/*/preview.html"
+        ],
+        "createdAt": "2026-10-18T13:29:21.577Z",
+        "reason": "specimen pages, not product UI"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "15px",
+        "files": [
+          "design-system/components/*/preview.html"
+        ],
+        "createdAt": "2026-10-18T13:29:21.590Z",
+        "reason": "specimen pages, not product UI"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "11px",
+        "files": [
+          "design-system/components/*/preview.html"
+        ],
+        "createdAt": "2026-10-18T13:29:21.604Z",
+        "reason": "specimen pages, not product UI"
+      }
+    ]
+  }
+}

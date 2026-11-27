@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CI-Review 3: Dichte</title>
+<link rel="stylesheet" href="../../design-system/styles.css">
+<style>
+  body { padding: 16px; }
+  .cols { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  .col { flex: 1 1 420px; min-width: 0; }
+  .tag { font-family: var(--font-display); font-size: 1.125rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-heading); margin: 0 0 4px; }
+  .note { font-size: .875rem; color: var(--text-muted); margin: 0 0 12px; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface-card); }
+  th { text-align: left; font-family: var(--font-display); font-weight: 400; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; background: var(--table-head-bg); color: var(--table-head-fg); padding: 0 10px; height: 40px; }
+  td { padding: 0 10px; border-bottom: 1px solid var(--border-hairline); }
+  tr:nth-child(even) td { background: var(--table-row-bg-alt); }
+  .act { display: inline-flex; gap: 8px; }
+  .act button { display: inline-flex; align-items: center; justify-content: center; border: 2px solid var(--border-default); background: transparent; color: var(--text-heading); font: inherit; cursor: pointer; }
+  .roomy td { height: 44px; }
+  .roomy .act button { min-width: 44px; min-height: 44px; }
+  .compact td { height: 36px; }
+  .compact .act button { min-width: 32px; min-height: 32px; }
+  @media (pointer: coarse) {
+    .compact td { height: 44px; }
+    .compact .act button { min-width: 44px; min-height: 44px; }
+  }
+  .meta { font-size: .875rem; color: var(--text-muted); margin-top: 8px; }
+</style>
+</head>
+<body>
+<h1>Tap-Ziele und Dichte</h1>
+<div class="cols">
+  <div class="col">
+    <p class="tag">A · heute: 44 px überall</p>
+    <p class="note">Zeilen 44 px, Zeilenaktionen 44 × 44 px</p>
+    <table class="roomy" id="a"></table>
+    <p class="meta" id="ma"></p>
+  </div>
+  <div class="col">
+    <p class="tag">C · kompakte Tabelle bei Maus</p>
+    <p class="note">Zeilen 36 px, Aktionen 32 × 32 px mit 8 px Abstand; bei Touch automatisch wieder 44 px</p>
+    <table class="compact" id="c"></table>
+    <p class="meta" id="mc"></p>
+  </div>
+</div>
+<script>
+  const teams = ["Berlin Bumpers", "Hamburg Hurricanes", "Köln Kanonen", "München Mixed", "Leipzig Lilacs", "Dresden Diggers", "Frankfurt Flames", "Bremen Blockers", "Hannover Hearts", "Stuttgart Spikers", "Nürnberg Netters", "Essen Aces"];
+  for (const id of ["a", "c"]) {
+    const t = document.getElementById(id);
+    t.innerHTML = "<thead><tr><th>Team</th><th>Level</th><th>Spieler*innen</th><th>Aktionen</th></tr></thead><tbody>" +
+      teams.map((n, i) => `<tr><td>${n}</td><td>${"ABCD"[i % 4]}</td><td>${10 + (i * 3) % 9}</td><td><span class="act"><button aria-label="Bearbeiten">✎</button><button aria-label="Löschen">×</button></span></td></tr>`).join("") + "</tbody>";
+  }
+  addEventListener("load", () => {
+    for (const id of ["a", "c"]) {
+      const h = document.getElementById(id).getBoundingClientRect().height;
+      document.getElementById("m" + id).textContent = "12 Zeilen: " + Math.round(h) + " px hoch · pointer: " + (matchMedia("(pointer: coarse)").matches ? "coarse (Touch)" : "fine (Maus)");
+    }
+  });
+</script>
+</body>
+</html>

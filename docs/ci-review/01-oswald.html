@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CI-Review 1: Oswald-Schnitt</title>
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<link rel="stylesheet" href="../../design-system/components/bundle.css">
+<style>
+  body { margin: 0; padding: 16px; background: var(--surface-page); color: var(--text-body-color); font-family: "Oswald", sans-serif; }
+  h1 { font-family: "Bebas Neue", sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .02em; font-size: 2rem; margin: 0 0 16px; color: var(--text-heading); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .pane { padding: 16px; background: var(--surface-card); color: var(--text-body-color); border: 1px solid var(--border-default); }
+  .pane[data-theme="dark"] { background: var(--surface-page); }
+  .tag { font-family: "Bebas Neue", sans-serif; font-size: 1rem; letter-spacing: .04em; color: var(--text-muted); margin: 0 0 8px; }
+  p { margin: 0 0 12px; line-height: 1.6; }
+  .lead { font-size: 1.1875rem; }
+  .s16 { font-size: 1rem; }
+  .s14 { font-size: .875rem; line-height: 1.45; }
+  .w300 { font-weight: 300; } .w400 { font-weight: 400; }
+  .w300 b { font-weight: 400; } .w400 b { font-weight: 500; }
+  .night-comp { letter-spacing: .01em; line-height: 1.7; }
+</style>
+</head>
+<body>
+<h1>Oswald Light gegen Regular</h1>
+<div class="grid" id="grid"></div>
+<template id="t">
+  <p class="lead">Deine Mannschaft ist für die Saison gemeldet.</p>
+  <p class="s16">Die Meldung für Level B läuft bis 15. Januar. Trag alle Spieler*innen ein, damit der Spielplan rechtzeitig steht. <b>Wichtig:</b> FLINTA*-Teams melden zusätzlich in ihrer Spielklasse.</p>
+  <p class="s14">Zuletzt geändert am 12.11. · 14 Spieler*innen · Gruppe Nord</p>
+</template>
+<script>
+  const variants = [
+    ["A · heute: 300 überall · hell", "light", "w300", ""],
+    ["A · heute: 300 überall · Nacht", "dark", "w300", ""],
+    ["B · 400 in Apps · hell", "light", "w400", ""],
+    ["B · 400 in Apps · Nacht", "dark", "w400", ""],
+    ["C · 400, Nacht mit mehr Luft", "dark", "w400", "night-comp"],
+  ];
+  const g = document.getElementById("grid"), t = document.getElementById("t");
+  for (const [label, theme, w, extra] of variants) {
+    const d = document.createElement("div");
+    d.className = "pane " + w + " " + extra;
+    d.dataset.theme = theme;
+    d.innerHTML = '<p class="tag">' + label + "</p>";
+    d.append(t.content.cloneNode(true));
+    g.append(d);
+  }
+</script>
+</body>
+</html>

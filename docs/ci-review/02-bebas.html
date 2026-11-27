@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CI-Review 2: Bebas und lange Wörter</title>
+<link rel="stylesheet" href="../../design-system/styles.css">
+<style>
+  body { padding: 16px; }
+  .cols { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .phone { width: 390px; max-width: 100%; box-sizing: border-box; padding: 16px; background: var(--surface-card); border: 1px solid var(--border-default); }
+  .tag { font-family: var(--font-display); font-size: 1.125rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-heading); margin: 0 0 4px; }
+  .note { font-size: .875rem; color: var(--text-muted); margin: 0 0 12px; }
+  .h { margin: 0 0 12px; color: var(--text-heading); }
+  .A .h { font-size: 2.25rem; }
+  .B .h { font-size: 2.25rem; hyphens: auto; overflow-wrap: break-word; }
+  .C .h { font-size: clamp(1.75rem, 1.1rem + 2.6vw, 2.25rem); hyphens: auto; overflow-wrap: break-word; text-wrap: balance; }
+  .over { outline: 3px solid var(--qvl-orange); }
+  .eyebrows { display: grid; gap: 8px; margin-top: 8px; }
+  .eb { font-family: var(--font-display); text-transform: uppercase; color: var(--text-muted); }
+  .eb13 { font-size: .8125rem; letter-spacing: .14em; }
+  .eb14 { font-size: .875rem; letter-spacing: .1em; }
+  .os14 { font-family: var(--font-body); font-weight: 500; font-size: .8125rem; letter-spacing: .06em; }
+  .eb-lbl { font-size: .75rem; color: var(--text-muted); }
+  #report { font-family: ui-monospace, monospace; font-size: 12px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>Bebas: lange Wörter und kleine Größen</h1>
+<div class="cols" id="cols"></div>
+<h2 style="margin-top:24px">Eyebrow-Größen</h2>
+<div class="phone eyebrows">
+  <div><span class="eb eb13">Nächstes Spiel · Spieler*innen-Meldung</span><div class="eb-lbl">heute: Bebas 13 px, 0,14 em</div></div>
+  <div><span class="eb eb14">Nächstes Spiel · Spieler*innen-Meldung</span><div class="eb-lbl">Vorschlag: Bebas 14 px, 0,10 em</div></div>
+  <div><span class="eb os14">Nächstes Spiel · Spieler*innen-Meldung</span><div class="eb-lbl">Alternative: Oswald Medium 13 px, versal, 0,06 em</div></div>
+</div>
+<h2 style="margin-top:24px">Messung</h2>
+<div id="report"></div>
+<script>
+  const words = [
+    ["de", "Spieler*innen-Meldung"],
+    ["de", "Mannschaftsverantwortliche"],
+    ["nl", "Spelersregistratie"],
+    ["da", "Spillertilmeldingsfrist"],
+    ["sv", "Spelaranmälningar"],
+    ["pl", "Zgłoszenie zawodniczek"],
+    ["cs", "Přihlášky hráčů"],
+    ["fr", "Inscription des joueur·euses"],
+    ["pt", "Inscrição de jogadores"],
+    ["es", "Inscripción de jugadores"],
+    ["it", "Iscrizione giocatrici"],
+    ["en", "Player registration"],
+  ];
+  const variants = [
+    ["A", "heute: h1 36 px fest, keine Trennung"],
+    ["B", "36 px, hyphens: auto + lang"],
+    ["C", "B + fließende Größe 28–36 px + balance"],
+  ];
+  const cols = document.getElementById("cols");
+  for (const [v, note] of variants) {
+    const d = document.createElement("div");
+    d.className = "phone " + v;
+    d.innerHTML = '<p class="tag">Variante ' + v + '</p><p class="note">' + note + "</p>";
+    for (const [lang, w] of words) {
+      const h = document.createElement("h2");
+      h.className = "h"; h.lang = lang; h.textContent = w;
+      d.append(h);
+    }
+    cols.append(d);
+  }
+  const glyphs = "ÄÖÜẞĄĆĘŁŃÓŚŹŻÁČĎĚŇŘŠŤŮŽÆØÅÀÂÇÉÈÊËÎÏÔÙÛÜÃÕÑÍÚĲäöüßąćęłńóśźżčďěňřšťůžæøåàâçéèêëîïôùûüãõñíúĳ";
+  Promise.all([document.fonts.load('40px "Bebas Neue"', glyphs), document.fonts.load('400 40px "Oswald"', glyphs)]).then(() => document.fonts.ready).then(() => {
+    const out = [];
+    for (const ph of document.querySelectorAll(".phone.A, .phone.B, .phone.C")) {
+      const v = [...ph.classList].find(c => c.length === 1);
+      let over = 0, lines = 0;
+      for (const h of ph.querySelectorAll(".h")) {
+        const range = document.createRange(); range.selectNodeContents(h);
+        const r = range.getBoundingClientRect(), hb = h.getBoundingClientRect();
+        if (r.right > hb.right + 0.5 || h.scrollWidth > h.clientWidth + 0.5) { over++; h.classList.add("over"); }
+        lines += Math.round(hb.height / parseFloat(getComputedStyle(h).lineHeight));
+      }
+      out.push(v + ": " + over + " von " + words.length + " Überschriften laufen über, " + lines + " Zeilen gesamt");
+    }
+    // glyph coverage: a glyph the face lacks falls back and measures like the fallback
+    const cv = document.createElement("canvas").getContext("2d");
+    const chars = "ÄÖÜẞĄĆĘŁŃÓŚŹŻÁČĎĚŇŘŠŤŮŽÆØÅÀÂÇÉÈÊËÎÏÔÙÛÜÃÕÑÍÚĲ·„“«»–—äöüßąćęłńóśźżčďěňřšťůžæøåàâçéèêëîïôùûüãõñíúĳ";
+    for (const face of ["Bebas Neue", "Oswald"]) {
+      const miss = [];
+      for (const ch of chars) {
+        cv.font = '40px "' + face + '", monospace'; const a = cv.measureText(ch).width;
+        cv.font = "40px monospace"; const b = cv.measureText(ch).width;
+        if (Math.abs(a - b) < 0.01) miss.push(ch);
+      }
+      out.push(face + ": " + (miss.length ? "evtl. fehlend " + miss.join("") : "alle geprüften Zeichen vorhanden"));
+    }
+    document.getElementById("report").textContent = out.join("\n");
+  });
+</script>
+</body>
+</html>

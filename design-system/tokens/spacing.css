@@ -19,4 +19,8 @@
   --container-max:1200px;
   --container-narrow:720px;
   --tap-min:44px;   /* PWA, used courtside */
+  --row-compact:36px;  /* data tables, density="compact", mouse only */
+  --tap-compact:32px;  /* row actions in compact tables, mouse only, 8 px apart */
 }
+/* Compact density is for mouse only; touch keeps 44 px */
+@media (pointer: coarse){:root{--row-compact:var(--tap-min);--tap-compact:var(--tap-min)}}
