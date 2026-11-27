@@ -18,6 +18,9 @@ Queer Volleyball League e.V. — extern immer "Queer League". Einstieg ist `desi
 5. Icons nach Fläche: Software (Manager, Planner, Referee) und alles aus dem Design System mit Lucide über `Icon`; die Website (Zephyr) behält die Material Icons des Themes, Font Awesome nur für Marken-Symbole. Nie mischen innerhalb einer Fläche.
 6. Ton: du-Ansprache, Genderstern (Spieler*innen), FLINTA* immer mit Sternchen, kein Emoji, Headlines in Bebas Neue GROSS, Fließtext in Oswald Light.
 
+## README bei jedem Release
+Vor jedem Release (Tag `vX.Y.Z`) die `README.md` prüfen und im selben Commit nachziehen: Stand und Version, Inhalt, Nutzung, Doku-Tabelle. Die Repo-Tabelle oben ist in `qvlplanner`, `qvlmanager` und `qvlcommons` gleich; ändert sich dort etwas (z. B. eine Adresse), in allen drei Repos anpassen. Aufbau aller drei READMEs gleich halten.
+
 ## Leitplanken für Design-Skills (gilt für alle Apps)
 Farben, Schriften, Nacht-Modus und Tokens kommen ausschließlich aus `design-system/tokens.json`. Kein Skill schlägt eigenmächtig neue Paletten, Schriften, Radien oder Schatten vor.
 - impeccable: Standard für App-Bildschirme. Erlaubt sind audit, critique, harden, polish, clarify, distill, adapt, layout; nicht bolder, colorize, overdrive, new-work.

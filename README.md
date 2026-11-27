@@ -42,8 +42,9 @@ _Freigabe: Die Verläufe, die erweiterte Gelb-Regel und die abgeleiteten Pink-T�
 
 ## Release
 
-1. `version` in `package.json` hochzählen, committen, taggen (`v2.3.0`, …), pushen. Es gibt nur den Branch `main`.
-2. Danach das Artefakt aus dem Repo aktualisieren (Dateien unter `project/` ersetzen).
+1. Diese README auf den aktuellen Stand bringen (Regel in `CLAUDE.md`).
+2. `version` in `package.json` hochzählen, committen, taggen (`v2.3.0`, …), pushen. Es gibt nur den Branch `main`.
+3. Danach das Artefakt aus dem Repo aktualisieren (Dateien unter `project/` ersetzen).
 
 ## Doku im Repo
 
