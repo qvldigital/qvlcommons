@@ -51,6 +51,66 @@
         ],
         "createdAt": "2026-10-18T13:29:21.604Z",
         "reason": "specimen pages, not product UI"
+      },
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "**/harness.html?c=NetPattern*",
+          "design-system/components/NetPattern/preview.html"
+        ],
+        "createdAt": "2026-11-27T20:30:00.000Z",
+        "reason": "CI net pattern: petrol, not an AI cyan gradient (q_cir09, approved by Sebi 27.11.2026)"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "**/harness.html?c=NetPattern*",
+          "design-system/components/NetPattern/preview.html"
+        ],
+        "createdAt": "2026-11-27T20:30:00.000Z",
+        "reason": "CI net pattern is drawn with repeating gradients (q_cir09, approved 27.11.2026)"
+      },
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "**/harness.html?c=NetPattern*",
+          "design-system/components/NetPattern/preview.html"
+        ],
+        "createdAt": "2026-11-27T20:30:00.000Z",
+        "reason": "CI net pattern is a two-axis grid by design (q_cir09, approved 27.11.2026)"
+      },
+      {
+        "rule": "monotonous-spacing",
+        "value": "*",
+        "files": [
+          "**/harness.html?c=Badge*",
+          "design-system/components/Badge/preview.html"
+        ],
+        "createdAt": "2026-11-27T20:30:00.000Z",
+        "reason": "Badge padding is one compact step on purpose (q_cir09, approved 27.11.2026)"
+      },
+      {
+        "rule": "monotonous-spacing",
+        "value": "*",
+        "files": [
+          "**/harness.html?c=Alert*",
+          "design-system/components/Alert/preview.html"
+        ],
+        "createdAt": "2026-11-27T20:30:00.000Z",
+        "reason": "Alert padding is one compact step on purpose (q_cir09, approved 27.11.2026)"
+      },
+      {
+        "rule": "monotonous-spacing",
+        "value": "*",
+        "files": [
+          "**/harness.html?c=StandingsTable*",
+          "design-system/components/StandingsTable/preview.html"
+        ],
+        "createdAt": "2026-11-27T20:30:00.000Z",
+        "reason": "table cells share one padding on purpose (q_cir09, approved 27.11.2026)"
       }
     ]
   }
